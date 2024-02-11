@@ -1,0 +1,50 @@
+{
+  "type": "Config",
+  "favicon": "/images/favicon.svg",
+  "header": {
+    "title": "TypeScript + MUI Starter",
+    "navLinks": [
+      {
+        "type": "Link",
+        "label": "Home",
+        "href": "/",
+        "underline": "hover"
+      },
+      {
+        "type": "Link",
+        "label": "About",
+        "href": "/about",
+        "underline": "hover"
+      },
+      {
+        "type": "Link",
+        "label": "Documentation",
+        "href": "https://docs.netlify.com/create/overview",
+        "underline": "hover"
+      }
+    ]
+  },
+  "footer": {
+    "copyrightText": "Powered by Netlify Create.",
+    "navLinks": [
+      {
+        "type": "Link",
+        "label": "Home",
+        "underline": "hover",
+        "href": "/"
+      },
+      {
+        "type": "Link",
+        "label": "About",
+        "underline": "hover",
+        "href": "/about"
+      },
+      {
+        "type": "Link",
+        "label": "Documentation",
+        "underline": "hover",
+        "href": "https://docs.netlify.com/create/overview"
+      }
+    ]
+  }
+}

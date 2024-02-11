@@ -1,0 +1,30 @@
+{
+  "name": "content-model",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/content-model/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/content-model",
+        "main": "libs/content-model/src/index.ts",
+        "tsConfig": "libs/content-model/tsconfig.lib.json",
+        "assets": ["libs/content-model/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/content-model/jest.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

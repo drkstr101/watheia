@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`watheia.content-api #resolve() fully resolves all content entries with the provided schema 1`] = `
+[
+  {
+    "__metadata": {
+      "id": "content/data/config.json",
+    },
+    "favicon": "/images/favicon.svg",
+    "footer": {
+      "copyrightText": "Powered by Netlify Create.",
+      "navLinks": [
+        {
+          "href": "/",
+          "label": "Home",
+          "type": "Link",
+          "underline": "hover",
+        },
+        {
+          "href": "/about",
+          "label": "About",
+          "type": "Link",
+          "underline": "hover",
+        },
+        {
+          "href": "https://docs.netlify.com/create/overview",
+          "label": "Documentation",
+          "type": "Link",
+          "underline": "hover",
+        },
+      ],
+    },
+    "header": {
+      "navLinks": [
+        {
+          "href": "/",
+          "label": "Home",
+          "type": "Link",
+          "underline": "hover",
+        },
+        {
+          "href": "/about",
+          "label": "About",
+          "type": "Link",
+          "underline": "hover",
+        },
+        {
+          "href": "https://docs.netlify.com/create/overview",
+          "label": "Documentation",
+          "type": "Link",
+          "underline": "hover",
+        },
+      ],
+      "title": "TypeScript + MUI Starter",
+    },
+    "type": "Config",
+  },
+  {
+    "__metadata": {
+      "id": "content/data/theme.json",
+    },
+    "mode": "light",
+    "primaryColor": "#4C57C5",
+    "secondaryColor": "#F65458",
+    "type": "Theme",
+  },
+  {
+    "__metadata": {
+      "id": "content/pages/about.md",
+    },
+    "content": "",
+    "sections": [
+      {
+        "subtitle": "This is the subtitle",
+        "text": "This is **Markdown** *text*.
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+",
+        "title": "Example for H2 headline",
+        "type": "HeroSection",
+      },
+    ],
+    "title": "About",
+    "type": "Page",
+  },
+  {
+    "__metadata": {
+      "id": "content/pages/index.md",
+    },
+    "content": "",
+    "sections": [
+      {
+        "actions": [
+          {
+            "color": "primary",
+            "href": "https://docs.netlify.com/create/quickstart",
+            "label": "Start Building",
+            "size": "lg",
+            "type": "Button",
+            "variant": "solid",
+          },
+          {
+            "color": "primary",
+            "href": "https://docs.netlify.com/create/overview",
+            "label": "Read the Docs",
+            "size": "lg",
+            "type": "Button",
+            "variant": "outline",
+          },
+        ],
+        "image": {
+          "altText": "Hero section image",
+          "src": "/images/hero.svg",
+          "type": "Image",
+        },
+        "subtitle": "Featuring TypeScript, Next.js, MUI v5 & Emotion",
+        "text": "This is the HeroSection component. You can visually edit this component & add more sections while developing locally. [Learn more.](https://docs.netlify.com/create/features/local-development)
+",
+        "title": "Netlify Create Starter",
+        "type": "HeroSection",
+      },
+      {
+        "items": [
+          {
+            "actions": [
+              {
+                "href": "https://docs.netlify.com/create/overview",
+                "label": "Read the Docs",
+                "type": "Button",
+              },
+            ],
+            "image": {
+              "altText": "First item image",
+              "src": "/images/nextjs.svg",
+              "type": "Image",
+            },
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+",
+            "title": "First Card Title",
+            "type": "Card",
+          },
+          {
+            "actions": [
+              {
+                "href": "https://docs.netlify.com/create/overview",
+                "label": "Read the Docs",
+                "type": "Button",
+              },
+            ],
+            "image": {
+              "altText": "Second item image",
+              "src": "/images/mui-5.svg",
+              "type": "Image",
+            },
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+",
+            "title": "Second Card Title",
+            "type": "Card",
+          },
+          {
+            "actions": [
+              {
+                "href": "https://docs.netlify.com/create/overview",
+                "label": "Read the Docs",
+                "type": "Button",
+              },
+            ],
+            "image": {
+              "altText": "Third item image",
+              "src": "/images/ts.svg",
+              "type": "Image",
+            },
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+",
+            "title": "Third Card Title",
+            "type": "Card",
+          },
+        ],
+        "subtitle": "Section subtitle here",
+        "title": "Cards Section Component",
+        "type": "CardsSection",
+      },
+    ],
+    "title": "Home",
+    "type": "Page",
+  },
+]
+`;
