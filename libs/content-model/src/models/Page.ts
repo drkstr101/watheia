@@ -11,6 +11,13 @@ export const Page: PageModel = {
   fields: [
     {
       type: 'string',
+      name: 'slug',
+      label: 'Slug',
+      description: 'A unique url for this page starting with "/"',
+      required: true,
+    },
+    {
+      type: 'string',
       name: 'title',
       label: 'Title',
       default: 'This Is a New Page',

@@ -1,6 +1,7 @@
 ---
-title: Home
 type: Page
+slug: /
+title: Home
 sections:
   - type: HeroSection
     title: Netlify Create Starter

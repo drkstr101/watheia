@@ -7,7 +7,6 @@ export interface ContentApi {
 export interface LocalContentSchema {
   rootPath: string;
   models: Model[];
-  include: string[];
 }
 
 export interface MetaTag {

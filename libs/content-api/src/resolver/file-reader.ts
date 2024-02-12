@@ -1,40 +1,46 @@
+import { Model, ModelName } from '@watheia/content-model';
 import frontmatter from 'front-matter';
 import { readFileSync } from 'fs';
 import { extname, join } from 'path';
 import { LocalContentSchema } from '../content-api.types';
 
-function parseMarkdown(file: string, rawContent: string) {
-  const { attributes, body } = frontmatter<Record<string, unknown>>(rawContent);
+function addMetadata(data: Record<string, unknown>, relPath: string, model: Model) {
   return {
-    ...attributes,
-    content: body,
-    __metadata: { id: file },
-  };
-}
-function parseJson(file: string, rawContent: string) {
-  return {
-    ...JSON.parse(rawContent),
-    __metadata: { id: file },
+    ...data,
+    __metadata: { type: model.type, id: relPath },
   };
 }
 
-export function withLocalContent(schema: LocalContentSchema) {
+export function withLocalResolver(schema: LocalContentSchema) {
   // console.log(`withLocalContent(${schema})`);
-  return (file: string) => {
+  return async (relPath: string) => {
     // console.log(`Resolving:`, file);
-    const absolutePath = join(schema.rootPath, file);
+    const absolutePath = join(schema.rootPath, relPath);
     const rawContent = readFileSync(absolutePath, 'utf8');
-    const ext = extname(file).substring(1);
+    const ext = extname(relPath).substring(1);
 
     // console.log('absolutePath = ', absolutePath);
 
+    let content;
     switch (ext) {
       case 'md':
-        return parseMarkdown(file, rawContent);
+        // eslint-disable-next-line no-case-declarations
+        const { attributes, body } = frontmatter<Record<string, unknown>>(rawContent);
+        content = { ...attributes, content: body };
+        break;
       case 'json':
-        return parseJson(file, rawContent);
+        content = JSON.parse(rawContent);
+        break;
       default:
-        throw Error(`Unhandled file type: ${file}`);
+        throw Error(`Unhandled file extension: ${relPath}`);
     }
+
+    const modelName = content['type'] as ModelName;
+    const model = schema.models.find((m) => m.name === modelName);
+    if (!model) {
+      throw new Error(`Unhandled model type (${modelName}) found in ${relPath}`);
+    }
+
+    return addMetadata(content, relPath, model);
   };
 }

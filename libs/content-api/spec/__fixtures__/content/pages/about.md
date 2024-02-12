@@ -1,6 +1,7 @@
 ---
-title: About
 type: Page
+slug: /about
+title: About
 sections:
   - type: HeroSection
     title: Example for H2 headline

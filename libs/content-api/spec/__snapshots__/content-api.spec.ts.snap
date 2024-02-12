@@ -5,6 +5,7 @@ exports[`watheia.content-api #resolve() fully resolves all content entries with 
   {
     "__metadata": {
       "id": "content/data/config.json",
+      "type": "data",
     },
     "favicon": "/images/favicon.svg",
     "footer": {
@@ -58,6 +59,7 @@ exports[`watheia.content-api #resolve() fully resolves all content entries with 
   {
     "__metadata": {
       "id": "content/data/theme.json",
+      "type": "data",
     },
     "mode": "light",
     "primaryColor": "#4C57C5",
@@ -67,6 +69,7 @@ exports[`watheia.content-api #resolve() fully resolves all content entries with 
   {
     "__metadata": {
       "id": "content/pages/about.md",
+      "type": "page",
     },
     "content": "",
     "sections": [
@@ -81,12 +84,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         "type": "HeroSection",
       },
     ],
+    "slug": "/about",
     "title": "About",
     "type": "Page",
   },
   {
     "__metadata": {
       "id": "content/pages/index.md",
+      "type": "page",
     },
     "content": "",
     "sections": [
@@ -182,6 +187,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         "type": "CardsSection",
       },
     ],
+    "slug": "/",
     "title": "Home",
     "type": "Page",
   },
