@@ -6,6 +6,7 @@
     "dbaeumer.vscode-eslint",
     "stylelint.vscode-stylelint",
     "bradlc.vscode-tailwindcss",
-    "orta.vscode-jest"
+    "orta.vscode-jest",
+    "unifiedjs.vscode-mdx"
   ]
 }
