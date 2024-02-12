@@ -16,7 +16,7 @@ async function loadEntries<T extends { date: string }>(
         return {
           ...metadata,
           metadata,
-          href: `/${directory}/${filename.replace(/\/page\.mdx$/, '')}`,
+          slug: `/${directory}/${filename.replace(/\/page\.mdx$/, '')}`,
         };
       })
     )
@@ -25,7 +25,7 @@ async function loadEntries<T extends { date: string }>(
 
 type ImagePropsWithOptionalAlt = Omit<ImageProps, 'alt'> & { alt?: string };
 
-export type MDXEntry<T> = T & { href: string; metadata: T };
+export type MDXEntry<T> = T & { slug: string; metadata: T };
 
 export interface Article {
   date: string;
