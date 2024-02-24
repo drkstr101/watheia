@@ -92,7 +92,7 @@ function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> 
                     />
                   </Link>
                 </h3>
-                <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
+                <p className="mt-6 flex gap-x-2 text-sm text-black">
                   <time dateTime={caseStudy.date.split('-')[0]} className="font-semibold">
                     {caseStudy.date.split('-')[0]}
                   </time>
@@ -101,7 +101,7 @@ function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> 
                   </span>
                   <span>Case study</span>
                 </p>
-                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
+                <p className="mt-6 font-display text-2xl font-semibold text-black">
                   {caseStudy.title}
                 </p>
                 <p className="mt-4 text-base text-neutral-600">{caseStudy.description}</p>
@@ -175,7 +175,7 @@ export default async function Home() {
     <>
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
-          <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
+          <h1 className="font-display text-5xl font-medium tracking-tight text-black [text-wrap:balance] sm:text-7xl">
             Award-winning development studio based in Tri-Cities Washington.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">

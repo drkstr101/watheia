@@ -75,7 +75,7 @@ export function SocialMedia({
   return (
     <ul
       role="list"
-      className={clsx('flex gap-x-10', invert ? 'text-white' : 'text-neutral-950', className)}
+      className={clsx('flex gap-x-10', invert ? 'text-white' : 'text-black', className)}
     >
       {socialMediaProfiles.map((socialMediaProfile) => (
         <li key={socialMediaProfile.title}>

@@ -25,8 +25,8 @@ module.exports = {
         danger: colors.rose,
         warning: colors.amber,
         success: colors.emerald,
-        white: '#f8fafc',
-        black: '#020617',
+        white: colors.slate['50'],
+        black: colors.slate['950'],
       }),
       fontFamily: {
         sans: ['Mona Sans', ...fontFamily.sans],

@@ -39,12 +39,12 @@ export default async function Blog() {
                 <Border className="pt-16">
                   <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                     <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
-                      <h2 className="font-display text-2xl font-semibold text-neutral-950">
+                      <h2 className="font-display text-2xl font-semibold text-black">
                         <Link href={article.slug}>{article.title}</Link>
                       </h2>
                       <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
                         <dt className="sr-only">Published</dt>
-                        <dd className="absolute left-0 top-0 text-sm text-neutral-950 lg:static">
+                        <dd className="absolute left-0 top-0 text-sm text-black lg:static">
                           <time dateTime={article.date}>{formatDate(article.date)}</time>
                         </dd>
                         <dt className="sr-only">Author</dt>
@@ -56,7 +56,7 @@ export default async function Blog() {
                               className="h-12 w-12 object-cover grayscale"
                             />
                           </div>
-                          <div className="text-sm text-neutral-950">
+                          <div className="text-sm text-black">
                             <div className="font-semibold">{article.author.name}</div>
                             <div>{article.author.role}</div>
                           </div>
