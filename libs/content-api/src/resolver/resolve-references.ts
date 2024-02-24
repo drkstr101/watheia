@@ -1,4 +1,4 @@
-import defaultModel, { type Model } from '@watheia/content-model';
+import { models as defaultModel, type Model } from '@watheia/content-model';
 
 /**
  * Run side-affects on import to populate reference fields

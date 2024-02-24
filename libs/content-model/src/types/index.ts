@@ -25,17 +25,24 @@
 // methods to access or update independently.
 ////
 
-export interface HeaderProps {
+export interface Header {
   type: 'Header';
   __metadata: { type: 'object'; id: string };
-  navLinks?: LinkProps[];
+  navLinks?: Link[];
 }
 
-export interface FooterProps {
+export interface Footer {
   type: 'Footer';
   __metadata: { type: 'object'; id: string };
-  navLinks?: LinkProps[];
+  navLinks?: Link[];
   copyrightText: string;
+}
+
+export interface Testimonial {
+  type: 'Testimonial';
+  __metadata: { type: 'object'; id: string };
+  content: string;
+  author: { name: string; role: string };
 }
 
 // Documents
@@ -44,18 +51,27 @@ export interface FooterProps {
 // contributions to the site routes but is not required to do so.
 ////
 
-export interface ThemeProps {
+export interface Theme {
   type: 'Theme';
   __metadata: { type: 'data'; id: string };
   // TODO configure color palettes
 }
 
-export interface ConfigProps {
+export interface Config {
   type: 'Config';
   __metadata: { type: 'data'; id: string };
   favicon?: string;
-  header?: HeaderProps;
-  footer?: FooterProps;
+  header?: Header;
+  footer?: Footer;
+}
+
+export interface Person {
+  type: 'Person';
+  __metadata: { type: 'data'; id: string };
+  name: string;
+  fullName: string;
+  role: string;
+  image?: Image;
 }
 
 // Atoms
@@ -65,7 +81,7 @@ export interface ConfigProps {
 /**
  * Button model props
  */
-export interface ButtonProps {
+export interface Button {
   type: 'Button';
   __metadata: { type: 'object'; id: string };
   label: string;
@@ -84,14 +100,14 @@ export interface ButtonProps {
     | 'danger';
 }
 
-export interface ImageProps {
+export interface Image {
   type: 'Image';
   __metadata: { type: 'object'; id: string };
   src: string;
   altText: string;
 }
 
-export interface LinkProps {
+export interface Link {
   type: 'Link';
   __metadata: { type: 'object'; id: string };
   label: string;
@@ -107,12 +123,12 @@ export interface LinkProps {
 // can be configured to display in-line as well.
 ////
 
-export interface CardProps {
+export interface Card {
   type: 'Card';
   __metadata: { id: string; type: 'object' };
   text?: string;
-  image?: ImageProps;
-  actions?: ButtonProps[];
+  image?: Image;
+  actions?: Button[];
 }
 
 // Sections
@@ -120,26 +136,56 @@ export interface CardProps {
 // by a page, and who's labels may affect navigation or the rendering of a ToC for the page
 ////
 
-export interface HeroSectionProps {
+export interface HeroSection {
   type: 'HeroSection';
   __metadata: { type: 'object'; id: string };
   title?: string;
   subtitle?: string;
   text?: string;
-  actions?: ButtonProps[];
-  image?: ImageProps;
+  actions?: Button[];
+  image?: Image;
 }
 
 // Pages
 // Pages are entrypoints into the content. Pages are a type of document data that make contributions
 // to the site routes.
 
-export interface PageProps {
+type PageMeta = {
+  type: 'page';
+  id: string;
+  urlPath: string;
+};
+
+export interface Page {
   type: 'Page';
+  __metadata: PageMeta;
   slug: string;
-  __metadata: { type: 'page'; id: string };
   title: string;
   subtitle?: string;
-  text?: string;
-  sections?: HeroSectionProps[];
+  description?: string;
+  sections?: HeroSection[];
+}
+
+export interface Article {
+  type: 'Article';
+  __metadata: PageMeta;
+  slug: string;
+  title: string;
+  description: string;
+  date: Date;
+}
+
+export interface CaseStudy {
+  type: 'CaseStudy';
+  __metadata: PageMeta;
+  slug: string;
+  title: string;
+  description: string;
+  date: Date;
+  summary: string[];
+  client: string;
+  logo: string;
+  image: Image;
+  services: string[];
+  testimonial: Testimonial;
 }

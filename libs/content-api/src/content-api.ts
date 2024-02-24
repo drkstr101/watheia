@@ -1,4 +1,4 @@
-import model from '@watheia/content-model';
+import { models } from '@watheia/content-model';
 
 import { LocalContentSchema } from './content-api.types';
 import { withLocalResolver } from './resolver/file-reader';
@@ -6,7 +6,7 @@ import { scanContentDir } from './util/file-utils';
 
 export const defaultOptions = {
   rootPath: process.env['WORKSPACE_ROOT'] ?? process.cwd(),
-  models: Object.values(model),
+  models: Object.values(models),
 };
 
 export class LocalContentApi {
