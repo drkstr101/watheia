@@ -24,6 +24,12 @@ export const Page: PageModel = {
       required: true,
     },
     {
+      type: 'string',
+      name: 'description',
+      label: 'Description',
+      required: false,
+    },
+    {
       type: 'list',
       name: 'sections',
       label: 'Sections',
