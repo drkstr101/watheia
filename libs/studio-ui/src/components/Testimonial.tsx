@@ -1,5 +1,5 @@
-import Image, { type ImageProps } from 'next/image';
 import clsx from 'clsx';
+import Image, { type ImageProps } from 'next/image';
 
 import { Container } from './Container';
 import { FadeIn } from './FadeIn';
@@ -15,9 +15,9 @@ export function Testimonial({
   className?: string;
 }) {
   return (
-    <div className={clsx('relative isolate bg-neutral-50 py-16 sm:py-28 md:py-32', className)}>
+    <div className={clsx('relative isolate bg-white py-16 sm:py-28 md:py-32', className)}>
       <GridPattern
-        className="absolute inset-0 -z-10 h-full w-full fill-neutral-100 stroke-neutral-950/5 [mask-image:linear-gradient(to_bottom_left,white_50%,transparent_60%)]"
+        className="absolute inset-0 -z-10 h-full w-full fill-neutral-100 stroke-black/5 [mask-image:linear-gradient(to_bottom_left,white_50%,transparent_60%)]"
         yOffset={-256}
       />
       <Container>

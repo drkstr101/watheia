@@ -1,6 +1,6 @@
-import { useId } from 'react';
-import Image, { type ImageProps } from 'next/image';
 import clsx from 'clsx';
+import Image, { type ImageProps } from 'next/image';
+import { useId } from 'react';
 
 const shapes = [
   {
@@ -44,7 +44,7 @@ export function StylizedImage({
               />
             </foreignObject>
           </g>
-          <use href={`#${id}-shape`} strokeWidth="2" className="stroke-neutral-950/10" />
+          <use href={`#${id}-shape`} strokeWidth="2" className="stroke-black/10" />
         </g>
         <defs>
           <clipPath id={`${id}-clip`}>

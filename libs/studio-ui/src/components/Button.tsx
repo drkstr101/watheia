@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import clsx from 'clsx';
+import Link from 'next/link';
 
 type ButtonProps = {
   invert?: boolean;
@@ -14,7 +14,7 @@ export function Button({ invert = false, className, children, ...props }: Button
     'inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition',
     invert
       ? 'bg-white text-black hover:bg-neutral-200'
-      : 'bg-neutral-950 text-white hover:bg-neutral-800'
+      : 'bg-black text-white hover:bg-neutral-800'
   );
 
   const inner = <span className="relative top-px">{children}</span>;
