@@ -29,3 +29,9 @@ export const models = {
   Person,
   Theme,
 } as const;
+
+export type ContentModel = typeof models;
+
+export type ModelName = keyof ContentModel;
+
+export const ALL_MODEL_NAMES = Object.keys(models) as ModelName[];
