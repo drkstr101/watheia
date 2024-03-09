@@ -1,14 +1,15 @@
-// // import { SignJWT } from 'jose/jwt/sign';
+// import { SignJWT } from 'jose/jwt/sign';
+// import crypto from 'crypto';
 
 // import {
-//   getAllCategoryPostsSorted,
-//   getAllNonFeaturedPostsSorted,
-//   getAllPostsSorted,
-//   getPagedItemsForPage,
 //   getRootPagePath,
+//   resolveReferences,
+//   getAllPostsSorted,
+//   getAllNonFeaturedPostsSorted,
+//   getAllCategoryPostsSorted,
+//   getPagedItemsForPage,
 //   isPublished,
 //   mapDeepAsync,
-//   resolveReferences,
 // } from './data-utils';
 
 // export function resolveStaticProps(urlPath, data) {
@@ -49,7 +50,7 @@
 //   PostFeedLayout: (props, data) => {
 //     const numOfPostsPerPage = props.numOfPostsPerPage ?? 10;
 //     let allPosts = getAllNonFeaturedPostsSorted(data.objects);
-//     if (!process.env['stackbitPreview']) {
+//     if (!process.env.stackbitPreview) {
 //       allPosts = allPosts.filter(isPublished);
 //     }
 //     const paginationData = getPagedItemsForPage(props, allPosts, numOfPostsPerPage);
@@ -64,7 +65,7 @@
 //     const categoryId = props.__metadata?.id;
 //     const numOfPostsPerPage = props.numOfPostsPerPage ?? 10;
 //     let allCategoryPosts = getAllCategoryPostsSorted(data.objects, categoryId);
-//     if (!process.env['stackbitPreview']) {
+//     if (!process.env.stackbitPreview) {
 //       allCategoryPosts = allCategoryPosts.filter(isPublished);
 //     }
 //     const paginationData = getPagedItemsForPage(props, allCategoryPosts, numOfPostsPerPage);
@@ -77,7 +78,7 @@
 //   },
 //   RecentPostsSection: (props, data) => {
 //     let allPosts = getAllPostsSorted(data.objects);
-//     if (!process.env['stackbitPreview']) {
+//     if (!process.env.stackbitPreview) {
 //       allPosts = allPosts.filter(isPublished);
 //     }
 //     allPosts = allPosts.slice(0, props.recentCount || 6);
@@ -102,24 +103,22 @@
 //     if (!props.destination) {
 //       return props;
 //     }
-//     if (!process.env['WATHEIA_CONTACT_FORM_SECRET']) {
+//     if (!process.env.STACKBIT_CONTACT_FORM_SECRET) {
 //       console.error(
-//         `No WATHEIA_CONTACT_FORM_SECRET provided. It will not work properly for production build.`
+//         `No STACKBIT_CONTACT_FORM_SECRET provided. It will not work properly for production build.`
 //       );
 //       return props;
 //     }
-
-//     return props;
-//     // const secretKey = crypto
-//     //   .createHash('sha256')
-//     //   .update(process.env.WATHEIA_CONTACT_FORM_SECRET)
-//     //   .digest();
-//     // const destination = await new SignJWT({ email: props.destination })
-//     //   .setProtectedHeader({ alg: 'HS256' })
-//     //   .sign(secretKey);
-//     // return {
-//     //   ...props,
-//     //   destination,
-//     // };
+//     const secretKey = crypto
+//       .createHash('sha256')
+//       .update(process.env.STACKBIT_CONTACT_FORM_SECRET)
+//       .digest();
+//     const destination = await new SignJWT({ email: props.destination })
+//       .setProtectedHeader({ alg: 'HS256' })
+//       .sign(secretKey);
+//     return {
+//       ...props,
+//       destination,
+//     };
 //   },
 // };

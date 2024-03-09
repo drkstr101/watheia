@@ -8,7 +8,7 @@
     "lint": "nx format:check && nx run-many --target=lint --parallel",
     "test": "nx run-many --target=test --parallel --coverage -- --runInBand",
     "build": "nx run-many --target=build --parallel",
-    "start": "nx run --target=serve --parallel",
+    "start": "nx run home:serve:development",
     "e2e": "nx run cypress:e2e --skip-nx-cache",
     "validate": "stackbit validate"
   },

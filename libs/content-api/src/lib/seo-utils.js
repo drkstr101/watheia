@@ -1,5 +1,3 @@
-// import { MetaTag } from '../content-api.types';
-
 // export function seoGenerateMetaTags(page, site) {
 //   let pageMetaTags = {};
 
@@ -24,7 +22,7 @@
 //     });
 //   }
 
-//   const metaTags: MetaTag[] = [];
+//   let metaTags = [];
 //   Object.keys(pageMetaTags).forEach((key) => {
 //     if (pageMetaTags[key] !== null) {
 //       metaTags.push({
@@ -56,7 +54,7 @@
 //   if (page.seo?.metaDescription) {
 //     metaDescription = page.seo?.metaDescription;
 //   }
-//   return metaDescription ?? site.seo?.metaDescription;
+//   return metaDescription;
 // }
 
 // export function seoGenerateOgImage(page, site) {

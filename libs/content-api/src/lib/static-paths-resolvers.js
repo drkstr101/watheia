@@ -1,13 +1,13 @@
 // import {
-//   generatePagedPathsForPage,
-//   getAllCategoryPostsSorted,
 //   getAllNonFeaturedPostsSorted,
+//   getAllCategoryPostsSorted,
+//   generatePagedPathsForPage,
 //   isPublished,
 // } from './data-utils';
 
 // export function resolveStaticPaths({ pages, objects }) {
 //   return pages.reduce((paths, page) => {
-//     if (!process.env['stackbitPreview'] && page.isDraft) {
+//     if (!process.env.stackbitPreview && page.isDraft) {
 //       return paths;
 //     }
 //     const objectType = page.__metadata?.modelName;
@@ -23,7 +23,7 @@
 // const StaticPathsResolvers = {
 //   PostFeedLayout: (page, objects) => {
 //     let posts = getAllNonFeaturedPostsSorted(objects);
-//     if (!process.env['stackbitPreview']) {
+//     if (!process.env.stackbitPreview) {
 //       posts = posts.filter(isPublished);
 //     }
 //     const numOfPostsPerPage = page.numOfPostsPerPage ?? 10;
@@ -33,7 +33,7 @@
 //     const categoryId = page.__metadata?.id;
 //     const numOfPostsPerPage = page.numOfPostsPerPage ?? 10;
 //     let categoryPosts = getAllCategoryPostsSorted(objects, categoryId);
-//     if (!process.env['stackbitPreview']) {
+//     if (!process.env.stackbitPreview) {
 //       categoryPosts = categoryPosts.filter(isPublished);
 //     }
 //     return generatePagedPathsForPage(page, categoryPosts, numOfPostsPerPage);

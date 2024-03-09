@@ -14,3 +14,11 @@ export interface MetaTag {
   content: string;
   format: 'property' | 'name';
 }
+
+type Context = {
+  /** The document/asset file path relative to project directory. */
+  filePath: string;
+};
+
+export type DocumentContext = Context;
+export type AssetContext = Context;

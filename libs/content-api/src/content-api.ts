@@ -10,7 +10,7 @@ export const defaultOptions = {
 };
 
 export class LocalContentApi {
-  public static async resolve(
+  public static async create(
     schema: LocalContentSchema = defaultOptions
   ): Promise<LocalContentApi> {
     const filePaths = await scanContentDir(schema.rootPath);
