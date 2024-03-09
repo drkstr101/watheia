@@ -1,5 +1,12 @@
 // export core types
-export type { ConfigModel, DataModel, Model, ObjectModel, PageModel } from '@stackbit/types';
+export type {
+  ConfigModel,
+  ContentSourceInterface,
+  DataModel,
+  Model,
+  ObjectModel,
+  PageModel,
+} from '@stackbit/types';
 
 // model exports
 export { ALL_MODEL_NAMES, models } from './models';
