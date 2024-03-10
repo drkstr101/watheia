@@ -3,7 +3,13 @@
   "version": "0.0.1",
   "dependencies": {
     "@swc/helpers": "~0.5.2",
-    "@watheia/content-model": "*"
+    "@watheia/content-model": "*",
+    "@iarna/toml": "2.2.5",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "11.2.0",
+    "js-yaml": "4.1.0",
+    "lodash": "4.17.21",
+    "front-matter": "^4.0.2"
   },
   "type": "commonjs",
   "main": "./src/index.js",
