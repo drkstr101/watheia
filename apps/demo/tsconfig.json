@@ -18,6 +18,15 @@
     ],
     "types": ["jest", "node"]
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "next-env.d.ts"],
-  "exclude": ["node_modules", "jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
+  "include": [
+    "content/**/*.json",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "next-env.d.ts",
+    "src/pages/[[...slug]].js",
+    "next.config.mjs"
+  ],
+  "exclude": ["node_modules", "jest.config.ts", "spec/**/*.js", "spec/**/*.ts"]
 }
