@@ -25,7 +25,6 @@
     "**/*.js",
     "**/*.jsx",
     "next-env.d.ts",
-    "src/pages/[[...slug]].js",
     "next.config.mjs"
   ],
   "exclude": ["node_modules", "jest.config.ts", "spec/**/*.js", "spec/**/*.ts"]

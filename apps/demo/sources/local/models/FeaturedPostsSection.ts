@@ -33,7 +33,7 @@ export const FeaturedPostsSection: Model = {
       localized: false,
       items: {
         type: 'reference',
-        models: ['PostLayout'],
+        models: ['Article'],
       },
     },
     {

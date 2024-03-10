@@ -1,10 +1,34 @@
-import { Model } from '@stackbit/types';
+import { PageModel } from '@stackbit/types';
 
-export const PostLayout: Model = {
+export const Article: PageModel = {
   type: 'page',
-  name: 'PostLayout',
+  name: 'Article',
   label: 'Post',
   labelField: 'title',
+  urlPath: '/blog/{slug}',
+  thumbnail: 'https://assets.stackbit.com/components/models/thumbnails/default.png',
+  fieldGroups: [
+    {
+      name: 'thumbnail',
+      label: 'Thumbnail',
+      icon: 'image',
+    },
+    {
+      name: 'cardStyles',
+      label: 'Card styles',
+      icon: 'palette',
+    },
+    {
+      name: 'settings',
+      label: 'Settings',
+      icon: 'gear',
+    },
+    {
+      name: 'seo',
+      label: 'SEO',
+      icon: 'page',
+    },
+  ],
   fields: [
     {
       type: 'string',
@@ -213,30 +237,6 @@ export const PostLayout: Model = {
           textAlign: '*',
         },
       },
-    },
-  ],
-  urlPath: '/blog/{slug}',
-  thumbnail: 'https://assets.stackbit.com/components/models/thumbnails/default.png',
-  fieldGroups: [
-    {
-      name: 'thumbnail',
-      label: 'Thumbnail',
-      icon: 'image',
-    },
-    {
-      name: 'cardStyles',
-      label: 'Card styles',
-      icon: 'palette',
-    },
-    {
-      name: 'settings',
-      label: 'Settings',
-      icon: 'gear',
-    },
-    {
-      name: 'seo',
-      label: 'SEO',
-      icon: 'page',
     },
   ],
 };

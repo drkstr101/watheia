@@ -16,7 +16,7 @@
 
 //   console.time('Indexing duration');
 //   const data = fetchDocuments();
-//   const posts = data.filter((p) => p.__metadata.modelName == 'PostLayout');
+//   const posts = data.filter((p) => p.__metadata.modelName == 'Article');
 
 //   const objectsToIndex = buildObjectsToIndex(posts);
 //   await indexObjects(objectsToIndex);

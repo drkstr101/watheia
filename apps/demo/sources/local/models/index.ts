@@ -1,3 +1,4 @@
+import { Article } from './Article';
 import { BackgroundImage } from './BackgroundImage';
 import { Badge } from './Badge';
 import { Button } from './Button';
@@ -17,12 +18,11 @@ import { Header } from './Header';
 import { ImageBlock } from './ImageBlock';
 import { ImageGallerySection } from './ImageGallerySection';
 import { Link } from './Link';
-import { PageLayout } from './PageLayout';
+import { Page } from './Page';
 import { PagedPostsSection } from './PagedPostsSection';
 import { Person } from './Person';
 import { PostFeedLayout } from './PostFeedLayout';
 import { PostFeedSection } from './PostFeedSection';
-import { PostLayout } from './PostLayout';
 import { PricingPlan } from './PricingPlan';
 import { PricingSection } from './PricingSection';
 import { RecentPostsSection } from './RecentPostsSection';
@@ -39,8 +39,8 @@ import { ThemeStyleLink } from './ThemeStyleLink';
 import { TitleBlock } from './TitleBlock';
 import { VideoBlock } from './VideoBlock';
 
-import { MetaTag } from './MetaTag';
 import { FooterLinksGroup } from './FooterLinksGroup';
+import { MetaTag } from './MetaTag';
 import { Seo } from './Seo';
 
 export const allModels = {
@@ -63,12 +63,12 @@ export const allModels = {
   ImageBlock,
   ImageGallerySection,
   Link,
-  PageLayout,
+  Page,
   PagedPostsSection,
   Person,
   PostFeedLayout,
   PostFeedSection,
-  PostLayout,
+  Article,
   PricingPlan,
   PricingSection,
   RecentPostsSection,

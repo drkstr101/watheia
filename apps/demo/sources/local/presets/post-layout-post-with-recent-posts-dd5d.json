@@ -1,5 +1,5 @@
 {
-  "model": "PostLayout",
+  "model": "Article",
   "presets": [
     {
       "label": "Post with recent posts",

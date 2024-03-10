@@ -23,7 +23,7 @@ colors: bg-light-fg-dark
 styles:
   self:
     flexDirection: row
-type: PostLayout
+type: Article
 author: content/data/person1.json
 ---
 

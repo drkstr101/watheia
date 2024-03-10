@@ -44,7 +44,7 @@ export function resolveStaticProps(urlPath, data) {
 }
 
 const StaticPropsResolvers = {
-  PostLayout: (props, data, debugContext) => {
+  Article: (props, data, debugContext) => {
     return resolveReferences(props, ['author', 'category'], data.objects, debugContext);
   },
   PostFeedLayout: (props, data) => {

@@ -1,5 +1,5 @@
 {
-  "model": "PageLayout",
+  "model": "Page",
   "presets": [
     {
       "label": "Main page",
@@ -273,15 +273,15 @@
             "posts": [
               {
                 "$$ref": "content/pages/blog/case-study-1.md",
-                "$$type": "PostLayout"
+                "$$type": "Article"
               },
               {
                 "$$ref": "content/pages/blog/case-study-2.md",
-                "$$type": "PostLayout"
+                "$$type": "Article"
               },
               {
                 "$$ref": "content/pages/blog/case-study-3.md",
-                "$$type": "PostLayout"
+                "$$type": "Article"
               }
             ],
             "showThumbnail": true,

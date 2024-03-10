@@ -1,6 +1,7 @@
 ---
-title: Home
+type: Page
 slug: /
+title: Home
 sections:
   - type: GenericSection
     title:
@@ -627,5 +628,4 @@ seo:
   metaDescription: This demo site is built with Stackbit
   socialImage: /images/main-hero.svg
   type: Seo
-type: PageLayout
 ---

@@ -1,8 +1,8 @@
-import { Model } from '@stackbit/types';
+import { PageModel } from '@stackbit/types';
 
-export const PageLayout: Model = {
+export const Page: PageModel = {
   type: 'page',
-  name: 'PageLayout',
+  name: 'Page',
   label: 'Page',
   labelField: 'title',
   fields: [

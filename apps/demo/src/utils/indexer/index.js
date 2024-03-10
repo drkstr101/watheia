@@ -16,7 +16,7 @@ export async function index() {
 
   console.time('Indexing duration');
   const data = allContent();
-  const posts = data.pages.filter((p) => p.__metadata.modelName == 'PostLayout');
+  const posts = data.pages.filter((p) => p.__metadata.modelName == 'Article');
 
   const objectsToIndex = buildObjectsToIndex(posts);
   await indexObjects(objectsToIndex);

@@ -56,8 +56,8 @@ const components = {
   TextareaFormControl: dynamic(() => import('./blocks/FormBlock/TextareaFormControl')),
   TextFormControl: dynamic(() => import('./blocks/FormBlock/TextFormControl')),
   VideoBlock: dynamic(() => import('./blocks/VideoBlock')),
-  PageLayout: dynamic(() => import('./layouts/PageLayout')),
-  PostLayout: dynamic(() => import('./layouts/PostLayout')),
+  Page: dynamic(() => import('./layouts/page-layout')),
+  Article: dynamic(() => import('./layouts/article-layout')),
   PostFeedLayout: dynamic(() => import('./layouts/PostFeedLayout')),
   PostFeedCategoryLayout: dynamic(() => import('./layouts/PostFeedCategoryLayout')),
 };

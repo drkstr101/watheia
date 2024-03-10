@@ -19,15 +19,15 @@
         "posts": [
           {
             "$$ref": "content/pages/blog/how-to-write-a-blog-post-that-will-get-you-more-traffic.md",
-            "$$type": "PostLayout"
+            "$$type": "Article"
           },
           {
             "$$ref": "content/pages/blog/five-tips-for-starting-a-startup.md",
-            "$$type": "PostLayout"
+            "$$type": "Article"
           },
           {
             "$$ref": "content/pages/blog/what-is-a-design-system.md",
-            "$$type": "PostLayout"
+            "$$type": "Article"
           }
         ],
         "showThumbnail": true,

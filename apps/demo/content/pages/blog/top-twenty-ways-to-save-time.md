@@ -19,7 +19,7 @@ seo:
   socialImage: /images/abstract-feature2.svg
   type: Seo
 colors: bg-light-fg-dark
-type: PostLayout
+type: Article
 author: content/data/person4.json
 styles:
   self:

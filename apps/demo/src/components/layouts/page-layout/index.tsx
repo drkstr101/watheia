@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { getBaseLayoutComponent } from '../../../utils/base-layout';
 import { getComponent } from '../../components-registry';
 

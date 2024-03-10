@@ -163,5 +163,5 @@ seo:
   metaDescription: This is the careers page built with Stackbit.
   socialImage: /images/avatar5.jpg
   type: Seo
-type: PageLayout
+type: Page
 ---

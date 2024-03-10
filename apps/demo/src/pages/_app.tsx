@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app';
-import { WithNinetailedProvider } from '../utils/ninetailed-helpers';
+import { WithNinetailedProvider } from '../components/withPersonalization/ninetailed-provider';
 
 import '../css/main.css';
 

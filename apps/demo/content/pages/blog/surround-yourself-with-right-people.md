@@ -18,7 +18,7 @@ seo:
   socialImage: /images/abstract-feature1.svg
   type: Seo
 colors: bg-light-fg-dark
-type: PostLayout
+type: Article
 author: content/data/person1.json
 styles:
   self:

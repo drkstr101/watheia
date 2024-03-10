@@ -120,5 +120,5 @@ seo:
   metaDescription: This is the pricing page built with Stackbit.
   socialImage: /images/main-hero.svg
   type: Seo
-type: PageLayout
+type: Page
 ---

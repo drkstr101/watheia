@@ -1,5 +1,5 @@
 ---
-type: PostLayout
+type: Article
 title: What is a Design System
 slug: what-is-a-design-system
 date: '2023-02-14'

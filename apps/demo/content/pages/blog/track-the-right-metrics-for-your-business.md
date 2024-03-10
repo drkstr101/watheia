@@ -1,5 +1,5 @@
 ---
-type: PostLayout
+type: Article
 title: Track the right analytics for your business
 slug: track-the-right-analytics-for-your-business
 date: '2023-02-20'

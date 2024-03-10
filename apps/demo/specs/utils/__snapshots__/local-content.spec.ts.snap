@@ -6,7 +6,7 @@ exports[`local-content allContent fully resolves a local content directory 1`] =
     {
       "__metadata": {
         "id": "content/pages/careers.md",
-        "modelName": "PageLayout",
+        "modelName": "Page",
         "urlPath": "/careers",
       },
       "content": "",
@@ -517,12 +517,12 @@ exports[`local-content allContent fully resolves a local content directory 1`] =
       },
       "slug": "careers",
       "title": "Careers",
-      "type": "PageLayout",
+      "type": "Page",
     },
     {
       "__metadata": {
         "id": "content/pages/index.md",
-        "modelName": "PageLayout",
+        "modelName": "Page",
         "urlPath": "/",
       },
       "content": "",
@@ -863,7 +863,7 @@ exports[`local-content allContent fully resolves a local content directory 1`] =
             {
               "__metadata": {
                 "id": "content/pages/blog/case-study-1.md",
-                "modelName": "PostLayout",
+                "modelName": "Article",
                 "urlPath": "/blog/case-study-1",
               },
               "bottomSections": [
@@ -1001,12 +1001,12 @@ Nam rutrum magna sed pellentesque lobortis. Etiam quam mauris, iaculis eget ex a
                 },
               },
               "title": "Case study 1",
-              "type": "PostLayout",
+              "type": "Article",
             },
             {
               "__metadata": {
                 "id": "content/pages/blog/case-study-2.md",
-                "modelName": "PostLayout",
+                "modelName": "Article",
                 "urlPath": "/blog/case-study-2",
               },
               "bottomSections": [
@@ -1146,12 +1146,12 @@ Aenean scelerisque ullamcorper est aliquet blandit. Donec ac tellus enim. Vivamu
                 },
               },
               "title": "Case study 2",
-              "type": "PostLayout",
+              "type": "Article",
             },
             {
               "__metadata": {
                 "id": "content/pages/blog/case-study-3.md",
-                "modelName": "PostLayout",
+                "modelName": "Article",
                 "urlPath": "/blog/case-study-3",
               },
               "bottomSections": [
@@ -1293,7 +1293,7 @@ Aenean scelerisque ullamcorper est aliquet blandit. Donec ac tellus enim. Vivamu
                 },
               },
               "title": "Case study 3",
-              "type": "PostLayout",
+              "type": "Article",
             },
           ],
           "showAuthor": true,
@@ -1974,12 +1974,12 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
       },
       "slug": "/",
       "title": "Home",
-      "type": "PageLayout",
+      "type": "Page",
     },
     {
       "__metadata": {
         "id": "content/pages/pricing.md",
-        "modelName": "PageLayout",
+        "modelName": "Page",
         "urlPath": "/pricing",
       },
       "content": "",
@@ -2175,12 +2175,12 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
       },
       "slug": "pricing",
       "title": "Pricing",
-      "type": "PageLayout",
+      "type": "Page",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/case-study-1.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/case-study-1",
       },
       "bottomSections": [
@@ -2318,12 +2318,12 @@ Nam rutrum magna sed pellentesque lobortis. Etiam quam mauris, iaculis eget ex a
         },
       },
       "title": "Case study 1",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/case-study-2.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/case-study-2",
       },
       "bottomSections": [
@@ -2463,12 +2463,12 @@ Aenean scelerisque ullamcorper est aliquet blandit. Donec ac tellus enim. Vivamu
         },
       },
       "title": "Case study 2",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/case-study-3.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/case-study-3",
       },
       "bottomSections": [
@@ -2610,12 +2610,12 @@ Aenean scelerisque ullamcorper est aliquet blandit. Donec ac tellus enim. Vivamu
         },
       },
       "title": "Case study 3",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/five-tips-for-starting-a-startup.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/five-tips-for-starting-a-startup",
       },
       "author": {
@@ -2704,12 +2704,12 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
         },
       },
       "title": "5 Tips for Starting a Startup",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/how-to-write-a-blog-post-that-will-get-you-more-traffic.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/how-to-write-a-blog-post-that-will-get-you-more-traffic",
       },
       "author": {
@@ -2798,7 +2798,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
         },
       },
       "title": "How to Write a Blog Post That Will Get You More Traffic",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
@@ -2852,7 +2852,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             {
               "__metadata": {
                 "id": "content/pages/blog/top-ten-lessons-we-learned.md",
-                "modelName": "PostLayout",
+                "modelName": "Article",
                 "urlPath": "/blog/top-ten-lessons-we-learned",
               },
               "author": {
@@ -2938,7 +2938,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
                 },
               },
               "title": "The Top Ten Lessons We’ve Learned Since Our Initial Launch",
-              "type": "PostLayout",
+              "type": "Article",
             },
           ],
           "showAuthor": true,
@@ -2974,7 +2974,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
     {
       "__metadata": {
         "id": "content/pages/blog/life-of-our-development-team.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/life-of-our-development-team",
       },
       "author": {
@@ -3063,12 +3063,12 @@ Mi quis hendrerit dolor magna. Vel facilisis volutpat est velit egestas dui id o
         },
       },
       "title": "A Day in the Life of Our Development Team",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/surround-yourself-with-right-people.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/surround-yourself-with-right-people",
       },
       "author": {
@@ -3158,12 +3158,12 @@ Aenean scelerisque ullamcorper est aliquet blandit. Donec ac tellus enim. Vivamu
         },
       },
       "title": "Surround Yourself With the Right People",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/top-ten-lessons-we-learned.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/top-ten-lessons-we-learned",
       },
       "author": {
@@ -3249,12 +3249,12 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
         },
       },
       "title": "The Top Ten Lessons We’ve Learned Since Our Initial Launch",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/top-twenty-ways-to-save-time.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/top-twenty-ways-to-save-time",
       },
       "author": {
@@ -3341,12 +3341,12 @@ Mattis enim ut tellus elementum sagittis. At volutpat diam ut venenatis tellus i
         },
       },
       "title": "Top 20 Ways to Save Time at Work This Year",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/track-the-right-metrics-for-your-business.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/track-the-right-analytics-for-your-business",
       },
       "author": {
@@ -3435,12 +3435,12 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
         },
       },
       "title": "Track the right analytics for your business",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/what-is-a-design-system.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/what-is-a-design-system",
       },
       "author": {
@@ -3529,7 +3529,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
         },
       },
       "title": "What is a Design System",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
@@ -3537,7 +3537,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
         "modelName": "Footer",
       },
       "colors": "bg-dark-fg-light",
-      "copyrightText": "Powered by [Stackbit](https://www.stackbit.com/)",
+      "copyrightText": "© 2024 Watheia Labs, LLC.",
       "legalLinks": [
         {
           "__metadata": {
@@ -4098,7 +4098,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
           "modelName": "Footer",
         },
         "colors": "bg-dark-fg-light",
-        "copyrightText": "Powered by [Stackbit](https://www.stackbit.com/)",
+        "copyrightText": "© 2024 Watheia Labs, LLC.",
         "legalLinks": [
           {
             "__metadata": {
@@ -4509,7 +4509,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
     {
       "__metadata": {
         "id": "content/pages/careers.md",
-        "modelName": "PageLayout",
+        "modelName": "Page",
         "urlPath": "/careers",
       },
       "content": "",
@@ -5020,12 +5020,12 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
       },
       "slug": "careers",
       "title": "Careers",
-      "type": "PageLayout",
+      "type": "Page",
     },
     {
       "__metadata": {
         "id": "content/pages/index.md",
-        "modelName": "PageLayout",
+        "modelName": "Page",
         "urlPath": "/",
       },
       "content": "",
@@ -5366,7 +5366,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             {
               "__metadata": {
                 "id": "content/pages/blog/case-study-1.md",
-                "modelName": "PostLayout",
+                "modelName": "Article",
                 "urlPath": "/blog/case-study-1",
               },
               "bottomSections": [
@@ -5504,12 +5504,12 @@ Nam rutrum magna sed pellentesque lobortis. Etiam quam mauris, iaculis eget ex a
                 },
               },
               "title": "Case study 1",
-              "type": "PostLayout",
+              "type": "Article",
             },
             {
               "__metadata": {
                 "id": "content/pages/blog/case-study-2.md",
-                "modelName": "PostLayout",
+                "modelName": "Article",
                 "urlPath": "/blog/case-study-2",
               },
               "bottomSections": [
@@ -5649,12 +5649,12 @@ Aenean scelerisque ullamcorper est aliquet blandit. Donec ac tellus enim. Vivamu
                 },
               },
               "title": "Case study 2",
-              "type": "PostLayout",
+              "type": "Article",
             },
             {
               "__metadata": {
                 "id": "content/pages/blog/case-study-3.md",
-                "modelName": "PostLayout",
+                "modelName": "Article",
                 "urlPath": "/blog/case-study-3",
               },
               "bottomSections": [
@@ -5796,7 +5796,7 @@ Aenean scelerisque ullamcorper est aliquet blandit. Donec ac tellus enim. Vivamu
                 },
               },
               "title": "Case study 3",
-              "type": "PostLayout",
+              "type": "Article",
             },
           ],
           "showAuthor": true,
@@ -6477,12 +6477,12 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
       },
       "slug": "/",
       "title": "Home",
-      "type": "PageLayout",
+      "type": "Page",
     },
     {
       "__metadata": {
         "id": "content/pages/pricing.md",
-        "modelName": "PageLayout",
+        "modelName": "Page",
         "urlPath": "/pricing",
       },
       "content": "",
@@ -6678,12 +6678,12 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
       },
       "slug": "pricing",
       "title": "Pricing",
-      "type": "PageLayout",
+      "type": "Page",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/case-study-1.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/case-study-1",
       },
       "bottomSections": [
@@ -6821,12 +6821,12 @@ Nam rutrum magna sed pellentesque lobortis. Etiam quam mauris, iaculis eget ex a
         },
       },
       "title": "Case study 1",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/case-study-2.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/case-study-2",
       },
       "bottomSections": [
@@ -6966,12 +6966,12 @@ Aenean scelerisque ullamcorper est aliquet blandit. Donec ac tellus enim. Vivamu
         },
       },
       "title": "Case study 2",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/case-study-3.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/case-study-3",
       },
       "bottomSections": [
@@ -7113,12 +7113,12 @@ Aenean scelerisque ullamcorper est aliquet blandit. Donec ac tellus enim. Vivamu
         },
       },
       "title": "Case study 3",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/five-tips-for-starting-a-startup.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/five-tips-for-starting-a-startup",
       },
       "author": {
@@ -7207,12 +7207,12 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
         },
       },
       "title": "5 Tips for Starting a Startup",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/how-to-write-a-blog-post-that-will-get-you-more-traffic.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/how-to-write-a-blog-post-that-will-get-you-more-traffic",
       },
       "author": {
@@ -7301,7 +7301,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
         },
       },
       "title": "How to Write a Blog Post That Will Get You More Traffic",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
@@ -7355,7 +7355,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             {
               "__metadata": {
                 "id": "content/pages/blog/top-ten-lessons-we-learned.md",
-                "modelName": "PostLayout",
+                "modelName": "Article",
                 "urlPath": "/blog/top-ten-lessons-we-learned",
               },
               "author": {
@@ -7441,7 +7441,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
                 },
               },
               "title": "The Top Ten Lessons We’ve Learned Since Our Initial Launch",
-              "type": "PostLayout",
+              "type": "Article",
             },
           ],
           "showAuthor": true,
@@ -7477,7 +7477,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
     {
       "__metadata": {
         "id": "content/pages/blog/life-of-our-development-team.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/life-of-our-development-team",
       },
       "author": {
@@ -7566,12 +7566,12 @@ Mi quis hendrerit dolor magna. Vel facilisis volutpat est velit egestas dui id o
         },
       },
       "title": "A Day in the Life of Our Development Team",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/surround-yourself-with-right-people.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/surround-yourself-with-right-people",
       },
       "author": {
@@ -7661,12 +7661,12 @@ Aenean scelerisque ullamcorper est aliquet blandit. Donec ac tellus enim. Vivamu
         },
       },
       "title": "Surround Yourself With the Right People",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/top-ten-lessons-we-learned.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/top-ten-lessons-we-learned",
       },
       "author": {
@@ -7752,12 +7752,12 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
         },
       },
       "title": "The Top Ten Lessons We’ve Learned Since Our Initial Launch",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/top-twenty-ways-to-save-time.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/top-twenty-ways-to-save-time",
       },
       "author": {
@@ -7844,12 +7844,12 @@ Mattis enim ut tellus elementum sagittis. At volutpat diam ut venenatis tellus i
         },
       },
       "title": "Top 20 Ways to Save Time at Work This Year",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/track-the-right-metrics-for-your-business.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/track-the-right-analytics-for-your-business",
       },
       "author": {
@@ -7938,12 +7938,12 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
         },
       },
       "title": "Track the right analytics for your business",
-      "type": "PostLayout",
+      "type": "Article",
     },
     {
       "__metadata": {
         "id": "content/pages/blog/what-is-a-design-system.md",
-        "modelName": "PostLayout",
+        "modelName": "Article",
         "urlPath": "/blog/what-is-a-design-system",
       },
       "author": {
@@ -8032,7 +8032,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
         },
       },
       "title": "What is a Design System",
-      "type": "PostLayout",
+      "type": "Article",
     },
   ],
   "props": {
@@ -8049,7 +8049,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
           "modelName": "Footer",
         },
         "colors": "bg-dark-fg-light",
-        "copyrightText": "Powered by [Stackbit](https://www.stackbit.com/)",
+        "copyrightText": "© 2024 Watheia Labs, LLC.",
         "legalLinks": [
           {
             "__metadata": {

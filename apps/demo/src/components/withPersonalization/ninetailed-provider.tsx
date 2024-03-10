@@ -1,12 +1,12 @@
 import { NinetailedProvider } from '@ninetailed/experience.js-next';
-import { createContext, useContext, useState } from 'react';
+import { ReactNode, createContext, useContext, useState } from 'react';
 
-export const ninetailedApiKey = process.env.NEXT_PUBLIC_NINETAILED_API_KEY || null;
-export const ninetailedEnvironment = process.env.NEXT_PUBLIC_NINETAILED_ENVIRONMENT || null;
+export const ninetailedApiKey = process.env.NEXT_PUBLIC_NINETAILED_API_KEY ?? '';
+export const ninetailedEnvironment = process.env.NEXT_PUBLIC_NINETAILED_ENVIRONMENT ?? '';
 export const ninetailedEnabled = ninetailedApiKey ? true : false;
 
 // For use in custom App
-export function WithNinetailedProvider({ children }) {
+export function WithNinetailedProvider({ children }: { children: ReactNode }) {
   if (ninetailedEnabled) {
     console.log('Ninetailed enabled');
     return (
@@ -27,18 +27,18 @@ export function WithNinetailedProvider({ children }) {
   Mapping is: baseline variant ID (Contentful object ID) => selected variant ID, regardless of where the baseline is shown.
 */
 
-const VariantChoicesContext = createContext();
+const VariantChoicesContext = createContext({});
 
-export function VariantChoicesProvider({ children }) {
-  const [choices, setChoices] = useState({});
+export function VariantChoicesProvider({ children }: { children: ReactNode }) {
+  const [choices, setChoices] = useState<Record<string, any>>({});
 
-  function updateChoice(baselineVariantId, userSelectedVariantId) {
+  function updateChoice(baselineVariantId: string | number, userSelectedVariantId: any) {
     const updatedChoices = { ...choices };
     updatedChoices[baselineVariantId] = userSelectedVariantId;
     setChoices(updatedChoices);
   }
 
-  let sharedState = { choices, updateChoice };
+  const sharedState = { choices, updateChoice };
   return (
     <VariantChoicesContext.Provider value={sharedState}>
       {children}

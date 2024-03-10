@@ -1,7 +1,7 @@
 /* eslint-disable react/display-name */
-import styles from './styles.module.css';
 import { Personalize, usePersonalize } from '@ninetailed/experience.js-next';
-import { useVariantChoicesContext, ninetailedEnabled } from '../../utils/ninetailed-helpers';
+import { ninetailedEnabled, useVariantChoicesContext } from './ninetailed-provider';
+import styles from './styles.module.css';
 
 const isDev = process.env.NODE_ENV === 'development';
 

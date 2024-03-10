@@ -1,12 +1,11 @@
-import * as React from 'react';
 import dayjs from 'dayjs';
 import Markdown from 'markdown-to-jsx';
 
 import { getBaseLayoutComponent } from '../../../utils/base-layout';
-import { getComponent } from '../../components-registry';
 import Link from '../../atoms/Link';
+import { getComponent } from '../../components-registry';
 
-export default function PostLayout(props) {
+export default function ArticleLayout(props) {
   const { page, site } = props;
   const BaseLayout = getBaseLayoutComponent(page.baseLayout, site.baseLayout);
   const { title, date, author, content, bottomSections = [] } = page;
