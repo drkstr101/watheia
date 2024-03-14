@@ -3,6 +3,7 @@ export type {
   ConfigModel,
   ContentSourceInterface,
   DataModel,
+  Field,
   Model,
   ObjectModel,
   PageModel,
