@@ -30,8 +30,8 @@ export const models = {
   Theme,
 } as const;
 
-export type ContentModel = typeof models;
+export type WatheiaModel = typeof models;
 
-export type ModelName = keyof ContentModel;
+export type ModelName = keyof WatheiaModel;
 
 export const ALL_MODEL_NAMES = Object.keys(models) as ModelName[];

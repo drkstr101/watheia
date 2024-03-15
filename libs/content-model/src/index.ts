@@ -1,23 +1,9 @@
 // export core types
-export type {
-  ConfigModel,
-  ContentSourceInterface,
-  DataModel,
-  Field,
-  Model,
-  ObjectModel,
-  PageModel,
-} from '@stackbit/types';
+export type * from '@stackbit/types';
 
-// model exports
+// export models
+export type * from './models';
 export { ALL_MODEL_NAMES, models } from './models';
-export type { ContentModel, ModelName } from './models';
 
+export type * from './types';
 export { types } from './types';
-export type {
-  DataModelProps,
-  DocumentModelProps as DocumentProps,
-  ModelProps,
-  ObjectModelProps,
-  PageModelProps as PageProps,
-} from './types';
