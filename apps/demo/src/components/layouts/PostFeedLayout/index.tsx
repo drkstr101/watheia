@@ -92,7 +92,7 @@ function PageLinks({ pageIndex, baseUrlPath, numOfPages }) {
   if (numOfPages < 2) {
     return null;
   }
-  const pageLinks = [];
+  const pageLinks: any[] = [];
   const padRange = 2;
   const startIndex = pageIndex - padRange > 2 ? pageIndex - padRange : 0;
   const endIndex = pageIndex + padRange < numOfPages - 3 ? pageIndex + padRange : numOfPages - 1;

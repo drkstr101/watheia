@@ -22,7 +22,7 @@ export default function DynamicPage(props) {
   if (!modelName) {
     throw new Error(`page has no type, page '${props.path}'`);
   }
-  const Page = getComponent(modelName);
+  const Page = getComponent(modelName) as any;
   if (!Page) {
     throw new Error(`no page layout matching the page model: ${modelName}`);
   }

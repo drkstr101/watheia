@@ -22,7 +22,7 @@ export default function CarouselSection(props) {
     badge,
     title,
     subtitle,
-    items = [],
+    items = [] as any[],
     variant,
     styles = {},
   } = props;
@@ -96,7 +96,7 @@ function CarouselVariants(props) {
   }
 }
 
-function CarouselWithNavigation({ items = [], hasTopMargin, hasSectionTitle }) {
+function CarouselWithNavigation({ items = [] as any[], hasTopMargin, hasSectionTitle }) {
   const FeaturedItem = getComponent('FeaturedItem');
   const [swiperRef, setSwiperRef] = React.useState<SwiperClass>();
 
@@ -155,7 +155,7 @@ function CarouselWithNavigation({ items = [], hasTopMargin, hasSectionTitle }) {
   );
 }
 
-function CarouselWithPagination({ items = [], hasTopMargin, hasSectionTitle }) {
+function CarouselWithPagination({ items = [] as any[], hasTopMargin, hasSectionTitle }) {
   const FeaturedItem = getComponent('FeaturedItem');
   const [swiperRef, setSwiperRef] = React.useState<SwiperClass>();
   const [activeDot, setActiveDot] = React.useState(0);
@@ -206,7 +206,7 @@ function CarouselWithPagination({ items = [], hasTopMargin, hasSectionTitle }) {
   );
 }
 
-function CarouselWithTabs({ items = [], hasTopMargin, hasSectionTitle }) {
+function CarouselWithTabs({ items = [] as any[], hasTopMargin, hasSectionTitle }) {
   const FeaturedItem = getComponent('FeaturedItem');
   const [swiperRef, setSwiperRef] = React.useState<SwiperClass>();
   const [activeTab, setActiveTab] = React.useState(0);

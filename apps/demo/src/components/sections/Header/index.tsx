@@ -337,7 +337,7 @@ function SiteLogoLink({ title, logo }) {
 }
 
 function ListOfLinks(props) {
-  const { links = [], colors, inMobileMenu = false } = props;
+  const { links = [] as any[], colors, inMobileMenu = false } = props;
 
   return (
     <>
@@ -461,7 +461,7 @@ function LinkWithSubnav(props) {
   );
 }
 
-function ListOfSubNavLinks({ links = [], inMobileMenu = false }) {
+function ListOfSubNavLinks({ links = [] as any[], inMobileMenu = false }) {
   return (
     <>
       {links.map((link, index) => (

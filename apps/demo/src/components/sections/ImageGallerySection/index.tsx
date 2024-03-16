@@ -16,7 +16,7 @@ export default function ImageGallerySection(props) {
     badge,
     title,
     subtitle,
-    images = [],
+    images = [] as any[],
     motion,
     styles = {},
   } = props;
@@ -87,7 +87,11 @@ function ImageGalleryVariants(props) {
   }
 }
 
-function ImageGalleryStaticGrid({ images = [], hasTopMargin, justifyContent = 'flex-start' }) {
+function ImageGalleryStaticGrid({
+  images = [] as any[],
+  hasTopMargin,
+  justifyContent = 'flex-start',
+}) {
   if (images.length === 0) {
     return null;
   }
@@ -110,7 +114,7 @@ function ImageGalleryStaticGrid({ images = [], hasTopMargin, justifyContent = 'f
   );
 }
 
-function ImageGalleryAnimatedGrid({ images = [], motion, hasTopMargin }) {
+function ImageGalleryAnimatedGrid({ images = [] as any[], motion, hasTopMargin }) {
   if (images.length === 0) {
     return null;
   }

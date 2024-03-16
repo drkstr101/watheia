@@ -17,7 +17,7 @@ export default function FeaturedPeopleSection(props) {
     title,
     subtitle,
     actions = [],
-    people = [],
+    people = [] as any[],
     variant,
     styles = {},
   } = props;
@@ -116,7 +116,7 @@ function FeaturedPeopleVariants(props) {
   }
 }
 
-function FeaturedPeopleThreeCol({ people = [], hasTopMargin, hasSectionTitle }) {
+function FeaturedPeopleThreeCol({ people = [] as any[], hasTopMargin, hasSectionTitle }) {
   if (people.length === 0) {
     return null;
   }
@@ -138,7 +138,7 @@ function FeaturedPeopleThreeCol({ people = [], hasTopMargin, hasSectionTitle }) 
     </div>
   );
 }
-function FeaturedPeopleFourCol({ people = [], hasTopMargin, hasSectionTitle }) {
+function FeaturedPeopleFourCol({ people = [] as any[], hasTopMargin, hasSectionTitle }) {
   if (people.length === 0) {
     return null;
   }
@@ -161,7 +161,7 @@ function FeaturedPeopleFourCol({ people = [], hasTopMargin, hasSectionTitle }) {
   );
 }
 
-function FeaturedPeopleMixedCol({ people = [], hasTopMargin, hasSectionTitle }) {
+function FeaturedPeopleMixedCol({ people = [] as any[], hasTopMargin, hasSectionTitle }) {
   if (people.length === 0) {
     return null;
   }

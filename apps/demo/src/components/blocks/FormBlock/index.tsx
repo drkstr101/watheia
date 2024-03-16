@@ -25,7 +25,7 @@ export default class FormBlock extends React.Component<any> {
   handleSubmit(event, formAction) {
     event.preventDefault();
 
-    const data = new FormData(this.formRef.current);
+    const data = new FormData(this.formRef.current!);
     const value = Object.fromEntries(data.entries());
 
     this.setState({
@@ -38,7 +38,7 @@ export default class FormBlock extends React.Component<any> {
         this.setState({
           submitted: true,
         });
-        this.formRef.current.reset();
+        this.formRef.current!.reset();
       })
       .catch(() => {
         this.setState({

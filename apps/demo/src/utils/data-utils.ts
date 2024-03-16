@@ -196,7 +196,7 @@ export function generatePagedPathsForPage(
     return [pageUrlPath];
   }
   const numOfPages = Math.ceil(items.length / numOfItemsPerPage) || 1;
-  const paths = [];
+  const paths: any[] = [];
   for (let i = 0; i < numOfPages; i++) {
     paths.push(i === 0 ? pageUrlPath : `${pageUrlPath}/page/${i + 1}`);
   }

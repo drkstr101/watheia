@@ -38,7 +38,7 @@ function contentFilesInPath(dir: string) {
 
 function readContent(file: string) {
   const rawContent = fs.readFileSync(join(appDir, file), 'utf8');
-  let content = null;
+  let content: any = null;
   switch (extname(file).substring(1)) {
     case 'md':
       // eslint-disable-next-line no-case-declarations
