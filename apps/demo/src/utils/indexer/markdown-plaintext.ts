@@ -1,14 +1,22 @@
+import { MarkedOptions, RendererApi } from 'marked';
+
 /*
 Based on https://github.com/etler/marked-plaintext (Plain text renderer for Marked) by Tim Etler, ISC license.
 Converted to ES class & added missing checkbox() function (which does nothing, but needs to be there...).
 */
-export default class PlainTextRenderer {
-  constructor(options) {
+export default class PlainTextRenderer implements RendererApi {
+  options: MarkedOptions;
+  whitespaceDelimiter: string;
+  showImageText: any;
+  constructor(options: MarkedOptions) {
     this.options = options || {};
-    this.whitespaceDelimiter = this.options.spaces ? ' ' : '\n';
+    this.whitespaceDelimiter = ' ';
+  }
+  table(header: string, body: string): string {
+    throw new Error('Method not implemented.');
   }
 
-  code(code, infostring, escaped) {
+  code(code: string, infostring: string | undefined, escaped: boolean) {
     return (
       this.whitespaceDelimiter +
       this.whitespaceDelimiter +
@@ -18,15 +26,15 @@ export default class PlainTextRenderer {
     );
   }
 
-  blockquote(quote) {
+  blockquote(quote: string) {
     return '\t' + quote + this.whitespaceDelimiter;
   }
 
-  html(html) {
+  html(html: string) {
     return html;
   }
 
-  heading(text, level, raw, slugger) {
+  heading(text: string, level: number, raw: string) {
     return text;
   }
 
@@ -34,23 +42,23 @@ export default class PlainTextRenderer {
     return this.whitespaceDelimiter + this.whitespaceDelimiter;
   }
 
-  list(body, ordered, start) {
+  list(body: string, ordered: boolean, start: number | '') {
     return body;
   }
 
-  listitem(text) {
+  listitem(text: string, task: boolean, checked: boolean): string {
     return '\t' + text + this.whitespaceDelimiter;
   }
 
-  checkbox(checked) {
+  checkbox(checked: boolean): string {
     return '';
   }
 
-  paragraph(text) {
+  paragraph(text: string): string {
     return this.whitespaceDelimiter + text + this.whitespaceDelimiter;
   }
 
-  table(header, body) {
+  tabletable(header: string, body: string): string {
     return (
       this.whitespaceDelimiter +
       header +
@@ -60,44 +68,47 @@ export default class PlainTextRenderer {
     );
   }
 
-  tablerow(content) {
+  tablerow(content: string): string {
     return content + this.whitespaceDelimiter;
   }
 
-  tablecell(content, flags) {
+  tablecell(
+    content: string,
+    flags: { header: boolean; align: 'center' | 'left' | 'right' | null }
+  ) {
     return content + '\t';
   }
 
   // span level renderer
-  strong(text) {
+  strong(text: string): string {
     return text;
   }
 
-  em(text) {
+  em(text: string): string {
     return text;
   }
 
-  codespan(text) {
+  codespan(text: string): string {
     return text;
   }
 
-  br() {
+  br(): string {
     return this.whitespaceDelimiter + this.whitespaceDelimiter;
   }
 
-  del(text) {
+  del(text: string): string {
     return text;
   }
 
-  link(href, title, text) {
+  link(href: string, title: string | null | undefined, text: string): string {
     return text;
   }
 
-  image(href, title, text) {
+  image(href: string, title: string | null, text: string): string {
     return this.showImageText ? text : '';
   }
 
-  text(text) {
+  text(text: string): string {
     return text;
   }
 }

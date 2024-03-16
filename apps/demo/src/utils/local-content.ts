@@ -13,9 +13,9 @@ const appDir = process.env['LOCAL_CONTENT_DIR'] ?? join(__dirname, '../..');
 const pagesDir = sbConfig.pagesDir || 'content/pages';
 const dataDir = sbConfig.dataDir || 'content/data';
 
-const allReferenceFields = {};
+const allReferenceFields: Record<string, boolean> = {};
 Object.entries(allModels).forEach(([modelName, model]) => {
-  model.fields.forEach((field) => {
+  model.fields?.forEach((field) => {
     if (
       field.type === 'reference' ||
       (field.type === 'list' && field.items?.type === 'reference')
@@ -64,7 +64,10 @@ function readContent(file: string) {
   return content;
 }
 
-function resolveReferences(content, fileToContent) {
+function resolveReferences(
+  content: { [x: string]: any; type: any; __metadata: { modelName: any } },
+  fileToContent: { [x: string]: any }
+) {
   if (!content || !content.type) return;
 
   const modelName = content.type;
@@ -83,7 +86,7 @@ function resolveReferences(content, fileToContent) {
         content[fieldName] = fieldValue;
       }
       if (typeof fieldValue[0] === 'object') {
-        fieldValue.forEach((o) => resolveReferences(o, fileToContent));
+        fieldValue.forEach((o: any) => resolveReferences(o, fileToContent));
       }
     } else {
       if (isRef && typeof fieldValue === 'string') {

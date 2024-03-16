@@ -1,4 +1,4 @@
-function cssClassesFromUrlPath(urlPath) {
+export function cssClassesFromUrlPath(urlPath: string) {
   const parts = urlPath
     .replace(/^\/|\/$/g, '')
     .split('/')
@@ -11,7 +11,7 @@ function cssClassesFromUrlPath(urlPath) {
   });
 }
 
-function getPageUrl(page) {
+export function getPageUrl(page: { slug: string; __metadata: { modelName: string } }) {
   if (!page || !page.slug) {
     return null;
   }
@@ -23,14 +23,8 @@ function getPageUrl(page) {
   return page.slug.startsWith('/') ? page.slug : `/${page.slug}`;
 }
 
-function setEnvironmentVariables() {
+export function setEnvironmentVariables() {
   return {
     ...(process?.env?.URL && { URL: process.env.URL }),
   };
 }
-
-module.exports = {
-  cssClassesFromUrlPath,
-  getPageUrl,
-  setEnvironmentVariables,
-};

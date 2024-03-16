@@ -1,7 +1,7 @@
 import BlankBaseLayout from '../components/layouts/BlankBaseLayout';
 import DefaultBaseLayout from '../components/layouts/DefaultBaseLayout';
 
-export function getBaseLayoutComponent(pageBaseLayout, siteConfigBaseLayout) {
+export function getBaseLayoutComponent(pageBaseLayout: any, siteConfigBaseLayout: any) {
   const layout = pageBaseLayout || siteConfigBaseLayout || 'DefaultBaseLayout';
   let BaseLayout;
   if (layout === 'DefaultBaseLayout') {

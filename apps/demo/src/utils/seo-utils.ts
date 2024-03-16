@@ -1,5 +1,8 @@
-export function seoGenerateMetaTags(page, site) {
-  let pageMetaTags = {};
+export function seoGenerateMetaTags(
+  page: { seo: { metaTags: Record<string, any>[] } },
+  site: { defaultMetaTags: Record<string, any>[] }
+) {
+  let pageMetaTags: Record<string, any> = {};
 
   if (site.defaultMetaTags?.length) {
     site.defaultMetaTags.forEach((metaTag) => {
@@ -22,7 +25,7 @@ export function seoGenerateMetaTags(page, site) {
     });
   }
 
-  let metaTags = [];
+  const metaTags: Record<string, any>[] = [];
   Object.keys(pageMetaTags).forEach((key) => {
     if (pageMetaTags[key] !== null) {
       metaTags.push({
@@ -36,7 +39,10 @@ export function seoGenerateMetaTags(page, site) {
   return metaTags;
 }
 
-export function seoGenerateTitle(page, site) {
+export function seoGenerateTitle(
+  page: { seo: any; title?: any },
+  site: { defaultMetaTags?: Record<string, any>[]; titleSuffix?: string }
+) {
   let title = page.seo?.metaTitle ? page.seo?.metaTitle : page.title;
   if (site.titleSuffix && page.seo?.addTitleSuffix !== false) {
     title = `${title} - ${site.titleSuffix}`;
@@ -44,7 +50,10 @@ export function seoGenerateTitle(page, site) {
   return title;
 }
 
-export function seoGenerateMetaDescription(page, site) {
+export function seoGenerateMetaDescription(
+  page: { __metadata: { modelName: string }; excerpt: any; seo: { metaDescription: any } },
+  site: any
+) {
   let metaDescription = null;
   // Blog posts use the exceprt as the default meta description
   if (page.__metadata.modelName === 'Article') {
@@ -57,7 +66,10 @@ export function seoGenerateMetaDescription(page, site) {
   return metaDescription;
 }
 
-export function seoGenerateOgImage(page, site) {
+export function seoGenerateOgImage(
+  page: { seo: any; __metadata?: any; featuredImage?: any },
+  site: { defaultMetaTags?: Record<string, any>[]; defaultSocialImage?: any; env?: any }
+) {
   let ogImage = null;
   // Use the sites default og:image field
   if (site.defaultSocialImage) {

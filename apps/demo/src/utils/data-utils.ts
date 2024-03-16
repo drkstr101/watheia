@@ -1,47 +1,65 @@
-export function getAllPostsSorted(objects) {
+type DebugContext = {
+  keyPath: (string | number)[];
+  stack: Record<string, any>[];
+};
+
+export function getAllPostsSorted(objects: any) {
   const allPosts = getAllPosts(objects);
   return sortPosts(allPosts);
 }
 
-export function getAllCategoryPostsSorted(objects, categoryId) {
+export function getAllCategoryPostsSorted(objects: any, categoryId: any) {
   const allPosts = getAllPosts(objects);
-  const categoryPosts = allPosts.filter((post) => post.category === categoryId);
+  const categoryPosts = allPosts.filter(
+    (post: { category: any }) => post.category === categoryId
+  );
   return sortPosts(categoryPosts);
 }
 
-export function getAllPosts(objects) {
-  return objects.filter((object) => object.__metadata?.modelName === 'Article');
-}
-
-export function getAllFeaturedPostsSorted(objects) {
-  const allPosts = getAllPosts(objects);
-  const featuredPosts = allPosts.filter((post) => post.isFeatured === true);
-  return sortPosts(featuredPosts);
-}
-
-export function getAllNonFeaturedPostsSorted(objects) {
-  const allPosts = getAllPosts(objects);
-  const nonFeaturedPosts = allPosts.filter((post) => post.isFeatured !== true);
-  return sortPosts(nonFeaturedPosts);
-}
-
-export function sortPosts(posts) {
-  return posts.sort(
-    (postA, postB) => new Date(postB.date).getTime() - new Date(postA.date).getTime()
+export function getAllPosts(objects: any[]) {
+  return objects.filter(
+    (object: { __metadata: { modelName: string } }) => object.__metadata?.modelName === 'Article'
   );
 }
 
-export function isPublished(page) {
+export function getAllFeaturedPostsSorted(objects: any) {
+  const allPosts = getAllPosts(objects);
+  const featuredPosts = allPosts.filter(
+    (post: { isFeatured: boolean }) => post.isFeatured === true
+  );
+  return sortPosts(featuredPosts);
+}
+
+export function getAllNonFeaturedPostsSorted(objects: any) {
+  const allPosts = getAllPosts(objects);
+  const nonFeaturedPosts = allPosts.filter(
+    (post: { isFeatured: boolean }) => post.isFeatured !== true
+  );
+  return sortPosts(nonFeaturedPosts);
+}
+
+export function sortPosts(posts: any[]) {
+  return posts.sort(
+    (postA: { date: string | number | Date }, postB: { date: string | number | Date }) =>
+      new Date(postB.date).getTime() - new Date(postA.date).getTime()
+  );
+}
+
+export function isPublished(page: { isDraft: any }) {
   return !page.isDraft;
 }
 
 export function resolveReferences(
-  object,
-  fieldPaths,
-  objects,
-  debugContext = { keyPath: [], stack: [] }
+  object: any,
+  fieldPaths: any[],
+  objects: any,
+  debugContext: DebugContext = { keyPath: [], stack: [] }
 ) {
-  const _resolveDeep = (value, fieldNames, debugContext) => {
+  const _resolveDeep: any = (
+    value: any,
+    fieldNames: string | any[],
+    debugContext: DebugContext
+  ) => {
     if (typeof value === 'string') {
       const result = findObjectById(value, objects, debugContext);
       return _resolveDeep(result, fieldNames, debugContext);
@@ -73,17 +91,17 @@ export function resolveReferences(
     };
   };
 
-  return fieldPaths.reduce((object, fieldPath) => {
+  return fieldPaths.reduce((object: any, fieldPath: string) => {
     const fieldNames = fieldPath.split('.');
     return _resolveDeep(object, fieldNames, debugContext);
   }, object);
 }
 
 export function resolveReferenceField(
-  object,
-  fieldName,
-  objects,
-  debugContext = { keyPath: [], stack: [] }
+  object: Record<string, any>,
+  fieldName: string,
+  objects: Record<string, any>[],
+  debugContext: DebugContext = { keyPath: [], stack: [] }
 ) {
   if (!(fieldName in object)) {
     return object;
@@ -98,7 +116,12 @@ export function resolveReferenceField(
   };
 }
 
-export function resolveReferenceArray(object, fieldName, objects, debugContext) {
+export function resolveReferenceArray(
+  object: Record<string, any>,
+  fieldName: string,
+  objects: Record<string, any>[],
+  debugContext: DebugContext
+) {
   if (!(fieldName in object)) {
     return object;
   }
@@ -112,9 +135,13 @@ export function resolveReferenceArray(object, fieldName, objects, debugContext) 
   };
 }
 
-export function mapObjectsById(objectIds, objects, debugContext) {
+export function mapObjectsById(
+  objectIds: string[],
+  objects: Record<string, any>[],
+  debugContext: DebugContext
+) {
   return (objectIds ?? [])
-    .map((objectId, index) =>
+    .map((objectId: string, index: number) =>
       findObjectById(objectId, objects, {
         keyPath: debugContext.keyPath.concat(index),
         stack: debugContext.stack.concat([objectIds]),
@@ -123,7 +150,11 @@ export function mapObjectsById(objectIds, objects, debugContext) {
     .filter(Boolean);
 }
 
-export function findObjectById(objectId, objects, debugContext) {
+export function findObjectById(
+  objectId: string,
+  objects: Record<string, any>[],
+  debugContext: DebugContext
+) {
   if (!objectId) {
     return null;
   }
@@ -147,7 +178,7 @@ export function findObjectById(objectId, objects, debugContext) {
   return object;
 }
 
-export function getRootPagePath(pagePath) {
+export function getRootPagePath(pagePath: string) {
   const pagedPathMatch = pagePath.match(/\/page\/\d+$/);
   if (!pagedPathMatch) {
     return pagePath;
@@ -155,7 +186,11 @@ export function getRootPagePath(pagePath) {
   return pagePath.substring(0, pagedPathMatch.index);
 }
 
-export function generatePagedPathsForPage(page, items, numOfItemsPerPage) {
+export function generatePagedPathsForPage(
+  page: { __metadata: { urlPath: any } },
+  items: string | any[],
+  numOfItemsPerPage: number
+) {
   const pageUrlPath = page.__metadata?.urlPath;
   if (numOfItemsPerPage === 0) {
     return [pageUrlPath];
@@ -168,7 +203,11 @@ export function generatePagedPathsForPage(page, items, numOfItemsPerPage) {
   return paths;
 }
 
-export function getPagedItemsForPage(page, items, numOfItemsPerPage) {
+export function getPagedItemsForPage(
+  page: any,
+  items: string | any[],
+  numOfItemsPerPage: number
+) {
   const pageUrlPath = page.__metadata?.urlPath;
   const baseUrlPath = getRootPagePath(pageUrlPath);
   if (numOfItemsPerPage === 0) {
@@ -194,17 +233,28 @@ export function getPagedItemsForPage(page, items, numOfItemsPerPage) {
   };
 }
 
-export async function mapDeepAsync(value, iteratee, options = {}) {
+export async function mapDeepAsync(
+  value: any,
+  iteratee: {
+    (value: any, keyPath: any, stack: any): Promise<any>;
+    (arg0: any, arg1: any, arg2: any): any;
+  },
+  options: { postOrder?: boolean } = {}
+) {
   const postOrder = options?.postOrder ?? false;
-  async function _mapDeep(value, keyPath, stack) {
+  async function _mapDeep(
+    value: any,
+    keyPath: (string | number)[],
+    stack: Record<string, any>[]
+  ): Promise<any> {
     if (!postOrder) {
       value = await iteratee(value, keyPath, stack);
     }
-    const childrenIterator = (val, key) => {
+    const childrenIterator = (val: any, key: string | number) => {
       return _mapDeep(val, keyPath.concat(key), stack.concat([value]));
     };
     if (value && typeof value == 'object' && value.constructor === Object) {
-      const res = {};
+      const res: Record<string, any> = {};
       for (const [key, val] of Object.entries(value)) {
         res[key] = await childrenIterator(val, key);
       }

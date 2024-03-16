@@ -12,11 +12,14 @@ import {
   resolveReferences,
 } from './data-utils';
 
-export function resolveStaticProps(urlPath, data) {
+export function resolveStaticProps(
+  urlPath: string,
+  data: { objects: any[]; pages: any[]; props: any }
+) {
   // get root path of paged path: /blog/page/2 => /blog
   const rootUrlPath = getRootPagePath(urlPath);
   const { __metadata, ...rest } = data.pages.find(
-    (page) => page.__metadata.urlPath === rootUrlPath
+    (page: { __metadata: { urlPath: string } }) => page.__metadata.urlPath === rootUrlPath
   );
   const props = {
     page: {
@@ -32,7 +35,7 @@ export function resolveStaticProps(urlPath, data) {
   return mapDeepAsync(
     props,
     async (value, keyPath, stack) => {
-      const objectType = value?.__metadata?.modelName;
+      const objectType = value?.__metadata?.modelName as keyof typeof StaticPropsResolvers;
       if (objectType && StaticPropsResolvers[objectType]) {
         const resolver = StaticPropsResolvers[objectType];
         return resolver(value, data, { keyPath, stack });
@@ -44,10 +47,17 @@ export function resolveStaticProps(urlPath, data) {
 }
 
 const StaticPropsResolvers = {
-  Article: (props, data, debugContext) => {
+  Article: (
+    props: any,
+    data: { objects: any },
+    debugContext: { keyPath: (string | number)[]; stack: Record<string, any>[] } | undefined
+  ) => {
     return resolveReferences(props, ['author', 'category'], data.objects, debugContext);
   },
-  PostFeedLayout: (props, data) => {
+  PostFeedLayout: (
+    props: { numOfPostsPerPage?: any; __metadata?: { urlPath: any } },
+    data: { objects: any }
+  ) => {
     const numOfPostsPerPage = props.numOfPostsPerPage ?? 10;
     let allPosts = getAllNonFeaturedPostsSorted(data.objects);
     if (!process.env.stackbitPreview) {
@@ -61,7 +71,10 @@ const StaticPropsResolvers = {
       items,
     };
   },
-  PostFeedCategoryLayout: (props, data) => {
+  PostFeedCategoryLayout: (
+    props: { __metadata: any; numOfPostsPerPage?: any },
+    data: { objects: any }
+  ) => {
     const categoryId = props.__metadata?.id;
     const numOfPostsPerPage = props.numOfPostsPerPage ?? 10;
     let allCategoryPosts = getAllCategoryPostsSorted(data.objects, categoryId);
@@ -76,7 +89,7 @@ const StaticPropsResolvers = {
       items,
     };
   },
-  RecentPostsSection: (props, data) => {
+  RecentPostsSection: (props: { recentCount: any }, data: { objects: any }) => {
     let allPosts = getAllPostsSorted(data.objects);
     if (!process.env.stackbitPreview) {
       allPosts = allPosts.filter(isPublished);
@@ -88,7 +101,11 @@ const StaticPropsResolvers = {
       posts: recentPosts,
     };
   },
-  FeaturedPostsSection: (props, data, debugContext) => {
+  FeaturedPostsSection: (
+    props: any,
+    data: { objects: any },
+    debugContext: { keyPath: (string | number)[]; stack: Record<string, any>[] } | undefined
+  ) => {
     return resolveReferences(
       props,
       ['posts.author', 'posts.category'],
@@ -96,10 +113,14 @@ const StaticPropsResolvers = {
       debugContext
     );
   },
-  FeaturedPeopleSection: (props, data, debugContext) => {
+  FeaturedPeopleSection: (
+    props: any,
+    data: { objects: any },
+    debugContext: { keyPath: (string | number)[]; stack: Record<string, any>[] } | undefined
+  ) => {
     return resolveReferences(props, ['people'], data.objects, debugContext);
   },
-  FormBlock: async (props) => {
+  FormBlock: async (props: { destination: any }) => {
     if (!props.destination) {
       return props;
     }

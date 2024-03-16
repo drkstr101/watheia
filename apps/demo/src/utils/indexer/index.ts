@@ -1,5 +1,5 @@
 import algoliasearch from 'algoliasearch';
-import { marked } from 'marked';
+import { Lexer, marked } from 'marked';
 import { allContent } from '../local-content';
 import {
   ALGOLIA_ADMIN_API_KEY,
@@ -22,43 +22,54 @@ export async function index() {
   await indexObjects(objectsToIndex);
   console.timeEnd('Indexing duration');
 
-  return objectsToIndex.map((o) => o.url);
+  return objectsToIndex.map((o: { url: any }) => o.url);
 }
 
-function buildObjectsToIndex(posts) {
+function buildObjectsToIndex(posts: any[]) {
   marked.use({ gfm: true });
   const mdLexer = new marked.Lexer();
-  const mdPlainTextRenderer = new PlainTextRenderer({ spaces: true });
+  const mdPlainTextRenderer = new PlainTextRenderer({});
 
   console.log('Preparing data for indexing...');
-  const objectsToIndex = posts.map((post) => {
-    let o = {
-      objectID: post.__metadata.id,
-      url: post.__metadata.urlPath,
-      slug: post.slug,
-      title: post.title,
-      date: post.date,
-      authorName: post.author?.name,
-      authorImage: post.author?.image?.url,
-      excerpt: post.excerpt,
-      featuredImage: post.featuredImage?.url,
-    };
+  const objectsToIndex = posts.map(
+    (post: {
+      __metadata: { id: any; urlPath: any };
+      slug: any;
+      title: any;
+      date: any;
+      author: { name: any; image: { url: any } };
+      excerpt: any;
+      featuredImage: { url: any };
+      content: any;
+    }) => {
+      const o: any = {
+        objectID: post.__metadata.id,
+        url: post.__metadata.urlPath,
+        slug: post.slug,
+        title: post.title,
+        date: post.date,
+        authorName: post.author?.name,
+        authorImage: post.author?.image?.url,
+        excerpt: post.excerpt,
+        featuredImage: post.featuredImage?.url,
+      };
 
-    if (post.content) {
-      const { heading, body } = parseMarkdown(post.content, mdLexer, mdPlainTextRenderer);
-      o.contentHeading = heading;
-      o.contentBody = body;
+      if (post.content) {
+        const { heading, body } = parseMarkdown(post.content, mdLexer, mdPlainTextRenderer);
+        o.contentHeading = heading;
+        o.contentBody = body;
+      }
+      return o;
     }
-    return o;
-  });
+  );
   return objectsToIndex;
 }
 
-function parseMarkdown(markdown, lexer, renderer) {
+function parseMarkdown(markdown: string, lexer: Lexer, renderer: PlainTextRenderer) {
   const body = marked(markdown, { renderer });
   let heading = null;
   const tokens = lexer.lex(markdown);
-  for (let token of tokens) {
+  for (const token of tokens) {
     if (token.type === 'heading' && token.depth === 1) {
       heading = token.text;
       break;
@@ -67,7 +78,7 @@ function parseMarkdown(markdown, lexer, renderer) {
   return { heading, body };
 }
 
-async function indexObjects(objectsToIndex) {
+async function indexObjects(objectsToIndex: readonly Readonly<Record<string, any>>[]) {
   const indexName = buildIndexName();
   console.log('Indexing to', indexName);
   const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);

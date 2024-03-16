@@ -1,4 +1,4 @@
-const TAILWIND_MAP = {
+const TAILWIND_MAP: Record<string, any> = {
   alignItems: {
     'flex-start': 'items-start',
     'flex-end': 'items-end',
@@ -88,14 +88,14 @@ const TAILWIND_MAP = {
     'flex-end': 'justify-end',
     center: 'justify-center',
   },
-  margin: function (value) {
+  margin: function (value: any) {
     // for tailwind margins - ['twt0:16', 'twb0:16'], the value will be array ['mt-0', 'mb-4']
     if (Array.isArray(value)) {
       return value.join(' ');
     }
     // for regular margins - ['x0:8', 'y0:16'], the value will be object: { left: 4, top: 10 }
     if (typeof value === 'object' && value !== null) {
-      const classNames = [];
+      const classNames: string[] = [];
       Object.entries(value).forEach(([styleProp, styleValue]) => {
         const twValue = styleValue === 1 ? 'px' : String(Number(styleValue) / 4);
         if (styleProp === 'top') {
@@ -114,14 +114,14 @@ const TAILWIND_MAP = {
     console.warn('cannot convert "margin" style field value to class name');
     return '';
   },
-  padding: function (value) {
+  padding: function (value: any) {
     // for tailwind paddings - ['twt0:16', 'twb0:16'], the value will be array ['pt-0', 'pb-4']
     if (Array.isArray(value)) {
       return value.join(' ');
     }
     // for regular paddings - ['x0:8', 'y0:16'], the value will be object: { left: 4, top: 10 }
     if (typeof value === 'object' && value !== null) {
-      const classNames = [];
+      const classNames: string[] = [];
       Object.entries(value).forEach(([styleProp, styleValue]) => {
         const twValue = styleValue === 1 ? 'px' : String(Number(styleValue) / 4);
         if (styleProp === 'top') {
