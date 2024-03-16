@@ -1,10 +1,15 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { nxE2EPreset } from '@nx/playwright/preset';
 import { defineConfig, devices } from '@playwright/test';
 
 import { workspaceRoot } from '@nx/devkit';
+import { join } from 'path';
 
 // For CI, you may want to set BASE_URL to the deployed application.
 const baseURL = process.env['BASE_URL'] || 'http://localhost:4200';
+
+const specDirectory = join(workspaceRoot, 'apps/screenplay/src');
+const outputDirectory = join(workspaceRoot, 'dist/.playwright/apps/screenplay');
 
 /**
  * Read environment variables from file.
@@ -18,11 +23,37 @@ const baseURL = process.env['BASE_URL'] || 'http://localhost:4200';
 export default defineConfig({
   ...nxE2EPreset(__filename, { testDir: './src' }),
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-
+  reporter: [
+    ['line'],
+    ['html', { open: 'never' }],
+    [
+      '@serenity-js/playwright-test',
+      {
+        crew: [
+          '@serenity-js/console-reporter',
+          ['@serenity-js/serenity-bdd', { specDirectory }],
+          [
+            '@serenity-js/core:ArtifactArchiver',
+            { outputDirectory: join(outputDirectory, 'serenity-report') },
+          ],
+          // '@serenity-js/core:StreamReporter',  // use for debugging
+        ],
+      },
+    ],
+  ],
   use: {
     baseURL,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    // @ts-expect-error
+    defaultActorName: 'Alice',
+    crew: [
+      // Take screenshots of failed Serenity/JS Activities, such as a failed assertion, or o failed interaction
+      // ['@serenity-js/web:Photographer', { strategy: 'TakePhotosOfFailures' }],
+
+      // Take screenshots of all the Activities, both successful and failed
+      ['@serenity-js/web:Photographer', { strategy: 'TakePhotosOfInteractions' }],
+    ],
   },
   /* Run your local dev server before starting the tests */
   webServer: {
