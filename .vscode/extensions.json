@@ -7,6 +7,7 @@
     "stylelint.vscode-stylelint",
     "bradlc.vscode-tailwindcss",
     "orta.vscode-jest",
-    "unifiedjs.vscode-mdx"
+    "unifiedjs.vscode-mdx",
+    "ms-playwright.playwright"
   ]
 }
