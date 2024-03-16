@@ -1,4 +1,12 @@
-import { Field, Model } from '@watheia/content-model';
+import {
+  Field,
+  FieldEnum,
+  FieldList,
+  FieldModel,
+  FieldObject,
+  FieldReference,
+  Model,
+} from '@watheia/content-model';
 import sortBy from 'lodash/sortBy';
 import {
   ListFormat,
@@ -13,13 +21,15 @@ import {
 
 import * as keywords from './keywords';
 
+type FieldType = Field['type'];
+
 const EXPORT_KEYWORD = factory.createModifier(SyntaxKind.ExportKeyword);
 
 const OPTIONAL_TOKEN = factory.createToken(SyntaxKind.QuestionToken);
 
 // const READ_ONLY_MODIFIER = factory.createModifier(SyntaxKind.ReadonlyKeyword);
 
-function union(...nodes: TypeNode[]) {
+function createUnion(...nodes: TypeNode[]) {
   return factory.createUnionTypeNode(nodes);
 }
 
@@ -40,12 +50,64 @@ function createLiteral(value: string | number) {
   return factory.createLiteralTypeNode(literal);
 }
 
+function createMetadataProperty(model: Model) {
+  const properties = [createProperty('modelType', createLiteral(model.type))];
+  // append id prop for data/page types
+  if (model.type === 'data' || model.type === 'page') {
+    properties.push(createProperty('id', keywords.STRING));
+  }
+
+  // append urlPath prop for page types
+  if (model.type === 'page') {
+    properties.push(createProperty('urlPath', keywords.STRING));
+  }
+
+  return createProperty('__metadata', factory.createTypeLiteralNode(properties));
+}
+
+function createObjectType(field: FieldObject): TypeNode {
+  return factory.createTypeLiteralNode(field.fields.map(fieldTransformer));
+}
+
+function createEnumType(field: FieldEnum): TypeNode {
+  return factory.createUnionTypeNode(
+    field.options.map((f) => {
+      if (typeof f === 'string') {
+        return createLiteral(f);
+      } else if (typeof f === 'number') {
+        return createLiteral(f);
+      }
+
+      return createLiteral(f.value);
+    })
+  );
+}
+
+function createModelType(field: FieldModel): TypeNode {
+  return factory.createUnionTypeNode(
+    field.models.map((name) => factory.createTypeReferenceNode(name))
+  );
+}
+
+function createReferenceType(field: FieldReference): TypeNode {
+  return factory.createUnionTypeNode(
+    field.models.map((name) => factory.createTypeReferenceNode(name))
+  );
+}
+
+function createListType(field: FieldList): TypeNode {
+  // since we do not actually need a name to determine a field's type, we can
+  // simulate one here to reuse our field type transformer code on the list items
+  const items = { name: 'UNSPECIFIED', ...field.items };
+  return factory.createArrayTypeNode(getFieldType(items));
+}
+
 function getFieldType(field: Field): TypeNode {
   switch (field.type) {
     case 'boolean':
       return keywords.BOOLEAN;
     case 'color':
-      return union(keywords.STRING, keywords.NUMBER);
+      return createUnion(keywords.STRING, keywords.NUMBER);
     case 'cross-reference':
       return keywords.UNKNOWN;
     case 'date':
@@ -53,7 +115,7 @@ function getFieldType(field: Field): TypeNode {
     case 'datetime':
       return keywords.DATE;
     case 'enum':
-      return keywords.UNKNOWN;
+      return createEnumType(field);
     case 'file':
       return keywords.UNKNOWN;
     case 'html':
@@ -63,17 +125,17 @@ function getFieldType(field: Field): TypeNode {
     case 'json':
       return keywords.UNKNOWN;
     case 'list':
-      return keywords.UNKNOWN;
+      return createListType(field);
     case 'markdown':
       return keywords.STRING;
     case 'model':
-      return keywords.UNKNOWN;
+      return createModelType(field);
     case 'number':
       return keywords.NUMBER;
     case 'object':
-      return keywords.UNKNOWN;
+      return createObjectType(field);
     case 'reference':
-      return keywords.UNKNOWN;
+      return createReferenceType(field);
     case 'richText':
       return keywords.STRING;
     case 'string':
@@ -81,7 +143,11 @@ function getFieldType(field: Field): TypeNode {
     case 'slug':
       return keywords.STRING;
     case 'style':
-      return keywords.UNKNOWN;
+      // type: Record<string, Record<string, unkown>>
+      return factory.createTypeReferenceNode('Record', [
+        keywords.STRING,
+        factory.createTypeReferenceNode('Record', [keywords.STRING, keywords.UNKNOWN]),
+      ]);
     case 'text':
       return keywords.STRING;
     case 'url':
@@ -91,29 +157,22 @@ function getFieldType(field: Field): TypeNode {
   }
 }
 
+function modelTransformer(model: Model) {
+  const __metadata = createMetadataProperty(model);
+  const type = createProperty('type', createLiteral(model.name));
+  const fields = (model.fields ?? []).map(fieldTransformer);
+  return factory.createInterfaceDeclaration([EXPORT_KEYWORD], model.name, undefined, undefined, [
+    __metadata,
+    type,
+    ...fields,
+  ]);
+}
+
+function fieldTransformer(field: Field) {
+  return createProperty(field.name, getFieldType(field), !!field.required);
+}
+
 export function generateModelTypes(models: Model[]) {
-  // transform field to property node
-  const fieldTransformer = (field: Field) => {
-    return createProperty(field.name, getFieldType(field), !!field.required);
-  };
-
-  // transform model to interface node
-  const modelTransformer = (model: Model) => {
-    const __metadata = createProperty(
-      '__metadata',
-      factory.createTypeLiteralNode([createProperty('modelType', createLiteral(model.type))])
-    );
-    const type = createProperty('type', createLiteral(model.name));
-    const fields = (model.fields ?? []).map(fieldTransformer);
-    return factory.createInterfaceDeclaration(
-      [EXPORT_KEYWORD],
-      model.name,
-      undefined,
-      undefined,
-      [__metadata, type, ...fields]
-    );
-  };
-
   const nodes = factory.createNodeArray(sortBy(models, (m) => m.name).map(modelTransformer));
   const sourceFile = createSourceFile(
     'placeholder.ts',
