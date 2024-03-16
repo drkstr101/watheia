@@ -13,7 +13,7 @@ describe('watheia.content-api', () => {
     it('fully resolves all content entries with the provided schema', async () => {
       const api = await LocalContentApi.create(mockOptions);
       expect(api).toBeInstanceOf(LocalContentApi);
-      expect(api.documents).toMatchSnapshot();
+      expect(api.objectsById).toMatchSnapshot();
     });
   });
 });

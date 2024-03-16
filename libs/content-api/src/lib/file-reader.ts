@@ -1,13 +1,13 @@
 import toml from '@iarna/toml';
+import { DocumentEntry } from '@watheia/content-model';
 import { globSync } from 'fast-glob';
 import { readFileSync } from 'fs';
-import { readFile } from 'fs-extra';
 import yaml from 'js-yaml';
 import forEach from 'lodash/forEach';
 import reduce from 'lodash/reduce';
 import { extname, join } from 'path';
 
-type Entry = Record<string, unknown>;
+type Data = Record<string, unknown>;
 
 export const MARKDOWN_FILE_EXTENSIONS = ['md', 'mdx', 'markdown'];
 export const DATA_FILE_EXTENSIONS = ['yml', 'yaml', 'json', 'toml'];
@@ -40,7 +40,7 @@ const frontMatterTypes = [
   },
 ];
 
-function parseMarkdownWithFrontMatter(content: string): Entry {
+function parseMarkdownWithFrontMatter(content: string): Data {
   content = content.replace('\r\n', '\n');
   let frontmatter = null;
   let markdown = content;
@@ -80,14 +80,14 @@ function parseMarkdownWithFrontMatter(content: string): Entry {
   };
 }
 
-function parseDataByFilePath(rawContent: string, filePath: string): Entry {
+function parseDataByFilePath(rawContent: string, filePath: string): Data {
   const extension = extname(filePath).substring(1);
   let data;
   switch (extension) {
     case 'yml':
     case 'yaml':
       rawContent = rawContent.replace(/\n---\s*$/, '');
-      data = yaml.safeLoad(rawContent, { schema: yaml.JSON_SCHEMA });
+      data = yaml.load(rawContent, { schema: yaml.JSON_SCHEMA });
       break;
     case 'json':
       data = JSON.parse(rawContent);
@@ -112,13 +112,7 @@ function parseDataByFilePath(rawContent: string, filePath: string): Entry {
   return data;
 }
 
-export async function parseFile(filePath: string): Promise<Entry> {
-  return await readFile(filePath, 'utf8').then((rawContent: string) => {
-    return parseDataByFilePath(rawContent, filePath);
-  });
-}
-
-export function parseFileSync(filePath: string): Entry {
+export function parseFileSync(filePath: string): Data {
   const rawContent = readFileSync(filePath, 'utf8');
   return parseDataByFilePath(rawContent, filePath);
 }
@@ -127,7 +121,7 @@ export function readDirRecursively(
   rootPath: string,
   contentDirs: string[] = ['content/data', 'content/pages'],
   allowedExtensions: string[] = SUPPORTED_FILE_EXTENSIONS
-): Record<string, Entry> {
+): Record<string, DocumentEntry> {
   console.log(
     'readDirRecursively(rootPath, contentDirs, allowedExtensions)',
     rootPath,

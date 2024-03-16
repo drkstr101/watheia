@@ -1,12 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`watheia.content-api #resolve() fully resolves all content entries with the provided schema 1`] = `
-[
-  {
-    "__metadata": {
-      "id": "content/data/config.json",
-      "type": "data",
-    },
+{
+  "content/data/config.json": {
     "favicon": "/images/favicon.svg",
     "footer": {
       "copyrightText": "Powered by Netlify Create.",
@@ -56,11 +52,7 @@ exports[`watheia.content-api #resolve() fully resolves all content entries with 
     },
     "type": "Config",
   },
-  {
-    "__metadata": {
-      "id": "content/data/people/jane-doe.json",
-      "type": "data",
-    },
+  "content/data/people/jane-doe.json": {
     "image": {
       "altText": "Jane Doe",
       "src": "/images/jane-doe.jpg",
@@ -70,21 +62,13 @@ exports[`watheia.content-api #resolve() fully resolves all content entries with 
     "role": "Co-Founder / CEO",
     "type": "Person",
   },
-  {
-    "__metadata": {
-      "id": "content/data/theme.json",
-      "type": "data",
-    },
+  "content/data/theme.json": {
     "mode": "light",
     "primaryColor": "#4C57C5",
     "secondaryColor": "#F65458",
     "type": "Theme",
   },
-  {
-    "__metadata": {
-      "id": "content/pages/about.md",
-      "type": "page",
-    },
+  "content/pages/about.md": {
     "content": "",
     "sections": [
       {
@@ -102,13 +86,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     "title": "About",
     "type": "Page",
   },
-  {
-    "__metadata": {
-      "id": "content/pages/blog/article-1.md",
-      "type": "page",
-    },
+  "content/pages/blog/article-1.md": {
     "author": "content/data/people/jane-doe.json",
-    "content": "_View the [source of this content](http://github.github.com/github-flavored-markdown/sample_content.html)._
+    "content": "
+_View the [source of this content](http://github.github.com/github-flavored-markdown/sample_content.html)._
 
 Let's get the whole "linebreak" thing out of the way. The next paragraph contains two phrases separated by a single newline character:
 
@@ -257,17 +238,13 @@ I get 10 times more traffic from [Google] [1] than from
 [2]: http://search.yahoo.com/ 'Yahoo Search'
 [3]: http://search.msn.com/ 'MSN Search'
 ",
-    "date": 2024-01-01T00:00:00.000Z,
+    "date": "2024-01-01",
     "description": "Quibusdam quam omnis voluptatem ipsa omnis magnam dolorem. Nam ut qui nesciunt aliquam et qui numquam.",
     "slug": "article-1",
     "title": "Ullam qui ipsa sapiente et eaque tempore.",
     "type": "Article",
   },
-  {
-    "__metadata": {
-      "id": "content/pages/index.md",
-      "type": "page",
-    },
+  "content/pages/index.md": {
     "content": "",
     "sections": [
       {
@@ -366,5 +343,5 @@ I get 10 times more traffic from [Google] [1] than from
     "title": "Home",
     "type": "Page",
   },
-]
+}
 `;

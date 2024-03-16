@@ -1,6 +1,6 @@
 import * as types from './content-types';
 
-export type ObjectModelProps =
+export type ObjectEntry =
   | types.Button
   | types.Card
   | types.Footer
@@ -10,12 +10,12 @@ export type ObjectModelProps =
   | types.Link
   | types.Testimonial;
 
-export type DataModelProps = types.Config | types.Person | types.Theme;
+export type DataEntry = types.Config | types.Person | types.Theme;
 
-export type PageModelProps = types.Page | types.Article | types.CaseStudy;
+export type PageEntry = types.Page | types.Article | types.CaseStudy;
 
-export type DocumentModelProps = DataModelProps | PageModelProps;
+export type DocumentEntry = DataEntry | PageEntry;
 
-export type ModelProps = DocumentModelProps | ObjectModelProps;
+export type Entry = DocumentEntry | ObjectEntry;
 
 export { types };
