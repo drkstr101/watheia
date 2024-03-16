@@ -4,7 +4,7 @@ image:
   file: Dockerfile.gitpod
 
 tasks:
-  - init: yarn install
+  - init: yarn install && yarn playwright install --with-deps
     command: yarn nx run home:serve:development
 
 ports:
