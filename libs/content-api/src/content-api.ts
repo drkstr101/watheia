@@ -1,24 +1,29 @@
-import { DocumentEntry, models } from '@watheia/content-model';
+import { models, type Document } from '@watheia/content-model';
 
-import { LocalContentSchema } from './content-api.types';
-import { readDirRecursively } from './lib/file-reader';
+import { DocumentContext } from './lib/content-converter';
+import { LocalContentResolver, type ContentResolverOptions } from './lib/local-content-resolver';
+import logger from './lib/logger';
 
-export const defaultOptions = {
+export const defaultOptions: ContentResolverOptions = {
   rootPath: process.env['WORKSPACE_ROOT'] ?? process.cwd(),
   models: Object.values(models),
+  logger,
+  localDev: process.env['NODE_ENV'] !== 'production',
+  contentDirs: ['content/data', 'content/pages'],
 };
 
-export class LocalContentApi {
-  public static async create(
-    schema: LocalContentSchema = defaultOptions
-  ): Promise<LocalContentApi> {
-    const objectsById = await readDirRecursively(schema.rootPath);
-    // const documents = await Promise.all(filePaths.map(withLocalResolver(schema)));
-
-    // const fileToContent = Object.fromEntries(documents.map((doc) => [doc.__metadata.id, doc]));
-    // return new LocalContentApi(documents.map((doc) => resolveReferences(doc, fileToContent)));
-    return new LocalContentApi(objectsById);
+export class ContentApi {
+  public static create(options: Partial<ContentResolverOptions> = {}): ContentApi {
+    return new ContentApi({ ...defaultOptions, ...options });
   }
 
-  constructor(public readonly objectsById: Record<string, DocumentEntry>) {}
+  private readonly resolver: LocalContentResolver;
+
+  constructor(public readonly options: ContentResolverOptions) {
+    this.resolver = new LocalContentResolver(options);
+  }
+
+  async getDocuments(): Promise<Document<DocumentContext>[]> {
+    return this.resolver.getDocuments();
+  }
 }

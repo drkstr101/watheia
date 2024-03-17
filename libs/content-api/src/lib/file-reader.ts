@@ -122,16 +122,8 @@ export function readDirRecursively(
   contentDirs: string[] = ['content/data', 'content/pages'],
   allowedExtensions: string[] = SUPPORTED_FILE_EXTENSIONS
 ): Record<string, DocumentEntry> {
-  console.log(
-    'readDirRecursively(rootPath, contentDirs, allowedExtensions)',
-    rootPath,
-    contentDirs,
-    allowedExtensions
-  );
-
   const globStr = `**/*.{${allowedExtensions.join(',')}}`;
   const sources = contentDirs.map((path) => `${path}/${globStr}`);
-
   return reduce(
     globSync(sources, { cwd: rootPath }),
     (entriesById, filePath) => {

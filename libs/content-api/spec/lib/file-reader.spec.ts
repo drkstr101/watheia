@@ -2,9 +2,9 @@ import { parseFileSync, readDirRecursively } from '../../src/lib/file-reader';
 import { FIXTURES_DIR, fixturePath } from '../support';
 
 describe('watheia.content-api/file-reader', () => {
-  describe('#parseFileSync(filePath)', () => {
+  describe('parseFileSync(filePath)', () => {
     it('parses a valid json file', () => {
-      const data = parseFileSync(fixturePath('content/data/people/jane-doe.json'));
+      const data = parseFileSync(fixturePath('complete/data/people/jane-doe.json'));
       expect(data).toEqual({
         type: 'Person',
         name: 'Jane Doe',
@@ -13,7 +13,7 @@ describe('watheia.content-api/file-reader', () => {
       });
     });
     it('parses a valid markdown file', () => {
-      const data = parseFileSync(fixturePath('content/pages/blog/article-1.md'));
+      const data = parseFileSync(fixturePath('complete/pages/blog/article-1.md'));
       expect(data).toContainKey('content');
       expect(data['content']).toBeString();
       expect(data).toContainEntries([
