@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 import { NxWelcome } from './nx-welcome';
 
 const meta: Meta<typeof NxWelcome> = {
@@ -6,7 +6,7 @@ const meta: Meta<typeof NxWelcome> = {
   title: 'NxWelcome',
 };
 export default meta;
-type Story = StoryObj<typeof NxWelcome>;
+// type Story = StoryObj<typeof NxWelcome>;
 
 export const Primary = {
   args: {},

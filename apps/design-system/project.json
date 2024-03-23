@@ -58,13 +58,20 @@
       }
     },
     "lint": {
+      "dependsOn": ["stylelint"],
       "executor": "@nx/eslint:lint"
     },
-
     "test-storybook": {
       "executor": "nx:run-commands",
       "options": {
         "command": "test-storybook -c apps/design-system/.storybook --url=http://localhost:4400"
+      }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/design-system/**/*.css"]
       }
     }
   }
