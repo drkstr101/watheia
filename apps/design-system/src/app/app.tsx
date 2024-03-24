@@ -1,4 +1,4 @@
-import '@watheia/studio-ui/style.css';
+import '@watheia/studio-ui/styles/index.css';
 import '../styles.css';
 
 import NxWelcome from './nx-welcome';
