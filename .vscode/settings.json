@@ -8,7 +8,6 @@
     "source.fixAll.eslint": "explicit",
     "source.fixAll": "explicit"
   },
-
   "files.exclude": {
     "**/.DS_Store": true,
     "**/.git": true,
@@ -19,13 +18,11 @@
   },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-
   "npm.packageManager": "yarn",
   "typescript.tsdk": "./node_modules/typescript/lib",
   "eslint.run": "onSave",
   "eslint.nodePath": "./node_modules",
-  "eslint.validate": ["javascript", "typescript"],
-
+  "eslint.validate": ["javascript", "typescript", "json"],
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
