@@ -1,4 +1,4 @@
-import './styles/global.css';
+import './styles/index.css';
 
 // Components
 export * from './components';
