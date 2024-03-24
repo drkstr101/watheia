@@ -1,20 +1,18 @@
+import { models } from '@watheia/content-model';
 import { globSync as glob } from 'fast-glob';
 import frontmatter from 'front-matter';
 import * as fs from 'fs';
 import { extname, join } from 'path';
-import { allModels } from '../../sources/local/models';
-import { Config } from '../../sources/local/models/Config';
-import sbConfig from '../../stackbit.config';
 import { getPageUrl } from './page-utils';
 
 // TODO use types?
 
-const appDir = process.env['LOCAL_CONTENT_DIR'] ?? join(__dirname, '../..');
-const pagesDir = sbConfig.pagesDir || 'content/pages';
-const dataDir = sbConfig.dataDir || 'content/data';
+const appDir = process.env['LOCAL_CONTENT_DIR'] ?? join(__dirname, '../../../..');
+const pagesDir = 'content/pages';
+const dataDir = 'content/data';
 
 const allReferenceFields: Record<string, boolean> = {};
-Object.entries(allModels).forEach(([modelName, model]) => {
+Object.entries(models).forEach(([modelName, model]) => {
   model.fields?.forEach((field) => {
     if (
       field.type === 'reference' ||
@@ -113,6 +111,6 @@ export function allContent() {
     page.__metadata.urlPath = getPageUrl(page);
   });
 
-  const siteConfig = data.find((e) => e.__metadata.modelName === Config.name) ?? null;
+  const siteConfig = data.find((e) => e.__metadata.modelName === models.Config.name) ?? null;
   return { objects, pages, props: { site: siteConfig } };
 }

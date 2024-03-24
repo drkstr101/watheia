@@ -1,40 +1,209 @@
-import { ObjectModel } from '@stackbit/types';
+import { Model } from '@stackbit/types';
 
-export const Link: ObjectModel = {
+export const Link: Model = {
   type: 'object',
   name: 'Link',
   label: 'Link',
   labelField: 'label',
-  fieldGroups: [{ name: 'styles', label: 'Styles' }],
   fields: [
-    { type: 'string', name: 'label', label: 'Label', default: 'Learn more', required: true },
-    { type: 'string', name: 'href', label: 'URL', default: '/', required: true },
     {
-      type: 'enum',
-      name: 'underline',
+      type: 'string',
+      name: 'label',
+      label: 'Label',
+      required: false,
+      default: 'Learn more',
+      hidden: false,
+      localized: false,
+    },
+    {
+      type: 'string',
+      name: 'altText',
+      label: 'Alt text',
+      description: 'The alternative text for screen readers',
+      required: false,
+      default: '',
+      hidden: false,
+      localized: false,
+    },
+    {
+      type: 'string',
+      name: 'url',
+      label: 'URL',
+      required: true,
+      default: '/',
+      hidden: false,
+      localized: false,
+    },
+    {
+      type: 'boolean',
+      name: 'showIcon',
+      label: 'Show icon',
+      required: false,
+      default: false,
+      hidden: false,
+      localized: false,
       group: 'styles',
-      controlType: 'button-group',
-      label: 'Underline',
-      options: [
-        { label: 'Always', value: 'always' },
-        { label: 'Hover', value: 'hover' },
-        { label: 'None', value: 'none' },
-      ],
-      default: 'always',
     },
     {
       type: 'enum',
-      name: 'color',
+      name: 'icon',
+      label: 'Icon',
+      required: false,
+      default: 'arrowRight',
+      hidden: false,
+      localized: false,
+      options: [
+        {
+          label: 'Arrow down',
+          value: 'arrowDown',
+        },
+        {
+          label: 'Arrow left',
+          value: 'arrowLeft',
+        },
+        {
+          label: 'Arrow right',
+          value: 'arrowRight',
+        },
+        {
+          label: 'Arrow up',
+          value: 'arrowUp',
+        },
+        {
+          label: 'Chevron down',
+          value: 'chevronDown',
+        },
+        {
+          label: 'Chevron left',
+          value: 'chevronLeft',
+        },
+        {
+          label: 'Chevron big left',
+          value: 'chevronBigLeft',
+        },
+        {
+          label: 'Chevron right',
+          value: 'chevronRight',
+        },
+        {
+          label: 'Chevron big right',
+          value: 'chevronBigRight',
+        },
+        {
+          label: 'Facebook',
+          value: 'facebook',
+        },
+        {
+          label: 'GitHub',
+          value: 'github',
+        },
+        {
+          label: 'Instagram',
+          value: 'instagram',
+        },
+        {
+          label: 'LinkedIn',
+          value: 'linkedin',
+        },
+        {
+          label: 'Mail',
+          value: 'mail',
+        },
+        {
+          label: 'Play',
+          value: 'play',
+        },
+        {
+          label: 'Reddit',
+          value: 'reddit',
+        },
+        {
+          label: 'Send',
+          value: 'send',
+        },
+        {
+          label: 'Shopping bag',
+          value: 'shoppingBag',
+        },
+        {
+          label: 'Twitter',
+          value: 'twitter',
+        },
+        {
+          label: 'Vimeo',
+          value: 'vimeo',
+        },
+        {
+          label: 'YouTube',
+          value: 'youtube',
+        },
+      ],
+      group: 'styles',
+    },
+    {
+      type: 'enum',
+      name: 'iconPosition',
+      label: 'Icon position',
+      required: false,
+      default: 'right',
+      hidden: false,
+      localized: false,
+      options: [
+        {
+          label: 'Left',
+          value: 'left',
+        },
+        {
+          label: 'Right',
+          value: 'right',
+        },
+      ],
       group: 'styles',
       controlType: 'button-group',
-      label: 'Color',
+    },
+    {
+      type: 'enum',
+      name: 'style',
+      label: 'Style',
+      required: false,
+      default: 'primary',
+      hidden: false,
+      localized: false,
       options: [
-        { label: 'Neutral', value: 'neutral' },
-        { label: 'Primary', value: 'primary' },
-        { label: 'Secondary', value: 'secondary' },
-        { label: 'Accent', value: 'accent' },
+        {
+          label: 'Primary',
+          value: 'primary',
+        },
+        {
+          label: 'Secondary',
+          value: 'secondary',
+        },
       ],
-      default: 'default',
+      group: 'styles',
+      controlType: 'button-group',
+    },
+    {
+      type: 'string',
+      name: 'elementId',
+      label: 'Element ID',
+      description: 'The unique ID for an HTML element, must not contain whitespace',
+      required: false,
+      default: '',
+      hidden: false,
+      localized: false,
+      group: 'settings',
+    },
+  ],
+  fieldGroups: [
+    {
+      name: 'styles',
+      label: 'Styles',
+      icon: 'palette',
+    },
+    {
+      name: 'settings',
+      label: 'Settings',
+      icon: 'gear',
     },
   ],
 };

@@ -1,5 +1,5 @@
+import { models } from '@watheia/content-model';
 import { generateModelTypes } from '../src/lib/cabbage-type-generator';
-import model from './support/models';
 
 describe('watheia.cabbage/type-generator', () => {
   // afterEach(() => rmSync(tempFile));
@@ -31,52 +31,7 @@ describe('watheia.cabbage/type-generator', () => {
     });
 
     it('transforms complex model types', () => {
-      const output = generateModelTypes(Object.values(model));
-      expect(output).toEqualIgnoringWhitespace(`
-        export interface Button {
-            __metadata: {
-                modelType: 'object';
-            };
-            type: 'Button';
-            label?: string;
-            url?: string;
-            theme?:  'default' | 'outline';
-        }
-        export interface Hero {
-            __metadata: {
-                modelType: 'object';
-            };
-            type: 'Hero';
-            heading?: string;
-            body?: string;
-            image?: {
-              src?: string;
-              alt?: string;
-            };
-            button?: Button;
-            theme?:  'imgLeft' | 'imgRight';
-        }
-        export interface Page {
-            __metadata: {
-                modelType: 'page';
-                id: string;
-                urlPath: string;
-            };
-            type: 'Page';
-            title: string;
-            sections?: (Hero | Stats)[];
-        }
-        export interface Stats {
-            __metadata: {
-                modelType: 'object';
-            };
-            type: 'Stats';
-            heading?: string;
-            body?: string;
-            stats?: { label?: string; value?: string; }[];
-            theme?: 'primary' | 'dark';
-        }
-      `);
+      expect(generateModelTypes(Object.values(models))).toMatchSnapshot();
     });
   });
 });

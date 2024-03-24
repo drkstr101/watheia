@@ -4,7 +4,7 @@ import { composePlugins, withNx } from '@nx/next';
 import { resolve } from 'path';
 import { fileURLToPath } from 'url';
 
-const LOCAL_CONTENT_DIR = resolve(fileURLToPath(new URL('.', import.meta.url)), '.');
+const LOCAL_CONTENT_DIR = resolve(fileURLToPath(new URL('.', import.meta.url)), '../..');
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
