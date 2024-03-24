@@ -54,6 +54,15 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "build-storybook": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "^production",
+        "{projectRoot}/.storybook/**/*",
+        "{projectRoot}/tsconfig.storybook.json"
+      ]
     }
   },
   "namedInputs": {
@@ -71,7 +80,10 @@
       "!{projectRoot}/cypress.config.[jt]s",
       "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/eslint.config.js",
-      "!{projectRoot}/.stylelintrc(.(json|yml|yaml|js))?"
+      "!{projectRoot}/.stylelintrc(.(json|yml|yaml|js))?",
+      "!{projectRoot}/**/*.stories.@(js|jsx|ts|tsx|mdx)",
+      "!{projectRoot}/.storybook/**/*",
+      "!{projectRoot}/tsconfig.storybook.json"
     ],
     "sharedGlobals": [],
     "content": ["{workspaceRoot}/assets/images/**/*.(jpg|jpeg|gif|png|svg)"],
@@ -101,5 +113,12 @@
       }
     }
   },
-  "nxCloudAccessToken": "MjU1OGNiNGQtMmQ4Mi00MWQzLWE5OTYtMzIzMmU4OTU0NjYzfHJlYWQ="
+  "nxCloudAccessToken": "MjU1OGNiNGQtMmQ4Mi00MWQzLWE5OTYtMzIzMmU4OTU0NjYzfHJlYWQ=",
+  "tasksRunnerOptions": {
+    "default": {
+      "options": {
+        "cacheableOperations": ["build-storybook"]
+      }
+    }
+  }
 }

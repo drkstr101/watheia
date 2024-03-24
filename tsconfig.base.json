@@ -24,7 +24,7 @@
       "@watheia/content-api": ["libs/content-api/src/index.ts"],
       "@watheia/content-model": ["libs/content-model/src/index.ts"],
       "@watheia/studio-ui": ["libs/studio-ui/src/index.ts"],
-      "@watheia/studio-ui/style.css": ["dist/libs/studio-ui/style.css"]
+      "@watheia/studio-ui/styles/index.css": ["libs/studio-ui/src/styles/index.css"]
     }
   },
   "exclude": ["node_modules", "tmp"]
