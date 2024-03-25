@@ -2,7 +2,7 @@ import classNames from 'clsx';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
+import { mapStylesToClassNames as mapStyles } from '@watheia/content-helpers';
 import { Action, Link } from '../../atoms';
 import ImageBlock from '../../blocks/ImageBlock';
 import ChevronDownIcon from '../../svgs/chevron-down';

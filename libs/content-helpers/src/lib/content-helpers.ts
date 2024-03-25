@@ -25,6 +25,6 @@ export function getPageUrl(page: { slug: string; __metadata: { modelName: string
 
 export function setEnvironmentVariables() {
   return {
-    ...(process?.env?.URL && { URL: process.env.URL }),
+    ...(process?.env?.['URL'] && { URL: process.env['URL'] }),
   };
 }

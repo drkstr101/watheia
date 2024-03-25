@@ -1,7 +1,7 @@
 import classNames from 'clsx';
 import Markdown from 'markdown-to-jsx';
 
-import { mapStylesToClassNames as mapStyles } from '../../../../utils/map-styles-to-class-names';
+import { mapStylesToClassNames as mapStyles } from '@watheia/content-helpers';
 import Action from '../../../atoms/Action';
 import ImageBlock from '../../../blocks/ImageBlock';
 

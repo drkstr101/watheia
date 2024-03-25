@@ -2,7 +2,7 @@ import classNames from 'clsx';
 import Markdown from 'markdown-to-jsx';
 import * as React from 'react';
 
-import { mapStylesToClassNames as mapStyles } from '../../../../utils/map-styles-to-class-names';
+import { mapStylesToClassNames as mapStyles } from '@watheia/content-helpers';
 import Action from '../../../atoms/Action';
 import CloseIcon from '../../../svgs/close';
 import PlusIcon from '../../../svgs/plus';

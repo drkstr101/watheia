@@ -1,6 +1,6 @@
 import classNames from 'clsx';
 
-import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
+import { mapStylesToClassNames as mapStyles } from '@watheia/content-helpers';
 
 export default function VideoBlock(props) {
   const { elementId, className, url, aspectRatio = '16:9', styles = {}, ...rest } = props;

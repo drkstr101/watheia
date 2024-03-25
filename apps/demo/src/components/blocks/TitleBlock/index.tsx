@@ -1,6 +1,6 @@
 import classNames from 'clsx';
 
-import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
+import { mapStylesToClassNames as mapStyles } from '@watheia/content-helpers';
 
 export default function TitleBlock(props) {
   const { className, text = [], color = 'text-dark', styles = {} } = props;

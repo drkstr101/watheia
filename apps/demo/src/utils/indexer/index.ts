@@ -1,6 +1,6 @@
 import algoliasearch from 'algoliasearch';
 import { Lexer, marked } from 'marked';
-import { allContent } from '../local-content';
+import { resolveContent } from '@watheia/content-api';
 import {
   ALGOLIA_ADMIN_API_KEY,
   ALGOLIA_APP_ID,
@@ -15,7 +15,7 @@ export async function index() {
   }
 
   console.time('Indexing duration');
-  const data = allContent();
+  const data = resolveContent();
   const posts = data.pages.filter((p: any) => p.__metadata.modelName == 'Article');
 
   const objectsToIndex = buildObjectsToIndex(posts);

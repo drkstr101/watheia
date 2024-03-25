@@ -158,12 +158,14 @@ export function findObjectById(
   if (!objectId) {
     return null;
   }
-  const object = objects.find((object) => object.__metadata?.id === objectId) || null;
+  const object = objects.find((object) => object['__metadata']?.id === objectId) || null;
   if (!object && debugContext) {
     const reverseStack = debugContext.stack.slice().reverse();
-    const objectIndex = reverseStack.findIndex((object) => !!object.__metadata?.relProjectPath);
+    const objectIndex = reverseStack.findIndex(
+      (object) => !!object['__metadata']?.relProjectPath
+    );
     if (objectIndex >= 0) {
-      const filePath = reverseStack[objectIndex].__metadata.relProjectPath;
+      const filePath = reverseStack[objectIndex]['__metadata'].relProjectPath;
       const fieldPath = debugContext.keyPath
         .slice()
         .reverse()

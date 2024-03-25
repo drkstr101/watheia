@@ -22,6 +22,7 @@
       "@home/lib/mdx": ["apps/home/lib/mdx.ts"],
       "@watheia/cabbage.type-generator": ["libs/cabbage/type-generator/src/index.ts"],
       "@watheia/content-api": ["libs/content-api/src/index.ts"],
+      "@watheia/content-helpers": ["libs/content-helpers/src/index.ts"],
       "@watheia/content-model": ["libs/content-model/src/index.ts"],
       "@watheia/studio-ui": ["libs/studio-ui/src/index.ts"],
       "@watheia/studio-ui/styles/index.css": ["libs/studio-ui/src/styles/index.css"]

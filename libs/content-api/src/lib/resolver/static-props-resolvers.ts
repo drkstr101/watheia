@@ -1,6 +1,3 @@
-import crypto from 'crypto';
-import { SignJWT } from 'jose/jwt/sign';
-
 import {
   getAllCategoryPostsSorted,
   getAllNonFeaturedPostsSorted,
@@ -10,7 +7,9 @@ import {
   isPublished,
   mapDeepAsync,
   resolveReferences,
-} from './data-utils';
+} from '@watheia/content-helpers';
+import crypto from 'crypto';
+import { SignJWT } from 'jose/jwt/sign';
 
 export function resolveStaticProps(
   urlPath: string,
@@ -60,7 +59,7 @@ const StaticPropsResolvers = {
   ) => {
     const numOfPostsPerPage = props.numOfPostsPerPage ?? 10;
     let allPosts = getAllNonFeaturedPostsSorted(data.objects);
-    if (!process.env.stackbitPreview) {
+    if (!process.env['stackbitPreview']) {
       allPosts = allPosts.filter(isPublished);
     }
     const paginationData = getPagedItemsForPage(props, allPosts, numOfPostsPerPage);
@@ -78,7 +77,7 @@ const StaticPropsResolvers = {
     const categoryId = props.__metadata?.id;
     const numOfPostsPerPage = props.numOfPostsPerPage ?? 10;
     let allCategoryPosts = getAllCategoryPostsSorted(data.objects, categoryId);
-    if (!process.env.stackbitPreview) {
+    if (!process.env['stackbitPreview']) {
       allCategoryPosts = allCategoryPosts.filter(isPublished);
     }
     const paginationData = getPagedItemsForPage(props, allCategoryPosts, numOfPostsPerPage);
@@ -91,7 +90,7 @@ const StaticPropsResolvers = {
   },
   RecentPostsSection: (props: { recentCount: any }, data: { objects: any }) => {
     let allPosts = getAllPostsSorted(data.objects);
-    if (!process.env.stackbitPreview) {
+    if (!process.env['stackbitPreview']) {
       allPosts = allPosts.filter(isPublished);
     }
     allPosts = allPosts.slice(0, props.recentCount || 6);
@@ -124,7 +123,7 @@ const StaticPropsResolvers = {
     if (!props.destination) {
       return props;
     }
-    if (!process.env.STACKBIT_CONTACT_FORM_SECRET) {
+    if (!process.env['STACKBIT_CONTACT_FORM_SECRET']) {
       console.error(
         `No STACKBIT_CONTACT_FORM_SECRET provided. It will not work properly for production build.`
       );
@@ -132,7 +131,7 @@ const StaticPropsResolvers = {
     }
     const secretKey = crypto
       .createHash('sha256')
-      .update(process.env.STACKBIT_CONTACT_FORM_SECRET)
+      .update(process.env['STACKBIT_CONTACT_FORM_SECRET'])
       .digest();
     const destination = await new SignJWT({ email: props.destination })
       .setProtectedHeader({ alg: 'HS256' })

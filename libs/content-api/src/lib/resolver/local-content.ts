@@ -1,13 +1,13 @@
+import { getPageUrl } from '@watheia/content-helpers';
 import { models } from '@watheia/content-model';
 import { globSync as glob } from 'fast-glob';
 import frontmatter from 'front-matter';
-import * as fs from 'fs';
+import { readFileSync } from 'fs';
 import { extname, join } from 'path';
-import { getPageUrl } from './page-utils';
 
 // TODO use types?
 
-const appDir = process.env['LOCAL_CONTENT_DIR'] ?? join(__dirname, '../../../..');
+const rootPath = process.env['LOCAL_CONTENT_DIR'] ?? join(__dirname, '../../../../..');
 const pagesDir = 'content/pages';
 const dataDir = 'content/data';
 
@@ -31,11 +31,11 @@ const supportedFileTypes = ['md', 'json'];
 
 function contentFilesInPath(dir: string) {
   const globPattern = `${dir}/**/*.{${supportedFileTypes.join(',')}}`;
-  return glob(globPattern, { cwd: appDir });
+  return glob(globPattern, { cwd: rootPath });
 }
 
 function readContent(file: string) {
-  const rawContent = fs.readFileSync(join(appDir, file), 'utf8');
+  const rawContent = readFileSync(join(rootPath, file), 'utf8');
   let content: any = null;
   switch (extname(file).substring(1)) {
     case 'md':
@@ -98,7 +98,7 @@ function resolveReferences(
   }
 }
 
-export function allContent() {
+export function resolveContent() {
   const [data, pages] = [dataDir, pagesDir].map((dir) => {
     return contentFilesInPath(dir).map((file) => readContent(file));
   });

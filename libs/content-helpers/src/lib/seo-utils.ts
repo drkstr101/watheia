@@ -6,7 +6,7 @@ export function seoGenerateMetaTags(
 
   if (site.defaultMetaTags?.length) {
     site.defaultMetaTags.forEach((metaTag) => {
-      pageMetaTags[metaTag.property] = metaTag.content;
+      pageMetaTags[metaTag['property']] = metaTag['content'];
     });
   }
 
@@ -21,7 +21,7 @@ export function seoGenerateMetaTags(
 
   if (page.seo?.metaTags?.length) {
     page.seo?.metaTags.forEach((metaTag) => {
-      pageMetaTags[metaTag.property] = metaTag.content;
+      pageMetaTags[metaTag['property']] = metaTag['content'];
     });
   }
 

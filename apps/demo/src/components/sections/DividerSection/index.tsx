@@ -1,6 +1,6 @@
 import classNames from 'clsx';
 
-import { getDataAttrs } from '../../../utils/get-data-attrs';
+import { getDataAttrs } from '@watheia/content-helpers';
 import Section from '../Section';
 
 export default function DividerSection(props) {

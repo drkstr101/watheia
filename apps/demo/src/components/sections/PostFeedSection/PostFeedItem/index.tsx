@@ -1,8 +1,8 @@
+import { getPageUrl } from '@watheia/content-helpers';
 import classNames from 'clsx';
 import dayjs from 'dayjs';
 
-import { mapStylesToClassNames as mapStyles } from '../../../../utils/map-styles-to-class-names';
-import { getPageUrl } from '../../../../utils/page-utils';
+import { mapStylesToClassNames as mapStyles } from '@watheia/content-helpers';
 import Link from '../../../atoms/Link';
 import ImageBlock from '../../../blocks/ImageBlock';
 

@@ -3,12 +3,12 @@ import {
   getAllCategoryPostsSorted,
   getAllNonFeaturedPostsSorted,
   isPublished,
-} from './data-utils';
+} from '@watheia/content-helpers';
 
 export function resolveStaticPaths({ pages, objects }: { pages: any[]; objects: any[] }) {
   return pages.reduce(
     (paths: any[], page: { isDraft: any; __metadata: { modelName: string; urlPath: any } }) => {
-      if (!process.env.stackbitPreview && page.isDraft) {
+      if (!process.env['stackbitPreview'] && page.isDraft) {
         return paths;
       }
       const objectType = page.__metadata?.modelName as keyof typeof StaticPathsResolvers;
@@ -26,7 +26,7 @@ export function resolveStaticPaths({ pages, objects }: { pages: any[]; objects: 
 const StaticPathsResolvers = {
   PostFeedLayout: (page: any, objects: any[]) => {
     let posts = getAllNonFeaturedPostsSorted(objects);
-    if (!process.env.stackbitPreview) {
+    if (!process.env['stackbitPreview']) {
       posts = posts.filter(isPublished);
     }
     const numOfPostsPerPage = page.numOfPostsPerPage ?? 10;
@@ -39,7 +39,7 @@ const StaticPathsResolvers = {
     const categoryId = page.__metadata?.id;
     const numOfPostsPerPage = page.numOfPostsPerPage ?? 10;
     let categoryPosts = getAllCategoryPostsSorted(objects, categoryId);
-    if (!process.env.stackbitPreview) {
+    if (!process.env['stackbitPreview']) {
       categoryPosts = categoryPosts.filter(isPublished);
     }
     return generatePagedPathsForPage(page, categoryPosts, numOfPostsPerPage);

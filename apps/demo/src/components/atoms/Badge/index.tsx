@@ -1,6 +1,6 @@
 import classNames from 'clsx';
 
-import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
+import { mapStylesToClassNames as mapStyles } from '@watheia/content-helpers';
 
 export default function Badge(props) {
   const { label, color = 'text-primary', styles, className } = props;

@@ -1,8 +1,7 @@
 import classNames from 'clsx';
 import Markdown from 'markdown-to-jsx';
 
-import { getDataAttrs } from '../../../utils/get-data-attrs';
-import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
+import { getDataAttrs, mapStylesToClassNames as mapStyles } from '@watheia/content-helpers';
 import { Action, Badge } from '../../atoms';
 import TitleBlock from '../../blocks/TitleBlock';
 import { getComponent } from '../../components-registry';

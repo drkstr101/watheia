@@ -1,7 +1,6 @@
 import classNames from 'clsx';
 
-import { getDataAttrs } from '../../../utils/get-data-attrs';
-import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
+import { getDataAttrs, mapStylesToClassNames as mapStyles } from '@watheia/content-helpers';
 import { Action, Badge } from '../../atoms';
 import TitleBlock from '../../blocks/TitleBlock';
 import Section from '../Section';

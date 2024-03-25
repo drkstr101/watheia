@@ -1,8 +1,7 @@
 import classNames from 'clsx';
 import * as React from 'react';
 
-import { getDataAttrs } from '../../../utils/get-data-attrs';
-import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
+import { getDataAttrs, mapStylesToClassNames as mapStyles } from '@watheia/content-helpers';
 import Badge from '../../atoms/Badge';
 import ImageBlock from '../../blocks/ImageBlock';
 import TitleBlock from '../../blocks/TitleBlock';

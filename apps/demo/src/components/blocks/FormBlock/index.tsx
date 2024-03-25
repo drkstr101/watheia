@@ -2,7 +2,7 @@ import axios from 'axios';
 import classNames from 'clsx';
 import * as React from 'react';
 
-import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
+import { mapStylesToClassNames as mapStyles } from '@watheia/content-helpers';
 import { getComponent } from '../../components-registry';
 import SubmitButtonFormControl from './SubmitButtonFormControl';
 

@@ -1,5 +1,5 @@
+import { mapStylesToClassNames as mapStyles } from '@watheia/content-helpers';
 import classNames from 'clsx';
-import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 
 export default function BackgroundImage(props) {
   const { url, className, backgroundSize, backgroundPosition, backgroundRepeat, opacity } = props;

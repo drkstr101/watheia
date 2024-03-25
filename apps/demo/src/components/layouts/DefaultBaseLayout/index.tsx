@@ -4,7 +4,8 @@ import {
   seoGenerateMetaDescription,
   seoGenerateMetaTags,
   seoGenerateTitle,
-} from '../../../utils/seo-utils';
+} from '@watheia/content-helpers';
+
 import Footer from '../../sections/Footer';
 import Header from '../../sections/Header';
 
