@@ -1,171 +1,770 @@
-// Objects
-// -------
-// Objects are reusable data structures embedded in other documents and have no direct API
-// methods to access or update independently.
-////
-
-export interface Header {
-  type: 'Header';
-  __metadata: { type: 'object'; id: string };
-  navLinks?: Link[];
+export interface Article {
+  __metadata: {
+    modelType: 'page';
+    id: string;
+    urlPath: string;
+  };
+  type: 'Article';
+  title: string;
+  slug: string;
+  date: Date;
+  author?: Person;
+  excerpt?: string;
+  featuredImage?: ImageBlock;
+  content?: string;
+  bottomSections?: (
+    | CarouselSection
+    | DividerSection
+    | FeaturedItemsSection
+    | FeaturedPeopleSection
+    | FeaturedPostsSection
+    | GenericSection
+    | ImageGallerySection
+    | PricingSection
+    | RecentPostsSection
+  )[];
+  isFeatured?: boolean;
+  isDraft?: boolean;
+  seo?: Seo;
+  colors?:
+    | 'bg-light-fg-dark'
+    | 'bg-neutral-fg-dark'
+    | 'bg-neutralAlt-fg-dark'
+    | 'bg-dark-fg-light';
+  styles?: Record<string, Record<string, unknown>>;
 }
-
-export interface Footer {
-  type: 'Footer';
-  __metadata: { type: 'object'; id: string };
-  navLinks?: Link[];
-  copyrightText: string;
+export interface BackgroundImage {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'BackgroundImage';
+  url?: string;
+  altText?: string;
+  backgroundSize?: 'auto' | 'cover' | 'contain';
+  backgroundPosition?:
+    | 'bottom'
+    | 'center'
+    | 'left'
+    | 'left-bottom'
+    | 'left-top'
+    | 'right'
+    | 'right-bottom'
+    | 'right-top'
+    | 'top';
+  backgroundRepeat?: 'repeat' | 'repeat-x' | 'repeat-y' | 'no-repeat';
+  opacity?: number;
 }
-
-export interface Testimonial {
-  type: 'Testimonial';
-  __metadata: { type: 'object'; id: string };
-  content: string;
-  author: { name: string; role: string };
+export interface Badge {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'Badge';
+  label: string;
+  color?: 'text-dark' | 'text-light' | 'text-neutral' | 'text-primary';
+  styles?: Record<string, Record<string, unknown>>;
 }
-
-// Atoms
-// The lowest level UI elements on a page.
-////
-
-/**
- * Button model props
- */
 export interface Button {
+  __metadata: {
+    modelType: 'object';
+  };
   type: 'Button';
-  __metadata: { type: 'object'; id: string };
-  label: string;
+  label?: string;
+  altText?: string;
   url: string;
-  size?: 'sm' | 'md' | 'lg';
-  variant?: 'solid' | 'outline' | 'clear';
-  color:
-    | 'default'
-    | 'neutral'
-    | 'primary'
-    | 'secondary'
-    | 'accent'
-    | 'info'
-    | 'success'
-    | 'warning'
-    | 'danger';
+  showIcon?: boolean;
+  icon?:
+    | 'arrowDown'
+    | 'arrowLeft'
+    | 'arrowRight'
+    | 'arrowUp'
+    | 'chevronDown'
+    | 'chevronLeft'
+    | 'chevronBigLeft'
+    | 'chevronRight'
+    | 'chevronBigRight'
+    | 'facebook'
+    | 'github'
+    | 'instagram'
+    | 'linkedin'
+    | 'mail'
+    | 'play'
+    | 'reddit'
+    | 'send'
+    | 'shoppingBag'
+    | 'twitter'
+    | 'vimeo'
+    | 'youtube';
+  iconPosition?: 'left' | 'right';
+  style?: 'primary' | 'secondary';
+  elementId?: string;
 }
-
-export interface Image {
-  type: 'Image';
-  __metadata: { type: 'object'; id: string };
-  src: string;
-  altText: string;
-}
-
-export interface Link {
-  type: 'Link';
-  __metadata: { type: 'object'; id: string };
-  label: string;
-  href: string;
-  /** @deprecated Use proper context styles instead */
-  underline?: 'alway' | 'hover' | 'none';
-  color?: 'neutral' | 'primary' | 'secondary' | 'accent';
-}
-
-// Molecules
-// A complex block UI element. May compose multiple other blocks atoms or
-// molecules together and usually expands to take up the available width, but
-// can be configured to display in-line as well.
-////
-
-export interface Card {
-  type: 'Card';
-  __metadata: { id: string; type: 'object' };
-  text?: string;
-  image?: Image;
-  actions?: Button[];
-}
-
-// Sections
-// Sections are a specific kind of molecule. They are the top-level elements contained
-// by a page, and who's labels may affect navigation or the rendering of a ToC for the page
-////
-
-export interface HeroSection {
-  type: 'HeroSection';
-  __metadata: { type: 'object'; id: string };
-  title?: string;
+export interface CarouselSection {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'CarouselSection';
+  title?: TitleBlock;
   subtitle?: string;
-  text?: string;
-  actions?: Button[];
-  image?: Image;
+  items?: FeaturedItem[];
+  badge?: Badge;
+  elementId?: string;
+  variant?: 'next-prev-nav' | 'dots-nav' | 'tabs-nav';
+  colors?: 'bg-light-fg-dark' | 'bg-neutral-fg-dark' | 'bg-dark-fg-light';
+  backgroundImage?: BackgroundImage;
+  styles?: Record<string, Record<string, unknown>>;
 }
-
-// Data
-// ---------
-// Global static data not represented by any specific UI element. Some documents may also make
-// contributions to the site routes but is not required to do so.
-////
-
-export interface Theme {
-  type: 'Theme';
-  __metadata: { type: 'data'; id: string };
-  // TODO configure color palettes
+export interface CheckboxFormControl {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'CheckboxFormControl';
+  name: string;
+  label?: string;
+  isRequired?: boolean;
+  width?: 'full' | '1/2';
 }
-
 export interface Config {
+  __metadata: {
+    modelType: 'data';
+    id: string;
+  };
   type: 'Config';
-  __metadata: { type: 'data'; id: string };
   favicon?: string;
   header?: Header;
   footer?: Footer;
+  titleSuffix?: string;
+  defaultSocialImage?: string;
+  defaultMetaTags?: MetaTag[];
 }
-
-export interface Person {
-  type: 'Person';
-  __metadata: { type: 'data'; id: string };
-  name: string;
-  fullName: string;
-  role: string;
-  image?: Image;
+export interface DividerSection {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'DividerSection';
+  title?: string;
+  elementId?: string;
+  colors?: 'bg-light-fg-dark' | 'bg-neutral-fg-dark' | 'bg-dark-fg-light';
+  styles?: Record<string, Record<string, unknown>>;
 }
-
-// Pages
-// Pages are entrypoints into the content. Pages are a type of document data that make contributions
-// to the site routes.
-
-type PageMeta = {
-  type: 'page';
-  id: string;
-  urlPath: string;
-  rawContent?: string;
-};
-
-export interface Page {
-  type: 'Page';
-  __metadata: PageMeta;
-  slug: string;
+export interface EmailFormControl {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'EmailFormControl';
+  name?: string;
+  label?: string;
+  hideLabel?: boolean;
+  placeholder?: string;
+  isRequired?: boolean;
+  width?: 'full' | '1/2';
+}
+export interface FeaturedItem {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'FeaturedItem';
   title: string;
+  tagline?: string;
   subtitle?: string;
+  text?: string;
+  image?: ImageBlock;
+  actions?: (Button | Link)[];
+  elementId?: string;
+  colors?:
+    | 'bg-light-fg-dark'
+    | 'bg-neutral-fg-dark'
+    | 'bg-neutralAlt-fg-dark'
+    | 'bg-dark-fg-light';
+  styles?: Record<string, Record<string, unknown>>;
+}
+export interface FeaturedItemsSection {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'FeaturedItemsSection';
+  title?: TitleBlock;
+  subtitle?: string;
+  items?: FeaturedItem[];
+  actions?: (Button | Link)[];
+  badge?: Badge;
+  elementId?: string;
+  variant?: 'two-col-grid' | 'three-col-grid' | 'small-list' | 'big-list' | 'toggle-list';
+  colors?: 'bg-light-fg-dark' | 'bg-neutral-fg-dark' | 'bg-dark-fg-light';
+  backgroundImage?: BackgroundImage;
+  styles?: Record<string, Record<string, unknown>>;
+}
+export interface FeaturedPeopleSection {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'FeaturedPeopleSection';
+  title?: TitleBlock;
+  subtitle?: string;
+  people?: Person[];
+  actions?: (Button | Link)[];
+  badge?: Badge;
+  elementId?: string;
+  variant?: 'three-col-grid' | 'four-col-grid' | 'mixed-grid';
+  colors?: 'bg-light-fg-dark' | 'bg-neutral-fg-dark' | 'bg-dark-fg-light';
+  backgroundImage?: BackgroundImage;
+  styles?: Record<string, Record<string, unknown>>;
+}
+export interface FeaturedPostsSection {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'FeaturedPostsSection';
+  title?: TitleBlock;
+  subtitle?: string;
+  posts?: Article[];
+  showThumbnail?: boolean;
+  showExcerpt?: boolean;
+  showDate?: boolean;
+  showAuthor?: boolean;
+  actions?: (Button | Link)[];
+  badge?: Badge;
+  elementId?: string;
+  variant?: 'two-col-grid' | 'three-col-grid' | 'small-list' | 'big-list';
+  colors?: 'bg-light-fg-dark' | 'bg-neutral-fg-dark' | 'bg-dark-fg-light';
+  backgroundImage?: BackgroundImage;
+  styles?: Record<string, Record<string, unknown>>;
+}
+export interface Footer {
+  __metadata: {
+    modelType: 'data';
+    id: string;
+  };
+  type: 'Footer';
+  logo?: ImageBlock;
+  title?: string;
+  text?: string;
+  primaryLinks?: FooterLinksGroup;
+  secondaryLinks?: FooterLinksGroup;
+  socialLinks?: Social[];
+  legalLinks?: Link[];
+  copyrightText?: string;
+  colors?: 'bg-light-fg-dark' | 'bg-neutral-fg-dark' | 'bg-dark-fg-light';
+  styles?: Record<string, Record<string, unknown>>;
+}
+export interface FooterLinksGroup {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'FooterLinksGroup';
+  title?: string;
+  links?: (Button | Link)[];
+  styles?: unknown;
+}
+export interface FormBlock {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'FormBlock';
+  fields?: (
+    | TextFormControl
+    | EmailFormControl
+    | TextareaFormControl
+    | CheckboxFormControl
+    | SelectFormControl
+  )[];
+  submitButton?: SubmitButtonFormControl;
+  action?: string;
+  destination?: string;
+  elementId: string;
+  styles?: Record<string, Record<string, unknown>>;
+}
+export interface GenericSection {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'GenericSection';
+  title?: TitleBlock;
+  subtitle?: string;
+  text?: string;
+  actions?: (Button | Link)[];
+  media?: FormBlock | ImageBlock | VideoBlock;
+  badge?: Badge;
+  elementId?: string;
+  colors?: 'bg-light-fg-dark' | 'bg-neutral-fg-dark' | 'bg-dark-fg-light';
+  backgroundImage?: BackgroundImage;
+  styles?: Record<string, Record<string, unknown>>;
+}
+export interface Header {
+  __metadata: {
+    modelType: 'data';
+    id: string;
+  };
+  type: 'Header';
+  title?: string;
+  logo?: ImageBlock;
+  primaryLinks?: (Button | Link | SubNav)[];
+  secondaryLinks?: (Button | Link)[];
+  variant?:
+    | 'logo-left-primary-nav-left'
+    | 'logo-left-primary-nav-centered'
+    | 'logo-left-primary-nav-right'
+    | 'logo-centered-primary-nav-left'
+    | 'logo-centered-primary-nav-centered';
+  colors?: 'bg-light-fg-dark' | 'bg-neutral-fg-dark' | 'bg-dark-fg-light';
+  styles?: Record<string, Record<string, unknown>>;
+}
+export interface ImageBlock {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'ImageBlock';
+  url?: string;
+  altText?: string;
+  elementId?: string;
+  styles?: Record<string, Record<string, unknown>>;
+}
+export interface ImageGallerySection {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'ImageGallerySection';
+  title?: TitleBlock;
+  subtitle?: string;
+  images?: ImageBlock[];
+  badge?: Badge;
+  elementId?: string;
+  motion?: 'static' | 'move-to-left' | 'move-to-right';
+  colors?: 'bg-light-fg-dark' | 'bg-neutral-fg-dark' | 'bg-dark-fg-light';
+  backgroundImage?: BackgroundImage;
+  styles?: Record<string, Record<string, unknown>>;
+}
+export interface Link {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'Link';
+  label?: string;
+  altText?: string;
+  url: string;
+  showIcon?: boolean;
+  icon?:
+    | 'arrowDown'
+    | 'arrowLeft'
+    | 'arrowRight'
+    | 'arrowUp'
+    | 'chevronDown'
+    | 'chevronLeft'
+    | 'chevronBigLeft'
+    | 'chevronRight'
+    | 'chevronBigRight'
+    | 'facebook'
+    | 'github'
+    | 'instagram'
+    | 'linkedin'
+    | 'mail'
+    | 'play'
+    | 'reddit'
+    | 'send'
+    | 'shoppingBag'
+    | 'twitter'
+    | 'vimeo'
+    | 'youtube';
+  iconPosition?: 'left' | 'right';
+  style?: 'primary' | 'secondary';
+  elementId?: string;
+}
+export interface MetaTag {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'MetaTag';
+  property?:
+    | 'og:title'
+    | 'og:type'
+    | 'og:image'
+    | 'og:image:alt'
+    | 'og:url'
+    | 'og:description'
+    | 'og:locale'
+    | 'og:site_name'
+    | 'og:video'
+    | 'twitter:card'
+    | 'twitter:site'
+    | 'twitter:creator'
+    | 'twitter:description'
+    | 'twitter:title'
+    | 'twitter:image'
+    | 'twitter:image:alt'
+    | 'twitter:player';
+  content?: string;
+}
+export interface Page {
+  __metadata: {
+    modelType: 'page';
+    id: string;
+    urlPath: string;
+  };
+  type: 'Page';
+  title: string;
+  slug: string;
+  sections?: (
+    | CarouselSection
+    | DividerSection
+    | FeaturedItemsSection
+    | FeaturedPeopleSection
+    | FeaturedPostsSection
+    | GenericSection
+    | ImageGallerySection
+    | PricingSection
+    | RecentPostsSection
+  )[];
+  isDraft?: boolean;
+  seo?: Seo;
+}
+export interface PagedPostsSection {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'PagedPostsSection';
+  title?: TitleBlock;
+  subtitle?: string;
+  showThumbnail?: boolean;
+  showExcerpt?: boolean;
+  showDate?: boolean;
+  showAuthor?: boolean;
+  actions?: (Button | Link)[];
+  badge?: Badge;
+  elementId?: string;
+  variant?: 'two-col-grid' | 'three-col-grid' | 'small-list' | 'big-list';
+  colors?: 'bg-light-fg-dark' | 'bg-neutral-fg-dark' | 'bg-dark-fg-light';
+  backgroundImage?: BackgroundImage;
+  styles?: Record<string, Record<string, unknown>>;
+}
+export interface Person {
+  __metadata: {
+    modelType: 'data';
+    id: string;
+  };
+  type: 'Person';
+  name: string;
+  role?: string;
+  bio?: string;
+  image?: ImageBlock;
+  colors?:
+    | 'bg-light-fg-dark'
+    | 'bg-neutral-fg-dark'
+    | 'bg-neutralAlt-fg-dark'
+    | 'bg-dark-fg-light';
+  elementId?: string;
+  styles?: Record<string, Record<string, unknown>>;
+}
+export interface PostFeedLayout {
+  __metadata: {
+    modelType: 'page';
+    id: string;
+    urlPath: string;
+  };
+  type: 'PostFeedLayout';
+  title?: string;
+  slug: string;
+  postFeed?: PagedPostsSection;
+  numOfPostsPerPage?: number;
+  enableSearch?: boolean;
+  topSections?: (
+    | CarouselSection
+    | DividerSection
+    | FeaturedItemsSection
+    | FeaturedPeopleSection
+    | FeaturedPostsSection
+    | GenericSection
+    | ImageGallerySection
+    | PricingSection
+    | RecentPostsSection
+  )[];
+  bottomSections?: (
+    | CarouselSection
+    | DividerSection
+    | FeaturedItemsSection
+    | FeaturedPeopleSection
+    | FeaturedPostsSection
+    | GenericSection
+    | ImageGallerySection
+    | PricingSection
+    | RecentPostsSection
+  )[];
+  isDraft?: boolean;
+  styles?: Record<string, Record<string, unknown>>;
+  seo?: Seo;
+}
+export interface PostFeedSection {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'PostFeedSection';
+  title?: TitleBlock;
+  subtitle?: string;
+  showThumbnail?: boolean;
+  showExcerpt?: boolean;
+  showDate?: boolean;
+  showAuthor?: boolean;
+  actions?: (Button | Link)[];
+  badge?: Badge;
+  elementId?: string;
+  variant?: 'two-col-grid' | 'three-col-grid' | 'small-list' | 'big-list';
+  colors?: 'bg-light-fg-dark' | 'bg-neutral-fg-dark' | 'bg-dark-fg-light';
+  backgroundImage?: BackgroundImage;
+  styles?: Record<string, Record<string, unknown>>;
+}
+export interface PricingPlan {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'PricingPlan';
+  title?: string;
+  price?: string;
+  details?: string;
   description?: string;
-  sections?: HeroSection[];
+  features?: string[];
+  image?: ImageBlock;
+  actions?: (Button | Link)[];
+  elementId?: string;
+  colors?:
+    | 'bg-light-fg-dark'
+    | 'bg-neutral-fg-dark'
+    | 'bg-neutralAlt-fg-dark'
+    | 'bg-dark-fg-light';
+  styles?: Record<string, Record<string, unknown>>;
 }
-
-export interface Article {
-  type: 'Article';
-  __metadata: PageMeta;
-  slug: string;
-  title: string;
-  description: string;
-  date: Date;
+export interface PricingSection {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'PricingSection';
+  title?: TitleBlock;
+  subtitle?: string;
+  plans?: PricingPlan[];
+  badge?: Badge;
+  elementId?: string;
+  colors?: 'bg-light-fg-dark' | 'bg-neutral-fg-dark' | 'bg-dark-fg-light';
+  backgroundImage?: BackgroundImage;
+  styles?: Record<string, Record<string, unknown>>;
 }
-
-export interface CaseStudy {
-  type: 'CaseStudy';
-  __metadata: PageMeta;
-  slug: string;
-  title: string;
-  description: string;
-  date: Date;
-  summary: string[];
-  client: string;
-  logo: string;
-  image: Image;
-  services: string[];
-  testimonial: Testimonial;
+export interface RecentPostsSection {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'RecentPostsSection';
+  title?: TitleBlock;
+  subtitle?: string;
+  recentCount?: number;
+  showThumbnail?: boolean;
+  showExcerpt?: boolean;
+  showDate?: boolean;
+  showAuthor?: boolean;
+  actions?: (Button | Link)[];
+  badge?: Badge;
+  elementId?: string;
+  variant?: 'two-col-grid' | 'three-col-grid' | 'small-list' | 'big-list';
+  colors?: 'bg-light-fg-dark' | 'bg-neutral-fg-dark' | 'bg-dark-fg-light';
+  backgroundImage?: BackgroundImage;
+  styles?: Record<string, Record<string, unknown>>;
+}
+export interface SelectFormControl {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'SelectFormControl';
+  name: string;
+  label?: string;
+  hideLabel?: boolean;
+  defaultValue?: string;
+  options?: string[];
+  isRequired?: boolean;
+  width?: 'full' | '1/2';
+}
+export interface Seo {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'Seo';
+  metaTitle?: string;
+  metaDescription?: string;
+  addTitleSuffix?: boolean;
+  socialImage?: string;
+  metaTags?: MetaTag[];
+}
+export interface Social {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'Social';
+  altText?: string;
+  url: string;
+  icon:
+    | 'facebook'
+    | 'github'
+    | 'instagram'
+    | 'linkedin'
+    | 'mail'
+    | 'reddit'
+    | 'twitter'
+    | 'vimeo'
+    | 'youtube';
+  elementId?: string;
+}
+export interface SubNav {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'SubNav';
+  label?: string;
+  altText?: string;
+  links?: Link[];
+  labelStyle?: 'primary' | 'secondary';
+}
+export interface SubmitButtonFormControl {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'SubmitButtonFormControl';
+  label?: string;
+  showIcon?: boolean;
+  icon?:
+    | 'arrowDown'
+    | 'arrowLeft'
+    | 'arrowRight'
+    | 'arrowUp'
+    | 'chevronDown'
+    | 'chevronLeft'
+    | 'chevronBigLeft'
+    | 'chevronRight'
+    | 'chevronBigRight'
+    | 'facebook'
+    | 'github'
+    | 'instagram'
+    | 'linkedin'
+    | 'mail'
+    | 'play'
+    | 'reddit'
+    | 'send'
+    | 'shoppingBag'
+    | 'twitter'
+    | 'vimeo'
+    | 'youtube';
+  iconPosition?: 'left' | 'right';
+  style?: 'primary' | 'secondary';
+  elementId?: string;
+}
+export interface TextFormControl {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'TextFormControl';
+  name: string;
+  label?: string;
+  hideLabel?: boolean;
+  placeholder?: string;
+  isRequired?: boolean;
+  width?: 'full' | '1/2';
+}
+export interface TextareaFormControl {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'TextareaFormControl';
+  name: string;
+  label?: string;
+  hideLabel?: boolean;
+  placeholder?: string;
+  isRequired?: boolean;
+  width?: 'full' | '1/2';
+}
+export interface ThemeStyle {
+  __metadata: {
+    modelType: 'data';
+    id: string;
+  };
+  type: 'ThemeStyle';
+  light?: string | number;
+  dark?: string | number;
+  neutral?: string | number;
+  neutralAlt?: string | number;
+  primary?: string | number;
+  fontBody?: 'sans' | 'serif';
+  fontHeadlines?: 'sans' | 'serif';
+  h1?: ThemeStyleHeading;
+  h2?: ThemeStyleHeading;
+  h3?: ThemeStyleHeading;
+  h4?: ThemeStyleHeading;
+  h5?: ThemeStyleHeading;
+  h6?: ThemeStyleHeading;
+  buttonPrimary?: ThemeStyleButton;
+  buttonSecondary?: ThemeStyleButton;
+  linkPrimary?: ThemeStyleLink;
+  linkSecondary?: ThemeStyleLink;
+}
+export interface ThemeStyleButton {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'ThemeStyleButton';
+  weight?: 'normal' | 'medium' | 'bold';
+  case?: 'none' | 'lowercase' | 'capitalize' | 'uppercase';
+  letterSpacing?: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider';
+  borderRadius?: 'none' | 'DEFAULT' | 'lg' | 'xl' | 'full';
+  shadow?: 'none' | 'md' | 'xl';
+  horizontalPadding?: number;
+  verticalPadding?: number;
+}
+export interface ThemeStyleHeading {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'ThemeStyleHeading';
+  size?:
+    | 'xs'
+    | 'sm'
+    | 'base'
+    | 'lg'
+    | 'xl'
+    | '2xl'
+    | '3xl'
+    | '4xl'
+    | '5xl'
+    | '6xl'
+    | '7xl'
+    | '8xl'
+    | '9xl';
+  weight?: 'normal' | 'medium' | 'bold';
+  decoration?: 'none' | 'underline' | 'line-through';
+  case?: 'none' | 'lowercase' | 'capitalize' | 'uppercase';
+  letterSpacing?: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider';
+}
+export interface ThemeStyleLink {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'ThemeStyleLink';
+  weight?: 'normal' | 'medium' | 'bold';
+  case?: 'none' | 'lowercase' | 'capitalize' | 'uppercase';
+  letterSpacing?: 'tighter' | 'tight' | 'normal' | 'wide' | 'wider';
+}
+export interface TitleBlock {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'TitleBlock';
+  text?: string;
+  color?: 'text-dark' | 'text-light' | 'text-neutral' | 'text-primary';
+  styles?: Record<string, Record<string, unknown>>;
+}
+export interface VideoBlock {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'VideoBlock';
+  title?: string;
+  url?: string;
+  autoplay?: boolean;
+  loop?: boolean;
+  muted?: boolean;
+  controls?: boolean;
+  aspectRatio?: '4:3' | '16:9';
+  elementId?: string;
+  styles?: Record<string, Record<string, unknown>>;
 }

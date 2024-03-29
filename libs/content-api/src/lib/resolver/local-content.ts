@@ -4,6 +4,7 @@ import { globSync as glob } from 'fast-glob';
 import frontmatter from 'front-matter';
 import { readFileSync } from 'fs';
 import { extname, join } from 'path';
+import { ContentCache } from '../content-api.types';
 
 // TODO use types?
 
@@ -102,7 +103,7 @@ function resolveReferences(content: any, fileToContent: { [x: string]: any }) {
   }
 }
 
-export function resolveContent() {
+export function resolveContent(): ContentCache {
   const [data, pages] = [dataDir, pagesDir].map((dir) => {
     return contentFilesInPath(dir).map((file) => readContent(file));
   });

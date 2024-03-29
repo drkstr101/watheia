@@ -1,6 +1,6 @@
 import { DocumentEntry, models } from '@watheia/content-model';
 
-import { LocalContentSchema } from './content-api.types';
+import { LocalContentSchema } from './lib/content-api.types';
 import { readDirRecursively } from './lib/file-reader';
 
 export const defaultOptions = {

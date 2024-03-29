@@ -1,4 +1,4 @@
-import { Model } from '@watheia/content-model';
+import { DocumentEntry, Model, PageEntry, types } from '@watheia/content-model';
 
 export interface ContentApi {
   resolve: () => ContentApi;
@@ -22,3 +22,9 @@ type Context = {
 
 export type DocumentContext = Context;
 export type AssetContext = Context;
+
+export interface ContentCache {
+  objects: DocumentEntry[];
+  pages: PageEntry[];
+  props: { site: types.Config };
+}

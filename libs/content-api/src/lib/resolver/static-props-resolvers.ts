@@ -10,16 +10,15 @@ import {
 } from '@watheia/content-helpers';
 import crypto from 'crypto';
 import { SignJWT } from 'jose/jwt/sign';
+import { ContentCache } from '../content-api.types';
 
-export function resolveStaticProps(
-  urlPath: string,
-  data: { objects: any[]; pages: any[]; props: any }
-) {
+export function resolveStaticProps(urlPath: string, data: ContentCache) {
   // get root path of paged path: /blog/page/2 => /blog
   const rootUrlPath = getRootPagePath(urlPath);
-  const { __metadata, ...rest } = data.pages.find(
-    (page: { __metadata: { urlPath: string } }) => page.__metadata.urlPath === rootUrlPath
-  );
+  const page = data.pages.find((page) => page.__metadata.urlPath === rootUrlPath);
+  if (!page) throw new Error(`Failed to locate page for url path: ${urlPath}`);
+
+  const { __metadata, ...rest } = page;
   const props = {
     page: {
       __metadata: {

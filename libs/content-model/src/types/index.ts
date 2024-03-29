@@ -1,21 +1,14 @@
 import * as types from './content-types';
 
-export type ObjectEntry =
-  | types.Button
-  | types.Card
+export type DataEntry =
+  | types.Config
   | types.Footer
   | types.Header
-  | types.HeroSection
-  | types.Image
-  | types.Link
-  | types.Testimonial;
+  | types.Person
+  | types.ThemeStyle;
 
-export type DataEntry = types.Config | types.Person | types.Theme;
-
-export type PageEntry = types.Page | types.Article | types.CaseStudy;
+export type PageEntry = types.Article | types.Page | types.PostFeedLayout;
 
 export type DocumentEntry = DataEntry | PageEntry;
-
-export type Entry = DocumentEntry | ObjectEntry;
 
 export { types };

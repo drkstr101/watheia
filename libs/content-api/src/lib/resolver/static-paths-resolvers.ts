@@ -4,9 +4,10 @@ import {
   getAllNonFeaturedPostsSorted,
   isPublished,
 } from '@watheia/content-helpers';
+import { ContentCache } from '../content-api.types';
 
-export function resolveStaticPaths({ pages, objects }: { pages: any[]; objects: any[] }) {
-  return pages.reduce((paths: any[], page: any) => {
+export function resolveStaticPaths({ pages, objects }: ContentCache) {
+  return pages.reduce((paths, page) => {
     if (!process.env['stackbitPreview'] && page.isDraft) {
       return paths;
     }
@@ -17,7 +18,7 @@ export function resolveStaticPaths({ pages, objects }: { pages: any[]; objects: 
       return paths.concat(resolver(page, objects));
     }
     return paths.concat(pageUrlPath);
-  }, []);
+  }, [] as string[]);
 }
 
 const StaticPathsResolvers = {
