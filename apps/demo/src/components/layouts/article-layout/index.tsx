@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import Markdown from 'markdown-to-jsx';
 
-import { getBaseLayoutComponent } from '../../../utils/base-layout';
+import { getBaseLayoutComponent } from '../../../lib/base-layout';
 import Link from '../../atoms/Link';
 import { getComponent } from '../../components-registry';
 

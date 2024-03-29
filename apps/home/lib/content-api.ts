@@ -1,3 +1,3 @@
-import { LocalContentApi } from '@watheia/content-api';
+// import { LocalContentApi } from '@watheia/content-api';
 
-export const api: LocalContentApi = new LocalContentApi({});
+// export const api: LocalContentApi = new LocalContentApi({});

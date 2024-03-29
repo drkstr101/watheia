@@ -1,4 +1,4 @@
-import { index } from '../../utils/indexer';
+import { index } from '../../lib/indexer';
 
 export default async function handler(req, res) {
   try {

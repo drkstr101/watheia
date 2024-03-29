@@ -6,6 +6,7 @@ export interface ContentApi {
 
 export interface LocalContentSchema {
   rootPath: string;
+  contentDirs: string[];
   models: Model[];
 }
 

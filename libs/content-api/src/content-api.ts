@@ -1,24 +1,25 @@
-import { DocumentEntry, models } from '@watheia/content-model';
+import type { ContentCache, LocalContentSchema } from './lib/content-api.types';
+import { resolveContent, resolveStaticPaths, resolveStaticProps } from './lib/resolver';
 
-import { LocalContentSchema } from './lib/content-api.types';
-import { readDirRecursively } from './lib/file-reader';
-
-export const defaultOptions = {
-  rootPath: process.env['WORKSPACE_ROOT'] ?? process.cwd(),
-  models: Object.values(models),
-};
+// export const defaultOptions = {
+//   rootPath: process.env['WORKSPACE_ROOT'] ?? process.cwd(),
+//   contentDirs: ['content/data', 'content/pages'],
+//   models: Object.values(models),
+// };
 
 export class LocalContentApi {
-  public static async create(
-    schema: LocalContentSchema = defaultOptions
-  ): Promise<LocalContentApi> {
-    const objectsById = await readDirRecursively(schema.rootPath);
-    // const documents = await Promise.all(filePaths.map(withLocalResolver(schema)));
-
-    // const fileToContent = Object.fromEntries(documents.map((doc) => [doc.__metadata.id, doc]));
-    // return new LocalContentApi(documents.map((doc) => resolveReferences(doc, fileToContent)));
-    return new LocalContentApi(objectsById);
+  public static async create(schema: LocalContentSchema): Promise<LocalContentApi> {
+    const cache = await resolveContent();
+    return new LocalContentApi(schema, cache);
   }
 
-  constructor(public readonly objectsById: Record<string, DocumentEntry>) {}
+  constructor(public readonly schema: LocalContentSchema, public readonly cache: ContentCache) {}
+
+  resolvePaths(): string[] {
+    return resolveStaticPaths(this.cache);
+  }
+
+  resolveProps(urlPath: string) {
+    return resolveStaticProps(urlPath, this.cache);
+  }
 }

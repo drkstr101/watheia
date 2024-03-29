@@ -5,15 +5,17 @@ import { LocalContentApi } from '../src/content-api';
 
 const mockOptions = {
   models: Object.values(models),
-  rootPath: join(__dirname, '__fixtures__'),
+  contentDirs: ['content/data', 'content/pages'],
+  rootPath: join(__dirname, '../../..'),
 };
 
 describe('watheia.content-api', () => {
   describe('#resolve()', () => {
-    it('fully resolves all content entries with the provided schema', async () => {
+    it('fully resolves local content cache with the provided schema', async () => {
       const api = await LocalContentApi.create(mockOptions);
       expect(api).toBeInstanceOf(LocalContentApi);
-      expect(api.objectsById).toMatchSnapshot();
+      const { schema, cache } = api;
+      expect({ schema, cache }).toMatchSnapshot();
     });
   });
 });

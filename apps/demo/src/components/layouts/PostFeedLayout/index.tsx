@@ -1,7 +1,7 @@
 import classNames from 'clsx';
 import * as React from 'react';
 
-import { getBaseLayoutComponent } from '../../../utils/base-layout';
+import { getBaseLayoutComponent } from '../../../lib/base-layout';
 import Link from '../../atoms/Link';
 import { getComponent } from '../../components-registry';
 import ChevronLeftIcon from '../../svgs/chevron-left';

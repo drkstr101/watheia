@@ -1,6 +1,8 @@
-import { resolveContent } from '@watheia/content-api';
+// import { resolveContent } from '@watheia/content-api';
 import algoliasearch from 'algoliasearch';
 import { Lexer, marked } from 'marked';
+
+import { withLocalContent } from '../content-api';
 import {
   ALGOLIA_ADMIN_API_KEY,
   ALGOLIA_APP_ID,
@@ -15,8 +17,8 @@ export async function index() {
   }
 
   console.time('Indexing duration');
-  const data = resolveContent();
-  const posts = data.pages.filter((p: any) => p.type == 'Article');
+  const api = await withLocalContent();
+  const posts = api.cache.pages.filter((p: any) => p.type == 'Article');
 
   const objectsToIndex = buildObjectsToIndex(posts);
   await indexObjects(objectsToIndex);

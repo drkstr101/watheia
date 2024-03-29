@@ -4,7 +4,7 @@ import { composePlugins, withNx } from '@nx/next';
 import { resolve } from 'path';
 import { fileURLToPath } from 'url';
 
-const LOCAL_CONTENT_DIR = resolve(fileURLToPath(new URL('.', import.meta.url)), '../..');
+const WORKSPACE_ROOT = resolve(fileURLToPath(new URL('.', import.meta.url)), '../..');
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
@@ -15,7 +15,7 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
-  env: { LOCAL_CONTENT_DIR },
+  env: { WORKSPACE_ROOT },
 };
 
 const plugins = [

@@ -1,4 +1,4 @@
-import { getBaseLayoutComponent } from '../../../utils/base-layout';
+import { getBaseLayoutComponent } from '../../../lib/base-layout';
 import { getComponent } from '../../components-registry';
 
 export default function PageLayout(props) {

@@ -1,17 +1,16 @@
-import { resolveContent, resolveStaticPaths, resolveStaticProps } from '@watheia/content-api';
-
 import { getComponent } from '../components/components-registry';
+import { withLocalContent } from '../lib/content-api';
 
-export function getStaticPaths() {
-  const data = resolveContent();
-  const paths = resolveStaticPaths(data);
+export async function getStaticPaths() {
+  const api = await withLocalContent();
+  const paths = api.resolvePaths();
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  const data = resolveContent();
+  const api = await withLocalContent();
   const urlPath = '/' + (params.slug || []).join('/');
-  const props = await resolveStaticProps(urlPath, data);
+  const props = await api.resolveProps(urlPath);
   return { props };
 }
 
