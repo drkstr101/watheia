@@ -17,9 +17,7 @@ export function getAllCategoryPostsSorted(objects: any, categoryId: any) {
 }
 
 export function getAllPosts(objects: any[]) {
-  return objects.filter(
-    (object: { __metadata: { modelName: string } }) => object.__metadata?.modelName === 'Article'
-  );
+  return objects.filter((object) => object.type === 'Article');
 }
 
 export function getAllFeaturedPostsSorted(objects: any) {

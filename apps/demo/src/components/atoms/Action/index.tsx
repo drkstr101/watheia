@@ -28,7 +28,7 @@ export default function Action(props) {
           .trim(),
       }
     : {};
-  const type = props.__metadata?.modelName;
+  const type = props.type;
 
   return (
     <Link

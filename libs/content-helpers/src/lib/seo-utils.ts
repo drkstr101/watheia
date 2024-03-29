@@ -50,13 +50,10 @@ export function seoGenerateTitle(
   return title;
 }
 
-export function seoGenerateMetaDescription(
-  page: { __metadata: { modelName: string }; excerpt: any; seo: { metaDescription: any } },
-  site: any
-) {
+export function seoGenerateMetaDescription(page: any, site: any) {
   let metaDescription = null;
   // Blog posts use the exceprt as the default meta description
-  if (page.__metadata.modelName === 'Article') {
+  if (page.type === 'Article') {
     metaDescription = page.excerpt;
   }
   // page metaDescription field overrides all others
@@ -66,17 +63,14 @@ export function seoGenerateMetaDescription(
   return metaDescription;
 }
 
-export function seoGenerateOgImage(
-  page: { seo: any; __metadata?: any; featuredImage?: any },
-  site: { defaultMetaTags?: Record<string, any>[]; defaultSocialImage?: any; env?: any }
-) {
+export function seoGenerateOgImage(page: any, site: any) {
   let ogImage = null;
   // Use the sites default og:image field
   if (site.defaultSocialImage) {
     ogImage = site.defaultSocialImage;
   }
   // Blog posts use the featuredImage as the default og:image
-  if (page.__metadata.modelName === 'Article') {
+  if (page.type === 'Article') {
     if (page.featuredImage?.url) {
       ogImage = page.featuredImage.url;
     }

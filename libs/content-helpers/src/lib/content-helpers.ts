@@ -11,12 +11,12 @@ export function cssClassesFromUrlPath(urlPath: string) {
   });
 }
 
-export function getPageUrl(page: { slug: string; __metadata: { modelName: string } }) {
+export function getPageUrl(page: any) {
   if (!page || !page.slug) {
     return null;
   }
 
-  if (['Article'].includes(page?.__metadata.modelName)) {
+  if (['Article'].includes(page.type)) {
     return `/blog${page.slug.startsWith('/') ? page.slug : `/${page.slug}`}`;
   }
 

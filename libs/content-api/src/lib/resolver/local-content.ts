@@ -1,5 +1,5 @@
 import { getPageUrl } from '@watheia/content-helpers';
-import { models } from '@watheia/content-model';
+import { Model, ModelName, models } from '@watheia/content-model';
 import { globSync as glob } from 'fast-glob';
 import frontmatter from 'front-matter';
 import { readFileSync } from 'fs';
@@ -34,6 +34,13 @@ function contentFilesInPath(dir: string) {
   return glob(globPattern, { cwd: rootPath });
 }
 
+function getModelByName(name: string): Model {
+  const model = models[name as ModelName];
+  if (!model) throw Error(`Could not locate model named: ${name}`);
+  if (model.name !== name) throw Error(`Model name/key mismatch found for: ${name}`);
+  return model;
+}
+
 function readContent(file: string) {
   const rawContent = readFileSync(join(rootPath, file), 'utf8');
   let content: any = null;
@@ -56,27 +63,24 @@ function readContent(file: string) {
   // Make Sourcebit-compatible
   content.__metadata = {
     id: file,
-    modelName: content.type,
+    modelType: getModelByName(content.type).type,
   };
 
   return content;
 }
 
-function resolveReferences(
-  content: { [x: string]: any; type: any; __metadata: { modelName: any } },
-  fileToContent: { [x: string]: any }
-) {
+function resolveReferences(content: any, fileToContent: { [x: string]: any }) {
   if (!content || !content.type) return;
 
-  const modelName = content.type;
+  const model = getModelByName(content.type);
   // Make Sourcebit-compatible
-  if (!content.__metadata) content.__metadata = { modelName: content.type };
+  if (!content.__metadata) content.__metadata = { modelType: model.type };
 
   for (const fieldName in content) {
     let fieldValue = content[fieldName];
     if (!fieldValue) continue;
 
-    const isRef = isRefField(modelName, fieldName);
+    const isRef = isRefField(model.name, fieldName);
     if (Array.isArray(fieldValue)) {
       if (fieldValue.length === 0) continue;
       if (isRef && typeof fieldValue[0] === 'string') {
@@ -111,6 +115,6 @@ export function resolveContent() {
     page.__metadata.urlPath = getPageUrl(page);
   });
 
-  const siteConfig = data.find((e) => e.__metadata.modelName === models.Config.name) ?? null;
+  const siteConfig = data.find((e) => e.type === models.Config.name) ?? null;
   return { objects, pages, props: { site: siteConfig } };
 }

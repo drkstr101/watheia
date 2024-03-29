@@ -111,10 +111,9 @@ export default function GenericSection(props) {
               'flex',
               mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }),
               {
-                'max-w-sectionBody': media.__metadata.modelName === 'FormBlock',
+                'max-w-sectionBody': media.type === 'FormBlock',
                 'lg:w-[57.5%] lg:shrink-0': hasTextContent && hasXDirection,
-                'lg:mt-10':
-                  badge?.label && media.__metadata.modelName === 'FormBlock' && hasXDirection,
+                'lg:mt-10': badge?.label && media.type === 'FormBlock' && hasXDirection,
               }
             )}
           >
@@ -127,13 +126,13 @@ export default function GenericSection(props) {
 }
 
 function Media({ media }: { media: any }) {
-  const modelName = media.__metadata.modelName;
-  if (!modelName) {
-    throw new Error(`generic section media does not have the 'modelName' property`);
+  const mediaType = media.type;
+  if (!mediaType) {
+    throw new Error(`generic section media does not have the 'type' property`);
   }
-  const MediaComponent = getComponent(modelName);
+  const MediaComponent = getComponent(mediaType);
   if (!MediaComponent) {
-    throw new Error(`no component matching the hero section media model name: ${modelName}`);
+    throw new Error(`no component matching the hero section media type: ${mediaType}`);
   }
   return <MediaComponent {...media} data-sb-field-path=".media" />;
 }

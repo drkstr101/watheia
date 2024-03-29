@@ -17,10 +17,10 @@ export default function PageLayout(props) {
         {sections.length > 0 && (
           <div data-sb-field-path="sections">
             {sections.map((section, index) => {
-              const Component = getComponent(section.__metadata.modelName);
+              const Component = getComponent(section.type);
               if (!Component) {
                 throw new Error(
-                  `no component matching the page section's model name: ${section.__metadata.modelName}`
+                  `no component matching the page section's model name: ${section.type}`
                 );
               }
               return (

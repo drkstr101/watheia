@@ -54,11 +54,9 @@ function renderSections(sections: any[], fieldName: string) {
   return (
     <div data-sb-field-path={fieldName}>
       {sections.map((section, index) => {
-        const Component = getComponent(section.__metadata.modelName);
+        const Component = getComponent(section.type);
         if (!Component) {
-          throw new Error(
-            `no component matching the page section's model name: ${section.__metadata.modelName}`
-          );
+          throw new Error(`no component matching the page section's model name: ${section.type}`);
         }
         return (
           <Component key={index} {...section} data-sb-field-path={`${fieldName}.${index}`} />

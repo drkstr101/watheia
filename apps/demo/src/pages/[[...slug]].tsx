@@ -17,13 +17,12 @@ export async function getStaticProps({ params }) {
 
 export default function DynamicPage(props) {
   const { page, site } = props;
-  const { modelName } = page.__metadata;
-  if (!modelName) {
+  if (!page.type) {
     throw new Error(`page has no type, page '${props.path}'`);
   }
-  const Page = getComponent(modelName) as any;
+  const Page = getComponent(page.type) as any;
   if (!Page) {
-    throw new Error(`no page layout matching the page model: ${modelName}`);
+    throw new Error(`no page layout matching the page model: ${page.type}`);
   }
   return <Page page={page} site={site} />;
 }

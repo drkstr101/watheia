@@ -6,21 +6,18 @@ import {
 } from '@watheia/content-helpers';
 
 export function resolveStaticPaths({ pages, objects }: { pages: any[]; objects: any[] }) {
-  return pages.reduce(
-    (paths: any[], page: { isDraft: any; __metadata: { modelName: string; urlPath: any } }) => {
-      if (!process.env['stackbitPreview'] && page.isDraft) {
-        return paths;
-      }
-      const objectType = page.__metadata?.modelName as keyof typeof StaticPathsResolvers;
-      const pageUrlPath = page.__metadata?.urlPath;
-      if (objectType && StaticPathsResolvers[objectType]) {
-        const resolver = StaticPathsResolvers[objectType];
-        return paths.concat(resolver(page, objects));
-      }
-      return paths.concat(pageUrlPath);
-    },
-    []
-  );
+  return pages.reduce((paths: any[], page: any) => {
+    if (!process.env['stackbitPreview'] && page.isDraft) {
+      return paths;
+    }
+    const objectType = page.type as keyof typeof StaticPathsResolvers;
+    const pageUrlPath = page.__metadata?.urlPath;
+    if (objectType && StaticPathsResolvers[objectType]) {
+      const resolver = StaticPathsResolvers[objectType];
+      return paths.concat(resolver(page, objects));
+    }
+    return paths.concat(pageUrlPath);
+  }, []);
 }
 
 const StaticPathsResolvers = {

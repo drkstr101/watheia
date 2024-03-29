@@ -28,10 +28,10 @@ export function getComponent(key: string): ComponentType {
  *
  * Dynamic components can be selected at run-time based on the type of their content (props). This is because
  * components are mapped by models that describe their content, and content's type always matches the model name.
- * For example, a page component can call `getComponent(section.__metadata.modelName)` function, passing it the type of section
+ * For example, a page component can call `getComponent(section.type)` function, passing it the type of section
  * data it needs to render, and get back the component that can render that type of data:
  *
- *     const Section = getComponent(section.__metadata.modelName);
+ *     const Section = getComponent(section.type);
  *     return <Section {...section} />;
  */
 const components = {

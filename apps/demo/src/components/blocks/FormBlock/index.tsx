@@ -115,13 +115,13 @@ export default class FormBlock extends React.Component<any> {
           <input type="hidden" name="form-name" value={elementId} />
           <input type="hidden" name="form-destination" value={destination || ''} />
           {fields.map((field, index) => {
-            const modelName = field.__metadata.modelName;
-            if (!modelName) {
-              throw new Error(`form field does not have the 'modelName' property`);
+            const fieldType = field.type;
+            if (!fieldType) {
+              throw new Error(`form field does not have the 'type' property`);
             }
-            const FormControl = getComponent(modelName);
+            const FormControl = getComponent(fieldType);
             if (!FormControl) {
-              throw new Error(`no component matching the form field model name: ${modelName}`);
+              throw new Error(`no component matching the form field model type: ${fieldType}`);
             }
             return <FormControl key={index} {...field} data-sb-field-path={`.${index}`} />;
           })}

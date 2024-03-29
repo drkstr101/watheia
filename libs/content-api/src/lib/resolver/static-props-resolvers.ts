@@ -34,7 +34,7 @@ export function resolveStaticProps(
   return mapDeepAsync(
     props,
     async (value, keyPath, stack) => {
-      const objectType = value?.__metadata?.modelName as keyof typeof StaticPropsResolvers;
+      const objectType = value?.type as keyof typeof StaticPropsResolvers;
       if (objectType && StaticPropsResolvers[objectType]) {
         const resolver = StaticPropsResolvers[objectType];
         return resolver(value, data, { keyPath, stack });
