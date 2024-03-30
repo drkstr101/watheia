@@ -14,8 +14,7 @@ describe('watheia.content-api', () => {
     it('fully resolves local content cache with the provided schema', async () => {
       const api = await LocalContentApi.create(mockOptions);
       expect(api).toBeInstanceOf(LocalContentApi);
-      const { schema, cache } = api;
-      expect({ schema, cache }).toMatchSnapshot();
+      expect(api.cache).toMatchSnapshot();
     });
   });
 });

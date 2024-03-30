@@ -28,4 +28,5 @@ export interface ContentCache {
   objects: DocumentEntry[];
   pages: PageEntry[];
   props: { site: types.Config };
+  schema: LocalContentSchema;
 }
