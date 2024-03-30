@@ -1,9 +1,9 @@
 import {
   generatePagedPathsForPage,
-  getAllCategoryPostsSorted,
   getAllNonFeaturedPostsSorted,
   isPublished,
 } from '@watheia/content-helpers';
+import { DocumentEntry, PageEntry } from '@watheia/content-model';
 import { ContentCache } from '../content-api.types';
 
 export function resolveStaticPaths({ pages, objects }: ContentCache) {
@@ -22,24 +22,27 @@ export function resolveStaticPaths({ pages, objects }: ContentCache) {
 }
 
 const StaticPathsResolvers = {
-  PostFeedLayout: (page: any, objects: any[]) => {
+  PostFeedLayout: (page: PageEntry, objects: DocumentEntry[]) => {
     let posts = getAllNonFeaturedPostsSorted(objects);
     if (!process.env['stackbitPreview']) {
       posts = posts.filter(isPublished);
     }
+    if (page.type !== 'PostFeedLayout')
+      throw new Error(`Expected page with type PostFeedLayout but got ${page.type}`);
+
     const numOfPostsPerPage = page.numOfPostsPerPage ?? 10;
     return generatePagedPathsForPage(page, posts, numOfPostsPerPage);
   },
-  PostFeedCategoryLayout: (
-    page: { __metadata: any; numOfPostsPerPage?: any },
-    objects: any[]
-  ) => {
-    const categoryId = page.__metadata?.id;
-    const numOfPostsPerPage = page.numOfPostsPerPage ?? 10;
-    let categoryPosts = getAllCategoryPostsSorted(objects, categoryId);
-    if (!process.env['stackbitPreview']) {
-      categoryPosts = categoryPosts.filter(isPublished);
-    }
-    return generatePagedPathsForPage(page, categoryPosts, numOfPostsPerPage);
-  },
+  // PostFeedCategoryLayout: (
+  //   page: PageEntry,
+  //   objects: any[]
+  // ) => {
+  //   const categoryId = page.__metadata?.id;
+  //   const numOfPostsPerPage = page.numOfPostsPerPage ?? 10;
+  //   let categoryPosts = getAllCategoryPostsSorted(objects, categoryId);
+  //   if (!process.env['stackbitPreview']) {
+  //     categoryPosts = categoryPosts.filter(isPublished);
+  //   }
+  //   return generatePagedPathsForPage(page, categoryPosts, numOfPostsPerPage);
+  // },
 };

@@ -76,18 +76,3 @@ function PostAuthor({ author }) {
     <span data-sb-field-path="author">{authorName}</span>
   );
 }
-
-/*
-function PostCategory({ category }) {
-    if (!category) {
-        return null;
-    }
-    return (
-        <div className="mb-4">
-            <Link data-sb-field-path="category" href={category.__metadata?.urlPath}>
-                {category.title}
-            </Link>
-        </div>
-    );
-}
-*/

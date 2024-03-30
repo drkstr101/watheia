@@ -10,19 +10,10 @@ export interface LocalContentSchema {
   models: Model[];
 }
 
-export interface MetaTag {
-  property: string;
-  content: string;
-  format: 'property' | 'name';
-}
-
-type Context = {
-  /** The document/asset file path relative to project directory. */
-  filePath: string;
+export type DebugContext = {
+  keyPath: (string | number)[];
+  stack: Record<string, any>[];
 };
-
-export type DocumentContext = Context;
-export type AssetContext = Context;
 
 export interface ContentCache {
   objects: DocumentEntry[];

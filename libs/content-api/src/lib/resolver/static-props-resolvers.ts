@@ -1,16 +1,15 @@
 import {
-  getAllCategoryPostsSorted,
   getAllNonFeaturedPostsSorted,
   getAllPostsSorted,
   getPagedItemsForPage,
   getRootPagePath,
   isPublished,
   mapDeepAsync,
-  resolveReferences,
 } from '@watheia/content-helpers';
 import crypto from 'crypto';
 import { SignJWT } from 'jose/jwt/sign';
-import { ContentCache } from '../content-api.types';
+import { ContentCache, DebugContext } from '../content-api.types';
+import { resolveReferences } from './resolver-utils';
 
 export function resolveStaticProps(urlPath: string, data: ContentCache) {
   // get root path of paged path: /blog/page/2 => /blog
@@ -45,80 +44,60 @@ export function resolveStaticProps(urlPath: string, data: ContentCache) {
 }
 
 const StaticPropsResolvers = {
-  Article: (
-    props: any,
-    data: { objects: any },
-    debugContext: { keyPath: (string | number)[]; stack: Record<string, any>[] } | undefined
-  ) => {
-    return resolveReferences(props, ['author', 'category'], data.objects, debugContext);
+  Article: (props: any, data: ContentCache, ctx: DebugContext) => {
+    return resolveReferences(props, ['author'], data.objects, ctx);
   },
-  PostFeedLayout: (
-    props: { numOfPostsPerPage?: any; __metadata?: { urlPath: any } },
-    data: { objects: any }
-  ) => {
+  PostFeedLayout: (props: any, data: ContentCache) => {
     const numOfPostsPerPage = props.numOfPostsPerPage ?? 10;
     let allPosts = getAllNonFeaturedPostsSorted(data.objects);
     if (!process.env['stackbitPreview']) {
       allPosts = allPosts.filter(isPublished);
     }
     const paginationData = getPagedItemsForPage(props, allPosts, numOfPostsPerPage);
-    const items = resolveReferences(paginationData.items, ['author', 'category'], data.objects);
+    const items = resolveReferences(paginationData.items, ['author'], data.objects);
     return {
       ...props,
       ...paginationData,
       items,
     };
   },
-  PostFeedCategoryLayout: (
-    props: { __metadata: any; numOfPostsPerPage?: any },
-    data: { objects: any }
-  ) => {
-    const categoryId = props.__metadata?.id;
-    const numOfPostsPerPage = props.numOfPostsPerPage ?? 10;
-    let allCategoryPosts = getAllCategoryPostsSorted(data.objects, categoryId);
-    if (!process.env['stackbitPreview']) {
-      allCategoryPosts = allCategoryPosts.filter(isPublished);
-    }
-    const paginationData = getPagedItemsForPage(props, allCategoryPosts, numOfPostsPerPage);
-    const items = resolveReferences(paginationData.items, ['author', 'category'], data.objects);
-    return {
-      ...props,
-      ...paginationData,
-      items,
-    };
-  },
-  RecentPostsSection: (props: { recentCount: any }, data: { objects: any }) => {
+  // PostFeedCategoryLayout: (
+  //   props: { __metadata: any; numOfPostsPerPage?: any },
+  //   data: ContentCache
+  // ) => {
+  //   const categoryId = props.__metadata?.id;
+  //   const numOfPostsPerPage = props.numOfPostsPerPage ?? 10;
+  //   let allCategoryPosts = getAllCategoryPostsSorted(data.objects, categoryId);
+  //   if (!process.env['stackbitPreview']) {
+  //     allCategoryPosts = allCategoryPosts.filter(isPublished);
+  //   }
+  //   const paginationData = getPagedItemsForPage(props, allCategoryPosts, numOfPostsPerPage);
+  //   const items = resolveReferences(paginationData.items, ['author'], data.objects);
+  //   return {
+  //     ...props,
+  //     ...paginationData,
+  //     items,
+  //   };
+  // },
+  RecentPostsSection: (props: any, data: ContentCache) => {
     let allPosts = getAllPostsSorted(data.objects);
     if (!process.env['stackbitPreview']) {
       allPosts = allPosts.filter(isPublished);
     }
     allPosts = allPosts.slice(0, props.recentCount || 6);
-    const recentPosts = resolveReferences(allPosts, ['author', 'category'], data.objects);
+    const recentPosts = resolveReferences(allPosts, ['author'], data.objects);
     return {
       ...props,
       posts: recentPosts,
     };
   },
-  FeaturedPostsSection: (
-    props: any,
-    data: { objects: any },
-    debugContext: { keyPath: (string | number)[]; stack: Record<string, any>[] } | undefined
-  ) => {
-    return resolveReferences(
-      props,
-      ['posts.author', 'posts.category'],
-      data.objects,
-      debugContext
-    );
+  FeaturedPostsSection: (props: any, data: ContentCache, ctx: DebugContext) => {
+    return resolveReferences(props, ['posts.author'], data.objects, ctx);
   },
-  FeaturedPeopleSection: (
-    props: any,
-    data: { objects: any },
-    debugContext: { keyPath: (string | number)[]; stack: Record<string, any>[] } | undefined
-  ) => {
-    return resolveReferences(props, ['people'], data.objects, debugContext);
+  FeaturedPeopleSection: (props: any, data: ContentCache, ctx: DebugContext) => {
+    return resolveReferences(props, ['people'], data.objects, ctx);
   },
-  FormBlock: async (props: { destination: any }) => {
+  FormBlock: async (props: any) => {
     if (!props.destination) {
       return props;
     }
