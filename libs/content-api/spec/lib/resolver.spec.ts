@@ -14,8 +14,8 @@ describe('watheia.content-api/resolver', () => {
     });
     it('parses a valid markdown file', () => {
       const data = parseFileSync(fixturePath('content/pages/blog/article-1.md'));
-      expect(data).toContainKey('content');
-      expect(data['content']).toBeString();
+      expect(data).toContainKey('markdown_content');
+      expect(data['markdown_content']).toBeString();
       expect(data).toContainEntries([
         ['type', 'Article'],
         ['slug', 'article-1'],

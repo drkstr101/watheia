@@ -106,14 +106,14 @@ export const PricingPlan: Model = {
           label: 'Neutral background, dark foreground',
           value: 'bg-neutral-fg-dark',
           textColor: '$dark',
-          backgroundColor: '$neutral',
+          backgroundColor: '$colors.neutral.200',
           borderColor: '#ececec',
         },
         {
           label: 'Neutral alt background, dark foreground',
           value: 'bg-neutralAlt-fg-dark',
           textColor: '$dark',
-          backgroundColor: '$neutralAlt',
+          backgroundColor: '$colors.neutral.300',
           borderColor: '#ececec',
         },
         {
@@ -157,17 +157,17 @@ export const PricingPlan: Model = {
             {
               value: 'border-neutral',
               label: 'Neutral',
-              color: '$neutral',
+              color: '$colors.neutral.200',
             },
             {
               value: 'border-neutralAlt',
               label: 'Neutral alt',
-              color: '$neutralAlt',
+              color: '$colors.neutral.300',
             },
             {
               value: 'border-primary',
               label: 'Primary',
-              color: '$primary',
+              color: '$colors.primary.500',
             },
           ],
           borderRadius: '*',

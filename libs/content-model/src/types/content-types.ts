@@ -11,7 +11,7 @@ export interface Article {
   author?: Person;
   excerpt?: string;
   featuredImage?: ImageBlock;
-  content?: string;
+  markdown_content?: string;
   bottomSections?: (
     | CarouselSection
     | DividerSection
@@ -122,6 +122,21 @@ export interface CheckboxFormControl {
   label?: string;
   isRequired?: boolean;
   width?: 'full' | '1/2';
+}
+export interface ColorPalette {
+  __metadata: {
+    modelType: 'object';
+  };
+  type: 'ColorPalette';
+  100: string;
+  200: string;
+  300: string;
+  400: string;
+  500: string;
+  600: string;
+  700: string;
+  800: string;
+  900: string;
 }
 export interface Config {
   __metadata: {
@@ -415,6 +430,7 @@ export interface Page {
   )[];
   isDraft?: boolean;
   seo?: Seo;
+  markdown_content?: string;
 }
 export interface PagedPostsSection {
   __metadata: {
@@ -490,6 +506,7 @@ export interface PostFeedLayout {
   isDraft?: boolean;
   styles?: Record<string, Record<string, unknown>>;
   seo?: Seo;
+  markdown_content?: string;
 }
 export interface PostFeedSection {
   __metadata: {
@@ -680,11 +697,18 @@ export interface ThemeStyle {
     id: string;
   };
   type: 'ThemeStyle';
-  light?: string | number;
-  dark?: string | number;
-  neutral?: string | number;
-  neutralAlt?: string | number;
-  primary?: string | number;
+  colors: {
+    black: string;
+    white: string;
+    neutral: ColorPalette;
+    primary: ColorPalette;
+    secondary: ColorPalette;
+    accent: ColorPalette;
+    info: ColorPalette;
+    success: ColorPalette;
+    warning: ColorPalette;
+    danger: ColorPalette;
+  };
   fontBody?: 'sans' | 'serif';
   fontHeadlines?: 'sans' | 'serif';
   h1?: ThemeStyleHeading;

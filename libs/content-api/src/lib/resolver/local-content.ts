@@ -81,11 +81,5 @@ export function resolveContent(schema: LocalContentSchema): ContentCache {
   const pages = objects.filter((o) => o.__metadata.modelType === 'page') as PageEntry[];
   const site = objects.find(({ type }) => type === 'Config') as types.Config;
 
-  // objects.forEach((e) => resolveReferences(e));
-
-  // pages.forEach((page) => {
-  //   page.__metadata.urlPath = getPageUrl(page);
-  // });
-
   return { objects, pages, props: { site }, schema };
 }

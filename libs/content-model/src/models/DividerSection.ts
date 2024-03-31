@@ -48,7 +48,7 @@ export const DividerSection: Model = {
           label: 'Neutral background, dark foreground',
           value: 'bg-neutral-fg-dark',
           textColor: '$dark',
-          backgroundColor: '$neutral',
+          backgroundColor: '$colors.neutral.200',
           borderColor: '#ececec',
         },
         {

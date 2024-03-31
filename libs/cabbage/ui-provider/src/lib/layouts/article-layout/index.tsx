@@ -8,7 +8,7 @@ import { getComponent } from '../../ui-provider';
 export default function ArticleLayout(props) {
   const { page, site } = props;
   const BaseLayout = getBaseLayoutComponent(page.baseLayout, site.baseLayout);
-  const { title, date, author, content, bottomSections = [] } = page;
+  const { title, date, author, markdown_content, bottomSections = [] } = page;
   const dateTimeAttr = dayjs(date).format('YYYY-MM-DD HH:mm:ss');
   const formattedDate = dayjs(date).format('MMMM D, YYYY');
 
@@ -31,13 +31,13 @@ export default function ArticleLayout(props) {
                 )}
               </div>
             </header>
-            {content && (
+            {markdown_content && (
               <Markdown
                 options={{ forceBlock: true }}
                 className="sb-markdown max-w-3xl mx-auto"
                 data-sb-field-path="content"
               >
-                {content}
+                {markdown_content}
               </Markdown>
             )}
           </div>

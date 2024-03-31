@@ -2,7 +2,7 @@
   "name": "@watheia/content-model",
   "version": "0.0.1",
   "dependencies": {
-    "@stackbit/types": "^0.11.1",
+    "@stackbit/types": "^0.11.8",
     "@swc/helpers": "~0.5.2"
   },
   "devDependencies": {},

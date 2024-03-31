@@ -4,7 +4,7 @@ slug: careers
 sections:
   - title:
       text: A team that works closely together
-      color: text-dark
+      color: text-black
       styles:
         self:
           textAlign: center
@@ -49,7 +49,7 @@ sections:
       url: /images/abstract-background.svg
   - title:
       text: Meet the team
-      color: text-dark
+      color: text-black
       styles:
         self:
           textAlign: center
@@ -76,7 +76,7 @@ sections:
     type: FeaturedPeopleSection
   - title:
       text: Open positions
-      color: text-dark
+      color: text-black
       styles:
         self:
           textAlign: center

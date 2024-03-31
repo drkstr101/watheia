@@ -11,7 +11,7 @@
           {
             "title": {
               "text": "Flexible Pricing",
-              "color": "text-dark",
+              "color": "text-black",
               "styles": {
                 "self": {
                   "textAlign": "center"
@@ -160,7 +160,7 @@
           "metaTags": [],
           "$$type": "Seo"
         },
-        "markdown_content": ""
+        "content": ""
       },
       "thumbnail": "images/page-layout-pricing-91fd.png"
     }

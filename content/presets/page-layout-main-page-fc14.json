@@ -11,7 +11,7 @@
           {
             "title": {
               "text": "Unblock your team boost your time to production",
-              "color": "text-dark",
+              "color": "text-black",
               "styles": null,
               "$$type": "TitleBlock"
             },
@@ -69,7 +69,7 @@
           {
             "title": {
               "text": "Key Benefits",
-              "color": "text-dark",
+              "color": "text-black",
               "styles": {
                 "self": {
                   "textAlign": "center"
@@ -316,7 +316,7 @@
           {
             "title": {
               "text": "Grow your business 10x faster",
-              "color": "text-dark",
+              "color": "text-black",
               "styles": {
                 "self": {
                   "textAlign": "center"
@@ -374,7 +374,7 @@
           {
             "title": {
               "text": "Generic section with a video",
-              "color": "text-dark",
+              "color": "text-black",
               "styles": {
                 "self": {
                   "textAlign": "left"
@@ -423,7 +423,7 @@
           {
             "title": {
               "text": "Social Media Management",
-              "color": "text-dark",
+              "color": "text-black",
               "styles": null,
               "$$type": "TitleBlock"
             },
@@ -479,7 +479,7 @@
           {
             "title": {
               "text": "Business Consulting",
-              "color": "text-dark",
+              "color": "text-black",
               "styles": null,
               "$$type": "TitleBlock"
             },
@@ -742,7 +742,7 @@
           {
             "title": {
               "text": "Generic Section With A Form",
-              "color": "text-dark",
+              "color": "text-black",
               "styles": null,
               "$$type": "TitleBlock"
             },
@@ -824,7 +824,7 @@
           "metaTags": [],
           "$$type": "Seo"
         },
-        "markdown_content": ""
+        "content": ""
       },
       "thumbnail": "images/page-layout-main-page-fc14.png"
     }
