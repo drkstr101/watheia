@@ -5,7 +5,7 @@ image:
 
 tasks:
   - init: yarn install && yarn playwright install --with-deps
-    command: yarn nx run home:serve:development
+    command: yarn build
 
 ports:
   - port: 4200
