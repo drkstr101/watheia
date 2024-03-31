@@ -1,7 +1,7 @@
 import { models } from '@watheia/content-model';
 import { join } from 'path';
 
-import { LocalContentApi } from '../src/content-api';
+import { LocalContentApi } from '../src/lib/content-api';
 
 const mockOptions = {
   models: Object.values(models),

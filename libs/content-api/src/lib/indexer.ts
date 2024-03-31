@@ -1,23 +1,23 @@
-// import { resolveContent } from '@watheia/content-api';
-import algoliasearch from 'algoliasearch';
-import { Lexer, marked } from 'marked';
-
-import { withLocalContent } from '../content-api';
 import {
   ALGOLIA_ADMIN_API_KEY,
   ALGOLIA_APP_ID,
   ALGOLIA_INDEX_NAME_SUFFIX,
   buildIndexName,
-} from './consts';
-import PlainTextRenderer from './markdown-plaintext';
+} from '@watheia/content-helpers';
+import algoliasearch from 'algoliasearch';
+import { Lexer, marked } from 'marked';
 
-export async function index() {
+import { LocalContentApi } from './content-api';
+import { LocalContentSchema } from './content-api.types';
+import { PlainTextRenderer } from './markdown-plaintext';
+
+export async function indexer(schema: LocalContentSchema) {
   if (!ALGOLIA_APP_ID || !ALGOLIA_INDEX_NAME_SUFFIX || !ALGOLIA_ADMIN_API_KEY) {
     throw new Error('Missing required configuration for indexing');
   }
 
   console.time('Indexing duration');
-  const api = await withLocalContent();
+  const api = await LocalContentApi.create(schema);
   const posts = api.cache.pages.filter((p: any) => p.type == 'Article');
 
   const objectsToIndex = buildObjectsToIndex(posts);

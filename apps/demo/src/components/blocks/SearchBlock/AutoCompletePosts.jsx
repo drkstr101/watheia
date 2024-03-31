@@ -1,11 +1,7 @@
 import { getAlgoliaResults } from '@algolia/autocomplete-js';
 import '@algolia/autocomplete-theme-classic';
+import { ALGOLIA_APP_ID, ALGOLIA_SEARCH_API_KEY, buildIndexName } from '@watheia/content-helpers';
 import algoliasearch from 'algoliasearch';
-import {
-  ALGOLIA_APP_ID,
-  ALGOLIA_SEARCH_API_KEY,
-  buildIndexName,
-} from '../../../lib/indexer/consts';
 import BaseAutoComplete from './BaseAutoComplete';
 
 const searchClient = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_SEARCH_API_KEY);

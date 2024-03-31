@@ -4,7 +4,7 @@ import { MarkedOptions, RendererApi } from 'marked';
 Based on https://github.com/etler/marked-plaintext (Plain text renderer for Marked) by Tim Etler, ISC license.
 Converted to ES class & added missing checkbox() function (which does nothing, but needs to be there...).
 */
-export default class PlainTextRenderer implements RendererApi {
+export class PlainTextRenderer implements RendererApi {
   options: MarkedOptions;
   whitespaceDelimiter: string;
   showImageText: any;
