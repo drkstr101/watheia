@@ -883,7 +883,7 @@ exports[`watheia.content-api #resolve() fully resolves local content cache with 
         "verticalPadding": 12,
         "weight": "normal",
       },
-      "dark": "#4A4A4A",
+      "dark": "#020617",
       "fontBody": "sans",
       "fontHeadlines": "sans",
       "h1": {
@@ -952,7 +952,7 @@ exports[`watheia.content-api #resolve() fully resolves local content cache with 
         "type": "ThemeStyleHeading",
         "weight": "normal",
       },
-      "light": "#ffffff",
+      "light": "#f8fafc",
       "linkPrimary": {
         "__metadata": {
           "modelType": "object",
@@ -971,9 +971,9 @@ exports[`watheia.content-api #resolve() fully resolves local content cache with 
         "type": "ThemeStyleLink",
         "weight": "normal",
       },
-      "neutral": "#E8E8EB",
-      "neutralAlt": "#DCDCDC",
-      "primary": "#2a2a2a",
+      "neutral": "#e2e8f0",
+      "neutralAlt": "#cbd5e1",
+      "primary": "#06b6d4",
       "type": "ThemeStyle",
     },
     {
