@@ -21,6 +21,7 @@
       "@home/lib/content-api": ["apps/home/lib/content-api.ts"],
       "@home/lib/mdx": ["apps/home/lib/mdx.ts"],
       "@watheia/cabbage.type-generator": ["libs/cabbage/type-generator/src/index.ts"],
+      "@watheia/cabbage.ui-provider": ["libs/cabbage/ui-provider/src/index.ts"],
       "@watheia/content-api": ["libs/content-api/src/index.ts"],
       "@watheia/content-helpers": ["libs/content-helpers/src/index.ts"],
       "@watheia/content-model": ["libs/content-model/src/index.ts"],

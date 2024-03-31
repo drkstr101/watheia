@@ -1,4 +1,5 @@
-import { getComponent } from '../components/components-registry';
+import { getComponent } from '@watheia/cabbage.ui-provider';
+
 import { withLocalContent } from '../lib/content-api';
 
 export async function getStaticPaths() {

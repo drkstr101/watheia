@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app';
-import { WithNinetailedProvider } from '../components/withPersonalization/ninetailed-provider';
+import { WithNinetailedProvider } from '@watheia/cabbage.ui-provider';
 
 import '../css/main.css';
 
