@@ -1,25 +1,22 @@
 import {
-  getAllCategoryPostsSorted,
   getAllNonFeaturedPostsSorted,
   getAllPostsSorted,
   getPagedItemsForPage,
   getRootPagePath,
   isPublished,
   mapDeepAsync,
-  resolveReferences,
 } from '@watheia/content-helpers';
-import crypto from 'crypto';
-import { SignJWT } from 'jose/jwt/sign';
+import { types } from '@watheia/content-model';
+import { ContentCache, DebugContext } from '../content-api.types';
+// import { resolveReferences } from './resolver-utils';
 
-export function resolveStaticProps(
-  urlPath: string,
-  data: { objects: any[]; pages: any[]; props: any }
-) {
+export function resolveStaticProps(urlPath: string, data: ContentCache) {
   // get root path of paged path: /blog/page/2 => /blog
   const rootUrlPath = getRootPagePath(urlPath);
-  const { __metadata, ...rest } = data.pages.find(
-    (page: { __metadata: { urlPath: string } }) => page.__metadata.urlPath === rootUrlPath
-  );
+  const page = data.pages.find((page) => page.__metadata.urlPath === rootUrlPath);
+  if (!page) throw new Error(`Failed to locate page for url path: ${urlPath}`);
+
+  const { __metadata, ...rest } = page;
   const props = {
     page: {
       __metadata: {
@@ -46,99 +43,81 @@ export function resolveStaticProps(
 }
 
 const StaticPropsResolvers = {
-  Article: (
-    props: any,
-    data: { objects: any },
-    debugContext: { keyPath: (string | number)[]; stack: Record<string, any>[] } | undefined
-  ) => {
-    return resolveReferences(props, ['author', 'category'], data.objects, debugContext);
-  },
-  PostFeedLayout: (
-    props: { numOfPostsPerPage?: any; __metadata?: { urlPath: any } },
-    data: { objects: any }
-  ) => {
+  // Article: (props: any, data: ContentCache, ctx: DebugContext) => {
+  //   return resolveReferences(props, ['author'], data.objects, ctx);
+  // },
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  PostFeedLayout: (props: types.PostFeedLayout, data: ContentCache, ctx: DebugContext) => {
     const numOfPostsPerPage = props.numOfPostsPerPage ?? 10;
-    let allPosts = getAllNonFeaturedPostsSorted(data.objects);
+    let posts = getAllNonFeaturedPostsSorted(data.objects);
     if (!process.env['stackbitPreview']) {
-      allPosts = allPosts.filter(isPublished);
+      posts = posts.filter(isPublished);
     }
-    const paginationData = getPagedItemsForPage(props, allPosts, numOfPostsPerPage);
-    const items = resolveReferences(paginationData.items, ['author', 'category'], data.objects);
+    const paginationData = getPagedItemsForPage(props, posts, numOfPostsPerPage);
+    // const items = resolveReferences(paginationData.items, ['author'], data.objects);
     return {
       ...props,
       ...paginationData,
-      items,
+      // items,
     };
   },
-  PostFeedCategoryLayout: (
-    props: { __metadata: any; numOfPostsPerPage?: any },
-    data: { objects: any }
-  ) => {
-    const categoryId = props.__metadata?.id;
-    const numOfPostsPerPage = props.numOfPostsPerPage ?? 10;
-    let allCategoryPosts = getAllCategoryPostsSorted(data.objects, categoryId);
+  // PostFeedCategoryLayout: (
+  //   props: { __metadata: any; numOfPostsPerPage?: any },
+  //   data: ContentCache
+  // ) => {
+  //   const categoryId = props.__metadata?.id;
+  //   const numOfPostsPerPage = props.numOfPostsPerPage ?? 10;
+  //   let allCategoryPosts = getAllCategoryPostsSorted(data.objects, categoryId);
+  //   if (!process.env['stackbitPreview']) {
+  //     allCategoryPosts = allCategoryPosts.filter(isPublished);
+  //   }
+  //   const paginationData = getPagedItemsForPage(props, allCategoryPosts, numOfPostsPerPage);
+  //   const items = resolveReferences(paginationData.items, ['author'], data.objects);
+  //   return {
+  //     ...props,
+  //     ...paginationData,
+  //     items,
+  //   };
+  // },
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  RecentPostsSection: (data: types.RecentPostsSection, cache: ContentCache) => {
+    let posts = getAllPostsSorted(cache.objects);
     if (!process.env['stackbitPreview']) {
-      allCategoryPosts = allCategoryPosts.filter(isPublished);
+      posts = posts.filter(isPublished);
     }
-    const paginationData = getPagedItemsForPage(props, allCategoryPosts, numOfPostsPerPage);
-    const items = resolveReferences(paginationData.items, ['author', 'category'], data.objects);
+    posts = posts.slice(0, data.recentCount || 6);
+    // const recentPosts = resolveReferences(posts, ['author'], data.objects);
     return {
-      ...props,
-      ...paginationData,
-      items,
+      ...data,
+      posts,
     };
   },
-  RecentPostsSection: (props: { recentCount: any }, data: { objects: any }) => {
-    let allPosts = getAllPostsSorted(data.objects);
-    if (!process.env['stackbitPreview']) {
-      allPosts = allPosts.filter(isPublished);
-    }
-    allPosts = allPosts.slice(0, props.recentCount || 6);
-    const recentPosts = resolveReferences(allPosts, ['author', 'category'], data.objects);
-    return {
-      ...props,
-      posts: recentPosts,
-    };
-  },
-  FeaturedPostsSection: (
-    props: any,
-    data: { objects: any },
-    debugContext: { keyPath: (string | number)[]; stack: Record<string, any>[] } | undefined
-  ) => {
-    return resolveReferences(
-      props,
-      ['posts.author', 'posts.category'],
-      data.objects,
-      debugContext
-    );
-  },
-  FeaturedPeopleSection: (
-    props: any,
-    data: { objects: any },
-    debugContext: { keyPath: (string | number)[]; stack: Record<string, any>[] } | undefined
-  ) => {
-    return resolveReferences(props, ['people'], data.objects, debugContext);
-  },
-  FormBlock: async (props: { destination: any }) => {
-    if (!props.destination) {
-      return props;
-    }
-    if (!process.env['STACKBIT_CONTACT_FORM_SECRET']) {
-      console.error(
-        `No STACKBIT_CONTACT_FORM_SECRET provided. It will not work properly for production build.`
-      );
-      return props;
-    }
-    const secretKey = crypto
-      .createHash('sha256')
-      .update(process.env['STACKBIT_CONTACT_FORM_SECRET'])
-      .digest();
-    const destination = await new SignJWT({ email: props.destination })
-      .setProtectedHeader({ alg: 'HS256' })
-      .sign(secretKey);
-    return {
-      ...props,
-      destination,
-    };
-  },
+  // FeaturedPostsSection: (props: any, data: ContentCache, ctx: DebugContext) => {
+  //   return resolveReferences(props, ['posts.author'], data.objects, ctx);
+  // },
+  // FeaturedPeopleSection: (props: any, data: ContentCache, ctx: DebugContext) => {
+  //   return resolveReferences(props, ['people'], data.objects, ctx);
+  // },
+  // FormBlock: async (props: any) => {
+  //   if (!props.destination) {
+  //     return props;
+  //   }
+  //   if (!process.env['STACKBIT_CONTACT_FORM_SECRET']) {
+  //     console.error(
+  //       `No STACKBIT_CONTACT_FORM_SECRET provided. It will not work properly for production build.`
+  //     );
+  //     return props;
+  //   }
+  //   const secretKey = crypto
+  //     .createHash('sha256')
+  //     .update(process.env['STACKBIT_CONTACT_FORM_SECRET'])
+  //     .digest();
+  //   const destination = await new SignJWT({ email: props.destination })
+  //     .setProtectedHeader({ alg: 'HS256' })
+  //     .sign(secretKey);
+  //   return {
+  //     ...props,
+  //     destination,
+  //   };
+  // },
 };

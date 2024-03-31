@@ -3,8 +3,7 @@ import { Metadata } from 'next';
 
 import { RootLayout } from '@watheia/studio-ui';
 
-import '@watheia/studio-ui/styles/index.css';
-// import api from '../lib/content-api';
+import '@watheia/cabbage.theme';
 
 export const metadata: Metadata = {
   title: {

@@ -1,0 +1,33 @@
+{
+  "name": "@watheia/cabbage.ui-provider",
+  "version": "0.0.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "dependencies": {
+    "@algolia/autocomplete-js": "^1.17.0",
+    "@algolia/autocomplete-theme-classic": "^1.17.0",
+    "@ninetailed/experience.js-next": "^2.2.11",
+    "@nx/react": "18.2.1",
+    "@nx/vite": "18.2.1",
+    "@vitejs/plugin-react": "^4.2.1",
+    "@watheia/content-helpers": "0.0.1",
+    "@watheia/content-model": "0.0.1",
+    "algoliasearch": "^4.23.2",
+    "axios": "^1.6.8",
+    "clsx": "^2.1.0",
+    "dayjs": "^1.11.10",
+    "markdown-to-jsx": "^7.4.5",
+    "next": "14.1.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "swiper": "^8.4.7",
+    "vite": "^5.2.7",
+    "vite-plugin-dts": "~2.3.0"
+  }
+}
