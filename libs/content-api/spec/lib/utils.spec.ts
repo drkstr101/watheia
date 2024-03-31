@@ -1,7 +1,7 @@
-import { parseFileSync, readDirRecursively } from '../../src/lib/resolver/file-reader';
+import { parseFileSync, readDirRecursively } from '../../src/lib/utils';
 import { FIXTURES_DIR, fixturePath } from '../support';
 
-describe('watheia.content-api/resolver', () => {
+describe('watheia.content-api/utils', () => {
   describe('#parseFileSync(filePath)', () => {
     it('parses a valid json file', () => {
       const data = parseFileSync(fixturePath('content/data/people/jane-doe.json'));

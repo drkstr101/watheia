@@ -1,7 +1,8 @@
 import { getPageUrl } from '@watheia/content-helpers';
 import type { Model, PageEntry, types } from '@watheia/content-model';
-import { ContentCache, LocalContentSchema } from '../content-api.types';
-import { readDirRecursively } from './file-reader';
+
+import type { ContentCache, LocalContentSchema } from '../content-api.types';
+import { readDirRecursively } from '../utils';
 
 function getReferenceFields(models: Model[]) {
   const referenceFields: Record<string, boolean> = {};

@@ -1,6 +1,14 @@
 import { DocumentEntry } from '@watheia/content-model';
 import { DebugContext } from '../content-api.types';
 
+/**
+ * @deprecated use local-resolver instead
+ * @param object
+ * @param fieldPaths
+ * @param objects
+ * @param ctx
+ * @returns
+ */
 export function resolveReferences(
   object: any,
   fieldPaths: string[],
@@ -45,6 +53,15 @@ export function resolveReferences(
   }, object);
 }
 
+/**
+ * @deprecated for local resolver API
+ *
+ * @param object
+ * @param fieldName
+ * @param objects
+ * @param ctx
+ * @returns
+ */
 export function resolveReferenceField(
   object: Record<string, any>,
   fieldName: string,
@@ -64,6 +81,14 @@ export function resolveReferenceField(
   };
 }
 
+/**
+ * @deprecated for local resolver API
+ * @param object
+ * @param fieldName
+ * @param objects
+ * @param ctx
+ * @returns
+ */
 export function resolveReferenceArray(
   object: Record<string, any>,
   fieldName: string,
@@ -83,6 +108,14 @@ export function resolveReferenceArray(
   };
 }
 
+/**
+ * @deprecated for local resolver API
+ *
+ * @param objectIds
+ * @param objects
+ * @param ctx
+ * @returns
+ */
 export function mapObjectsById(
   objectIds: string[],
   objects: Record<string, any>[],
@@ -98,6 +131,14 @@ export function mapObjectsById(
     .filter(Boolean);
 }
 
+/**
+ * @deprecated for local resolver API
+ *
+ * @param objectId
+ * @param objects
+ * @param ctx
+ * @returns
+ */
 export function findObjectById(
   objectId: string,
   objects: Record<string, any>[],
