@@ -6,8 +6,8 @@ import { models } from './libs/content-model/src/index';
 export default defineStackbitConfig({
   stackbitVersion: '~0.6.0',
   ssgName: 'nextjs',
-  buildCommand: 'nx run home:build:production',
-  devCommand: 'nx run home:serve:development --port {PORT}',
+  buildCommand: 'nx run demo:build:production',
+  devCommand: 'nx run demo:serve:development --port {PORT}',
   installCommand: 'yarn install',
 
   nodeVersion: '18',
@@ -24,7 +24,7 @@ export default defineStackbitConfig({
 
   assets: {
     referenceType: 'static',
-    staticDir: 'apps/home/public',
+    staticDir: 'apps/demo/public',
     uploadDir: 'images',
     publicPath: '/',
   },
