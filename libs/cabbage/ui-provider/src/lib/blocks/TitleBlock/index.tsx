@@ -1,9 +1,10 @@
 import classNames from 'clsx';
 
 import { mapStylesToClassNames as mapStyles } from '@watheia/content-helpers';
+import defaultTheme from './title-block.module.css';
 
 export default function TitleBlock(props) {
-  const { className, text = [], color = 'text-dark', styles = {} } = props;
+  const { className, text = [], color = 'black', styles = {} } = props;
   if (!text) {
     return null;
   }
@@ -14,7 +15,7 @@ export default function TitleBlock(props) {
         'sb-component',
         'sb-component-block',
         'sb-component-title',
-        color,
+        defaultTheme[color],
         className,
         styles?.self ? mapStyles(styles?.self) : undefined
       )}

@@ -77,7 +77,7 @@ function parseMarkdownWithFrontMatter(content: string): Data {
   });
   return {
     ...(frontmatter ?? {}),
-    content: trim(markdown),
+    markdown_content: trim(markdown),
   };
 }
 

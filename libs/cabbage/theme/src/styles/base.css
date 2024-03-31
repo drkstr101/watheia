@@ -8,3 +8,22 @@
   font-stretch: 75% 125%;
   src: url('./fonts/Mona-Sans.var.woff2') format('woff2');
 }
+
+@layer base {
+  body {
+    @apply text-base;
+  }
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  h6 {
+    @apply break-words;
+    line-height: 1.2;
+  }
+}

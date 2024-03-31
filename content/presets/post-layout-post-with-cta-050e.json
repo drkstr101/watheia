@@ -24,7 +24,7 @@
           },
           "$$type": "ImageBlock"
         },
-        "content": null,
+        "markdown_content": null,
         "bottomSections": [
           {
             "title": "Divider",
@@ -40,7 +40,7 @@
           {
             "title": {
               "text": "How can we help?",
-              "color": "text-dark",
+              "color": "black",
               "styles": null,
               "$$type": "TitleBlock"
             },

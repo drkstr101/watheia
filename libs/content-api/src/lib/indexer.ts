@@ -4,6 +4,7 @@ import {
   ALGOLIA_INDEX_NAME_SUFFIX,
   buildIndexName,
 } from '@watheia/content-helpers';
+import { types } from '@watheia/content-model';
 import algoliasearch from 'algoliasearch';
 import { Lexer, marked } from 'marked';
 
@@ -18,33 +19,24 @@ export async function indexer(schema: LocalContentSchema) {
 
   console.time('Indexing duration');
   const api = await LocalContentApi.create(schema);
-  const posts = api.cache.pages.filter((p: any) => p.type == 'Article');
+  const posts = api.cache.pages.filter((p) => p.type == 'Article') as types.Article[];
 
-  const objectsToIndex = buildObjectsToIndex(posts);
+  const objectsToIndex = await buildObjectsToIndex(posts);
   await indexObjects(objectsToIndex);
   console.timeEnd('Indexing duration');
 
-  return objectsToIndex.map((o: { url: any }) => o.url);
+  return objectsToIndex.map((o) => o.url);
 }
 
-function buildObjectsToIndex(posts: any[]) {
+async function buildObjectsToIndex(posts: types.Article[]) {
   marked.use({ gfm: true });
   const mdLexer = new marked.Lexer();
   const mdPlainTextRenderer = new PlainTextRenderer({});
 
   console.log('Preparing data for indexing...');
-  const objectsToIndex = posts.map(
-    (post: {
-      __metadata: { id: any; urlPath: any };
-      slug: any;
-      title: any;
-      date: any;
-      author: { name: any; image: { url: any } };
-      excerpt: any;
-      featuredImage: { url: any };
-      content: any;
-    }) => {
-      const o: any = {
+  const objectsToIndex = await Promise.all(
+    posts.map(async (post) => {
+      const o = {
         objectID: post.__metadata.id,
         url: post.__metadata.urlPath,
         slug: post.slug,
@@ -54,22 +46,32 @@ function buildObjectsToIndex(posts: any[]) {
         authorImage: post.author?.image?.url,
         excerpt: post.excerpt,
         featuredImage: post.featuredImage?.url,
+        contentBody: '',
+        contentHeading: '',
       };
 
-      if (post.content) {
-        const { heading, body } = parseMarkdown(post.content, mdLexer, mdPlainTextRenderer);
+      if (post.markdown_content) {
+        const { heading, body } = await parseMarkdown(
+          post.markdown_content,
+          mdLexer,
+          mdPlainTextRenderer
+        );
         o.contentHeading = heading;
         o.contentBody = body;
       }
       return o;
-    }
+    })
   );
   return objectsToIndex;
 }
 
-function parseMarkdown(markdown: string, lexer: Lexer, renderer: PlainTextRenderer) {
-  const body = marked(markdown, { renderer });
-  let heading = null;
+async function parseMarkdown(
+  markdown: string,
+  lexer: Lexer,
+  renderer: PlainTextRenderer
+): Promise<{ body: string; heading: string }> {
+  const body = await marked(markdown, { renderer });
+  let heading = '';
   const tokens = lexer.lex(markdown);
   for (const token of tokens) {
     if (token.type === 'heading' && token.depth === 1) {

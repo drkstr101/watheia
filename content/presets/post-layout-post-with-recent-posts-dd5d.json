@@ -40,7 +40,7 @@
           {
             "title": {
               "text": "Recent posts",
-              "color": "text-dark",
+              "color": "black",
               "styles": {
                 "self": {
                   "textAlign": "center"

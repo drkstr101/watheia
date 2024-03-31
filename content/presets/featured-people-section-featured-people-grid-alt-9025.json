@@ -7,7 +7,7 @@
       "data": {
         "title": {
           "text": "Meet the team",
-          "color": "text-dark",
+          "color": "black",
           "styles": {
             "self": {
               "textAlign": "center"

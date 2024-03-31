@@ -83,27 +83,27 @@ export const FormBlock: Model = {
             {
               value: 'border-dark',
               label: 'Dark',
-              color: '$dark',
+              color: '$colors.black',
             },
             {
               value: 'border-light',
               label: 'Light',
-              color: '$light',
+              color: '$colors.white',
             },
             {
               value: 'border-neutral',
               label: 'Neutral',
-              color: '$neutral',
+              color: '$colors.neutral.200',
             },
             {
               value: 'border-neutralAlt',
               label: 'Neutral alt',
-              color: '$neutralAlt',
+              color: '$colors.neutral.300',
             },
             {
               value: 'border-primary',
               label: 'Primary',
-              color: '$primary',
+              color: '$colors.primary.500',
             },
           ],
           borderRadius: '*',

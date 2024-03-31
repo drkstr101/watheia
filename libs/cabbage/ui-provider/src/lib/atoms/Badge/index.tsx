@@ -2,8 +2,10 @@ import classNames from 'clsx';
 
 import { mapStylesToClassNames as mapStyles } from '@watheia/content-helpers';
 
+import defaultTheme from './badge.module.css';
+
 export default function Badge(props) {
-  const { label, color = 'text-primary', styles, className } = props;
+  const { label, color = 'primary', styles, className } = props;
   if (!label) {
     return null;
   }
@@ -14,7 +16,7 @@ export default function Badge(props) {
         'sb-component',
         'sb-component-block',
         'sb-component-badge',
-        color,
+        defaultTheme[color],
         className,
         styles?.self ? mapStyles(styles?.self) : undefined
       )}

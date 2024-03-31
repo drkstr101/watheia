@@ -11,7 +11,7 @@
           {
             "title": {
               "text": "A team that works closely together",
-              "color": "text-dark",
+              "color": "black",
               "styles": {
                 "self": {
                   "textAlign": "center"
@@ -66,7 +66,7 @@
           {
             "title": {
               "text": "Meet the team",
-              "color": "text-dark",
+              "color": "black",
               "styles": {
                 "self": {
                   "textAlign": "center"
@@ -121,7 +121,7 @@
           {
             "title": {
               "text": "Open positions",
-              "color": "text-dark",
+              "color": "black",
               "styles": {
                 "self": {
                   "textAlign": "center"
@@ -229,7 +229,7 @@
           "metaTags": [],
           "$$type": "Seo"
         },
-        "markdown_content": ""
+        "content": ""
       },
       "thumbnail": "images/page-layout-careers-c1de.png"
     }

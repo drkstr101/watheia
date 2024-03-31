@@ -4,6 +4,7 @@ import { Badge } from './Badge';
 import { Button } from './Button';
 import { CarouselSection } from './CarouselSection';
 import { CheckboxFormControl } from './CheckboxFormControl';
+import { ColorPalette } from './ColorPalette';
 import { Config } from './Config';
 import { DividerSection } from './DividerSection';
 import { EmailFormControl } from './EmailFormControl';
@@ -38,7 +39,6 @@ import { ThemeStyleHeading } from './ThemeStyleHeading';
 import { ThemeStyleLink } from './ThemeStyleLink';
 import { TitleBlock } from './TitleBlock';
 import { VideoBlock } from './VideoBlock';
-
 import { FooterLinksGroup } from './FooterLinksGroup';
 import { MetaTag } from './MetaTag';
 import { Seo } from './Seo';
@@ -49,6 +49,7 @@ export const models = {
   Button,
   CarouselSection,
   CheckboxFormControl,
+  ColorPalette,
   Config,
   DividerSection,
   EmailFormControl,
@@ -87,7 +88,7 @@ export const models = {
   MetaTag,
   FooterLinksGroup,
   Seo,
-};
+} as const;
 
 export type WatheiaModel = typeof models;
 
