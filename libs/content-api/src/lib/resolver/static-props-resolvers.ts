@@ -6,10 +6,9 @@ import {
   isPublished,
   mapDeepAsync,
 } from '@watheia/content-helpers';
-import crypto from 'crypto';
-import { SignJWT } from 'jose/jwt/sign';
+import { types } from '@watheia/content-model';
 import { ContentCache, DebugContext } from '../content-api.types';
-import { resolveReferences } from './resolver-utils';
+// import { resolveReferences } from './resolver-utils';
 
 export function resolveStaticProps(urlPath: string, data: ContentCache) {
   // get root path of paged path: /blog/page/2 => /blog
@@ -44,21 +43,22 @@ export function resolveStaticProps(urlPath: string, data: ContentCache) {
 }
 
 const StaticPropsResolvers = {
-  Article: (props: any, data: ContentCache, ctx: DebugContext) => {
-    return resolveReferences(props, ['author'], data.objects, ctx);
-  },
-  PostFeedLayout: (props: any, data: ContentCache) => {
+  // Article: (props: any, data: ContentCache, ctx: DebugContext) => {
+  //   return resolveReferences(props, ['author'], data.objects, ctx);
+  // },
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  PostFeedLayout: (props: types.PostFeedLayout, data: ContentCache, ctx: DebugContext) => {
     const numOfPostsPerPage = props.numOfPostsPerPage ?? 10;
-    let allPosts = getAllNonFeaturedPostsSorted(data.objects);
+    let posts = getAllNonFeaturedPostsSorted(data.objects);
     if (!process.env['stackbitPreview']) {
-      allPosts = allPosts.filter(isPublished);
+      posts = posts.filter(isPublished);
     }
-    const paginationData = getPagedItemsForPage(props, allPosts, numOfPostsPerPage);
-    const items = resolveReferences(paginationData.items, ['author'], data.objects);
+    const paginationData = getPagedItemsForPage(props, posts, numOfPostsPerPage);
+    // const items = resolveReferences(paginationData.items, ['author'], data.objects);
     return {
       ...props,
       ...paginationData,
-      items,
+      // items,
     };
   },
   // PostFeedCategoryLayout: (
@@ -79,44 +79,45 @@ const StaticPropsResolvers = {
   //     items,
   //   };
   // },
-  RecentPostsSection: (props: any, data: ContentCache) => {
-    let allPosts = getAllPostsSorted(data.objects);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  RecentPostsSection: (data: types.RecentPostsSection, cache: ContentCache) => {
+    let posts = getAllPostsSorted(cache.objects);
     if (!process.env['stackbitPreview']) {
-      allPosts = allPosts.filter(isPublished);
+      posts = posts.filter(isPublished);
     }
-    allPosts = allPosts.slice(0, props.recentCount || 6);
-    const recentPosts = resolveReferences(allPosts, ['author'], data.objects);
+    posts = posts.slice(0, data.recentCount || 6);
+    // const recentPosts = resolveReferences(posts, ['author'], data.objects);
     return {
-      ...props,
-      posts: recentPosts,
+      ...data,
+      posts,
     };
   },
-  FeaturedPostsSection: (props: any, data: ContentCache, ctx: DebugContext) => {
-    return resolveReferences(props, ['posts.author'], data.objects, ctx);
-  },
-  FeaturedPeopleSection: (props: any, data: ContentCache, ctx: DebugContext) => {
-    return resolveReferences(props, ['people'], data.objects, ctx);
-  },
-  FormBlock: async (props: any) => {
-    if (!props.destination) {
-      return props;
-    }
-    if (!process.env['STACKBIT_CONTACT_FORM_SECRET']) {
-      console.error(
-        `No STACKBIT_CONTACT_FORM_SECRET provided. It will not work properly for production build.`
-      );
-      return props;
-    }
-    const secretKey = crypto
-      .createHash('sha256')
-      .update(process.env['STACKBIT_CONTACT_FORM_SECRET'])
-      .digest();
-    const destination = await new SignJWT({ email: props.destination })
-      .setProtectedHeader({ alg: 'HS256' })
-      .sign(secretKey);
-    return {
-      ...props,
-      destination,
-    };
-  },
+  // FeaturedPostsSection: (props: any, data: ContentCache, ctx: DebugContext) => {
+  //   return resolveReferences(props, ['posts.author'], data.objects, ctx);
+  // },
+  // FeaturedPeopleSection: (props: any, data: ContentCache, ctx: DebugContext) => {
+  //   return resolveReferences(props, ['people'], data.objects, ctx);
+  // },
+  // FormBlock: async (props: any) => {
+  //   if (!props.destination) {
+  //     return props;
+  //   }
+  //   if (!process.env['STACKBIT_CONTACT_FORM_SECRET']) {
+  //     console.error(
+  //       `No STACKBIT_CONTACT_FORM_SECRET provided. It will not work properly for production build.`
+  //     );
+  //     return props;
+  //   }
+  //   const secretKey = crypto
+  //     .createHash('sha256')
+  //     .update(process.env['STACKBIT_CONTACT_FORM_SECRET'])
+  //     .digest();
+  //   const destination = await new SignJWT({ email: props.destination })
+  //     .setProtectedHeader({ alg: 'HS256' })
+  //     .sign(secretKey);
+  //   return {
+  //     ...props,
+  //     destination,
+  //   };
+  // },
 };

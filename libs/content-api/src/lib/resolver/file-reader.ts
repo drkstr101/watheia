@@ -5,6 +5,7 @@ import { readFileSync } from 'fs';
 import yaml from 'js-yaml';
 import forEach from 'lodash/forEach';
 import reduce from 'lodash/reduce';
+import trim from 'lodash/trim';
 import { extname, join } from 'path';
 
 type Data = Record<string, unknown>;
@@ -76,7 +77,7 @@ function parseMarkdownWithFrontMatter(content: string): Data {
   });
   return {
     ...(frontmatter ?? {}),
-    content: markdown,
+    content: trim(markdown),
   };
 }
 
