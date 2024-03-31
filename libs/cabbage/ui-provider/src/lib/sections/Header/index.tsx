@@ -427,7 +427,7 @@ function LinkWithSubnav(props) {
           {
             'group-hover:no-underline hover:no-underline':
               !inMobileMenu && (link.labelStyle ?? 'primary') === 'primary',
-            'group-hover:text-primary': !inMobileMenu && link.labelStyle === 'secondary',
+            'group-hover:text-primary-500': !inMobileMenu && link.labelStyle === 'secondary',
           }
         )}
       >

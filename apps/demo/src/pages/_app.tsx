@@ -1,7 +1,7 @@
-import { AppProps } from 'next/app';
 import { WithNinetailedProvider } from '@watheia/cabbage.ui-provider';
+import { AppProps } from 'next/app';
 
-import '../css/main.css';
+import '@watheia/cabbage.theme';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (

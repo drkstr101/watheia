@@ -3,7 +3,7 @@ import classNames from 'clsx';
 import { mapStylesToClassNames as mapStyles } from '@watheia/content-helpers';
 
 export default function Badge(props) {
-  const { label, color = 'text-primary', styles, className } = props;
+  const { label, color = 'text-primary-500', styles, className } = props;
   if (!label) {
     return null;
   }

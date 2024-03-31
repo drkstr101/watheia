@@ -60,7 +60,7 @@ export interface Badge {
   };
   type: 'Badge';
   label: string;
-  color?: 'text-dark' | 'text-light' | 'text-neutral' | 'text-primary';
+  color?: 'text-black' | 'text-white' | 'text-neutral' | 'text-primary';
   styles?: Record<string, Record<string, unknown>>;
 }
 export interface Button {
@@ -750,7 +750,7 @@ export interface TitleBlock {
   };
   type: 'TitleBlock';
   text?: string;
-  color?: 'text-dark' | 'text-light' | 'text-neutral' | 'text-primary';
+  color?: 'text-black' | 'text-white' | 'text-neutral' | 'text-primary';
   styles?: Record<string, Record<string, unknown>>;
 }
 export interface VideoBlock {

@@ -21,20 +21,20 @@ export const Badge: Model = {
       name: 'color',
       label: 'Color',
       required: false,
-      default: 'text-primary',
+      default: 'text-primary-500',
       hidden: false,
       localized: false,
       options: [
         {
           label: 'Dark',
-          value: 'text-dark',
+          value: 'text-black',
           textColor: '$dark',
           backgroundColor: '$dark',
           borderColor: '#ececec',
         },
         {
           label: 'Light',
-          value: 'text-light',
+          value: 'text-white',
           textColor: '$light',
           backgroundColor: '$light',
           borderColor: '#ececec',
