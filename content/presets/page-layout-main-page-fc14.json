@@ -11,7 +11,7 @@
           {
             "title": {
               "text": "Unblock your team boost your time to production",
-              "color": "text-black",
+              "color": "black",
               "styles": null,
               "$$type": "TitleBlock"
             },
@@ -50,7 +50,7 @@
             },
             "badge": {
               "label": "This is a badge",
-              "color": "text-primary",
+              "color": "primary",
               "styles": null,
               "$$type": "Badge"
             },
@@ -69,7 +69,7 @@
           {
             "title": {
               "text": "Key Benefits",
-              "color": "text-black",
+              "color": "black",
               "styles": {
                 "self": {
                   "textAlign": "center"
@@ -175,7 +175,7 @@
             ],
             "badge": {
               "label": "This is a badge",
-              "color": "text-primary",
+              "color": "primary",
               "styles": {
                 "self": {
                   "textAlign": "center"
@@ -316,7 +316,7 @@
           {
             "title": {
               "text": "Grow your business 10x faster",
-              "color": "text-black",
+              "color": "black",
               "styles": {
                 "self": {
                   "textAlign": "center"
@@ -349,7 +349,7 @@
             },
             "badge": {
               "label": "Key Benefits",
-              "color": "text-primary",
+              "color": "primary",
               "styles": {
                 "self": {
                   "textAlign": "center"
@@ -374,7 +374,7 @@
           {
             "title": {
               "text": "Generic section with a video",
-              "color": "text-black",
+              "color": "black",
               "styles": {
                 "self": {
                   "textAlign": "left"
@@ -423,7 +423,7 @@
           {
             "title": {
               "text": "Social Media Management",
-              "color": "text-black",
+              "color": "black",
               "styles": null,
               "$$type": "TitleBlock"
             },
@@ -462,7 +462,7 @@
             },
             "badge": {
               "label": "This is a badge",
-              "color": "text-primary",
+              "color": "primary",
               "styles": null,
               "$$type": "Badge"
             },
@@ -479,7 +479,7 @@
           {
             "title": {
               "text": "Business Consulting",
-              "color": "text-black",
+              "color": "black",
               "styles": null,
               "$$type": "TitleBlock"
             },
@@ -518,7 +518,7 @@
             },
             "badge": {
               "label": "This is a badge",
-              "color": "text-primary",
+              "color": "primary",
               "styles": null,
               "$$type": "Badge"
             },
@@ -627,7 +627,7 @@
           {
             "title": {
               "text": "List of features here",
-              "color": "text-primary",
+              "color": "primary",
               "styles": {
                 "self": {
                   "textAlign": "center"
@@ -742,7 +742,7 @@
           {
             "title": {
               "text": "Generic Section With A Form",
-              "color": "text-black",
+              "color": "black",
               "styles": null,
               "$$type": "TitleBlock"
             },
@@ -804,7 +804,7 @@
             },
             "badge": {
               "label": "Contact Us",
-              "color": "text-primary",
+              "color": "primary",
               "styles": null,
               "$$type": "Badge"
             },

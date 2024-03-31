@@ -7,7 +7,7 @@
       "data": {
         "title": {
           "text": "List of features here",
-          "color": "text-primary",
+          "color": "primary",
           "styles": {
             "self": {
               "textAlign": "center"

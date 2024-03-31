@@ -1135,7 +1135,7 @@ exports[`watheia.content-api #resolve() fully resolves local content cache with 
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "styles": {
               "self": {
                 "textAlign": "center",
@@ -1440,7 +1440,7 @@ exports[`watheia.content-api #resolve() fully resolves local content cache with 
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "styles": {
               "self": {
                 "textAlign": "center",
@@ -1561,7 +1561,7 @@ exports[`watheia.content-api #resolve() fully resolves local content cache with 
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "styles": {
               "self": {
                 "textAlign": "center",
@@ -1633,7 +1633,7 @@ exports[`watheia.content-api #resolve() fully resolves local content cache with 
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-primary",
+            "color": "primary",
             "label": "This is a badge",
             "type": "Badge",
           },
@@ -1667,7 +1667,7 @@ exports[`watheia.content-api #resolve() fully resolves local content cache with 
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "text": "Unblock your team boost your time to production",
             "type": "TitleBlock",
           },
@@ -1697,7 +1697,7 @@ exports[`watheia.content-api #resolve() fully resolves local content cache with 
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-primary",
+            "color": "primary",
             "label": "This is a badge",
             "styles": {
               "self": {
@@ -1835,7 +1835,7 @@ exports[`watheia.content-api #resolve() fully resolves local content cache with 
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "styles": {
               "self": {
                 "textAlign": "center",
@@ -2404,7 +2404,7 @@ Aenean scelerisque ullamcorper est aliquet blandit. Donec ac tellus enim. Vivamu
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-primary",
+            "color": "primary",
             "label": "Key Benefits",
             "styles": {
               "self": {
@@ -2459,7 +2459,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "styles": {
               "self": {
                 "textAlign": "center",
@@ -2522,7 +2522,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "styles": {
               "self": {
                 "textAlign": "left",
@@ -2566,7 +2566,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-primary",
+            "color": "primary",
             "label": "This is a badge",
             "type": "Badge",
           },
@@ -2591,7 +2591,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "text": "Social Media Management",
             "type": "TitleBlock",
           },
@@ -2630,7 +2630,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-primary",
+            "color": "primary",
             "label": "This is a badge",
             "type": "Badge",
           },
@@ -2656,7 +2656,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "text": "Business Consulting",
             "type": "TitleBlock",
           },
@@ -2915,7 +2915,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-primary",
+            "color": "primary",
             "styles": {
               "self": {
                 "textAlign": "center",
@@ -2935,7 +2935,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-primary",
+            "color": "primary",
             "label": "Contact Us",
             "type": "Badge",
           },
@@ -3020,7 +3020,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "text": "Generic Section With A Form",
             "type": "TitleBlock",
           },
@@ -3216,7 +3216,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "styles": {
               "self": {
                 "textAlign": "center",
@@ -4018,7 +4018,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "text": "Featured Post",
             "type": "TitleBlock",
           },
@@ -4648,7 +4648,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "styles": {
               "self": {
                 "textAlign": "center",
@@ -4953,7 +4953,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "styles": {
               "self": {
                 "textAlign": "center",
@@ -5074,7 +5074,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "styles": {
               "self": {
                 "textAlign": "center",
@@ -5146,7 +5146,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-primary",
+            "color": "primary",
             "label": "This is a badge",
             "type": "Badge",
           },
@@ -5180,7 +5180,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "text": "Unblock your team boost your time to production",
             "type": "TitleBlock",
           },
@@ -5210,7 +5210,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-primary",
+            "color": "primary",
             "label": "This is a badge",
             "styles": {
               "self": {
@@ -5348,7 +5348,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "styles": {
               "self": {
                 "textAlign": "center",
@@ -5917,7 +5917,7 @@ Aenean scelerisque ullamcorper est aliquet blandit. Donec ac tellus enim. Vivamu
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-primary",
+            "color": "primary",
             "label": "Key Benefits",
             "styles": {
               "self": {
@@ -5972,7 +5972,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "styles": {
               "self": {
                 "textAlign": "center",
@@ -6035,7 +6035,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "styles": {
               "self": {
                 "textAlign": "left",
@@ -6079,7 +6079,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-primary",
+            "color": "primary",
             "label": "This is a badge",
             "type": "Badge",
           },
@@ -6104,7 +6104,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "text": "Social Media Management",
             "type": "TitleBlock",
           },
@@ -6143,7 +6143,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-primary",
+            "color": "primary",
             "label": "This is a badge",
             "type": "Badge",
           },
@@ -6169,7 +6169,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "text": "Business Consulting",
             "type": "TitleBlock",
           },
@@ -6428,7 +6428,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-primary",
+            "color": "primary",
             "styles": {
               "self": {
                 "textAlign": "center",
@@ -6448,7 +6448,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-primary",
+            "color": "primary",
             "label": "Contact Us",
             "type": "Badge",
           },
@@ -6533,7 +6533,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "text": "Generic Section With A Form",
             "type": "TitleBlock",
           },
@@ -6729,7 +6729,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "styles": {
               "self": {
                 "textAlign": "center",
@@ -7531,7 +7531,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "__metadata": {
               "modelType": "object",
             },
-            "color": "text-black",
+            "color": "black",
             "text": "Featured Post",
             "type": "TitleBlock",
           },
@@ -8572,7 +8572,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
           },
           {
             "controlType": "palette",
-            "default": "text-primary-500",
+            "default": "primary",
             "group": "styles",
             "hidden": false,
             "label": "Color",
@@ -8580,32 +8580,32 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "name": "color",
             "options": [
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark",
-                "textColor": "$dark",
-                "value": "text-black",
+                "textColor": "$colors.black",
+                "value": "black",
               },
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light",
-                "textColor": "$light",
-                "value": "text-white",
+                "textColor": "$colors.white",
+                "value": "white",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral",
                 "textColor": "$colors.neutral.200",
-                "value": "text-neutral",
+                "value": "neutral",
               },
               {
                 "backgroundColor": "$colors.primary.500",
                 "borderColor": "#ececec",
                 "label": "Primary",
                 "textColor": "$colors.primary.500",
-                "value": "text-primary",
+                "value": "primary",
               },
             ],
             "required": false,
@@ -8954,24 +8954,24 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -9286,24 +9286,24 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -9515,31 +9515,31 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.300",
                 "borderColor": "#ececec",
                 "label": "Neutral alt background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutralAlt-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -9557,12 +9557,12 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
               "self": {
                 "borderColor": [
                   {
-                    "color": "$dark",
+                    "color": "$colors.black",
                     "label": "Dark",
                     "value": "border-dark",
                   },
                   {
-                    "color": "$light",
+                    "color": "$colors.white",
                     "label": "Light",
                     "value": "border-light",
                   },
@@ -9745,24 +9745,24 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -9946,24 +9946,24 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -10188,24 +10188,24 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -10377,24 +10377,24 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -10508,12 +10508,12 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
               "self": {
                 "borderColor": [
                   {
-                    "color": "$dark",
+                    "color": "$colors.black",
                     "label": "Dark",
                     "value": "border-dark",
                   },
                   {
-                    "color": "$light",
+                    "color": "$colors.white",
                     "label": "Light",
                     "value": "border-light",
                   },
@@ -10667,24 +10667,24 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -10866,24 +10866,24 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -10967,12 +10967,12 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
               "self": {
                 "borderColor": [
                   {
-                    "color": "$dark",
+                    "color": "$colors.black",
                     "label": "Dark",
                     "value": "border-dark",
                   },
                   {
-                    "color": "$light",
+                    "color": "$colors.white",
                     "label": "Light",
                     "value": "border-light",
                   },
@@ -11120,24 +11120,24 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -11651,24 +11651,24 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -11790,31 +11790,31 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.300",
                 "borderColor": "#ececec",
                 "label": "Neutral alt background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutralAlt-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -11841,12 +11841,12 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
               "self": {
                 "borderColor": [
                   {
-                    "color": "$dark",
+                    "color": "$colors.black",
                     "label": "Dark",
                     "value": "border-dark",
                   },
                   {
-                    "color": "$light",
+                    "color": "$colors.white",
                     "label": "Light",
                     "value": "border-light",
                   },
@@ -12208,24 +12208,24 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -12442,31 +12442,31 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.300",
                 "borderColor": "#ececec",
                 "label": "Neutral alt background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutralAlt-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -12484,12 +12484,12 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
               "self": {
                 "borderColor": [
                   {
-                    "color": "$dark",
+                    "color": "$colors.black",
                     "label": "Dark",
                     "value": "border-dark",
                   },
                   {
-                    "color": "$light",
+                    "color": "$colors.white",
                     "label": "Light",
                     "value": "border-light",
                   },
@@ -12647,31 +12647,31 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.300",
                 "borderColor": "#ececec",
                 "label": "Neutral alt background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutralAlt-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -12689,12 +12689,12 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
               "self": {
                 "borderColor": [
                   {
-                    "color": "$dark",
+                    "color": "$colors.black",
                     "label": "Dark",
                     "value": "border-dark",
                   },
                   {
-                    "color": "$light",
+                    "color": "$colors.white",
                     "label": "Light",
                     "value": "border-light",
                   },
@@ -12824,24 +12824,24 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -13062,24 +13062,24 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "name": "colors",
             "options": [
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-light-fg-dark",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral background, dark foreground",
-                "textColor": "$dark",
+                "textColor": "$colors.black",
                 "value": "bg-neutral-fg-dark",
               },
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark background, light foreground",
-                "textColor": "$light",
+                "textColor": "$colors.white",
                 "value": "bg-dark-fg-light",
               },
             ],
@@ -14591,7 +14591,7 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
           },
           {
             "controlType": "palette",
-            "default": "text-black",
+            "default": "black",
             "group": "styles",
             "hidden": false,
             "label": "Color",
@@ -14599,32 +14599,32 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
             "name": "color",
             "options": [
               {
-                "backgroundColor": "$dark",
+                "backgroundColor": "$colors.black",
                 "borderColor": "#ececec",
                 "label": "Dark",
-                "textColor": "$dark",
-                "value": "text-black",
+                "textColor": "$colors.black",
+                "value": "black",
               },
               {
-                "backgroundColor": "$light",
+                "backgroundColor": "$colors.white",
                 "borderColor": "#ececec",
                 "label": "Light",
-                "textColor": "$light",
-                "value": "text-white",
+                "textColor": "$colors.white",
+                "value": "white",
               },
               {
                 "backgroundColor": "$colors.neutral.200",
                 "borderColor": "#ececec",
                 "label": "Neutral",
                 "textColor": "$colors.neutral.200",
-                "value": "text-neutral",
+                "value": "neutral",
               },
               {
                 "backgroundColor": "$colors.primary.500",
                 "borderColor": "#ececec",
                 "label": "Primary",
                 "textColor": "$colors.primary.500",
-                "value": "text-primary",
+                "value": "primary",
               },
             ],
             "required": false,
@@ -14769,12 +14769,12 @@ vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
               "self": {
                 "borderColor": [
                   {
-                    "color": "$dark",
+                    "color": "$colors.black",
                     "label": "Dark",
                     "value": "border-dark",
                   },
                   {
-                    "color": "$light",
+                    "color": "$colors.white",
                     "label": "Light",
                     "value": "border-light",
                   },

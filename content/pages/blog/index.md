@@ -7,7 +7,7 @@ enableSearch: true
 topSections:
   - title:
       text: Featured Post
-      color: text-black
+      color: black
       type: TitleBlock
     subtitle: This is the subtitle
     posts:

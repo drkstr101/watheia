@@ -40,7 +40,7 @@
           {
             "title": {
               "text": "How can we help?",
-              "color": "text-black",
+              "color": "black",
               "styles": null,
               "$$type": "TitleBlock"
             },

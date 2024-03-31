@@ -111,12 +111,12 @@ export const VideoBlock: Model = {
             {
               value: 'border-dark',
               label: 'Dark',
-              color: '$dark',
+              color: '$colors.black',
             },
             {
               value: 'border-light',
               label: 'Light',
-              color: '$light',
+              color: '$colors.white',
             },
             {
               value: 'border-neutral',

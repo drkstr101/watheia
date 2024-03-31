@@ -7,7 +7,7 @@
       "data": {
         "title": {
           "text": "Social Media Management",
-          "color": "text-black",
+          "color": "black",
           "styles": null,
           "$$type": "TitleBlock"
         },
@@ -46,7 +46,7 @@
         },
         "badge": {
           "label": "This is a badge",
-          "color": "text-primary",
+          "color": "primary",
           "styles": null,
           "$$type": "Badge"
         },

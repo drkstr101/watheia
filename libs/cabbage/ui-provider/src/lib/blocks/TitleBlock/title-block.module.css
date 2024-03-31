@@ -1,0 +1,39 @@
+.white {
+  @apply text-white;
+}
+
+.black {
+  @apply text-black;
+}
+
+.neutral {
+  @apply text-neutral-700;
+}
+
+.primary {
+  @apply text-primary-500;
+}
+
+.secondary {
+  @apply text-secondary-500;
+}
+
+.accent {
+  @apply text-accent-500;
+}
+
+.info {
+  @apply text-info-500;
+}
+
+.warning {
+  @apply text-warning-500;
+}
+
+.danger {
+  @apply text-danger-500;
+}
+
+.success {
+  @apply text-success-500;
+}

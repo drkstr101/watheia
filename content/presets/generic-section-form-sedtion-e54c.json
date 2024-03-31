@@ -7,7 +7,7 @@
       "data": {
         "title": {
           "text": "Generic Section With A Form",
-          "color": "text-black",
+          "color": "black",
           "styles": null,
           "$$type": "TitleBlock"
         },
@@ -69,7 +69,7 @@
         },
         "badge": {
           "label": "Contact Us",
-          "color": "text-primary",
+          "color": "primary",
           "styles": null,
           "$$type": "Badge"
         },

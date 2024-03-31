@@ -7,7 +7,7 @@
       "data": {
         "title": {
           "text": "Generic section with a video",
-          "color": "text-black",
+          "color": "black",
           "styles": {
             "self": {
               "textAlign": "left"

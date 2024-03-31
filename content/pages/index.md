@@ -6,7 +6,7 @@ sections:
   - type: GenericSection
     title:
       text: Unblock your team boost your time to production
-      color: text-black
+      color: black
       type: TitleBlock
     subtitle: Subtitle goes here
     text: >
@@ -39,7 +39,7 @@ sections:
       type: ImageBlock
     badge:
       label: This is a badge
-      color: text-primary
+      color: primary
       type: Badge
     elementId: ''
     colors: bg-light-fg-dark
@@ -55,7 +55,7 @@ sections:
   - type: FeaturedItemsSection
     title:
       text: Key Benefits
-      color: text-black
+      color: black
       styles:
         self:
           textAlign: center
@@ -151,7 +151,7 @@ sections:
         type: Button
     badge:
       label: This is a badge
-      color: text-primary
+      color: primary
       styles:
         self:
           textAlign: center
@@ -230,7 +230,7 @@ sections:
     type: DividerSection
   - title:
       text: Grow your business 10x faster
-      color: text-black
+      color: black
       styles:
         self:
           textAlign: center
@@ -263,7 +263,7 @@ sections:
       muted: true
     badge:
       label: Key Benefits
-      color: text-primary
+      color: primary
       styles:
         self:
           textAlign: center
@@ -279,7 +279,7 @@ sections:
   - type: GenericSection
     title:
       text: Generic section with a video
-      color: text-black
+      color: black
       styles:
         self:
           textAlign: left
@@ -321,7 +321,7 @@ sections:
         textAlign: left
   - title:
       text: Social Media Management
-      color: text-black
+      color: black
       type: TitleBlock
     subtitle: Increase your reach
     text: >
@@ -347,7 +347,7 @@ sections:
       type: ImageBlock
     badge:
       label: This is a badge
-      color: text-primary
+      color: primary
       type: Badge
     colors: bg-light-fg-dark
     styles:
@@ -356,7 +356,7 @@ sections:
     type: GenericSection
   - title:
       text: Business Consulting
-      color: text-black
+      color: black
       type: TitleBlock
     subtitle: Be in good company
     text: >
@@ -382,7 +382,7 @@ sections:
       type: ImageBlock
     badge:
       label: This is a badge
-      color: text-primary
+      color: primary
       type: Badge
     colors: bg-light-fg-dark
     styles:
@@ -473,7 +473,7 @@ sections:
         textAlign: center
   - title:
       text: List of features here
-      color: text-primary
+      color: primary
       styles:
         self:
           textAlign: center
@@ -564,7 +564,7 @@ sections:
     type: FeaturedItemsSection
   - title:
       text: Generic Section With A Form
-      color: text-black
+      color: black
       type: TitleBlock
     subtitle: Section with a form subtitle
     text: |-
@@ -618,7 +618,7 @@ sections:
         elementId: null
     badge:
       label: Contact Us
-      color: text-primary
+      color: primary
       type: Badge
     colors: bg-light-fg-dark
     type: GenericSection

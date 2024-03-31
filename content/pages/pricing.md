@@ -4,7 +4,7 @@ slug: pricing
 sections:
   - title:
       text: Flexible Pricing
-      color: text-black
+      color: black
       styles:
         self:
           textAlign: center

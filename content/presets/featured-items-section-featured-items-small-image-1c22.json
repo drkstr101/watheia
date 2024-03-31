@@ -7,7 +7,7 @@
       "data": {
         "title": {
           "text": "Key Benefits",
-          "color": "text-black",
+          "color": "black",
           "styles": {
             "self": {
               "textAlign": "center"
@@ -113,7 +113,7 @@
         ],
         "badge": {
           "label": "This is a badge",
-          "color": "text-primary",
+          "color": "primary",
           "styles": {
             "self": {
               "textAlign": "center"
