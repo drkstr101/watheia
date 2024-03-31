@@ -196,15 +196,19 @@ export default async function About() {
         </p>
         <div className="mt-10 max-w-2xl space-y-6 text-base">
           <p>
-            Watheia Labs was started by three friends who noticed that developer studios were
-            charging clients double what an in-house team would cost. Since the beginning, we have
-            been committed to doing things differently by charging triple instead.
+            By fostering open communication and active participation, we ensure that our
+            clients&apos; visions are not only heard but also fully realized. We view each project
+            as a partnership, working closely with our clients to understand their unique goals,
+            challenges, and requirements.
           </p>
           <p>
-            At Watheia Labs, we’re more than just colleagues — we’re a family. This means we pay
-            very little and expect people to work late. We want our employees to bring their whole
-            selves to work. In return, we just ask that they keep themselves there until at least
-            6:30pm.
+            This collaborative ethos permeates every aspect of our work, from initial ideation to
+            final implementation and beyond. We leverage our collective expertise and diverse
+            perspectives to develop innovative solutions that drive tangible results for our
+            clients. By working hand in hand with our clients every step of the way, we cultivate
+            trust, transparency, and mutual respect, laying the foundation for successful
+            long-term partnerships. Together, we can achieve extraordinary outcomes and propel
+            your business towards continued growth and success.
           </p>
         </div>
       </PageIntro>
