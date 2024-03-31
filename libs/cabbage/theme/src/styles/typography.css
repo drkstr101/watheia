@@ -1,10 +1,10 @@
 .typography {
-  color: theme(colors.neutral.950);
+  color: theme(colors.black);
   font-size: theme(fontSize.xl);
   line-height: theme(fontSize.xl[1].lineHeight);
 
   --shiki-color-text: theme(colors.white);
-  --shiki-color-background: theme(colors.neutral.950);
+  --shiki-color-background: theme(colors.black);
   --shiki-token-constant: theme(colors.neutral.300);
   --shiki-token-string: theme(colors.neutral.400);
   --shiki-token-comment: theme(colors.neutral.500);
@@ -90,14 +90,14 @@
 
   :where(thead th) {
     padding-bottom: theme(spacing.6);
-    border-bottom: 1px solid theme(colors.neutral.950);
+    border-bottom: 1px solid theme(colors.black);
   }
 
   :where(td) {
     vertical-align: top;
     padding-top: theme(spacing.6);
     padding-bottom: theme(spacing.6);
-    border-bottom: 1px solid theme(colors.neutral.950 / 0.1);
+    border-bottom: 1px solid theme(colors.black / 0.1);
   }
 
   :where(:is(th, td):not(:last-child)) {
@@ -107,7 +107,7 @@
   /* Code blocks */
   :where(pre) {
     display: flex;
-    background-color: theme(colors.neutral.950);
+    background-color: theme(colors.black);
     /* stylelint-disable-next-line unit-no-unknown */
     border-radius: theme(borderRadius.4xl);
     overflow-x: auto;
@@ -134,7 +134,7 @@
 
   /* <hr> */
   :where(hr) {
-    border-color: theme(colors.neutral.950 / 0.1);
+    border-color: theme(colors.black / 0.1);
     margin-top: theme(spacing.24);
     margin-bottom: theme(spacing.24);
   }

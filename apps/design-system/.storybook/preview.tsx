@@ -1,4 +1,4 @@
-import '@watheia/studio-ui/styles/index.css';
+import '@watheia/cabbage.theme';
 import '../src/styles.css';
 
 import { Preview } from '@storybook/react';

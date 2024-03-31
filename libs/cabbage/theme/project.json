@@ -1,7 +1,7 @@
 {
-  "name": "cabbage-ui-provider",
+  "name": "cabbage-theme",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/cabbage/ui-provider/src",
+  "sourceRoot": "libs/cabbage/theme/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -14,7 +14,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/libs/cabbage/ui-provider"
+        "outputPath": "dist/libs/cabbage/theme"
       },
       "configurations": {
         "development": {
@@ -29,14 +29,14 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/cabbage/ui-provider/jest.config.ts"
+        "jestConfig": "libs/cabbage/theme/jest.config.ts"
       }
     },
     "stylelint": {
       "executor": "nx-stylelint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/cabbage/ui-provider/**/*.css"]
+        "lintFilePatterns": ["libs/cabbage/theme/**/*.css"]
       }
     }
   }

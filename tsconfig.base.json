@@ -20,13 +20,13 @@
       "@home/app/work/wrapper": ["apps/home/app/work/wrapper.tsx"],
       "@home/lib/content-api": ["apps/home/lib/content-api.ts"],
       "@home/lib/mdx": ["apps/home/lib/mdx.ts"],
+      "@watheia/cabbage.theme": ["libs/cabbage/theme/src/index.ts"],
       "@watheia/cabbage.type-generator": ["libs/cabbage/type-generator/src/index.ts"],
       "@watheia/cabbage.ui-provider": ["libs/cabbage/ui-provider/src/index.ts"],
       "@watheia/content-api": ["libs/content-api/src/index.ts"],
       "@watheia/content-helpers": ["libs/content-helpers/src/index.ts"],
       "@watheia/content-model": ["libs/content-model/src/index.ts"],
-      "@watheia/studio-ui": ["libs/studio-ui/src/index.ts"],
-      "@watheia/studio-ui/styles/index.css": ["libs/studio-ui/src/styles/index.css"]
+      "@watheia/studio-ui": ["libs/studio-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
