@@ -175,7 +175,7 @@ function Services() {
 }
 
 export const metadata: Metadata = {
-  description: 'Turn your ideas into reality with custom software solutions',
+  description: 'Turn your ideas into reality with custom software by Watheia Labs',
 };
 
 export default async function Home() {
