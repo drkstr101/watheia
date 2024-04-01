@@ -1,5 +1,6 @@
 'use client';
 
+import GoogleTagManager from '@magicul/next-google-tag-manager';
 import clsx from 'clsx';
 import { MotionConfig, motion, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
@@ -22,6 +23,8 @@ import { GridPattern } from '../../components/GridPattern';
 import { Logo, Logomark } from '../../components/Logo';
 import { Offices } from '../../components/Offices';
 import { SocialMedia } from '../../components/SocialMedia';
+
+const { GOOGLE_TAD_ID } = process.env;
 
 const RootLayoutContext = createContext<{
   logoHovered: boolean;
@@ -265,11 +268,14 @@ export function RootLayout({ children, ...props }: RootLayoutProps) {
   const [logoHovered, setLogoHovered] = useState(false);
 
   return (
-    <RootLayoutContext.Provider value={{ logoHovered, setLogoHovered }}>
-      <RootLayoutInner key={pathname} {...props}>
-        {children}
-      </RootLayoutInner>
-    </RootLayoutContext.Provider>
+    <>
+      <RootLayoutContext.Provider value={{ logoHovered, setLogoHovered }}>
+        <RootLayoutInner key={pathname} {...props}>
+          {children}
+        </RootLayoutInner>
+      </RootLayoutContext.Provider>
+      <GoogleTagManager id={GOOGLE_TAD_ID ?? 'GTM-XXXXX'} />
+    </>
   );
 }
 

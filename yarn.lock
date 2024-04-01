@@ -3469,6 +3469,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@magicul/next-google-tag-manager@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@magicul/next-google-tag-manager@npm:2.0.0"
+  peerDependencies:
+    next: ">=13.0.0"
+    react: ">=17.0.2"
+  checksum: 3d1f23feabe37707b46313cb6ed7288bf2304bf4d9bf37976fb9fd83bd26f498faba5f6f12076f982d65f9d98a0183d634eb0cb545ee77039ac11442c52a529d
+  languageName: node
+  linkType: hard
+
 "@mdx-js/loader@npm:^3.0.1":
   version: 3.0.1
   resolution: "@mdx-js/loader@npm:3.0.1"
@@ -9418,6 +9428,7 @@ __metadata:
     "@base2/pretty-print-object": "npm:^1.0.2"
     "@heroicons/react": "npm:^2.1.3"
     "@leafac/rehype-shiki": "npm:^2.2.1"
+    "@magicul/next-google-tag-manager": "npm:^2.0.0"
     "@mdx-js/loader": "npm:^3.0.1"
     "@mdx-js/react": "npm:^3.0.1"
     "@netlify/plugin-nextjs": "npm:^4.41.3"

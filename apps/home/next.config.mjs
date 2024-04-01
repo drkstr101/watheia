@@ -16,6 +16,7 @@ import { unifiedConditional } from 'unified-conditional';
 import { fileURLToPath } from 'url';
 
 const WORKSPACE_ROOT = resolve(fileURLToPath(new URL('.', import.meta.url)), '../..');
+const GOOGLE_TAD_ID = process.env['GOOGLE_TAD_ID'] ?? 'GTM-XXXXX';
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
@@ -23,7 +24,7 @@ const WORKSPACE_ROOT = resolve(fileURLToPath(new URL('.', import.meta.url)), '..
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
-  env: { WORKSPACE_ROOT },
+  env: { GOOGLE_TAD_ID, WORKSPACE_ROOT },
   nx: {
     // Set this to true if you would like to use SVGR
     // See: https://github.com/gregberge/svgr
