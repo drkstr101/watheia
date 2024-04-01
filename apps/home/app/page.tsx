@@ -11,7 +11,6 @@ import {
   ListItem,
   SectionIntro,
   StylizedImage,
-  TestimonialSection,
 } from '@watheia/studio-ui';
 
 import logoUnseal from '@assets/images/clients/auto-devops/logo-light.svg';
@@ -20,7 +19,6 @@ import logoFamilyFund from '@assets/images/clients/cabbage-cms/logo-light.svg';
 import logoGreenLife from '@assets/images/clients/green-life/logo-light.svg';
 import logoHomeWork from '@assets/images/clients/home-work/logo-light.svg';
 import logoMailSmirk from '@assets/images/clients/mail-smirk/logo-light.svg';
-import logoPhobiaDark from '@assets/images/clients/natural/logo-dark.svg';
 import logoPhobiaLight from '@assets/images/clients/natural/logo-light.svg';
 import logoNorthAdventures from '@assets/images/clients/north-adventures/logo-light.svg';
 import imageLaptop from '@assets/images/laptop.jpg';
@@ -44,7 +42,7 @@ function Clients() {
       <Container>
         <FadeIn className="flex items-center gap-x-8">
           <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
-            We’ve worked with hundreds of amazing people
+            Loved by clients and partners world wide
           </h2>
           <div className="h-px flex-auto bg-neutral-800" />
         </FadeIn>
@@ -200,13 +198,13 @@ export default async function Home() {
 
       <CaseStudies caseStudies={caseStudies} />
 
-      <TestimonialSection
+      {/* <TestimonialSection
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'Natural', logo: logoPhobiaDark }}
       >
         The team at Watheia Labs went above and beyond with our onboarding, even finding a way to
         access the user’s microphone without triggering one of those annoying permission dialogs.
-      </TestimonialSection>
+      </TestimonialSection> */}
 
       <Services />
 
