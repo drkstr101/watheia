@@ -14,23 +14,23 @@ import {
   Testimonial,
 } from '@watheia/studio-ui';
 
+import logoUnseal from '@assets/images/clients/auto-devops/logo-light.svg';
 import logoBrightPath from '@assets/images/clients/bright-path/logo-light.svg';
-import logoFamilyFund from '@assets/images/clients/family-fund/logo-light.svg';
+import logoFamilyFund from '@assets/images/clients/cabbage-cms/logo-light.svg';
 import logoGreenLife from '@assets/images/clients/green-life/logo-light.svg';
 import logoHomeWork from '@assets/images/clients/home-work/logo-light.svg';
 import logoMailSmirk from '@assets/images/clients/mail-smirk/logo-light.svg';
+import logoPhobiaDark from '@assets/images/clients/natural/logo-dark.svg';
+import logoPhobiaLight from '@assets/images/clients/natural/logo-light.svg';
 import logoNorthAdventures from '@assets/images/clients/north-adventures/logo-light.svg';
-import logoPhobiaDark from '@assets/images/clients/phobia/logo-dark.svg';
-import logoPhobiaLight from '@assets/images/clients/phobia/logo-light.svg';
-import logoUnseal from '@assets/images/clients/unseal/logo-light.svg';
 import imageLaptop from '@assets/images/laptop.jpg';
 
 import { CaseStudy, MDXEntry, loadCaseStudies } from '../lib/mdx';
 
 const clients = [
-  ['Phobia', logoPhobiaLight],
+  ['Natural', logoPhobiaLight],
   ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
+  ['Auto-DevOps', logoUnseal],
   ['Mail Smirk', logoMailSmirk],
   ['Home Work', logoHomeWork],
   ['Green Life', logoGreenLife],
@@ -202,7 +202,7 @@ export default async function Home() {
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Phobia', logo: logoPhobiaDark }}
+        client={{ name: 'Natural', logo: logoPhobiaDark }}
       >
         The team at Watheia Labs went above and beyond with our onboarding, even finding a way to
         access the user’s microphone without triggering one of those annoying permission dialogs.

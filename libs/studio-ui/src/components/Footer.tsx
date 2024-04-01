@@ -7,11 +7,11 @@ import { socialMediaProfiles } from './SocialMedia';
 
 const navigation = [
   {
-    title: 'Work',
+    title: 'Labs',
     links: [
-      { title: 'FamilyFund', href: '/work/family-fund' },
-      { title: 'Unseal', href: '/work/unseal' },
-      { title: 'Phobia', href: '/work/phobia' },
+      { title: 'CabbageCMS', href: '/work/cabbage-cms' },
+      { title: 'Auto-DevOps', href: '/work/auto-devops' },
+      { title: 'Natural', href: '/work/natural' },
       {
         title: (
           <>
