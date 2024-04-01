@@ -18,6 +18,7 @@ import {
   SectionIntro,
   StatList,
   StatListItem,
+  ValuesSection,
 } from '@watheia/studio-ui';
 import { loadArticles } from '../../lib/mdx';
 
@@ -212,6 +213,8 @@ export default async function About() {
       </Container>
 
       <Culture />
+
+      <ValuesSection />
 
       <Team />
 

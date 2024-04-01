@@ -11,7 +11,7 @@ import {
   FadeIn,
   FadeInStagger,
   PageIntro,
-  Testimonial,
+  TestimonialSection,
   formatDate,
 } from '@watheia/studio-ui';
 
@@ -148,13 +148,13 @@ export default async function Work() {
 
       <CaseStudies caseStudies={caseStudies} />
 
-      <Testimonial
+      <TestimonialSection
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
       >
         We approached <em>Watheia Labs</em> because we loved their past work. They delivered
         something remarkably similar in record time.
-      </Testimonial>
+      </TestimonialSection>
 
       <Clients />
 

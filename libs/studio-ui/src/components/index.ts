@@ -1,3 +1,4 @@
+export * from '../sections/testimonial-section';
 export * from './Blockquote';
 export * from './Border';
 export * from './Button';
@@ -19,4 +20,3 @@ export * from './SocialMedia';
 export * from './StatList';
 export * from './StylizedImage';
 export * from './TagList';
-export * from './Testimonial';

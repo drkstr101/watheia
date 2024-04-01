@@ -11,7 +11,7 @@ import {
   ListItem,
   SectionIntro,
   StylizedImage,
-  Testimonial,
+  TestimonialSection,
 } from '@watheia/studio-ui';
 
 import logoUnseal from '@assets/images/clients/auto-devops/logo-light.svg';
@@ -200,13 +200,13 @@ export default async function Home() {
 
       <CaseStudies caseStudies={caseStudies} />
 
-      <Testimonial
+      <TestimonialSection
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'Natural', logo: logoPhobiaDark }}
       >
         The team at Watheia Labs went above and beyond with our onboarding, even finding a way to
         access the user’s microphone without triggering one of those annoying permission dialogs.
-      </Testimonial>
+      </TestimonialSection>
 
       <Services />
 
