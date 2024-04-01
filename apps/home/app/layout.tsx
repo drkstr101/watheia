@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   // console.log(api.documents);
   return (
-    <html lang="en">
+    <html lang="en" className="bg-black m-1">
       <body>
         <RootLayout>{children}</RootLayout>
         <Analytics />

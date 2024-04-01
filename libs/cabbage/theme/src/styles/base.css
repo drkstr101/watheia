@@ -24,6 +24,5 @@
   h5,
   h6 {
     @apply break-words;
-    line-height: 1.2;
   }
 }
