@@ -1,7 +1,7 @@
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/react';
-import { Metadata } from 'next';
-
 import { RootLayout } from '@watheia/studio-ui';
+import { Metadata } from 'next';
 
 import '@watheia/cabbage.theme';
 
@@ -18,6 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <RootLayout>{children}</RootLayout>
         <Analytics />
+        <GoogleAnalytics gaId="G-GD3ZBX5EST" />
       </body>
     </html>
   );

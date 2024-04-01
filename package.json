@@ -20,6 +20,7 @@
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "^14.1.4",
+    "@next/third-parties": "^14.1.4",
     "@ninetailed/experience.js-next": "^2.2.11",
     "@stackbit/cms-git": "^0.4.6",
     "@stackbit/types": "^0.11.8",
