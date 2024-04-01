@@ -14,23 +14,23 @@ import {
   Testimonial,
 } from '@watheia/studio-ui';
 
+import logoUnseal from '@assets/images/clients/auto-devops/logo-light.svg';
 import logoBrightPath from '@assets/images/clients/bright-path/logo-light.svg';
-import logoFamilyFund from '@assets/images/clients/family-fund/logo-light.svg';
+import logoFamilyFund from '@assets/images/clients/cabbage-cms/logo-light.svg';
 import logoGreenLife from '@assets/images/clients/green-life/logo-light.svg';
 import logoHomeWork from '@assets/images/clients/home-work/logo-light.svg';
 import logoMailSmirk from '@assets/images/clients/mail-smirk/logo-light.svg';
+import logoPhobiaDark from '@assets/images/clients/natural/logo-dark.svg';
+import logoPhobiaLight from '@assets/images/clients/natural/logo-light.svg';
 import logoNorthAdventures from '@assets/images/clients/north-adventures/logo-light.svg';
-import logoPhobiaDark from '@assets/images/clients/phobia/logo-dark.svg';
-import logoPhobiaLight from '@assets/images/clients/phobia/logo-light.svg';
-import logoUnseal from '@assets/images/clients/unseal/logo-light.svg';
 import imageLaptop from '@assets/images/laptop.jpg';
 
 import { CaseStudy, MDXEntry, loadCaseStudies } from '../lib/mdx';
 
 const clients = [
-  ['Phobia', logoPhobiaLight],
+  ['Natural', logoPhobiaLight],
   ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
+  ['Auto-DevOps', logoUnseal],
   ['Mail Smirk', logoMailSmirk],
   ['Home Work', logoHomeWork],
   ['Green Life', logoGreenLife],
@@ -72,8 +72,9 @@ function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> 
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          We believe technology is the answer to the world’s greatest challenges. It’s also the
-          cause, so we find ourselves in bit of a catch 22 situation.
+          We&apos;re dedicated to empowering businesses with cutting-edge solutions that drive
+          efficiency, sustainability, and growth. From AI-driven automation to sustainable tech
+          initiatives, we pave the way for a more prosperous and sustainable future for all.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -123,8 +124,8 @@ function Services() {
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          As long as those opportunities involve giving us money to re-purpose old projects — we
-          can come up with an endless number of those.
+          With our strategic guidance and tailored solutions, we empower your business to seize
+          untapped potential and thrive in ever-evolving markets.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -140,21 +141,31 @@ function Services() {
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
             <ListItem title="Web development">
-              We specialise in crafting beautiful, high quality marketing pages. The rest of the
-              website will be a shell that uses lorem ipsum everywhere.
+              Transform your online presence with our top-tier web development services. Our
+              skilled team crafts visually stunning and fully functional websites tailored to your
+              brand&apos;s identity, ensuring a seamless user experience across all devices.
+              Partner with us to create a captivating digital platform that captivates your
+              audience and drives business growth.
             </ListItem>
             <ListItem title="Application development">
-              We have a team of skilled developers who are experts in the latest app frameworks,
-              like Angular 1 and Google Web Toolkit.
+              Elevate your digital strategy with our comprehensive software development solutions.
+              From concept to execution, our expert team delivers cutting-edge software tailored
+              to your business needs, ensuring seamless integration and optimal performance.
+              Partner with us to turn your vision into reality and stay ahead in today&apos;s
+              fast-paced market.
             </ListItem>
-            <ListItem title="E-commerce">
-              We are at the forefront of modern e-commerce development. Which mainly means adding
-              your logo to the Shopify store template we’ve used for the past six years.
+            <ListItem title="Digital design">
+              Leverage your brand&amp;s visual identity with our premium digital design services.
+              Our talented team combines creativity with strategic thinking to deliver stunning
+              designs that resonate with your audience and drive engagement. Partner with us to
+              bring your brand to life and leave a lasting impression in the digital world.
             </ListItem>
-            <ListItem title="Custom content management">
-              At Watheia Labs we understand the importance of having a robust and customised CMS.
-              That’s why we run all of our client projects out of a single, enormous Joomla
-              instance.
+            <ListItem title="Project management">
+              Empower your projects with our expert project management services. Our seasoned
+              professionals leverage industry-leading methodologies and tools to streamline
+              workflows, optimize resources, and ensure timely delivery of results. Partner with
+              us to navigate complexities, mitigate risks, and achieve your business objectives
+              with confidence.
             </ListItem>
           </List>
         </div>
@@ -164,8 +175,7 @@ function Services() {
 }
 
 export const metadata: Metadata = {
-  description:
-    'We are a development studio working at the intersection of design and technology.',
+  description: 'Turn your ideas into reality with custom software solutions',
 };
 
 export default async function Home() {
@@ -176,11 +186,12 @@ export default async function Home() {
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-black [text-wrap:balance] sm:text-7xl">
-            Award-winning development studio based in Tri-Cities Washington.
+            Turn your ideas into reality with custom software solutions
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            We are a development studio working at the intersection of design and technology.
-            Level-up your next IT project with custom built software built just for you.
+            Whether you&apos;re a startup looking to disrupt the market or an established
+            enterprise aiming for digital transformation, we&apos;re here to partner with you
+            every step of the way, ensuring your success in the fast-paced world of technology.
           </p>
         </FadeIn>
       </Container>
@@ -191,7 +202,7 @@ export default async function Home() {
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Phobia', logo: logoPhobiaDark }}
+        client={{ name: 'Natural', logo: logoPhobiaDark }}
       >
         The team at Watheia Labs went above and beyond with our onboarding, even finding a way to
         access the user’s microphone without triggering one of those annoying permission dialogs.

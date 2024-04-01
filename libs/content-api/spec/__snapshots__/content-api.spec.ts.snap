@@ -849,7 +849,7 @@ exports[`watheia.content-api #resolve() fully resolves local content cache with 
         "type": "Header",
         "variant": "logo-left-primary-nav-centered",
       },
-      "titleSuffix": "Theme Demo",
+      "titleSuffix": "Watheia Labs",
       "type": "Config",
     },
     {
@@ -8389,7 +8389,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
         "type": "Header",
         "variant": "logo-left-primary-nav-centered",
       },
-      "titleSuffix": "Theme Demo",
+      "titleSuffix": "Watheia Labs",
       "type": "Config",
     },
   },

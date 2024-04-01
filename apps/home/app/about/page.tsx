@@ -1,18 +1,9 @@
 import { type Metadata } from 'next';
 import Image from 'next/image';
 
-import imageAngelaFisher from '@assets/images/team/angela-fisher.jpg';
-import imageBenjaminRussel from '@assets/images/team/benjamin-russel.jpg';
-import imageBlakeReid from '@assets/images/team/blake-reid.jpg';
-import imageChelseaHagon from '@assets/images/team/chelsea-hagon.jpg';
 import imageDriesVincent from '@assets/images/team/dries-vincent.jpg';
-import imageEmmaDorsey from '@assets/images/team/emma-dorsey.jpg';
-import imageJeffreyWebb from '@assets/images/team/jeffrey-webb.jpg';
-import imageKathrynMurphy from '@assets/images/team/kathryn-murphy.jpg';
-import imageLeonardKrasner from '@assets/images/team/leonard-krasner.jpg';
 import imageLeslieAlexander from '@assets/images/team/leslie-alexander.jpg';
 import imageMichaelFoster from '@assets/images/team/michael-foster.jpg';
-import imageWhitneyFrancis from '@assets/images/team/whitney-francis.jpg';
 
 import {
   Border,
@@ -65,72 +56,72 @@ const team = [
     title: 'Leadership',
     people: [
       {
-        name: 'Leslie Alexander',
-        role: 'Co-Founder / CEO',
+        name: 'Patricia A Scott',
+        role: 'Co-Founder / CFO',
         image: { src: imageLeslieAlexander },
       },
       {
-        name: 'Michael Foster',
+        name: 'Aaron R Miller',
         role: 'Co-Founder / CTO',
         image: { src: imageMichaelFoster },
       },
       {
-        name: 'Dries Vincent',
-        role: 'Partner & Business Relations',
+        name: 'Patrick S Stevenson',
+        role: 'Co-Founder / COO',
         image: { src: imageDriesVincent },
       },
     ],
   },
-  {
-    title: 'Team',
-    people: [
-      {
-        name: 'Chelsea Hagon',
-        role: 'Senior Developer',
-        image: { src: imageChelseaHagon },
-      },
-      {
-        name: 'Emma Dorsey',
-        role: 'Senior Designer',
-        image: { src: imageEmmaDorsey },
-      },
-      {
-        name: 'Leonard Krasner',
-        role: 'VP, User Experience',
-        image: { src: imageLeonardKrasner },
-      },
-      {
-        name: 'Blake Reid',
-        role: 'Junior Copywriter',
-        image: { src: imageBlakeReid },
-      },
-      {
-        name: 'Kathryn Murphy',
-        role: 'VP, Human Resources',
-        image: { src: imageKathrynMurphy },
-      },
-      {
-        name: 'Whitney Francis',
-        role: 'Content Specialist',
-        image: { src: imageWhitneyFrancis },
-      },
-      {
-        name: 'Jeffrey Webb',
-        role: 'Account Coordinator',
-        image: { src: imageJeffreyWebb },
-      },
-      {
-        name: 'Benjamin Russel',
-        role: 'Senior Developer',
-        image: { src: imageBenjaminRussel },
-      },
-      {
-        name: 'Angela Fisher',
-        role: 'Front-end Developer',
-        image: { src: imageAngelaFisher },
-      },
-    ],
-  },
+  // {
+  //   title: 'Team',
+  //   people: [
+  //     {
+  //       name: 'Chelsea Hagon',
+  //       role: 'Senior Developer',
+  //       image: { src: imageChelseaHagon },
+  //     },
+  //     {
+  //       name: 'Emma Dorsey',
+  //       role: 'Senior Designer',
+  //       image: { src: imageEmmaDorsey },
+  //     },
+  //     {
+  //       name: 'Leonard Krasner',
+  //       role: 'VP, User Experience',
+  //       image: { src: imageLeonardKrasner },
+  //     },
+  //     {
+  //       name: 'Blake Reid',
+  //       role: 'Junior Copywriter',
+  //       image: { src: imageBlakeReid },
+  //     },
+  //     {
+  //       name: 'Kathryn Murphy',
+  //       role: 'VP, Human Resources',
+  //       image: { src: imageKathrynMurphy },
+  //     },
+  //     {
+  //       name: 'Whitney Francis',
+  //       role: 'Content Specialist',
+  //       image: { src: imageWhitneyFrancis },
+  //     },
+  //     {
+  //       name: 'Jeffrey Webb',
+  //       role: 'Account Coordinator',
+  //       image: { src: imageJeffreyWebb },
+  //     },
+  //     {
+  //       name: 'Benjamin Russel',
+  //       role: 'Senior Developer',
+  //       image: { src: imageBenjaminRussel },
+  //     },
+  //     {
+  //       name: 'Angela Fisher',
+  //       role: 'Front-end Developer',
+  //       image: { src: imageAngelaFisher },
+  //     },
+  //   ],
+  // },
 ];
 
 function Team() {
@@ -196,15 +187,19 @@ export default async function About() {
         </p>
         <div className="mt-10 max-w-2xl space-y-6 text-base">
           <p>
-            Watheia Labs was started by three friends who noticed that developer studios were
-            charging clients double what an in-house team would cost. Since the beginning, we have
-            been committed to doing things differently by charging triple instead.
+            By fostering open communication and active participation, we ensure that our
+            clients&apos; visions are not only heard but also fully realized. We view each project
+            as a partnership, working closely with our clients to understand their unique goals,
+            challenges, and requirements.
           </p>
           <p>
-            At Watheia Labs, we’re more than just colleagues — we’re a family. This means we pay
-            very little and expect people to work late. We want our employees to bring their whole
-            selves to work. In return, we just ask that they keep themselves there until at least
-            6:30pm.
+            This collaborative ethos permeates every aspect of our work, from initial ideation to
+            final implementation and beyond. We leverage our collective expertise and diverse
+            perspectives to develop innovative solutions that drive tangible results for our
+            clients. By working hand in hand with our clients every step of the way, we cultivate
+            trust, transparency, and mutual respect, laying the foundation for successful
+            long-term partnerships. Together, we can achieve extraordinary outcomes and propel
+            your business towards continued growth and success.
           </p>
         </div>
       </PageIntro>

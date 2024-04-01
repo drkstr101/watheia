@@ -119,7 +119,7 @@ function Build() {
         </p>
       </div>
 
-      <Blockquote author={{ name: 'Debra Fiscal', role: 'CEO of Unseal' }} className="mt-12">
+      <Blockquote author={{ name: 'Debra Fiscal', role: 'CEO of Auto-DevOps' }} className="mt-12">
         Watheia Labs were so regular with their progress updates we almost began to think they
         were automated!
       </Blockquote>

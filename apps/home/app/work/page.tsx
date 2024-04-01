@@ -15,21 +15,21 @@ import {
   formatDate,
 } from '@watheia/studio-ui';
 
+import logoUnseal from '@assets/images/clients/auto-devops/logo-dark.svg';
 import logoBrightPath from '@assets/images/clients/bright-path/logo-dark.svg';
-import logoFamilyFund from '@assets/images/clients/family-fund/logo-dark.svg';
+import logoFamilyFund from '@assets/images/clients/cabbage-cms/logo-dark.svg';
 import logoGreenLife from '@assets/images/clients/green-life/logo-dark.svg';
 import logoHomeWork from '@assets/images/clients/home-work/logo-dark.svg';
 import logoMailSmirk from '@assets/images/clients/mail-smirk/logo-dark.svg';
+import logoPhobia from '@assets/images/clients/natural/logo-dark.svg';
 import logoNorthAdventures from '@assets/images/clients/north-adventures/logo-dark.svg';
-import logoPhobia from '@assets/images/clients/phobia/logo-dark.svg';
-import logoUnseal from '@assets/images/clients/unseal/logo-dark.svg';
 import { CaseStudy, MDXEntry, loadCaseStudies } from '../../lib/mdx';
 
 function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> }) {
   return (
     <Container className="mt-40">
       <FadeIn>
-        <h2 className="font-display text-2xl font-semibold text-black">Case studies</h2>
+        <h2 className="font-display text-2xl font-semibold text-black">Featured projects</h2>
       </FadeIn>
       <div className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
         {caseStudies.map((caseStudy) => (
@@ -90,9 +90,9 @@ function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> 
 }
 
 const clients = [
-  ['Phobia', logoPhobia],
+  ['Natural', logoPhobia],
   ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
+  ['Auto-DevOps', logoUnseal],
   ['Mail Smirk', logoMailSmirk],
   ['Home Work', logoHomeWork],
   ['Green Life', logoGreenLife],
@@ -128,7 +128,7 @@ function Clients() {
 }
 
 export const metadata: Metadata = {
-  title: 'Our Work',
+  title: 'From the lab',
   description:
     'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
 };
@@ -138,7 +138,7 @@ export default async function Work() {
 
   return (
     <>
-      <PageIntro eyebrow="Our work" title="Proven solutions for real-world problems.">
+      <PageIntro eyebrow="From the lab" title="Proven solutions for real-world problems.">
         <p>
           We believe in efficiency and maximizing our resources to provide the best value to our
           clients. The primary way we do that is by re-using the same five projects we’ve been
