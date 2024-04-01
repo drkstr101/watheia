@@ -17,7 +17,7 @@
     "paths": {
       "@assets/images/*": ["libs/assets/images/*"],
       "@home/app/blog/wrapper": ["apps/home/app/blog/wrapper.tsx"],
-      "@home/app/work/wrapper": ["apps/home/app/work/wrapper.tsx"],
+      "@home/app/labs/wrapper": ["apps/home/app/labs/wrapper.tsx"],
       "@home/lib/content-api": ["apps/home/lib/content-api.ts"],
       "@home/lib/mdx": ["apps/home/lib/mdx.ts"],
       "@watheia/cabbage.theme": ["libs/cabbage/theme/src/index.ts"],

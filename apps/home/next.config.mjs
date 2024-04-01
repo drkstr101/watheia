@@ -100,8 +100,8 @@ export default async function config(phase, context) {
             [[remarkMDXLayout, '@home/app/blog/wrapper', 'article']],
           ],
           [
-            new RegExp(`^${escapeStringRegexp(resolve('app/work'))}`),
-            [[remarkMDXLayout, '@home/app/work/wrapper', 'caseStudy']],
+            new RegExp(`^${escapeStringRegexp(resolve('app/labs'))}`),
+            [[remarkMDXLayout, '@home/app/labs/wrapper', 'caseStudy']],
           ],
         ],
       ],

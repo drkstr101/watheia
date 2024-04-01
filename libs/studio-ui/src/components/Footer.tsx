@@ -9,16 +9,16 @@ const navigation = [
   {
     title: 'Labs',
     links: [
-      { title: 'Cabbage CMS', href: '/work/family-fund' },
-      { title: 'Auto-DevOps', href: '/work/unseal' },
-      { title: 'Natural', href: '/work/phobia' },
+      { title: 'Cabbage CMS', href: '/labs/family-fund' },
+      { title: 'Auto-DevOps', href: '/labs/unseal' },
+      { title: 'Natural', href: '/labs/phobia' },
       {
         title: (
           <>
             See all <span aria-hidden="true">&rarr;</span>
           </>
         ),
-        href: '/work',
+        href: '/labs',
       },
     ],
   },
