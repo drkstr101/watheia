@@ -5,6 +5,6 @@ test('has title', async ({ page }) => {
 
   // Expect h1 to contain a substring.
   expect(await page.locator('h1').innerText()).toContain(
-    'Award-winning development studio based in Tri-Cities Washington.'
+    'Turn your ideas into reality with custom software solutions'
   );
 });
