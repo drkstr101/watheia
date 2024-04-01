@@ -29,7 +29,7 @@ function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> 
   return (
     <Container className="mt-40">
       <FadeIn>
-        <h2 className="font-display text-2xl font-semibold text-black">Case studies</h2>
+        <h2 className="font-display text-2xl font-semibold text-black">Featured Projects</h2>
       </FadeIn>
       <div className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
         {caseStudies.map((caseStudy) => (
@@ -128,7 +128,7 @@ function Clients() {
 }
 
 export const metadata: Metadata = {
-  title: 'Our Work',
+  title: 'From the lab',
   description:
     'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
 };
@@ -138,7 +138,7 @@ export default async function Work() {
 
   return (
     <>
-      <PageIntro eyebrow="Our work" title="Proven solutions for real-world problems.">
+      <PageIntro eyebrow="From the lab" title="Proven solutions for real-world problems.">
         <p>
           We believe in efficiency and maximizing our resources to provide the best value to our
           clients. The primary way we do that is by re-using the same five projects we’ve been
