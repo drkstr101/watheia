@@ -155,7 +155,7 @@ function Services() {
               fast-paced market.
             </ListItem>
             <ListItem title="Digital design">
-              Elevate your brandamp&s visual identity with our premium digital design services.
+              Leverage your brand&amp;s visual identity with our premium digital design services.
               Our talented team combines creativity with strategic thinking to deliver stunning
               designs that resonate with your audience and drive engagement. Partner with us to
               bring your brand to life and leave a lasting impression in the digital world.
