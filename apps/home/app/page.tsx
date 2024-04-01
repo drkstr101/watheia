@@ -151,7 +151,7 @@ function Services() {
               Elevate your digital strategy with our comprehensive software development solutions.
               From concept to execution, our expert team delivers cutting-edge software tailored
               to your business needs, ensuring seamless integration and optimal performance.
-              Partner with us to turn your vision into reality and stay ahead in today's
+              Partner with us to turn your vision into reality and stay ahead in today&apos;s
               fast-paced market.
             </ListItem>
             <ListItem title="Digital design">
@@ -190,8 +190,8 @@ export default async function Home() {
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
             Whether you&apos;re a startup looking to disrupt the market or an established
-            enterprise aiming for digital transformation, we're here to partner with you every
-            step of the way, ensuring your success in the fast-paced world of technology.
+            enterprise aiming for digital transformation, we&apos;re here to partner with you
+            every step of the way, ensuring your success in the fast-paced world of technology.
           </p>
         </FadeIn>
       </Container>
