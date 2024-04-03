@@ -26,25 +26,28 @@ function Culture() {
   return (
     <div className="mt-24 rounded-4xl bg-black py-24 sm:mt-32 lg:mt-40 lg:py-32">
       <SectionIntro
-        eyebrow="Our culture"
-        title="Balance your passion with your passion for life."
+        eyebrow="Our values"
+        title="Our core values guide our approach to every project."
         invert
       >
-        <p>We are a group of like-minded people who share the same core values.</p>
+        <p>
+          We prioritize transparent communication, foster strong relationships built on trust, and
+          demonstrate unwavering commitment to delivering exceptional client results.
+        </p>
       </SectionIntro>
       <Container className="mt-16">
         <GridList>
-          <GridListItem title="Loyalty" invert>
-            Our team has been with us since the beginning because none of them are allowed to have
-            LinkedIn profiles.
+          <GridListItem title="Honesty" invert>
+            We believe in providing candid feedback, even when it may be difficult, to ensure that
+            our clients receive the most accurate and reliable guidance possible.
           </GridListItem>
           <GridListItem title="Trust" invert>
-            We don’t care when our team works just as long as they are working every waking
-            second.
+            By delivering on our promises and consistently exceeding expectations, we strive to
+            cultivate trust with our clients.
           </GridListItem>
-          <GridListItem title="Compassion" invert>
-            You never know what someone is going through at home and we make sure to never find
-            out.
+          <GridListItem title="Dedication" invert>
+            We are committed to delivering results that not only meet but surpass expectations,
+            adding tangible value to our clients&apos; businesses.
           </GridListItem>
         </GridList>
       </Container>
