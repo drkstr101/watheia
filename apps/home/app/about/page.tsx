@@ -42,8 +42,9 @@ function Culture() {
             our clients receive the most accurate and reliable guidance possible.
           </GridListItem>
           <GridListItem title="Trust" invert>
-            By delivering on our promises and consistently exceeding expectations, we strive to
-            cultivate trust with our clients.
+            We earn trust through consistent reliability, integrity, and competence. By delivering
+            on our promises and consistently exceeding expectations, we strive to cultivate trust
+            with our clients
           </GridListItem>
           <GridListItem title="Dedication" invert>
             We are committed to delivering results that not only meet but surpass expectations,
