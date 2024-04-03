@@ -17,11 +17,11 @@ export default function ValuesSection({ className, ...props }: ValuesSectionProp
         />
       </div>
 
-      <SectionIntro eyebrow="Our values" title="Balancing reliability and innovation">
+      <SectionIntro eyebrow="How we work" title="Balancing reliability and innovation">
         <p>
-          We strive to stay at the forefront of emerging trends and technologies, while completely
-          ignoring them and forking that old Rails project we feel comfortable using. We stand by
-          our core values to justify that decision.
+          By striking a harmonious balance between reliability and innovation, we can offer our
+          clients the stability of proven solutions while continuously pushing boundaries to
+          uncover new possibilities and drive sustainable growth.
         </p>
       </SectionIntro>
 
