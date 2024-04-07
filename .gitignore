@@ -54,3 +54,7 @@ Thumbs.db
 
 # Stackbit
 /.stackbit
+
+# Playwright
+# TODO: Figure out why this isn't getting placed in dist dir
+/playwright-report
