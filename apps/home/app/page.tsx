@@ -98,7 +98,7 @@ function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> 
                   <span className="text-neutral-300" aria-hidden="true">
                     /
                   </span>
-                  <span>Case study</span>
+                  <span>{caseStudy.client}</span>
                 </p>
                 <p className="mt-6 font-display text-2xl font-semibold text-black">
                   {caseStudy.title}
@@ -184,7 +184,7 @@ export default async function Home() {
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-black [text-wrap:balance] sm:text-7xl">
-            Turn your ideas into reality with custom software solutions
+            Turn your dreams into reality with Watheia Labs
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
             Whether you&apos;re a startup looking to disrupt the market or an established

@@ -8,7 +8,7 @@ import '@watheia/cabbage.theme';
 export const metadata: Metadata = {
   title: {
     template: '%s - Watheia Labs',
-    default: 'Turn your ideas into reality with custom software solutions by Watheia Labs',
+    default: 'Turn your dreams into reality with Watheia Labs by Watheia Labs',
   },
 };
 export default function Layout({ children }: { children: React.ReactNode }) {

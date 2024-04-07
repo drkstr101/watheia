@@ -9,7 +9,7 @@ const navigation = [
   {
     title: 'Labs',
     links: [
-      { title: 'CabbageCMS', href: '/labs/cabbage-cms' },
+      { title: 'Cabbage CMS', href: '/labs/cabbage-cms' },
       { title: 'Auto-DevOps', href: '/labs/auto-devops' },
       { title: 'Natural', href: '/labs/natural' },
       {

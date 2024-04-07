@@ -1661,7 +1661,7 @@ exports[`watheia.content-api #resolve() fully resolves local content cache with 
             },
           },
           "subtitle": "Subtitle goes here",
-          "text": "A CabbageCMS website is a git repo that you own. Every code commit is instantly reflected in the visual editor, and since every visual edit is a git commit, git workflows and collaboration work.
+          "text": "A Cabbage CMS website is a git repo that you own. Every code commit is instantly reflected in the visual editor, and since every visual edit is a git commit, git workflows and collaboration work.
 ",
           "title": {
             "__metadata": {
@@ -5174,7 +5174,7 @@ Vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Ac tincidunt vit
             },
           },
           "subtitle": "Subtitle goes here",
-          "text": "A CabbageCMS website is a git repo that you own. Every code commit is instantly reflected in the visual editor, and since every visual edit is a git commit, git workflows and collaboration work.
+          "text": "A Cabbage CMS website is a git repo that you own. Every code commit is instantly reflected in the visual editor, and since every visual edit is a git commit, git workflows and collaboration work.
 ",
           "title": {
             "__metadata": {

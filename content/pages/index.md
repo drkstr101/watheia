@@ -10,7 +10,7 @@ sections:
       type: TitleBlock
     subtitle: Subtitle goes here
     text: >
-      A CabbageCMS website is a git repo that you own. Every code commit is
+      A Cabbage CMS website is a git repo that you own. Every code commit is
       instantly reflected in the visual editor, and since every visual edit is a
       git commit, git workflows and collaboration work.
     actions:
