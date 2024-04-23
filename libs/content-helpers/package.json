@@ -2,7 +2,6 @@
   "name": "@watheia/content-helpers",
   "version": "0.0.1",
   "dependencies": {
-    "@swc/helpers": "~0.5.2",
     "@watheia/content-model": "0.0.1"
   },
   "type": "commonjs",
