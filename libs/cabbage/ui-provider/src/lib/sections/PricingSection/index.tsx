@@ -37,7 +37,7 @@ export default function PricingSection(props) {
         )}
       >
         {badge && (
-          <Badge {...badge} className="w-full max-w-sectionBody" data-sb-field-path=".badge" />
+          <Badge {...badge} className="max-w-sectionBody w-full" data-sb-field-path=".badge" />
         )}
         {title && (
           <TitleBlock
@@ -83,7 +83,7 @@ export default function PricingSection(props) {
               {plans.map((plan, index) => (
                 <div
                   key={index}
-                  className="px-5 basis-full max-w-full sm:basis-5/6 max-w-[83.33333%] md:basis-2/3 md:max-w-[66.66667%] lg:basis-1/3 lg:max-w-[33.33333%]"
+                  className="max-w-[83.33333%] max-w-full basis-full px-5 sm:basis-5/6 md:max-w-[66.66667%] md:basis-2/3 lg:max-w-[33.33333%] lg:basis-1/3"
                 >
                   <PricingPlan
                     {...plan}
@@ -186,7 +186,7 @@ function PricingPlan(props) {
           {(price || details) && (
             <div className={classNames({ 'mt-6': title })}>
               {price && (
-                <div className="text-4xl sm:text-6xl font-medium" data-sb-field-path=".price">
+                <div className="text-4xl font-medium sm:text-6xl" data-sb-field-path=".price">
                   {price}
                 </div>
               )}

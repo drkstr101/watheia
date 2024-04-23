@@ -41,7 +41,7 @@ export default function Social(props) {
     >
       {IconComponent && (
         <IconComponent
-          className="shrink-0 fill-current w-[1em] h-[1em]"
+          className="h-[1em] w-[1em] shrink-0 fill-current"
           data-sb-field-path=".icon"
         />
       )}

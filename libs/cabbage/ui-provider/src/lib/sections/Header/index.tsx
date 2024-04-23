@@ -25,7 +25,7 @@ export default function Header(props) {
       )}
       data-sb-object-id={props['data-sb-object-id']}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto max-w-7xl">
         <Link href="#main" className="sr-only">
           Skip to main content
         </Link>
@@ -60,7 +60,7 @@ function HeaderLogoLeftPrimaryLeft(props) {
     colors = 'bg-light-fg-dark',
   } = props;
   return (
-    <div className="flex items-center relative">
+    <div className="relative flex items-center">
       {(title || logo?.url) && (
         <div className="mr-10">
           <SiteLogoLink title={title} logo={logo} />
@@ -68,7 +68,7 @@ function HeaderLogoLeftPrimaryLeft(props) {
       )}
       {primaryLinks.length > 0 && (
         <ul
-          className="hidden mr-10 gap-x-10 lg:flex lg:items-center"
+          className="mr-10 hidden gap-x-10 lg:flex lg:items-center"
           data-sb-field-path=".primaryLinks"
         >
           <ListOfLinks links={primaryLinks} colors={colors} />
@@ -76,7 +76,7 @@ function HeaderLogoLeftPrimaryLeft(props) {
       )}
       {secondaryLinks.length > 0 && (
         <ul
-          className="hidden ml-auto gap-x-2.5 lg:flex lg:items-center"
+          className="ml-auto hidden gap-x-2.5 lg:flex lg:items-center"
           data-sb-field-path=".secondaryLinks"
         >
           <ListOfLinks links={secondaryLinks} />
@@ -96,7 +96,7 @@ function HeaderLogoLeftPrimaryCentered(props) {
     colors = 'bg-light-fg-dark',
   } = props;
   return (
-    <div className="flex items-center relative">
+    <div className="relative flex items-center">
       {(title || logo?.url) && (
         <div className="mr-10">
           <SiteLogoLink title={title} logo={logo} />
@@ -104,7 +104,7 @@ function HeaderLogoLeftPrimaryCentered(props) {
       )}
       {primaryLinks.length > 0 && (
         <ul
-          className="hidden lg:flex lg:items-center gap-x-10 absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-auto"
+          className="absolute left-1/2 top-1/2 hidden w-auto -translate-x-1/2 -translate-y-1/2 gap-x-10 lg:flex lg:items-center"
           data-sb-field-path=".primaryLinks"
         >
           <ListOfLinks links={primaryLinks} colors={colors} />
@@ -112,7 +112,7 @@ function HeaderLogoLeftPrimaryCentered(props) {
       )}
       {secondaryLinks.length > 0 && (
         <ul
-          className="hidden lg:flex lg:items-center ml-auto gap-x-2.5"
+          className="ml-auto hidden gap-x-2.5 lg:flex lg:items-center"
           data-sb-field-path=".secondaryLinks"
         >
           <ListOfLinks links={secondaryLinks} />
@@ -132,7 +132,7 @@ function HeaderLogoLeftPrimaryRight(props) {
     colors = 'bg-light-fg-dark',
   } = props;
   return (
-    <div className="flex items-center relative">
+    <div className="relative flex items-center">
       {(title || logo?.url) && (
         <div className="mr-10">
           <SiteLogoLink title={title} logo={logo} />
@@ -140,7 +140,7 @@ function HeaderLogoLeftPrimaryRight(props) {
       )}
       {primaryLinks.length > 0 && (
         <ul
-          className="hidden lg:flex lg:items-center ml-auto gap-x-10"
+          className="ml-auto hidden gap-x-10 lg:flex lg:items-center"
           data-sb-field-path=".primaryLinks"
         >
           <ListOfLinks links={primaryLinks} colors={colors} />
@@ -174,15 +174,15 @@ function HeaderLogoCenteredPrimaryLeft(props) {
     colors = 'bg-light-fg-dark',
   } = props;
   return (
-    <div className="flex items-center relative">
+    <div className="relative flex items-center">
       {(title || logo?.url) && (
-        <div className="mr-10 lg:mr-0 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-y-1/2 lg:-translate-x-1/2">
+        <div className="mr-10 lg:absolute lg:left-1/2 lg:top-1/2 lg:mr-0 lg:-translate-x-1/2 lg:-translate-y-1/2">
           <SiteLogoLink title={title} logo={logo} />
         </div>
       )}
       {primaryLinks.length > 0 && (
         <ul
-          className="hidden lg:flex lg:items-center gap-x-10"
+          className="hidden gap-x-10 lg:flex lg:items-center"
           data-sb-field-path=".primaryLinks"
         >
           <ListOfLinks links={primaryLinks} colors={colors} />
@@ -190,7 +190,7 @@ function HeaderLogoCenteredPrimaryLeft(props) {
       )}
       {secondaryLinks.length > 0 && (
         <ul
-          className="hidden lg:flex lg:items-center ml-auto gap-x-2.5"
+          className="ml-auto hidden gap-x-2.5 lg:flex lg:items-center"
           data-sb-field-path=".secondaryLinks"
         >
           <ListOfLinks links={secondaryLinks} />
@@ -211,15 +211,15 @@ function HeaderLogoCenteredPrimaryCentered(props) {
   } = props;
   return (
     <>
-      <div className="flex items-center relative">
+      <div className="relative flex items-center">
         {(title || logo?.url) && (
-          <div className="mr-10 lg:mr-0 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-y-1/2 lg:-translate-x-1/2">
+          <div className="mr-10 lg:absolute lg:left-1/2 lg:top-1/2 lg:mr-0 lg:-translate-x-1/2 lg:-translate-y-1/2">
             <SiteLogoLink title={title} logo={logo} />
           </div>
         )}
         {secondaryLinks.length > 0 && (
           <ul
-            className="hidden lg:flex lg:items-center gap-x-2.5 ml-auto"
+            className="ml-auto hidden gap-x-2.5 lg:flex lg:items-center"
             data-sb-field-path=".secondaryLinks"
           >
             <ListOfLinks links={secondaryLinks} />
@@ -229,7 +229,7 @@ function HeaderLogoCenteredPrimaryCentered(props) {
       </div>
       {primaryLinks.length > 0 && (
         <ul
-          className="hidden lg:flex lg:items-center lg:justify-center gap-x-10 mt-4"
+          className="mt-4 hidden gap-x-10 lg:flex lg:items-center lg:justify-center"
           data-sb-field-path=".primaryLinks"
         >
           <ListOfLinks links={primaryLinks} colors={colors} />
@@ -278,11 +278,11 @@ function MobileMenu(props) {
       <button
         aria-label="Open Menu"
         title="Open Menu"
-        className="p-2 -mr-1 focus:outline-none"
+        className="-mr-1 p-2 focus:outline-none"
         onClick={openMobileMenu}
       >
         <span className="sr-only">Open Menu</span>
-        <MenuIcon className="fill-current h-6 w-6" />
+        <MenuIcon className="h-6 w-6 fill-current" />
       </button>
       <div
         className={classNames(
@@ -295,16 +295,16 @@ function MobileMenu(props) {
           isMenuOpen ? 'block' : 'hidden'
         )}
       >
-        <div className="flex flex-col min-h-full">
-          <div className="flex items-center justify-between mb-10">
+        <div className="flex min-h-full flex-col">
+          <div className="mb-10 flex items-center justify-between">
             {(title || logo?.url) && <SiteLogoLink title={title} logo={logo} />}
             <button
               aria-label="Close Menu"
               title="Close Menu"
-              className="p-2 -mr-1 focus:outline-none"
+              className="-mr-1 p-2 focus:outline-none"
               onClick={closeMobileMenu}
             >
-              <CloseIcon className="fill-current h-6 w-6" />
+              <CloseIcon className="h-6 w-6 fill-current" />
             </button>
           </div>
           {primaryLinks.length > 0 && (
@@ -394,7 +394,7 @@ function LinkWithSubnav(props) {
 
   return (
     <li
-      className={classNames('relative', inMobileMenu ? 'border-t py-3' : 'py-2 group')}
+      className={classNames('relative', inMobileMenu ? 'border-t py-3' : 'group py-2')}
       onMouseLeave={
         !process.env.stackbitPreview && !inMobileMenu
           ? () => {
@@ -425,7 +425,7 @@ function LinkWithSubnav(props) {
           'items-center',
           inMobileMenu ? 'w-full' : 'text-sm',
           {
-            'group-hover:no-underline hover:no-underline':
+            'hover:no-underline group-hover:no-underline':
               !inMobileMenu && (link.labelStyle ?? 'primary') === 'primary',
             'group-hover:text-primary-500': !inMobileMenu && link.labelStyle === 'secondary',
           }
@@ -448,8 +448,8 @@ function LinkWithSubnav(props) {
           className={classNames(
             colors,
             inMobileMenu
-              ? 'p-4 space-y-3'
-              : 'absolute top-full left-0 w-44 border-t border-primary shadow-header z-10 px-6 pt-5 pb-6 space-y-4',
+              ? 'space-y-3 p-4'
+              : 'border-primary shadow-header absolute left-0 top-full z-10 w-44 space-y-4 border-t px-6 pb-6 pt-5',
             isSubNavOpen ? 'block' : 'hidden'
           )}
           data-sb-field-path=".links"

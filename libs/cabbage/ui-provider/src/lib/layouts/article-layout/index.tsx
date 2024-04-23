@@ -16,10 +16,10 @@ export default function ArticleLayout(props) {
     <BaseLayout page={page} site={site}>
       <main id="main" className="sb-layout sb-post-layout">
         <article className="px-4 py-16 sm:py-28">
-          <div className="max-w-screen-2xl mx-auto">
-            <header className="max-w-4xl mx-auto mb-12 text-center">
+          <div className="mx-auto max-w-screen-2xl">
+            <header className="mx-auto mb-12 max-w-4xl text-center">
               <h1 data-sb-field-path="title">{title}</h1>
-              <div className="text-sm uppercase mt-4">
+              <div className="mt-4 text-sm uppercase">
                 <time dateTime={dateTimeAttr} data-sb-field-path="date">
                   {formattedDate}
                 </time>
@@ -34,7 +34,7 @@ export default function ArticleLayout(props) {
             {markdown_content && (
               <Markdown
                 options={{ forceBlock: true }}
-                className="sb-markdown max-w-3xl mx-auto"
+                className="sb-markdown mx-auto max-w-3xl"
                 data-sb-field-path="content"
               >
                 {markdown_content}

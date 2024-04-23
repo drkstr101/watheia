@@ -57,7 +57,7 @@ const HeroSection = () => (
         />
         <div className="mt-24 sm:mt-32 lg:mt-16">
           <a href="#" className="inline-flex space-x-6">
-            <span className="rounded-full bg-primary-500/10 px-3 py-1 text-sm font-semibold leading-6 text-primary-400 ring-1 ring-inset ring-primary-500/20">
+            <span className="bg-primary-500/10 text-primary-400 ring-primary-500/20 rounded-full px-3 py-1 text-sm font-semibold leading-6 ring-1 ring-inset">
               Latest updates
             </span>
             <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-neutral-300">
@@ -76,7 +76,7 @@ const HeroSection = () => (
         <div className="mt-10 flex items-center gap-x-6">
           <a
             href="#"
-            className="rounded-md bg-primary-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-400"
+            className="bg-primary-500 hover:bg-primary-400 focus-visible:outline-primary-400 rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
           >
             Get started
           </a>
@@ -153,7 +153,7 @@ export function HomeView(props: HomeViewProps) {
         {/* Feature section */}
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-base font-semibold leading-7 text-primary-400">Deploy faster</h2>
+            <h2 className="text-primary-400 text-base font-semibold leading-7">Deploy faster</h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Everything you need to deploy your app
             </p>
@@ -167,7 +167,7 @@ export function HomeView(props: HomeViewProps) {
               {primaryFeatures.map((feature) => (
                 <div key={feature.name} className="flex flex-col">
                   <dt className="text-base font-semibold leading-7 text-white">
-                    <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-primary-500">
+                    <div className="bg-primary-500 mb-6 flex h-10 w-10 items-center justify-center rounded-lg">
                       <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                     </div>
                     {feature.name}
@@ -177,7 +177,7 @@ export function HomeView(props: HomeViewProps) {
                     <p className="mt-6">
                       <a
                         href={feature.href}
-                        className="text-sm font-semibold leading-6 text-primary-400"
+                        className="text-primary-400 text-sm font-semibold leading-6"
                       >
                         Learn more <span aria-hidden="true">→</span>
                       </a>
@@ -193,7 +193,7 @@ export function HomeView(props: HomeViewProps) {
         <div className="mt-32 sm:mt-56">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl sm:text-center">
-              <h2 className="text-base font-semibold leading-7 text-primary-400">
+              <h2 className="text-primary-400 text-base font-semibold leading-7">
                 Everything you need
               </h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -225,7 +225,7 @@ export function HomeView(props: HomeViewProps) {
                 <div key={feature.name} className="relative pl-9">
                   <dt className="inline font-semibold text-white">
                     <feature.icon
-                      className="absolute left-1 top-1 h-5 w-5 text-primary-500"
+                      className="text-primary-500 absolute left-1 top-1 h-5 w-5"
                       aria-hidden="true"
                     />
                     {feature.name}
@@ -240,7 +240,7 @@ export function HomeView(props: HomeViewProps) {
         {/* Stats */}
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-            <h2 className="text-base font-semibold leading-8 text-primary-400">
+            <h2 className="text-primary-400 text-base font-semibold leading-8">
               Our track record
             </h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">

@@ -38,10 +38,10 @@ const clients = [
 
 function Clients() {
   return (
-    <div className="mt-24 rounded-4xl bg-black py-20 sm:mt-32 sm:py-32 lg:mt-56">
+    <div className="rounded-4xl mt-24 bg-black py-20 sm:mt-32 sm:py-32 lg:mt-56">
       <Container>
         <FadeIn className="flex items-center gap-x-8">
-          <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
+          <h2 className="font-display text-center text-sm font-semibold tracking-wider text-white sm:text-left">
             Loved by clients and partners world wide
           </h2>
           <div className="h-px flex-auto bg-neutral-800" />
@@ -100,7 +100,7 @@ function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> 
                   </span>
                   <span>{caseStudy.client}</span>
                 </p>
-                <p className="mt-6 font-display text-2xl font-semibold text-black">
+                <p className="font-display mt-6 text-2xl font-semibold text-black">
                   {caseStudy.title}
                 </p>
                 <p className="mt-4 text-base text-neutral-600">{caseStudy.description}</p>

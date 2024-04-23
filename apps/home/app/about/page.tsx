@@ -24,7 +24,7 @@ import { loadArticles } from '../../lib/mdx';
 
 function Culture() {
   return (
-    <div className="mt-24 rounded-4xl bg-black py-24 sm:mt-32 lg:mt-40 lg:py-32">
+    <div className="rounded-4xl mt-24 bg-black py-24 sm:mt-32 lg:mt-40 lg:py-32">
       <SectionIntro
         eyebrow="Our values"
         title="Our core values guide our approach to every project."

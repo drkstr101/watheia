@@ -25,7 +25,7 @@ export default function CheckboxFormControl(props) {
       <div className="flex items-center">
         <input
           id={name}
-          className="sb-checkbox absolute h-6 w-6 appearance-none select-none opacity-0"
+          className="sb-checkbox absolute h-6 w-6 select-none appearance-none opacity-0"
           type="checkbox"
           name={name}
           {...attr}

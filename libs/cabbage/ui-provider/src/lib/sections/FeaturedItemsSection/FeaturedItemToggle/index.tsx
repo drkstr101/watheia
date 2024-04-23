@@ -48,7 +48,7 @@ export default function FeaturedItemToggle(props) {
     >
       {title &&
         (hasSectionTitle ? (
-          <h3 className="relative pr-8 cursor-pointer" onClick={() => setIsActive(!isActive)}>
+          <h3 className="relative cursor-pointer pr-8" onClick={() => setIsActive(!isActive)}>
             <span data-sb-field-path=".title">{title}</span>
             <span className="absolute right-0 top-1/2 -translate-y-1/2">
               <PlusIcon

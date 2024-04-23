@@ -10,7 +10,7 @@ export default function ValuesSection({ className, ...props }: ValuesSectionProp
       className={clsx('relative mt-24 pt-24 sm:mt-32 sm:pt-32 lg:mt-40 lg:pt-40', className)}
       {...props}
     >
-      <div className="absolute inset-x-0 top-0 -z-10 h-[884px] overflow-hidden rounded-t-4xl bg-gradient-to-b from-white">
+      <div className="rounded-t-4xl absolute inset-x-0 top-0 -z-10 h-[884px] overflow-hidden bg-gradient-to-b from-white">
         <GridPattern
           className="absolute inset-0 h-full w-full fill-neutral-100 stroke-black/5 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]"
           yOffset={-270}

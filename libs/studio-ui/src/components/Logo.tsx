@@ -62,7 +62,7 @@ export function Logo({
       <text
         x="32"
         y="20"
-        className={clsx('font-display font-bold text-xl', invert ? 'fill-white' : 'fill-black')}
+        className={clsx('font-display text-xl font-bold', invert ? 'fill-white' : 'fill-black')}
       >
         Watheia
       </text>

@@ -67,11 +67,11 @@
       }
     }
     pre {
-      @apply border border-current overflow-x-auto leading-normal;
+      @apply overflow-x-auto border border-current leading-normal;
       padding: 1.25em;
     }
     hr {
-      @apply bg-current border-0 h-px;
+      @apply h-px border-0 bg-current;
       &:not(:first-child) {
         margin-top: 2.5rem;
       }
@@ -85,7 +85,7 @@
       margin: 0.5rem 0 0;
     }
     table {
-      @apply border border-current border-collapse text-left w-full;
+      @apply w-full border-collapse border border-current text-left;
     }
     caption {
       @apply text-left;
@@ -94,7 +94,7 @@
     }
     th,
     td {
-      @apply border-r border-b border-current;
+      @apply border-b border-r border-current;
       padding: 0.5em;
     }
     th {
@@ -104,18 +104,18 @@
 
   /* Buttons */
   .sb-component-button {
-    @apply inline-flex justify-center items-center text-center border transition duration-200 ease-in hover:-translate-y-1;
+    @apply inline-flex items-center justify-center border text-center transition duration-200 ease-in hover:-translate-y-1;
   }
 
   /* Links */
   .sb-component-link {
-    @apply inline-flex justify-center items-center text-center transition duration-200 ease-linear;
+    @apply inline-flex items-center justify-center text-center transition duration-200 ease-linear;
   }
   .sb-component-link-primary {
     @apply text-primary-500 hover:underline;
   }
   .sb-component-link-secondary {
-    @apply text-current hover:text-primary-500;
+    @apply hover:text-primary-500 text-current;
   }
 
   /* Form controls */
@@ -136,11 +136,11 @@
 
   /* Carousel */
   .sb-carousel-dot {
-    @apply w-4 h-4 cursor-pointer;
+    @apply h-4 w-4 cursor-pointer;
   }
 
   .sb-carousel-tab-title {
-    @apply cursor-pointer opacity-40 max-w-xs;
+    @apply max-w-xs cursor-pointer opacity-40;
     display: -webkit-box;
     line-height: 1.5;
     max-height: 1.5em;
@@ -156,7 +156,7 @@
   /* Color palettes */
   .bg-light-fg-dark,
   .sb-card.bg-light-fg-dark {
-    @apply text-black bg-white;
+    @apply bg-white text-black;
     .sb-input,
     .sb-select,
     .sb-textarea {
@@ -191,7 +191,7 @@
   }
   .bg-neutral-fg-dark,
   .sb-card.bg-neutral-fg-dark {
-    @apply text-black bg-neutral-200;
+    @apply bg-neutral-200 text-black;
     .sb-input,
     .sb-select,
     .sb-textarea {
@@ -226,7 +226,7 @@
   }
   .bg-dark-fg-light,
   .sb-card.bg-dark-fg-light {
-    @apply text-white bg-black;
+    @apply bg-black text-white;
     .sb-input,
     .sb-select,
     .sb-textarea {
@@ -261,7 +261,7 @@
   }
   /* Only for cards */
   .bg-neutralAlt-fg-dark {
-    @apply text-black bg-neutral-300;
+    @apply bg-neutral-300 text-black;
     .sb-component-button-primary {
       @apply bg-primary-500 border-primary-500 text-white;
     }

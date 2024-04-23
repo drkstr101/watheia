@@ -70,7 +70,7 @@ export default function SelectFormControl(props) {
               </option>
             ))}
         </select>
-        <ChevronDownIcon className="sb-select-icon w-5 h-5 absolute top-1/2 -translate-y-1/2 right-2 fill-current pointer-events-none" />
+        <ChevronDownIcon className="sb-select-icon pointer-events-none absolute right-2 top-1/2 h-5 w-5 -translate-y-1/2 fill-current" />
       </div>
     </div>
   );

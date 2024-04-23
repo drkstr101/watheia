@@ -28,7 +28,7 @@ export default function Section(props) {
       {...getDataAttrs(props)}
     >
       {backgroundImage && <BackgroundImage {...backgroundImage} className="absolute inset-0" />}
-      <div className="w-full max-w-7xl mx-auto relative">{children}</div>
+      <div className="relative mx-auto w-full max-w-7xl">{children}</div>
     </div>
   );
 }

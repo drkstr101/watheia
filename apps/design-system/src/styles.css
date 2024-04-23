@@ -49,7 +49,7 @@ pre {
   margin-bottom: 0.5rem;
 }
 #hero {
-  @apply bg-primary-900 text-neutral-100 border-0;
+  @apply bg-primary-900 border-0 text-neutral-100;
   align-items: center;
   box-sizing: border-box;
   display: grid;

@@ -129,7 +129,7 @@ function NavigationItem({ href, children }: { href: string; children: React.Reac
 
 function Navigation() {
   return (
-    <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
+    <nav className="font-display mt-px text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
         <NavigationItem href="/about">About</NavigationItem>
         <NavigationItem href="/process">Process</NavigationItem>

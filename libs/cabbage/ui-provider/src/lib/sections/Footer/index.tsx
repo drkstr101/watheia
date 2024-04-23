@@ -30,7 +30,7 @@ export default function Footer(props) {
       data-sb-object-id={props['data-sb-object-id']}
     >
       <div className="mx-auto max-w-7xl">
-        <div className="grid sm:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid gap-8 sm:grid-cols-3 lg:grid-cols-4">
           {(logo?.url || title || text) && (
             <div className="pb-8 sm:col-span-3 lg:col-auto">
               {(logo?.url || title) && (
@@ -70,7 +70,7 @@ export default function Footer(props) {
             <div className="pb-6">
               <ul className="flex flex-wrap items-center" data-sb-field-path=".socialLinks">
                 {socialLinks.map((link, index) => (
-                  <li key={index} className="text-2xl mb-2 mr-8 lg:mr-12 last:mr-0">
+                  <li key={index} className="mb-2 mr-8 text-2xl last:mr-0 lg:mr-12">
                     <Social {...link} data-sb-field-path={`.${index}`} />
                   </li>
                 ))}
@@ -79,9 +79,9 @@ export default function Footer(props) {
           )}
         </div>
         {(copyrightText || legalLinks.length > 0) && (
-          <div className="sb-footer-bottom border-t pt-8 mt-16 flex flex-col sm:flex-row sm:flex-wrap sm:justify-between">
+          <div className="sb-footer-bottom mt-16 flex flex-col border-t pt-8 sm:flex-row sm:flex-wrap sm:justify-between">
             {legalLinks.length > 0 && (
-              <ul className="flex flex-wrap mb-3" data-sb-field-path=".legalLinks">
+              <ul className="mb-3 flex flex-wrap" data-sb-field-path=".legalLinks">
                 {legalLinks.map((link, index) => (
                   <li key={index} className="mb-1 mr-6 last:mr-0">
                     <Action {...link} className="text-sm" data-sb-field-path={`.${index}`} />
@@ -115,7 +115,7 @@ function FooterLinksGroup(props) {
   return (
     <div className="pb-8" data-sb-field-path={fieldPath}>
       {title && (
-        <h2 className="uppercase text-base tracking-wide" data-sb-field-path=".title">
+        <h2 className="text-base uppercase tracking-wide" data-sb-field-path=".title">
           {title}
         </h2>
       )}

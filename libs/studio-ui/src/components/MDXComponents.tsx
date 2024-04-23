@@ -17,7 +17,7 @@ export const MDXComponents = {
     return (
       <div
         className={clsx(
-          'group isolate my-10 overflow-hidden rounded-4xl bg-neutral-100 max-sm:-mx-6',
+          'rounded-4xl group isolate my-10 overflow-hidden bg-neutral-100 max-sm:-mx-6',
           className
         )}
       >

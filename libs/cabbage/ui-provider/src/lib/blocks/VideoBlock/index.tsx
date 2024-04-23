@@ -64,7 +64,7 @@ function VideoComponent(props) {
   const videoData = getVideoData(url);
   if (!videoData.id || !videoData.service) {
     return (
-      <p className="absolute italic left-0 text-center top-1/2 -translate-y-1/2 w-full">
+      <p className="absolute left-0 top-1/2 w-full -translate-y-1/2 text-center italic">
         Video URL is not supported.
       </p>
     );

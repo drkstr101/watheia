@@ -37,7 +37,7 @@ export default function FeaturedItemsSection(props) {
         )}
       >
         {badge && (
-          <Badge {...badge} className="w-full max-w-sectionBody" data-sb-field-path=".badge" />
+          <Badge {...badge} className="max-w-sectionBody w-full" data-sb-field-path=".badge" />
         )}
         {title && (
           <TitleBlock

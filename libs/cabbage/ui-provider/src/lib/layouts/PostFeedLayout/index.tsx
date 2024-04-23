@@ -80,7 +80,7 @@ function SearchBox({ enableSearch }) {
     '--aa-primary-color-rgb': '2,0,29',
   } as React.CSSProperties;
   return (
-    <div className="w-full mb-9" style={searchBoxStyle}>
+    <div className="mb-9 w-full" style={searchBoxStyle}>
       <AutoCompletePosts />
     </div>
   );
@@ -106,13 +106,13 @@ function PageLinks({ pageIndex, baseUrlPath, numOfPages }) {
   if (pageIndex > 0) {
     pageLinks.push(
       <PageLink key="prev" pageIndex={pageIndex - 1} baseUrlPath={baseUrlPath}>
-        <ChevronLeftIcon className="fill-current h-6 w-6" />
+        <ChevronLeftIcon className="h-6 w-6 fill-current" />
       </PageLink>
     );
   } else {
     pageLinks.push(
       <PageLinkDisabled key="prev">
-        <ChevronLeftIcon className="fill-current h-6 w-6" />
+        <ChevronLeftIcon className="h-6 w-6 fill-current" />
       </PageLinkDisabled>
     );
   }
@@ -158,19 +158,19 @@ function PageLinks({ pageIndex, baseUrlPath, numOfPages }) {
   if (pageIndex < numOfPages - 1) {
     pageLinks.push(
       <PageLink key="next" pageIndex={pageIndex + 1} baseUrlPath={baseUrlPath}>
-        <ChevronRightIcon className="fill-current h-6 w-6" />
+        <ChevronRightIcon className="h-6 w-6 fill-current" />
       </PageLink>
     );
   } else {
     pageLinks.push(
       <PageLinkDisabled key="next">
-        <ChevronRightIcon className="fill-current h-6 w-6" />
+        <ChevronRightIcon className="h-6 w-6 fill-current" />
       </PageLinkDisabled>
     );
   }
 
   return (
-    <div className={classNames('flex flex-row flex-wrap items-center gap-2 mt-12 sm:mt-20')}>
+    <div className={classNames('mt-12 flex flex-row flex-wrap items-center gap-2 sm:mt-20')}>
       {pageLinks}
     </div>
   );
@@ -180,7 +180,7 @@ function PageLink({ pageIndex, baseUrlPath, children }) {
   return (
     <Link
       href={urlPathForPageAtIndex(pageIndex, baseUrlPath)}
-      className="sb-component-button sb-component-button-secondary shrink-0 text-sm p-0 w-10 h-10"
+      className="sb-component-button sb-component-button-secondary h-10 w-10 shrink-0 p-0 text-sm"
     >
       {children}
     </Link>
@@ -191,7 +191,7 @@ function PageLinkDisabled({ children }) {
   return (
     <span
       key="next"
-      className="sb-component-button sb-component-button-secondary opacity-25 shrink-0 text-sm p-0 w-10 h-10 pointer-events-none"
+      className="sb-component-button sb-component-button-secondary pointer-events-none h-10 w-10 shrink-0 p-0 text-sm opacity-25"
     >
       {children}
     </span>
@@ -199,7 +199,7 @@ function PageLinkDisabled({ children }) {
 }
 
 function Ellipsis() {
-  return <span className="text-2xl p-1">&hellip;</span>;
+  return <span className="p-1 text-2xl">&hellip;</span>;
 }
 
 function urlPathForPageAtIndex(pageIndex, baseUrlPath) {

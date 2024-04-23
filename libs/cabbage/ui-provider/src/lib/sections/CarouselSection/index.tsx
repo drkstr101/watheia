@@ -44,7 +44,7 @@ export default function CarouselSection(props) {
         )}
       >
         {badge && (
-          <Badge {...badge} className="w-full max-w-sectionBody" data-sb-field-path=".badge" />
+          <Badge {...badge} className="max-w-sectionBody w-full" data-sb-field-path=".badge" />
         )}
         {title && (
           <TitleBlock
@@ -115,7 +115,7 @@ function CarouselWithNavigation({ items = [] as any[], hasTopMargin, hasSectionT
       >
         {items.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="w-full max-w-5xl mx-auto">
+            <div className="mx-auto w-full max-w-5xl">
               <FeaturedItem
                 {...item}
                 hasSectionTitle={hasSectionTitle}
@@ -128,26 +128,26 @@ function CarouselWithNavigation({ items = [] as any[], hasTopMargin, hasSectionT
       <div
         className={classNames(
           'sb-carousel-nav',
-          items.length > 1 ? 'flex justify-center mt-8 xl:mt-0' : 'hidden'
+          items.length > 1 ? 'mt-8 flex justify-center xl:mt-0' : 'hidden'
         )}
       >
         <button
-          className="sb-carousel-prev mx-2 w-10 h-10 rounded-full inline-flex justify-center items-center cursor-pointer xl:absolute xl:left-0 xl:top-1/2 xl:-translate-y-1/2 xl:z-50"
+          className="sb-carousel-prev mx-2 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full xl:absolute xl:left-0 xl:top-1/2 xl:z-50 xl:-translate-y-1/2"
           aria-label="Previous"
           onClick={() => {
             swiperRef?.slidePrev();
           }}
         >
-          <ChevronBigLeftIcon className="fill-current h-6 w-6" />
+          <ChevronBigLeftIcon className="h-6 w-6 fill-current" />
         </button>
         <button
-          className="sb-carousel-next mx-2 w-10 h-10 rounded-full inline-flex justify-center items-center cursor-pointer xl:absolute xl:right-0 xl:top-1/2 xl:-translate-y-1/2 xl:z-50"
+          className="sb-carousel-next mx-2 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full xl:absolute xl:right-0 xl:top-1/2 xl:z-50 xl:-translate-y-1/2"
           aria-label="Next"
           onClick={() => {
             swiperRef?.slideNext();
           }}
         >
-          <ChevronBigRightIcon className="fill-current h-6 w-6" />
+          <ChevronBigRightIcon className="h-6 w-6 fill-current" />
         </button>
       </div>
     </div>
@@ -171,7 +171,7 @@ function CarouselWithPagination({ items = [] as any[], hasTopMargin, hasSectionT
       >
         {items.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="w-full max-w-5xl mx-auto">
+            <div className="mx-auto w-full max-w-5xl">
               <FeaturedItem
                 {...item}
                 hasSectionTitle={hasSectionTitle}
@@ -184,7 +184,7 @@ function CarouselWithPagination({ items = [] as any[], hasTopMargin, hasSectionT
       <div
         className={classNames(
           'sb-carousel-dots',
-          items.length > 1 ? 'flex justify-center gap-3 mt-8' : 'hidden'
+          items.length > 1 ? 'mt-8 flex justify-center gap-3' : 'hidden'
         )}
       >
         {items.map((item, index) => (
@@ -215,7 +215,7 @@ function CarouselWithTabs({ items = [] as any[], hasTopMargin, hasSectionTitle }
       <div
         className={classNames(
           'sb-carousel-tabs-nav',
-          items.length > 1 ? 'flex justify-center gap-5 mb-10' : 'hidden'
+          items.length > 1 ? 'mb-10 flex justify-center gap-5' : 'hidden'
         )}
       >
         {items.map((item, index) => (
@@ -249,7 +249,7 @@ function CarouselWithTabs({ items = [] as any[], hasTopMargin, hasSectionTitle }
           const tabItem = { ...item, tagline: undefined };
           return (
             <SwiperSlide key={index}>
-              <div className="w-full max-w-5xl mx-auto">
+              <div className="mx-auto w-full max-w-5xl">
                 <FeaturedItem
                   {...tabItem}
                   hasSectionTitle={hasSectionTitle}

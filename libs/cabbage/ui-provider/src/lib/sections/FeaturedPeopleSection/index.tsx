@@ -39,7 +39,7 @@ export default function FeaturedPeopleSection(props) {
         )}
       >
         {badge && (
-          <Badge {...badge} className="w-full max-w-sectionBody" data-sb-field-path=".badge" />
+          <Badge {...badge} className="max-w-sectionBody w-full" data-sb-field-path=".badge" />
         )}
         {title && (
           <TitleBlock
@@ -178,7 +178,7 @@ function FeaturedPeopleMixedCol({ people = [] as any[], hasTopMargin, hasSection
           hasSectionTitle={hasSectionTitle}
           data-sb-field-path={`.${index}`}
           className={classNames('lg:col-span-4', {
-            'lg:col-start-3 lg:col-end-span4': (index + 3) % 7 === 0,
+            'lg:col-end-span4 lg:col-start-3': (index + 3) % 7 === 0,
             'lg:col-start-span4 lg:col-end-neg3': (index + 1) % 7 === 0,
           })}
         />
