@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "dependencies": {
     "@watheia/content-model": "0.0.1",
-    "lodash": "4.17.21"
+    "lodash": "4.17.21",
+    "typescript": "~5.4.5",
+    "@swc/helpers": "~0.5.10"
   },
   "type": "commonjs",
   "main": "./src/index.js",
