@@ -79,7 +79,6 @@ export default async function config(phase, context) {
     options: {
       recmaPlugins: [recmaImportImages],
       rehypePlugins: [
-        // @ts-expect-error
         [rehypeShiki, { highlighter }],
         [
           remarkRehypeWrap,
@@ -100,8 +99,8 @@ export default async function config(phase, context) {
             [[remarkMDXLayout, '@home/app/blog/wrapper', 'article']],
           ],
           [
-            new RegExp(`^${escapeStringRegexp(resolve('app/labs'))}`),
-            [[remarkMDXLayout, '@home/app/labs/wrapper', 'caseStudy']],
+            new RegExp(`^${escapeStringRegexp(resolve('app/solutions'))}`),
+            [[remarkMDXLayout, '@home/app/solutions/wrapper', 'caseStudy']],
           ],
         ],
       ],

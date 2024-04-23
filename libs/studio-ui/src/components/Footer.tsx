@@ -7,18 +7,18 @@ import { socialMediaProfiles } from './SocialMedia';
 
 const navigation = [
   {
-    title: 'Labs',
+    title: 'Solutions',
     links: [
-      { title: 'Cabbage CMS', href: '/labs/cabbage-cms' },
-      { title: 'Auto-DevOps', href: '/labs/auto-devops' },
-      { title: 'Natural', href: '/labs/natural' },
+      { title: 'Cabbage CMS', href: '/solutions/cabbage-cms' },
+      { title: 'Auto-DevOps', href: '/solutions/auto-devops' },
+      { title: 'Natural', href: '/solutions/natural' },
       {
         title: (
           <>
             See all <span aria-hidden="true">&rarr;</span>
           </>
         ),
-        href: '/labs',
+        href: '/solutions',
       },
     ],
   },

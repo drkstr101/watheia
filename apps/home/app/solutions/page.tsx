@@ -138,7 +138,10 @@ export default async function Work() {
 
   return (
     <>
-      <PageIntro eyebrow="From the lab" title="Proven solutions for real-world problems.">
+      <PageIntro
+        eyebrow="Case Studies &amp; Demos"
+        title="Proven solutions for real-world problems."
+      >
         <p>
           We believe in efficiency and maximizing our resources to provide the best value to our
           clients. The primary way we do that is by re-using the same five projects we’ve been
