@@ -10,6 +10,7 @@
     "build": "nx run-many --target=build --parallel",
     "start": "nx run home:serve:development",
     "e2e": "nx run screenplay:e2e --skip-nx-cache",
+    "e2e:setup": "playwright install --with-deps --force",
     "validate": "stackbit validate"
   },
   "dependencies": {
