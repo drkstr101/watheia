@@ -21,12 +21,12 @@
     "axios": "^1.6.8",
     "dayjs": "^1.11.10",
     "markdown-to-jsx": "^7.4.5",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "18.3.0",
+    "react-dom": "18.3.0",
     "swiper": "^8.4.7",
     "vite-plugin-dts": "~2.3.0",
     "clsx": "^2.1.1",
-    "next": "14.2.2",
+    "next": "14.2.3",
     "algoliasearch": "^4.23.3",
     "vite": "^5.2.10"
   }
