@@ -11,7 +11,7 @@ const navigation = [
     links: [
       { title: 'Cabbage CMS', href: '/solutions/cabbage-cms' },
       { title: 'Auto-DevOps', href: '/solutions/auto-devops' },
-      { title: 'Natural', href: '/solutions/natural' },
+      { title: 'Watheia Labs', href: '/solutions/watheia-labs' },
       {
         title: (
           <>
