@@ -1,5 +1,4 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { Analytics } from '@vercel/analytics/react';
 import { RootLayout } from '@watheia/studio-ui';
 import { Metadata } from 'next';
 
@@ -8,7 +7,7 @@ import '@watheia/cabbage.theme';
 export const metadata: Metadata = {
   title: {
     template: '%s - Watheia Labs',
-    default: 'Turn your dreams into reality with Watheia Labs by Watheia Labs',
+    default: 'Create better software with Watheia Labs',
   },
 };
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -17,7 +16,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en" className="m-1 bg-black">
       <body>
         <RootLayout>{children}</RootLayout>
-        <Analytics />
         <GoogleAnalytics gaId="G-GD3ZBX5EST" />
       </body>
     </html>

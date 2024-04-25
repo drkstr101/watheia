@@ -184,7 +184,7 @@ export default async function Home() {
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-black [text-wrap:balance] sm:text-7xl">
-            Build better software with{' '}
+            Create better software with{' '}
             <span className="text-primary-600 relative whitespace-nowrap">
               <svg
                 aria-hidden="true"
