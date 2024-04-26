@@ -39,7 +39,7 @@ export default function ValuesSection({ className, ...props }: ValuesSectionProp
             Every business has unique needs and our greatest challenge is shoe-horning those needs
             into something we already built.
           </GridListItem>
-          <GridListItem title="Honest">
+          <GridListItem title="Transparent">
             We are transparent about all of our processes, banking on the simple fact our clients
             never actually read anything.
           </GridListItem>
