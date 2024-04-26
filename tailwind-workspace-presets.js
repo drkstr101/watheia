@@ -44,6 +44,7 @@ module.exports = {
         info: colors.sky,
       }),
       fontFamily: {
+        mono: ['Fira Code', ...fontFamily.mono],
         sans: ['Mona Sans', ...fontFamily.sans],
         display: [['Mona Sans', ...fontFamily.sans], { fontVariationSettings: '"wdth" 125' }],
         book: [...fontFamily.sans],
