@@ -66,13 +66,14 @@ function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> 
   return (
     <>
       <SectionIntro
+        eyebrow="Case Studies"
         title="Harnessing technology for a brighter future"
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
           We&apos;re dedicated to empowering businesses with cutting-edge solutions that drive
-          efficiency, sustainability, and growth. From AI-driven automation to sustainable tech
-          initiatives, we pave the way for a more prosperous and sustainable future for all.
+          efficiency, sustainability, and growth. Read our featured case studies for more
+          information.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -85,7 +86,7 @@ function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> 
                     <span className="absolute inset-0 rounded-3xl" />
                     <Image
                       src={caseStudy.logo}
-                      alt={caseStudy.client}
+                      alt={caseStudy.project}
                       className="h-16 w-16"
                       unoptimized
                     />
@@ -98,7 +99,7 @@ function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> 
                   <span className="text-neutral-300" aria-hidden="true">
                     /
                   </span>
-                  <span>{caseStudy.client}</span>
+                  <span>{caseStudy.project}</span>
                 </p>
                 <p className="font-display mt-6 text-2xl font-semibold text-black">
                   {caseStudy.title}

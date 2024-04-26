@@ -10,8 +10,8 @@ const navigation = [
     title: 'Solutions',
     links: [
       { title: 'Cabbage CMS', href: '/solutions/cabbage-cms' },
-      { title: 'Auto-DevOps', href: '/solutions/auto-devops' },
-      { title: 'Watheia Labs', href: '/solutions/watheia-labs' },
+      { title: 'Realtime Chat', href: '/solutions/realtime-chat' },
+      { title: 'Design System', href: '/solutions/design-system' },
       {
         title: (
           <>

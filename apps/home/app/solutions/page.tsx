@@ -33,7 +33,7 @@ function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> 
       </FadeIn>
       <div className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
         {caseStudies.map((caseStudy) => (
-          <FadeIn key={caseStudy.client}>
+          <FadeIn key={caseStudy.project}>
             <article>
               <Border className="grid grid-cols-3 gap-x-8 gap-y-8 pt-16">
                 <div className="col-span-full sm:flex sm:items-center sm:justify-between sm:gap-x-8 lg:col-span-1 lg:block">
@@ -45,7 +45,7 @@ function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> 
                       unoptimized
                     />
                     <h3 className="mt-6 text-sm font-semibold text-black sm:mt-0 lg:mt-8">
-                      {caseStudy.client}
+                      {caseStudy.project}
                     </h3>
                   </div>
                   <div className="mt-1 flex gap-x-4 sm:mt-0 lg:block">
@@ -69,7 +69,7 @@ function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> 
                   <div className="mt-8 flex">
                     <Button
                       href={caseStudy.slug}
-                      aria-label={`Read case study: ${caseStudy.client}`}
+                      aria-label={`Read case study: ${caseStudy.project}`}
                     >
                       Read case study
                     </Button>
@@ -112,11 +112,11 @@ function Clients() {
           role="list"
           className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4"
         >
-          {clients.map(([client, logo]) => (
-            <li key={client} className="group">
+          {clients.map(([project, logo]) => (
+            <li key={project} className="group">
               <FadeIn className="overflow-hidden">
                 <Border className="pt-12 group-[&:nth-child(-n+2)]:-mt-px sm:group-[&:nth-child(3)]:-mt-px lg:group-[&:nth-child(4)]:-mt-px">
-                  <Image src={logo} alt={client} unoptimized />
+                  <Image src={logo} alt={project} unoptimized />
                 </Border>
               </FadeIn>
             </li>

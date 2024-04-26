@@ -25,7 +25,7 @@ export default async function CaseStudyLayout({
     <>
       <article className="mt-24 sm:mt-32 lg:mt-40">
         <header>
-          <PageIntro eyebrow={caseStudy.client} title={caseStudy.title} centered>
+          <PageIntro eyebrow={caseStudy.project} title={caseStudy.title} centered>
             <p>{caseStudy.description}</p>
           </PageIntro>
 
@@ -35,8 +35,8 @@ export default async function CaseStudyLayout({
                 <div className="mx-auto max-w-5xl">
                   <dl className="-mx-6 grid grid-cols-1 text-sm text-black sm:mx-0 sm:grid-cols-3">
                     <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
-                      <dt className="font-semibold">Client</dt>
-                      <dd>{caseStudy.client}</dd>
+                      <dt className="font-semibold">Project</dt>
+                      <dd>{caseStudy.project}</dd>
                     </div>
                     <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-semibold">Year</dt>
@@ -47,7 +47,7 @@ export default async function CaseStudyLayout({
                       </dd>
                     </div>
                     <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
-                      <dt className="font-semibold">Service</dt>
+                      <dt className="font-semibold">Technology</dt>
                       <dd>{caseStudy.service}</dd>
                     </div>
                   </dl>
