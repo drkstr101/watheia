@@ -66,14 +66,14 @@ function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> 
   return (
     <>
       <SectionIntro
-        eyebrow="Case Studies"
+        eyebrow="Solutions"
         title="Harnessing technology for a brighter future"
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
           We&apos;re dedicated to empowering businesses with cutting-edge solutions that drive
-          efficiency, sustainability, and growth. Read our featured case studies for more
-          information.
+          efficiency, sustainability, and growth. Our featured case-studies, example projects,
+          and tech demos
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -139,32 +139,27 @@ function Services() {
             </FadeIn>
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
-            <ListItem title="Web development">
-              Transform your online presence with our top-tier web development services. Our
-              skilled team crafts visually stunning and fully functional websites tailored to your
-              brand&apos;s identity, ensuring a seamless user experience across all devices.
-              Partner with us to create a captivating digital platform that captivates your
-              audience and drives business growth.
+            <ListItem title="Project Management">
+              Our seasoned professionals leverage industry-leading methodologies and tools to
+              streamline workflows, optimize resources, and ensure timely delivery of results.
+              Partner with us to navigate complexities, mitigate risks, and achieve your business
+              objectives with confidence.
             </ListItem>
-            <ListItem title="Application development">
-              Elevate your digital strategy with our comprehensive software development solutions.
+            <ListItem title="Systems Architecture & Design">
+              Omnis ut laboriosam. Unde corrupti eos deleniti itaque porro eum qui. Quis commodi
+              veniam. Voluptas ullam exercitationem ut quae numquam voluptatem sed tempora qui. Et
+              et ipsum saepe.
+            </ListItem>
+            <ListItem title="Software Development">
               From concept to execution, our expert team delivers cutting-edge software tailored
               to your business needs, ensuring seamless integration and optimal performance.
               Partner with us to turn your vision into reality and stay ahead in today&apos;s
               fast-paced market.
             </ListItem>
-            <ListItem title="Digital design">
-              Leverage your brand&amp;s visual identity with our premium digital design services.
-              Our talented team combines creativity with strategic thinking to deliver stunning
-              designs that resonate with your audience and drive engagement. Partner with us to
-              bring your brand to life and leave a lasting impression in the digital world.
-            </ListItem>
-            <ListItem title="Project management">
-              Empower your projects with our expert project management services. Our seasoned
-              professionals leverage industry-leading methodologies and tools to streamline
-              workflows, optimize resources, and ensure timely delivery of results. Partner with
-              us to navigate complexities, mitigate risks, and achieve your business objectives
-              with confidence.
+            <ListItem title="Education &amp; Training">
+              Mollitia non similique quo eos explicabo labore et assumenda qui. Excepturi eum aut
+              praesentium aliquid eos. Molestiae qui consequatur qui ut delectus veritatis ratione
+              qui commodi. Dolores qui sunt sit.
             </ListItem>
           </List>
         </div>
@@ -174,7 +169,7 @@ function Services() {
 }
 
 export const metadata: Metadata = {
-  description: 'Turn your ideas into reality with custom software by Watheia Labs',
+  description: 'Create better software with Watheia Labs',
 };
 
 export default async function Home() {
@@ -190,14 +185,13 @@ export default async function Home() {
               <svg
                 aria-hidden="true"
                 viewBox="0 0 418 42"
-                className="fill-primary-300/70 absolute left-0 top-2/3 h-[0.58em] w-full"
+                className="fill-accent-500/40 absolute left-0 top-2/3 h-[0.58em] w-full"
                 preserveAspectRatio="none"
               >
                 <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z" />
               </svg>
               <span className="relative">Watheia Labs</span>
             </span>
-            .
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
             Whether you&apos;re a startup looking to disrupt the market or an established
