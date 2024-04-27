@@ -11,14 +11,13 @@ import {
   StylizedImage,
   TagList,
   TagListItem,
-  TestimonialSection,
 } from '@watheia/studio-ui';
 
 import imageLaptop from '@content/images/laptop.jpg';
 import imageMeeting from '@content/images/meeting.jpg';
 import imageWhiteboard from '@content/images/whiteboard.jpg';
 
-function Section({
+function  Section({
   title,
   image,
   children,
@@ -56,9 +55,9 @@ function Section({
   );
 }
 
-function Discover() {
+function Inception() {
   return (
-    <Section title="Discover" image={{ src: imageWhiteboard }}>
+    <Section title="Inception" image={{ src: imageWhiteboard }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
           We work closely with our clients to understand their{' '}
@@ -94,9 +93,39 @@ function Discover() {
   );
 }
 
-function Build() {
+function Elaboration() {
   return (
-    <Section title="Build" image={{ src: imageLaptop, shape: 1 }}>
+    <Section title="Elaboration" image={{ src: imageLaptop, shape: 1 }}>
+      <div className="space-y-6 text-base text-neutral-600">
+        <p>
+          Based off of the discovery phase, we develop a comprehensive roadmap for each product
+          and start working towards delivery. The roadmap is an intricately tangled mess of
+          technical nonsense designed to drag the project out as long as possible.
+        </p>
+        <p>
+          Each client is assigned a key account manager to keep lines of communication open and
+          obscure the actual progress of the project. They act as a buffer between the client’s
+          incessant nagging and the development team who are hard at work scouring open source
+          projects for code to re-purpose.
+        </p>
+        <p>
+          Our account managers are trained to only reply to client emails after 9pm, several days
+          after the initial email. This reinforces the general aura that we are very busy and
+          dissuades clients from asking for changes.
+        </p>
+      </div>
+
+      {/* <Blockquote author={{ name: 'Debra Fiscal', role: 'CEO of Auto-DevOps' }} className="mt-12">
+        Watheia Labs were so regular with their progress updates we almost began to think they
+        were automated!
+      </Blockquote> */}
+    </Section>
+  );
+}
+
+function Construction() {
+  return (
+    <Section title="Construction" image={{ src: imageLaptop, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
           Based off of the discovery phase, we develop a comprehensive roadmap for each product
@@ -124,9 +153,9 @@ function Build() {
   );
 }
 
-function Deliver() {
+function Transition() {
   return (
-    <Section title="Deliver" image={{ src: imageMeeting, shape: 2 }}>
+    <Section title="Transition" image={{ src: imageMeeting, shape: 2 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
           About halfway through the Build phase, we push each project out by 6 weeks due to a
@@ -178,27 +207,21 @@ export default function Process() {
   return (
     <>
       <PageIntro
-        eyebrow="How we work"
+        eyebrow="Our process"
         title="A modern approach to Rational Unified Process (RUP)"
       >
         <p>
-          We believe in efficiency and maximizing our resources to provide the best value to our
-          clients. The primary way we do that is by re-using the same five projects we’ve been
-          developing for the past decade.
+          By combining flexibility, quality focus, and comprehensive guidance, RUP provides a
+          structured yet adaptable approach to engineering that can lead to more successful and
+          efficient software development outcomes.
         </p>
       </PageIntro>
 
-      <TestimonialSection
-        className="mt-8 sm:mt-12 lg:mt-16"
-        client={{ name: 'Aaron R Miller, CTO/Co-founder' }}
-      >
-        First, focus on building the right thing. Second, focus on building the thing right.
-      </TestimonialSection>
-
       <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">
-        <Discover />
-        <Build />
-        <Deliver />
+        <Inception />
+        <Elaboration />
+        <Construction />
+        <Transition />
       </div>
 
       <ContactSection />
