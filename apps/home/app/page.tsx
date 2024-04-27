@@ -72,8 +72,8 @@ function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> 
       >
         <p>
           We&apos;re dedicated to empowering businesses with cutting-edge solutions that drive
-          efficiency, sustainability, and growth. Our featured case-studies, example projects,
-          and tech demos
+          efficiency, sustainability, and growth. Our featured case-studies, example projects, and
+          tech demos
         </p>
       </SectionIntro>
       <Container className="mt-16">
