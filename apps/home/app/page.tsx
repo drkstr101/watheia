@@ -16,10 +16,10 @@ import {
 import logoUnseal from '@content/images/clients/auto-devops/logo-light.svg';
 import logoBrightPath from '@content/images/clients/bright-path/logo-light.svg';
 import logoFamilyFund from '@content/images/clients/cabbage-cms/logo-light.svg';
+import logoPhobiaLight from '@content/images/clients/cabbage-ui/logo-light.svg';
 import logoGreenLife from '@content/images/clients/green-life/logo-light.svg';
 import logoHomeWork from '@content/images/clients/home-work/logo-light.svg';
 import logoMailSmirk from '@content/images/clients/mail-smirk/logo-light.svg';
-import logoPhobiaLight from '@content/images/clients/natural/logo-light.svg';
 import logoNorthAdventures from '@content/images/clients/north-adventures/logo-light.svg';
 import imageLaptop from '@content/images/laptop.jpg';
 

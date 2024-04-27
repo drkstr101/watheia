@@ -11,7 +11,7 @@ async function loadEntries<T extends { date: string }>(
     await Promise.all(
       (
         await glob('**/page.mdx', { cwd: `${WORKSPACE_ROOT}/apps/home/app/${directory}` })
-      ).map(async (filename) => {
+      ).map(async (filename: string) => {
         const metadata = (await import(`../app/${directory}/${filename}`))[metaName] as T;
         return {
           ...metadata,
