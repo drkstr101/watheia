@@ -17,7 +17,7 @@ import imageLaptop from '@content/images/laptop.jpg';
 import imageMeeting from '@content/images/meeting.jpg';
 import imageWhiteboard from '@content/images/whiteboard.jpg';
 
-function  Section({
+function Section({
   title,
   image,
   children,
