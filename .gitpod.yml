@@ -5,7 +5,7 @@ image:
 
 tasks:
   - init: yarn install && yarn playwright install --with-deps
-    command: yarn build
+    command: yarn start
 
 ports:
   - port: 4200
