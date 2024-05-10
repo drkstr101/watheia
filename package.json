@@ -141,5 +141,9 @@
   "packageManager": "yarn@4.0.2",
   "nx": {
     "includedScripts": []
-  }
+  },
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ]
 }

@@ -1,9 +1,9 @@
 import { type Metadata } from 'next';
 import Image from 'next/image';
 
-import imageDriesVincent from '@content/images/team/dries-vincent.jpg';
-import imageLeslieAlexander from '@content/images/team/leslie-alexander.jpg';
-import imageMichaelFoster from '@content/images/team/michael-foster.jpg';
+import imageDriesVincent from '@assets/images/team/dries-vincent.jpg';
+import imageLeslieAlexander from '@assets/images/team/leslie-alexander.jpg';
+import imageMichaelFoster from '@assets/images/team/michael-foster.jpg';
 
 import {
   Border,
