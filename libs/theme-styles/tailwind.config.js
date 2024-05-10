@@ -11,5 +11,5 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-  presets: [require('../../../tailwind-workspace-presets.js')],
+  presets: [require('../../tailwind-workspace-presets.js')],
 };

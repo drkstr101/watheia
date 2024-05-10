@@ -7,7 +7,7 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../../node_modules/.vite/libs/cabbage/theme',
+  cacheDir: '../../node_modules/.vite/libs/cabbage/theme',
 
   plugins: [
     react(),
@@ -27,7 +27,7 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
-    outDir: '../../../dist/libs/cabbage/theme',
+    outDir: '../../dist/libs/cabbage/theme',
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,

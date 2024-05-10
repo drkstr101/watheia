@@ -1,7 +1,7 @@
 {
   "name": "theme-styles",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/theme/styles/src",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/theme-styles/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -14,7 +14,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/libs/theme/styles"
+        "outputPath": "dist/libs/theme-styles"
       },
       "configurations": {
         "development": {
@@ -29,14 +29,14 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/theme/styles/jest.config.ts"
+        "jestConfig": "libs/theme-styles/jest.config.ts"
       }
     },
     "stylelint": {
       "executor": "nx-stylelint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/theme/styles/**/*.css"]
+        "lintFilePatterns": ["libs/theme-styles/**/*.css"]
       }
     }
   }
