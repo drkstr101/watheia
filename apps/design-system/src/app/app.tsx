@@ -1,4 +1,4 @@
-import '@watheia/cabbage.theme';
+import '@watheia/theme.styles';
 import '../styles.css';
 
 import NxWelcome from './nx-welcome';

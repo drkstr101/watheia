@@ -1,4 +1,5 @@
-export * from './lib/consts';
+export * as algolia from './lib/algolia';
+
 export * from './lib/content-helpers';
 export * from './lib/data-utils';
 export * from './lib/date-utils';

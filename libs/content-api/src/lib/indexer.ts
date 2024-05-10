@@ -1,9 +1,4 @@
-import {
-  ALGOLIA_ADMIN_API_KEY,
-  ALGOLIA_APP_ID,
-  ALGOLIA_INDEX_NAME_SUFFIX,
-  buildIndexName,
-} from '@watheia/content-helpers';
+import { algolia } from '@watheia/content-helpers';
 import { types } from '@watheia/content-model';
 import algoliasearch from 'algoliasearch';
 import { Lexer, marked } from 'marked';
@@ -13,8 +8,12 @@ import { LocalContentSchema } from './content-api.types';
 import { PlainTextRenderer } from './markdown-plaintext';
 
 export async function indexer(schema: LocalContentSchema) {
-  if (!ALGOLIA_APP_ID || !ALGOLIA_INDEX_NAME_SUFFIX || !ALGOLIA_ADMIN_API_KEY) {
-    throw new Error('Missing required configuration for indexing');
+  if (
+    !algolia.ALGOLIA_APP_ID ||
+    !algolia.ALGOLIA_INDEX_NAME_SUFFIX ||
+    !algolia.ALGOLIA_ADMIN_API_KEY
+  ) {
+    throw new Error('Missing required algoliauration for indexing');
   }
 
   console.time('Indexing duration');
@@ -83,9 +82,9 @@ async function parseMarkdown(
 }
 
 async function indexObjects(objectsToIndex: readonly Readonly<Record<string, any>>[]) {
-  const indexName = buildIndexName();
+  const indexName = algolia.buildIndexName();
   console.log('Indexing to', indexName);
-  const client = algoliasearch(ALGOLIA_APP_ID, ALGOLIA_ADMIN_API_KEY);
+  const client = algoliasearch(algolia.ALGOLIA_APP_ID, algolia.ALGOLIA_ADMIN_API_KEY);
   const index = client.initIndex(indexName);
   const response = await index.saveObjects(objectsToIndex);
   await index.setSettings({

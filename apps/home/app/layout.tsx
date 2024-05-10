@@ -2,7 +2,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import { RootLayout } from '@watheia/studio-ui';
 import { Metadata } from 'next';
 
-import '@watheia/cabbage.theme';
+import '@watheia/theme.styles';
 
 export const metadata: Metadata = {
   title: {
