@@ -6,7 +6,7 @@ import {
   FieldObject,
   FieldReference,
   Model,
-} from '@watheia/content-model';
+} from '@stackbit/types';
 import sortBy from 'lodash/sortBy';
 import {
   ListFormat,

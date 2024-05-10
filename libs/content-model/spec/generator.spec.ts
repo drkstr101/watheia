@@ -1,5 +1,5 @@
-import { models } from '@watheia/content-model';
 import generateModelTypes from '../src/generator';
+import { models } from '../src/models';
 
 describe('watheia.cabbage/type-generator', () => {
   // afterEach(() => rmSync(tempFile));
