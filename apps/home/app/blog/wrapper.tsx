@@ -1,11 +1,5 @@
-import {
-  ContactSection,
-  Container,
-  FadeIn,
-  MDXComponents,
-  PageLinks,
-  formatDate,
-} from '@watheia/studio-ui';
+import { formatDate } from '@watheia/content-helpers';
+import { ContactSection, Container, FadeIn, MDXComponents, PageLinks } from '@watheia/studio-ui';
 import { Article, MDXEntry, loadArticles } from '../../lib/mdx';
 
 export default async function BlogArticleWrapper({

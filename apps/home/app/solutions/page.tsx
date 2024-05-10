@@ -2,6 +2,7 @@ import { type Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { formatDate } from '@watheia/content-helpers';
 import {
   Blockquote,
   Border,
@@ -12,7 +13,6 @@ import {
   FadeInStagger,
   PageIntro,
   TestimonialSection,
-  formatDate,
 } from '@watheia/studio-ui';
 
 import logoUnseal from '@content/images/clients/auto-devops/logo-dark.svg';

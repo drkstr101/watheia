@@ -48,6 +48,7 @@ module.exports = {
         sans: ['Mona Sans', ...fontFamily.sans],
         display: [['Mona Sans', ...fontFamily.sans], { fontVariationSettings: '"wdth" 125' }],
         book: [...fontFamily.sans],
+        detail: [...fontFamily.mono],
         code: [...fontFamily.mono],
       },
       gridTemplateColumns: {

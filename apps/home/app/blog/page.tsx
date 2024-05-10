@@ -2,15 +2,9 @@ import { type Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import {
-  Border,
-  Button,
-  ContactSection,
-  Container,
-  FadeIn,
-  PageIntro,
-  formatDate,
-} from '@watheia/studio-ui';
+import { formatDate } from '@watheia/content-helpers';
+import { Border, Button, ContactSection, Container, FadeIn, PageIntro } from '@watheia/studio-ui';
+
 import { loadArticles } from '../../lib/mdx';
 
 export const metadata: Metadata = {

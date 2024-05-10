@@ -1,7 +1,8 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 
-import { formatDate } from '../utils/formatDate';
+import { formatDate } from '@watheia/content-helpers';
+
 import { Border } from './Border';
 import { Container } from './Container';
 import { FadeIn, FadeInStagger } from './FadeIn';

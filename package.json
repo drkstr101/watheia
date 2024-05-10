@@ -16,7 +16,6 @@
   "dependencies": {
     "@algolia/autocomplete-js": "^1.17.0",
     "@algolia/autocomplete-theme-classic": "^1.17.0",
-    "@heroicons/react": "^2.1.3",
     "@leafac/rehype-shiki": "^2.2.1",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",

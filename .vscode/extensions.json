@@ -1,13 +1,13 @@
 {
   "recommendations": [
-    "nrwl.angular-console",
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "firsttris.vscode-jest-runner",
-    "dbaeumer.vscode-eslint",
-    "stylelint.vscode-stylelint",
-    "bradlc.vscode-tailwindcss",
+    "ms-playwright.playwright",
+    "nrwl.angular-console",
     "orta.vscode-jest",
-    "unifiedjs.vscode-mdx",
-    "ms-playwright.playwright"
+    "stylelint.vscode-stylelint",
+    "unifiedjs.vscode-mdx"
   ]
 }
