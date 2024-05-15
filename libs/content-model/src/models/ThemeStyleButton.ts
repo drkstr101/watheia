@@ -1,18 +1,16 @@
 import { Model } from '@stackbit/types';
 
-export const ThemeStyleButton: Model = {
+export const ThemeStyleButtonModel: Model = {
   type: 'object',
   name: 'ThemeStyleButton',
-  label: 'Theme Style Button',
+  label: 'Button',
   labelField: 'weight',
   fields: [
     {
       type: 'enum',
       name: 'weight',
       label: 'Font weight',
-      required: false,
-      hidden: false,
-      localized: false,
+      controlType: 'button-group',
       options: [
         {
           label: 'Normal',
@@ -22,20 +20,15 @@ export const ThemeStyleButton: Model = {
           label: 'Medium',
           value: 'medium',
         },
-        {
-          label: 'Bold',
-          value: 'bold',
-        },
       ],
-      controlType: 'button-group',
+      default: 'medium',
+      required: true,
     },
     {
       type: 'enum',
       name: 'case',
       label: 'Case',
-      required: false,
-      hidden: false,
-      localized: false,
+      controlType: 'button-group',
       options: [
         {
           label: 'Default',
@@ -54,15 +47,14 @@ export const ThemeStyleButton: Model = {
           value: 'uppercase',
         },
       ],
-      controlType: 'button-group',
+      default: 'none',
+      required: true,
     },
     {
       type: 'enum',
       name: 'letterSpacing',
       label: 'Letter spacing',
-      required: false,
-      hidden: false,
-      localized: false,
+      controlType: 'button-group',
       options: [
         {
           label: 'Tighter',
@@ -85,89 +77,30 @@ export const ThemeStyleButton: Model = {
           value: 'wider',
         },
       ],
-      controlType: 'button-group',
-    },
-    {
-      type: 'enum',
-      name: 'borderRadius',
-      label: 'Corner radius',
-      required: false,
-      default: 'none',
-      hidden: false,
-      localized: false,
-      options: [
-        {
-          label: 'None',
-          value: 'none',
-        },
-        {
-          label: 'Small',
-          value: 'DEFAULT',
-        },
-        {
-          label: 'Medium',
-          value: 'lg',
-        },
-        {
-          label: 'Large',
-          value: 'xl',
-        },
-        {
-          label: 'XLarge',
-          value: 'full',
-        },
-      ],
-      controlType: 'button-group',
-    },
-    {
-      type: 'enum',
-      name: 'shadow',
-      label: 'Shadow',
-      required: false,
-      hidden: false,
-      localized: false,
-      options: [
-        {
-          label: 'None',
-          value: 'none',
-        },
-        {
-          label: 'Mild',
-          value: 'md',
-        },
-        {
-          label: 'Float',
-          value: 'xl',
-        },
-      ],
-      controlType: 'button-group',
+      default: 'normal',
+      required: true,
     },
     {
       type: 'number',
       name: 'horizontalPadding',
       label: 'Horizontal padding',
-      required: false,
-      hidden: false,
-      localized: false,
-      subtype: 'int',
+      controlType: 'slider',
       min: 0,
       max: 30,
-      controlType: 'slider',
+      step: 1,
       unit: 'px',
+      default: 24,
     },
     {
       type: 'number',
       name: 'verticalPadding',
       label: 'Vertical padding',
-      required: false,
-      hidden: false,
-      localized: false,
-      subtype: 'int',
+      controlType: 'slider',
       min: 0,
       max: 30,
-      controlType: 'slider',
+      step: 1,
       unit: 'px',
+      default: 12,
     },
   ],
-  readOnly: true,
 };

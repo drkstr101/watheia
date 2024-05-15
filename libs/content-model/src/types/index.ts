@@ -1,14 +1,21 @@
-import * as types from './content-types';
+import { Config, ContentObject } from './generated';
 
-export type DataEntry =
-  | types.Config
-  | types.Footer
-  | types.Header
-  | types.Person
-  | types.ThemeStyle;
+export * from './base';
+export * as types from './generated';
 
-export type PageEntry = types.Article | types.Page | types.PostFeedLayout;
+export const DATA_MODEL_NAMES = ['Config', 'Person', 'ThemeStyle'];
+export const PAGE_MODEL_NAMES = [
+  'PageLayout',
+  'PostFeedLayout',
+  'PostLayout',
+  'ProjectFeedLayout',
+  'ProjectLayout',
+];
 
-export type DocumentEntry = DataEntry | PageEntry;
+export type GlobalProps = {
+  site: Config;
+};
 
-export { types };
+export type PageComponentProps = ContentObject & {
+  global: GlobalProps;
+};

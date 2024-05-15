@@ -12,11 +12,9 @@ const mockOptions = {
 describe('watheia.content-api', () => {
   describe('#resolve()', () => {
     it('fully resolves local content cache with the provided schema', async () => {
-      const api = await LocalContentApi.create(mockOptions);
+      const api = await LocalContentApi.resolve(mockOptions);
       expect(api).toBeInstanceOf(LocalContentApi);
-      // ensure consistent snapshot across environments
-      api.cache.schema.rootPath = '/workspace/watheia';
-      expect(api.cache).toMatchSnapshot();
+      expect(api.documents).toMatchSnapshot();
     });
   });
 });

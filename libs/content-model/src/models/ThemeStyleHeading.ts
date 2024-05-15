@@ -1,19 +1,15 @@
 import { Model } from '@stackbit/types';
 
-export const ThemeStyleHeading: Model = {
+export const ThemeStyleHeadingModel: Model = {
   type: 'object',
   name: 'ThemeStyleHeading',
-  label: 'Theme Style Heading',
+  label: 'Heading',
   labelField: 'size',
   fields: [
     {
       type: 'enum',
       name: 'size',
       label: 'Font size',
-      required: false,
-      default: '5xl',
-      hidden: false,
-      localized: false,
       options: [
         {
           label: 'XS',
@@ -68,15 +64,14 @@ export const ThemeStyleHeading: Model = {
           value: '9xl',
         },
       ],
+      default: '4xl',
+      required: true,
     },
     {
       type: 'enum',
       name: 'weight',
       label: 'Font weight',
-      required: false,
-      default: 'bold',
-      hidden: false,
-      localized: false,
+      controlType: 'button-group',
       options: [
         {
           label: 'Normal',
@@ -86,21 +81,15 @@ export const ThemeStyleHeading: Model = {
           label: 'Medium',
           value: 'medium',
         },
-        {
-          label: 'Bold',
-          value: 'bold',
-        },
       ],
-      controlType: 'button-group',
+      default: 'medium',
+      required: true,
     },
     {
       type: 'enum',
       name: 'decoration',
       label: 'Decoration',
-      required: false,
-      default: 'none',
-      hidden: false,
-      localized: false,
+      controlType: 'button-group',
       options: [
         {
           label: 'None',
@@ -115,16 +104,14 @@ export const ThemeStyleHeading: Model = {
           value: 'line-through',
         },
       ],
-      controlType: 'button-group',
+      default: 'none',
+      required: true,
     },
     {
       type: 'enum',
       name: 'case',
       label: 'Case',
-      required: false,
-      default: 'none',
-      hidden: false,
-      localized: false,
+      controlType: 'button-group',
       options: [
         {
           label: 'Default',
@@ -143,16 +130,14 @@ export const ThemeStyleHeading: Model = {
           value: 'uppercase',
         },
       ],
-      controlType: 'button-group',
+      default: 'none',
+      required: true,
     },
     {
       type: 'enum',
       name: 'letterSpacing',
       label: 'Letter spacing',
-      required: false,
-      default: 'normal',
-      hidden: false,
-      localized: false,
+      controlType: 'button-group',
       options: [
         {
           label: 'Tighter',
@@ -175,7 +160,8 @@ export const ThemeStyleHeading: Model = {
           value: 'wider',
         },
       ],
-      controlType: 'button-group',
+      default: 'normal',
+      required: true,
     },
   ],
 };

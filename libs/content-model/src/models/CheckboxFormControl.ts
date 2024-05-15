@@ -1,48 +1,43 @@
 import { Model } from '@stackbit/types';
 
-export const CheckboxFormControl: Model = {
+export const CheckboxFormControlModel: Model = {
   type: 'object',
   name: 'CheckboxFormControl',
-  label: 'CheckboxFormControl',
+  label: 'Checkbox',
   labelField: 'label',
+  fieldGroups: [
+    {
+      name: 'styles',
+      label: 'Styles',
+      icon: 'palette',
+    },
+    {
+      name: 'settings',
+      label: 'Settings',
+      icon: 'gear',
+    },
+  ],
   fields: [
     {
       type: 'string',
       name: 'name',
       label: 'Name',
-      description:
-        'Must be unique and not contain whitespace. This is the property name that will be sent to the server with this field value.',
-      required: true,
       default: 'updates',
-      hidden: false,
-      localized: false,
+      required: true,
+      description:
+        "Must be unique - this is the property name that will be sent to the server with this field's value.",
     },
     {
       type: 'string',
       name: 'label',
       label: 'Label',
-      required: false,
       default: 'Sign me up to receive updates',
-      hidden: false,
-      localized: false,
-    },
-    {
-      type: 'boolean',
-      name: 'isRequired',
-      label: 'Is the field required?',
-      required: false,
-      default: false,
-      hidden: false,
-      localized: false,
     },
     {
       type: 'enum',
       name: 'width',
+      group: 'styles',
       label: 'Width',
-      required: false,
-      default: 'full',
-      hidden: false,
-      localized: false,
       options: [
         {
           label: 'Full',
@@ -53,15 +48,15 @@ export const CheckboxFormControl: Model = {
           value: '1/2',
         },
       ],
-      group: 'styles',
-      controlType: 'button-group',
+      default: 'full',
+      required: true,
     },
-  ],
-  fieldGroups: [
     {
-      name: 'styles',
-      label: 'Styles',
-      icon: 'palette',
+      type: 'boolean',
+      name: 'isRequired',
+      group: 'settings',
+      label: 'Is the field required?',
+      default: false,
     },
   ],
 };
