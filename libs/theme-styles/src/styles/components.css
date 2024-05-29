@@ -1,3 +1,345 @@
+/* stylelint-disable no-descending-specificity */
 @import url('tailwindcss/components.css');
 @import url('./typography.css');
 
+@layer components {
+  .sb-markdown {
+    @apply text-lg leading-relaxed;
+    a {
+      @apply underline;
+    }
+    a:hover {
+      @apply no-underline;
+    }
+    b,
+    strong {
+      @apply font-medium;
+    }
+    em {
+      @apply italic;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 2.5rem 0 1.5rem;
+    }
+    p {
+      margin: 1.5rem 0;
+    }
+    ol {
+      @apply list-decimal;
+      margin: 1.5rem 0;
+      padding-left: 1.25em;
+    }
+    ul {
+      @apply list-disc;
+      margin: 1.5rem 0;
+      padding-left: 1.25em;
+    }
+    li > ul,
+    li > ol {
+      margin: 0;
+    }
+    blockquote {
+      @apply border-l-4 border-current;
+      font-size: 1.25em;
+      line-height: 1.4;
+      margin: 2.5rem 0;
+      padding-left: 1.25em;
+    }
+    pre {
+      @apply overflow-x-auto border border-current leading-normal;
+      font-size: 0.875em;
+      margin: 1.5rem 0;
+      padding: 1.25em;
+    }
+    hr {
+      @apply h-px border-0 bg-current;
+      margin: 2.5rem 0;
+    }
+    figure {
+      margin: 1.5rem 0;
+    }
+    figcaption {
+      @apply leading-normal;
+      font-size: 0.875em;
+      margin: 0.5rem 0 0;
+    }
+    table {
+      @apply w-full border-collapse border border-current text-left;
+      margin: 1.5rem 0;
+    }
+    caption {
+      @apply text-left;
+      font-size: 0.875em;
+      margin: 0 0 0.5rem;
+    }
+    th,
+    td {
+      @apply border-r border-b border-current;
+      padding: 0.5em;
+    }
+    th {
+      font-weight: medium;
+    }
+    h1:first-child,
+    h2:first-child,
+    h3:first-child,
+    h4:first-child,
+    h5:first-child,
+    h6:first-child,
+    p:first-child,
+    ul:first-child,
+    ol:first-child,
+    blockquote:first-child,
+    pre:first-child,
+    hr:first-child,
+    figure:first-child,
+    table:first-child {
+      margin-top: 0;
+    }
+    h1 + h2,
+    h2 + h3,
+    h3 + h4,
+    h4 + h5,
+    h5 + h6 {
+      margin-top: 1.5rem;
+    }
+  }
+
+  /* Buttons */
+  .sb-component-button {
+    @apply relative inline-flex items-center justify-center border-2 border-current text-center text-lg no-underline transition duration-200 ease-in;
+    box-shadow: none;
+  }
+  .sb-component-button:not(.sb-component-button-no-hover):hover,
+  .group:hover .sb-component-button:not(.sb-component-button-no-hover) {
+    box-shadow: 0 6px 0 0 currentColor;
+    transform: translate(0, -6px);
+  }
+  .sb-component-button-secondary {
+    @apply rounded-full;
+  }
+
+  /* Links */
+  .sb-component-link {
+    @apply relative inline-flex items-center justify-center text-lg no-underline;
+  }
+  .sb-component-link:not(.sb-component-link-fill) {
+    box-shadow: 0 1px 0 0 currentColor;
+    transition: box-shadow 0.25s ease-in-out;
+  }
+  .sb-component-link:not(.sb-component-link-fill):hover,
+  .group:hover .sb-component-link:not(.sb-component-link-fill) {
+    box-shadow: 0 5px 0 0 currentColor;
+  }
+
+  /* Socials */
+  .sb-component-social {
+    @apply relative inline-flex items-center justify-center text-lg no-underline;
+  }
+  .sb-component-social:not(.sb-component-social-fill) {
+    @apply opacity-100 hover:opacity-80;
+    transition: opacity 0.25s ease-in-out;
+  }
+
+  /* Header links hover */
+  .sb-component-link-fill,
+  .sb-component-social-fill,
+  .sb-header-logo {
+    @apply relative overflow-hidden;
+    transition: color 0.25s ease-in-out;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    z-index: 1;
+  }
+  .sb-component-link-fill:before,
+  .sb-component-social-fill:before,
+  .sb-header-logo:before {
+    @apply absolute left-0 top-0 h-full opacity-0;
+    content: '';
+    z-index: -1;
+    transform: translate3d(0, -100%, 0);
+    transform-origin: 0% 100%;
+    transition: transform 0.25s, opacity 0.25s;
+    width: 101%;
+  }
+  .sb-component-link-fill:hover:before,
+  .sb-component-social-fill:hover:before,
+  .sb-header-logo:hover:before {
+    @apply opacity-100;
+    transform: translate3d(0, 0, 0);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+
+  /* Form controls */
+  .sb-form-control {
+    @apply mb-6;
+  }
+  .sb-label {
+    @apply mb-1 inline-block sm:text-xl;
+  }
+  .sb-input,
+  .sb-select,
+  .sb-textarea {
+    @apply w-full border border-current bg-transparent p-3 focus:outline-none sm:text-xl;
+  }
+  option {
+    color: initial;
+  }
+  .sb-checkbox {
+    @apply absolute select-none appearance-none opacity-0;
+    height: 1.5em;
+    width: 1.5em;
+  }
+  .sb-checkbox + .sb-label {
+    @apply relative cursor-pointer sm:text-xl;
+    padding-left: 2.5em;
+  }
+  .sb-checkbox + .sb-label:before {
+    @apply absolute left-0 top-1/2 -translate-y-1/2 cursor-pointer border border-current text-center font-sans;
+    content: '';
+    height: 1.5em;
+    width: 1.5em;
+    line-height: 1.25;
+  }
+  .sb-checkbox:checked + .sb-label:before {
+    content: '\2713';
+  }
+  .sb-select {
+    @apply cursor-pointer appearance-none bg-no-repeat pr-7;
+    background-image: linear-gradient(45deg, transparent 50%, currentColor 0),
+      linear-gradient(135deg, currentColor 50%, transparent 0);
+    background-position: calc(100% - 18px) calc(1px + 50%), calc(100% - 12px) calc(1px + 50%);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+  }
+
+  .text-center + .sb-contact-section-form,
+  .sb-contact-section-form:only-child {
+    text-align: center;
+  }
+
+  /* Post, project "read more" button */
+  .sb-project-feed-item.group:hover .sb-component-button-icon,
+  .sb-post-feed-item.group:hover .sb-component-button-icon {
+    transform: translate(6px, -6px);
+  }
+
+  /* Project navigation */
+  .sb-project-nav-item:not(:first-child) {
+    @apply md:text-right;
+  }
+
+  /* Color palettes */
+  .colors-a {
+    @apply bg-black text-white;
+    .sb-input,
+    .sb-select,
+    .sb-textarea {
+      @apply text-white placeholder-white placeholder-opacity-75;
+    }
+    .sb-component-link-fill:before,
+    .sb-component-social-fill:before,
+    .sb-header-logo:before {
+      @apply bg-white;
+    }
+    .sb-component-link-fill:hover,
+    .sb-component-social-fill:hover,
+    .sb-header-logo:hover {
+      @apply text-black;
+    }
+    .sb-header-overlay {
+      @apply bg-black;
+    }
+  }
+  .colors-b {
+    @apply bg-white text-neutral-700;
+    .sb-input,
+    .sb-select,
+    .sb-textarea {
+      @apply text-neutral-700 placeholder-neutral-700 placeholder-opacity-75;
+    }
+    .sb-component-link-fill:before,
+    .sb-component-social-fill:before,
+    .sb-header-logo:before {
+      @apply bg-neutral-700;
+    }
+    .sb-component-link-fill:hover,
+    .sb-component-social-fill:hover,
+    .sb-header-logo:hover {
+      @apply text-white;
+    }
+    .sb-header-overlay {
+      @apply bg-white;
+    }
+  }
+  .colors-c {
+    @apply bg-primary-500 text-white;
+    .sb-input,
+    .sb-select,
+    .sb-textarea {
+      @apply text-white placeholder-white placeholder-opacity-75;
+    }
+    .sb-component-link-fill:before,
+    .sb-component-social-fill:before,
+    .sb-header-logo:before {
+      @apply bg-white;
+    }
+    .sb-component-link-fill:hover,
+    .sb-component-social-fill:hover,
+    .sb-header-logo:hover {
+      @apply text-primary-500;
+    }
+    .sb-header-overlay {
+      @apply bg-primary-500;
+    }
+  }
+  .colors-d {
+    @apply bg-secondary-500 text-white;
+    .sb-input,
+    .sb-select,
+    .sb-textarea {
+      @apply text-white placeholder-white placeholder-opacity-75;
+    }
+    .sb-component-link-fill:before,
+    .sb-component-social-fill:before,
+    .sb-header-logo:before {
+      @apply bg-white;
+    }
+    .sb-component-link-fill:hover,
+    .sb-component-social-fill:hover,
+    .sb-header-logo:hover {
+      @apply text-secondary-500;
+    }
+    .sb-header-overlay {
+      @apply bg-secondary-500;
+    }
+  }
+  .colors-e {
+    @apply bg-neutral-500 text-white;
+    .sb-input,
+    .sb-select,
+    .sb-textarea {
+      @apply text-white placeholder-white placeholder-opacity-75;
+    }
+    .sb-component-link-fill:before,
+    .sb-component-social-fill:before,
+    .sb-header-logo:before {
+      @apply bg-white;
+    }
+    .sb-component-link-fill:hover,
+    .sb-component-social-fill:hover,
+    .sb-header-logo:hover {
+      @apply text-neutral-500;
+    }
+    .sb-header-overlay {
+      @apply bg-neutral-500;
+    }
+  }
+  .colors-f {
+    @apply bg-transparent;
+  }
+}

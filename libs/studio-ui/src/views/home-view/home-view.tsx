@@ -1,6 +1,15 @@
-import { type Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import logoUnseal from '../../assets/images/clients/auto-devops/logo-light.svg';
+import logoBrightPath from '../../assets/images/clients/bright-path/logo-light.svg';
+import logoFamilyFund from '../../assets/images/clients/cabbage-cms/logo-light.svg';
+import logoPhobiaLight from '../../assets/images/clients/cabbage-ui/logo-light.svg';
+import logoGreenLife from '../../assets/images/clients/green-life/logo-light.svg';
+import logoHomeWork from '../../assets/images/clients/home-work/logo-light.svg';
+import logoMailSmirk from '../../assets/images/clients/mail-smirk/logo-light.svg';
+import logoNorthAdventures from '../../assets/images/clients/north-adventures/logo-light.svg';
+import imageLaptop from '../../assets/images/laptop.jpg';
 
 import {
   ContactSection,
@@ -11,19 +20,8 @@ import {
   ListItem,
   SectionIntro,
   StylizedImage,
-} from '@watheia/studio-ui';
-
-import logoUnseal from '@assets/images/clients/auto-devops/logo-light.svg';
-import logoBrightPath from '@assets/images/clients/bright-path/logo-light.svg';
-import logoFamilyFund from '@assets/images/clients/cabbage-cms/logo-light.svg';
-import logoPhobiaLight from '@assets/images/clients/cabbage-ui/logo-light.svg';
-import logoGreenLife from '@assets/images/clients/green-life/logo-light.svg';
-import logoHomeWork from '@assets/images/clients/home-work/logo-light.svg';
-import logoMailSmirk from '@assets/images/clients/mail-smirk/logo-light.svg';
-import logoNorthAdventures from '@assets/images/clients/north-adventures/logo-light.svg';
-import imageLaptop from '@assets/images/laptop.jpg';
-
-import { CaseStudy, MDXEntry, loadCaseStudies } from '../lib/mdx';
+} from '../../components';
+import { CaseStudy, MDXEntry } from '../../studio-ui.types';
 
 const clients = [
   ['Natural', logoPhobiaLight],
@@ -168,13 +166,12 @@ function Services() {
   );
 }
 
-export const metadata: Metadata = {
-  description: 'Create better software with Watheia Labs',
-};
+/* eslint-disable-next-line */
+export interface HomeViewProps {
+  caseStudies: MDXEntry<CaseStudy>[];
+}
 
-export default async function Home() {
-  const caseStudies = (await loadCaseStudies()).slice(0, 3);
-
+export function HomeView({ caseStudies }: HomeViewProps) {
   return (
     <>
       <Container className="mt-24 sm:mt-32 md:mt-56">
@@ -219,3 +216,5 @@ export default async function Home() {
     </>
   );
 }
+
+export default HomeView;

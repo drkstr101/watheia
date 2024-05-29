@@ -2,16 +2,9 @@ import { globSync } from 'fast-glob';
 import frontmatter from 'front-matter';
 import * as fs from 'fs';
 import path, { join } from 'path';
-import { cwd } from 'process';
 
-import { isDev } from '@watheia/content-helpers';
-import {
-  PAGE_MODEL_NAMES,
-  fieldPathAttr,
-  models,
-  objectIdAttr,
-  types,
-} from '@watheia/content-model';
+import { config } from '@watheia/content-helpers';
+import { fieldPathAttr, models, objectIdAttr, types } from '@watheia/content-model';
 import { ContentApiOptions } from './content-api.types';
 
 const contentBaseDir = 'content';
@@ -33,15 +26,13 @@ function isRefField(modelName: string, fieldName: string) {
   return !!allReferenceFields[modelName + ':' + fieldName];
 }
 
-const supportedFileTypes = ['md', 'json'];
-const WORKSPACE_ROOT = process.env['WORKSPACE_ROOT'] ?? cwd();
 function contentFilesInPath(dir: string) {
-  const globPattern = `${dir}/**/*.{${supportedFileTypes.join(',')}}`;
-  return globSync(globPattern, { cwd: WORKSPACE_ROOT });
+  const globPattern = `${dir}/**/*.{${config.supportedFileTypes.join(',')}}`;
+  return globSync(globPattern, { cwd: config.workspaceRoot });
 }
 
 function readContent(file: string): types.DocumentModelType {
-  const rawContent = fs.readFileSync(join(WORKSPACE_ROOT, file), 'utf8');
+  const rawContent = fs.readFileSync(join(config.workspaceRoot, file), 'utf8');
   let content: any = null;
   switch (path.extname(file).substring(1)) {
     case 'md':
@@ -146,7 +137,7 @@ export async function resolveContent(
 
 export function allPages(allData: types.DocumentModelType[]): types.PageModelType[] {
   return allData.filter((obj) => {
-    return PAGE_MODEL_NAMES.includes(obj.__metadata.modelName);
+    return config.pageModels.includes(obj.__metadata.modelName);
   }) as types.PageModelType[];
 }
 
@@ -157,7 +148,8 @@ const skipList = ['__metadata'];
 const logAnnotations = false;
 
 function annotateContentObject(o: any, prefix = '', depth = 0) {
-  if (!isDev || !o || typeof o !== 'object' || !o.type || skipList.includes(prefix)) return;
+  if (!config.isDev || !o || typeof o !== 'object' || !o.type || skipList.includes(prefix))
+    return;
 
   const depthPrefix = '--'.repeat(depth);
   if (depth === 0) {

@@ -34,7 +34,7 @@ exports[`watheia.content-api #resolve() fully resolves local content cache with 
           "altText": "",
           "label": "Info",
           "type": "Link",
-          "url": "/info",
+          "url": "/about",
         },
         {
           "__metadata": {
@@ -91,7 +91,7 @@ exports[`watheia.content-api #resolve() fully resolves local content cache with 
           },
           "label": "Info",
           "type": "Link",
-          "url": "/info",
+          "url": "/about",
         },
         {
           "__metadata": {
@@ -1241,9 +1241,9 @@ Aenean scelerisque ullamcorper est aliquet blandit. Donec ac tellus enim. Vivamu
   },
   {
     "__metadata": {
-      "id": "content/pages/info.md",
+      "id": "content/pages/about.md",
       "modelName": "PageLayout",
-      "urlPath": "/info",
+      "urlPath": "/about",
     },
     "backgroundImage": {
       "__metadata": {

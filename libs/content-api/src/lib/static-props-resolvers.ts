@@ -3,7 +3,7 @@ import { GlobalProps, PageComponentProps, models, types } from '@watheia/content
 
 export function resolveStaticProps(
   urlPath: string,
-  allData: types.ContentObject[]
+  allData: types.DocumentModelType[]
 ): PageComponentProps {
   const originalPage = allData.find((obj) => obj.__metadata.urlPath === urlPath);
   const globalProps: GlobalProps = {

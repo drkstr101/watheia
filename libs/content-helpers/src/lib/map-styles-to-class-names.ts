@@ -107,7 +107,7 @@ export function mapStylesToClassNames(styles: Record<string, any>) {
         const obj: any = typeof TAILWIND_MAP[prop as TWMapProp];
         if (typeof obj === 'function') {
           return obj(value);
-        } else if (value in obj) {
+        } else if (Object.hasOwn(obj, value)) {
           return obj[value];
         }
       } else {

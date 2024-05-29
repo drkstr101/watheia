@@ -1,4 +1,4 @@
-export * from './lib/config';
+export * as config from './lib/config';
 export * from './lib/date-utils';
 export * from './lib/get-data-attrs';
 export * from './lib/get-video-data';

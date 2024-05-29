@@ -3,10 +3,10 @@ export const fieldPathAttr = 'data-sb-field-path';
 
 export type HasAnnotation =
   | {
-      [objectIdAttr]?: string;
+      'data-sb-object-id'?: string;
     }
   | {
-      [fieldPathAttr]?: string;
+      'data-sb-field-path'?: string;
     };
 
 export type ContentObjectMetadata = {

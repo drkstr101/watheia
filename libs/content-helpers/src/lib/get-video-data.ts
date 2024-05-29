@@ -4,7 +4,7 @@ export interface VideoData {
 }
 
 // Based on https://github.com/radiovisual/get-video-id
-export default function getVideoData(videoUrl: string) {
+export function getVideoData(videoUrl: string) {
   let videoData: VideoData = {
     id: null,
     service: null,

@@ -11,7 +11,7 @@
       {
         "type": "Link",
         "label": "Info",
-        "url": "/info"
+        "url": "/about"
       },
       {
         "type": "Link",
@@ -52,7 +52,7 @@
       {
         "type": "Link",
         "label": "Info",
-        "url": "/info",
+        "url": "/about",
         "altText": ""
       },
       {

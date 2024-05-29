@@ -2,16 +2,16 @@
 type: PageLayout
 title: Home
 colors: colors-a
-backgroundImage:
-  type: BackgroundImage
-  url: /images/bg1.jpg
-  backgroundSize: cover
-  backgroundPosition: center
-  backgroundRepeat: no-repeat
-  opacity: 75
+# backgroundImage:
+#   type: BackgroundImage
+#   url: /images/bg1.jpg
+#   backgroundSize: cover
+#   backgroundPosition: center
+#   backgroundRepeat: no-repeat
+#   opacity: 75
 sections:
   - elementId: ''
-    colors: colors-f
+    colors: colors-b
     backgroundSize: full
     title: >-
       I’m a developer, digital artist, consultant and a bunch of other
