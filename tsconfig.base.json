@@ -1,0 +1,26 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@watheia/base-ui": ["libs/base-ui/src/index.ts"],
+      "@watheia/content-helpers": ["libs/content-helpers/src/index.ts"],
+      "@watheia/home.ui-provider": ["libs/home/ui-provider/src/index.ts"],
+      "@watheia/home.ui-provider/styles.css": ["libs/home/ui-provider/src/styles/index.css"],
+      "@watheia/studio-ui": ["libs/studio-ui/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

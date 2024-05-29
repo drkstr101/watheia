@@ -1,0 +1,9 @@
+{
+  "name": "screenplay",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/screenplay/src",
+  "tags": [],
+  "implicitDependencies": ["home"],
+  "// targets": "to see all targets run: nx show project screenplay --web",
+  "targets": {}
+}

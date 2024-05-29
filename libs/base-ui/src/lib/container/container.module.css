@@ -1,0 +1,15 @@
+/*
+ * Replace this with your own classes
+ *
+ * e.g.
+ * .container {
+ * }
+*/
+
+.outer {
+  @apply mx-auto max-w-7xl px-6 lg:px-8;
+}
+
+.inner {
+  @apply mx-auto max-w-2xl lg:max-w-none;
+}

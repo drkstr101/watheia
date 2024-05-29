@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ms-playwright.playwright",
+    "nrwl.angular-console",
+    "stylelint.vscode-stylelint",
+    "unifiedjs.vscode-mdx",
+    "vitest.explorer"
+  ]
+}

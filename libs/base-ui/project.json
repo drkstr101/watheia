@@ -1,0 +1,16 @@
+{
+  "name": "base-ui",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/base-ui/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/base-ui/**/*.css"]
+      }
+    }
+  }
+}
