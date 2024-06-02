@@ -14,8 +14,7 @@ pre {
 }
 
 .container {
-  @apply mx-auto w-full max-w-4xl sm:px-6 lg:px-8;
-  color: rgba(55, 65, 81, 1);
+  @apply mx-auto w-full max-w-4xl text-neutral-700 sm:px-6 lg:px-8;
 }
 #welcome {
   margin-top: 2.5rem;
