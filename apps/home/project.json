@@ -46,14 +46,14 @@
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "executor": "@nx/vite:test",
       "options": {
-        "jestConfig": "apps/home/jest.config.ts"
+        "config": "apps/home/vite.config.ts",
+        "reportsDirectory": "../../dist/coverage/apps/home",
+        "watch": false
       }
     },
     "lint": {
-      "dependsOn": ["stylelint"],
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"]
     },

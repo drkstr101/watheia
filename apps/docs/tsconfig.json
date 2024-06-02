@@ -21,12 +21,11 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
+    "**/*.mjs",
     "**/*.jsx",
     "../../apps/docs/.next/types/**/*.ts",
     "../../dist/apps/docs/.next/types/**/*.ts",
-    "next-env.d.ts",
-    "next.config.mjs",
-    ".next/types/**/*.ts"
+    "next-env.d.ts"
   ],
   "exclude": ["node_modules", "jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
 }
