@@ -98,7 +98,7 @@ const WORKSPACE_ROOT = resolve(fileURLToPath(new URL('.', import.meta.url)), '..
  **/
 const nextConfig = {
   reactStrictMode: true,
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  pageExtensions: ['js', 'jsx', 'mjs', 'ts', 'tsx', 'md', 'mdx'],
   env: { WORKSPACE_ROOT },
   nx: {
     // Set this to true if you would like to use SVGR

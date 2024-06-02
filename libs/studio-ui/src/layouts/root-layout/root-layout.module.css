@@ -1,7 +1,65 @@
-/*
- * Replace this with your own classes
- *
- * e.g.
- * .container {
- * }
-*/
+.siteNavLink {
+  align-items: center;
+  border-radius: 0.75rem;
+  display: flex;
+  margin-top: 1rem;
+  padding: 1rem;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow,
+    transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  width: 100%;
+}
+.siteNavLink svg:first-child {
+  @apply text-neutral-300;
+
+  margin-right: 1rem;
+  height: 1.5rem;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow,
+    transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  width: 1.5rem;
+}
+.siteNavLink > span {
+  @apply text-neutral-100;
+
+  flex-grow: 1;
+  font-weight: 400;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow,
+    transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.siteNavLink > span > span {
+  @apply text-neutral-300;
+
+  display: block;
+  flex-grow: 1;
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1rem;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow,
+    transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.siteNavLink svg:last-child {
+  @apply text-neutral-300;
+
+  height: 1rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  width: 1rem;
+}
+.siteNavLink:hover {
+  @apply bg-accent-500 text-white;
+}
+/* .siteNavLink:hover > span {} */
+.siteNavLink:hover > span > span {
+  color: rgba(243, 244, 246, 1);
+}
+.siteNavLink:hover svg:last-child {
+  transform: translateX(0.25rem);
+}

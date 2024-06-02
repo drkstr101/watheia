@@ -20,21 +20,20 @@ function Office({
   );
 }
 
-export function Offices({
+export function OtherSites({
   invert = false,
   ...props
 }: React.ComponentPropsWithoutRef<'ul'> & { invert?: boolean }) {
   return (
-    <ul role="list" {...props}>
+    <ul {...props}>
       <li>
-        <Office name="Kennewick" invert={invert}>
-          1 Carlsberg Gate
-          <br />
-          Kennewick, WA
+        <Office name="Dashboard" invert={invert}>
+          Client projects &amp;
+          <br /> user settings
         </Office>
       </li>
       <li>
-        <Office name="Spokane" invert={invert}>
+        <Office name="Documentation" invert={invert}>
           555 Any St.
           <br />
           Spokane, WA

@@ -6,8 +6,14 @@ import { MotionConfig, motion, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
+  ComponentPropsWithoutRef,
+  ComponentType,
+  Dispatch,
+  ElementRef,
   HtmlHTMLAttributes,
   ReactNode,
+  RefObject,
+  SetStateAction,
   createContext,
   useContext,
   useEffect,
@@ -19,15 +25,21 @@ import {
 import { Footer } from '../../components/Footer';
 import { GridPattern } from '../../components/GridPattern';
 import { Logo, Logomark } from '../../components/Logo';
-import { Offices } from '../../components/Offices';
 import { SocialMedia } from '../../components/SocialMedia';
+
+import styles from './root-layout.module.css';
 
 const RootLayoutContext = createContext<{
   logoHovered: boolean;
-  setLogoHovered: React.Dispatch<React.SetStateAction<boolean>>;
-} | null>(null);
+  setLogoHovered: Dispatch<SetStateAction<boolean>>;
+}>({
+  logoHovered: false,
+  setLogoHovered: function (value: SetStateAction<boolean>): void {
+    throw new Error('Function not implemented: ' + value);
+  },
+});
 
-function XIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function XIcon(props: ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path d="m5.636 4.223 14.142 14.142-1.414 1.414L4.222 5.637z" />
@@ -36,7 +48,7 @@ function XIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   );
 }
 
-function MenuIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function MenuIcon(props: ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path d="M2 6h20v2H2zM2 16h20v2H2z" />
@@ -53,13 +65,13 @@ function Header({
   invert = false,
 }: {
   panelId: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: ComponentType<{ className?: string }>;
   expanded: boolean;
   onToggle: () => void;
-  toggleRef: React.RefObject<HTMLButtonElement>;
+  toggleRef: RefObject<HTMLButtonElement>;
   invert?: boolean;
 }) {
-  const { logoHovered, setLogoHovered } = useContext(RootLayoutContext)!;
+  const { logoHovered, setLogoHovered } = useContext(RootLayoutContext);
 
   return (
     <Container>
@@ -104,7 +116,7 @@ function Header({
   );
 }
 
-function NavigationRow({ children }: { children: React.ReactNode }) {
+function NavigationRow({ children }: { children: ReactNode }) {
   return (
     <div className="even:mt-px sm:bg-black">
       <Container>
@@ -114,7 +126,7 @@ function NavigationRow({ children }: { children: React.ReactNode }) {
   );
 }
 
-function NavigationItem({ href, children }: { href: string; children: React.ReactNode }) {
+function NavigationItem({ href, children }: { href: string; children: ReactNode }) {
   return (
     <Link
       href={href}
@@ -151,9 +163,9 @@ export type RootLayoutProps = Omit<HtmlHTMLAttributes<HTMLDivElement>, 'children
 export function RootLayoutInner({ children }: RootLayoutProps) {
   const panelId = useId();
   const [expanded, setExpanded] = useState(false);
-  const openRef = useRef<React.ElementRef<'button'>>(null);
-  const closeRef = useRef<React.ElementRef<'button'>>(null);
-  const navRef = useRef<React.ElementRef<'div'>>(null);
+  const openRef = useRef<ElementRef<'button'>>(null);
+  const closeRef = useRef<ElementRef<'button'>>(null);
+  const navRef = useRef<ElementRef<'div'>>(null);
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -223,9 +235,73 @@ export function RootLayoutInner({ children }: RootLayoutProps) {
                 <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
                   <div>
                     <h2 className="font-display text-base font-semibold text-white">
-                      Our offices
+                      Other sites
                     </h2>
-                    <Offices invert className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2" />
+                    <Link href="/docs" className={styles.siteNavLink}>
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                        />
+                      </svg>
+                      <span>
+                        Documentation
+                        <span>Design system &amp; API documentation</span>
+                      </span>
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </Link>
+                    <Link href="/admin" className={styles.siteNavLink}>
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+                        />
+                      </svg>
+                      <span>
+                        Admin
+                        <span>Users, billing & projects</span>
+                      </span>
+                      <svg
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </Link>
+                    {/* <OtherSites invert className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2" /> */}
                   </div>
                   <div className="sm:border-l sm:border-transparent sm:pl-16">
                     <h2 className="font-display text-base font-semibold text-white">Follow us</h2>

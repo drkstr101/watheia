@@ -7,11 +7,7 @@ export function TagList({
   children: React.ReactNode;
   className?: string;
 }) {
-  return (
-    <ul role="list" className={clsx(className, 'flex flex-wrap gap-4')}>
-      {children}
-    </ul>
-  );
+  return <ul className={clsx(className, 'flex flex-wrap gap-4')}>{children}</ul>;
 }
 
 export function TagListItem({

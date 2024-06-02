@@ -6,9 +6,7 @@ import { FadeIn, FadeInStagger } from './FadeIn';
 export function List({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
     <FadeInStagger>
-      <ul role="list" className={clsx('text-base text-neutral-600', className)}>
-        {children}
-      </ul>
+      <ul className={clsx('text-base text-neutral-600', className)}>{children}</ul>
     </FadeInStagger>
   );
 }

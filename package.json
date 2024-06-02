@@ -8,7 +8,7 @@
     "lint": "nx format:check && nx run-many --target=lint,stylelint --parallel",
     "test": "nx run-many --target=test --parallel --coverage",
     "build": "nx run-many --target=build --parallel",
-    "start": "nx run-many --target serve --projects home --nxBail --parallel",
+    "start": "nx run-many --target serve --projects admin docs home --nxBail --parallel",
     "e2e": "nx run screenplay:e2e --skip-nx-cache",
     "e2e:setup": "playwright install --with-deps --force",
     "validate": "stackbit validate"

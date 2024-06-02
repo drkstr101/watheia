@@ -1,7 +1,7 @@
 import { Button, Container } from '@watheia/base-ui';
 
 import { FadeIn } from './FadeIn';
-import { Offices } from './Offices';
+import { OtherSites } from './Offices';
 
 export function ContactSection() {
   return (
@@ -19,7 +19,7 @@ export function ContactSection() {
             </div>
             <div className="mt-10 border-t border-white/10 pt-10">
               <h3 className="font-display text-base font-semibold text-white">Our offices</h3>
-              <Offices invert className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2" />
+              <OtherSites invert className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2" />
             </div>
           </div>
         </div>

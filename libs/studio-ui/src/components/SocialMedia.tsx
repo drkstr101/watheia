@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import clsx from 'clsx';
+import Link from 'next/link';
 
 function FacebookIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -73,10 +73,7 @@ export function SocialMedia({
   invert?: boolean;
 }) {
   return (
-    <ul
-      role="list"
-      className={clsx('flex gap-x-10', invert ? 'text-white' : 'text-black', className)}
-    >
+    <ul className={clsx('flex gap-x-10', invert ? 'text-white' : 'text-black', className)}>
       {socialMediaProfiles.map((socialMediaProfile) => (
         <li key={socialMediaProfile.title}>
           <Link
