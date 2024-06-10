@@ -1,12 +1,11 @@
 {
-  "name": "theme-styles",
+  "name": "ui-provider",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/theme-styles/src",
+  "sourceRoot": "libs/ui-provider/src",
   "projectType": "library",
   "tags": [],
   "targets": {
     "lint": {
-      "dependsOn": ["stylelint"],
       "executor": "@nx/eslint:lint"
     },
     "build": {
@@ -14,7 +13,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/libs/theme-styles"
+        "outputPath": "dist/libs/ui-provider"
       },
       "configurations": {
         "development": {
@@ -29,14 +28,14 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/theme-styles/jest.config.ts"
+        "jestConfig": "libs/ui-provider/jest.config.ts"
       }
     },
     "stylelint": {
       "executor": "nx-stylelint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/theme-styles/**/*.css"]
+        "lintFilePatterns": ["libs/ui-provider/**/*.css"]
       }
     }
   }
