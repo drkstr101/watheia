@@ -1,0 +1,82 @@
+import imageAaronMiller from '@content/images/team/aaron-r-miller.jpg';
+
+export const article = {
+  date: '2024-06-02',
+  title: 'Common pitfalls, challenges, and concerns with enterprise JAMStack',
+  description:
+    'When heading out on your own to sink or swim for the first time as a Highly Paid Consultant (HPC), it helps to be over-prepared with solutions to these common pitfalls, challenges, and concerns with JAMStack in the enterprise.',
+  author: {
+    name: 'Aaron R Miller',
+    role: 'Co-Founder / CTO',
+    image: { src: imageAaronMiller },
+  },
+};
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+};
+
+![](./server.jpg)
+
+When heading out on your own to sink or swim for the first time as a Highly Paid Consultant (HPC), it helps to be over-prepared with solutions to these common pitfalls, challenges, and concerns with JAMStack in the enterprise.
+
+### Continuous Integration & Deployment
+
+- CI/CD Pipelines
+- Containerized builders & runtime environments
+- Distributed secrets management
+- Code quality and coverage reporting
+
+Continuous integration and deployment involve validating code changes, processing them into release artifacts (e.g., building the project(s)), and publishing those artifacts to a specified environment.
+
+Typically, there are at least two implicit environments: `development` (local) and `production` (remote). Other standard options are `preview,` `staging,` or `next`. Project-wide configuration values are a product of the defaults and current environment.
+
+### Developer Tooling
+
+- Containerized application builders and runtimes
+- Portable developer environments (GitPod, Dev Container, etc.)
+- Automated linting & formatting
+- Task orchestration (Ant, Gradle, Nx, Jenkins, Make, etc.)
+
+While it may sound unintuitive, tool quality and user preference are rarely the determining factor or a significant concern for large organizations. Consistency, reproducibility, automation, and interoperability with other tools are more important considerations.
+
+In addition to detailed platform-specific documentation in the README, projects often include an entire development environment for easy setup and guaranteed reproducibility [3]. Both GitPod and Microsoft Dev Container bundle a copy of Theia IDE, a web-based VSCode clone intended for this purpose.
+
+### Domain Modeling
+
+- Schema definitions & data validation
+- Change management (versioning)
+- Transaction management (consistency)
+- Relational data vs. document stores
+- Automatic code generation
+
+### Design Systems
+
+- Shared design vocabulary between stakeholders
+- Design tokens are decisions codified as data
+
+### User Authentication & Authorization
+
+- User authentication providers (SSO, OAuth2, LDAP, etc.)
+- Role-based access protocols
+- Distributed identity management and access control
+
+### Content Management
+
+- Version control & revision management (branching, merging, release, etc)
+- Role-based access controls
+- Environment-based configuration
+
+### Reporting & Observability
+
+- Automated logging report retention
+- Usage of dead letter queues
+
+## Resources
+
+![](./laptop.jpg)
+
+1. https://www.netlify.com/blog/framework-popularity-on-netlify/ [2023]
+2. https://open-next.js.org/inner_workings/architecture
+3. Well, as much as anything can be guaranteed
