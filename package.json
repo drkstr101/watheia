@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "format": "prettier . --write",
-    "lint": "nx format:check && nx run-many --target=lint --parallel",
+    "lint": "nx run-many --target=lint --parallel",
+    "stylelint": "nx run-many --target=stylelint --parallel",
     "test": "nx run-many --target=test --parallel --coverage -- --runInBand",
     "build": "nx run-many --target=build --parallel",
     "start": "nx run home:serve:development --port 4200",
