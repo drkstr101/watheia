@@ -10,7 +10,7 @@ import {
   Offices,
   PageIntro,
   SocialMedia,
-} from '@watheia/studio-ui';
+} from '@watheia/base-ui';
 
 function TextInput({
   label,

@@ -15,15 +15,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@content/images/*": ["content/assets/images/*"],
+      "@assets/images/*": ["libs/assets/images/*"],
       "@home/app/blog/wrapper": ["apps/home/app/blog/wrapper.tsx"],
       "@home/app/solutions/wrapper": ["apps/home/app/solutions/wrapper.tsx"],
       "@home/lib/content-api": ["apps/home/lib/content-api.ts"],
       "@home/lib/mdx": ["apps/home/lib/mdx.ts"],
+      "@watheia/base-ui": ["libs/base-ui/src/index.ts"],
       "@watheia/content-api": ["libs/content-api/src/index.ts"],
       "@watheia/content-helpers": ["libs/content-helpers/src/index.ts"],
       "@watheia/content-model": ["libs/content-model/src/index.ts"],
-      "@watheia/studio-ui": ["libs/studio-ui/src/index.ts"],
       "@watheia/ui-provider": ["libs/ui-provider/src/index.ts"],
       "@watheia/ui-provider/style.css": ["libs/ui-provider/src/styles/index.css"]
     }

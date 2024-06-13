@@ -11,11 +11,11 @@ import {
   StylizedImage,
   TagList,
   TagListItem,
-} from '@watheia/studio-ui';
+} from '@watheia/base-ui';
 
-import imageLaptop from '@content/images/laptop.jpg';
-import imageMeeting from '@content/images/meeting.jpg';
-import imageWhiteboard from '@content/images/whiteboard.jpg';
+import imageLaptop from '@assets/images/laptop.jpg';
+import imageMeeting from '@assets/images/meeting.jpg';
+import imageWhiteboard from '@assets/images/whiteboard.jpg';
 
 function Section({
   title,

@@ -1,93 +1,95 @@
 import { Model } from '@stackbit/types';
 
-export const Link: Model = {
+export const LinkModel: Model = {
   type: 'object',
   name: 'Link',
   label: 'Link',
   labelField: 'label',
+  fieldGroups: [
+    {
+      name: 'styles',
+      label: 'Styles',
+      icon: 'palette',
+    },
+    {
+      name: 'settings',
+      label: 'Settings',
+      icon: 'gear',
+    },
+  ],
   fields: [
     {
       type: 'string',
       name: 'label',
       label: 'Label',
-      required: false,
       default: 'Learn more',
-      hidden: false,
-      localized: false,
     },
     {
       type: 'string',
       name: 'altText',
       label: 'Alt text',
       description: 'The alternative text for screen readers',
-      required: false,
       default: '',
-      hidden: false,
-      localized: false,
     },
     {
       type: 'string',
       name: 'url',
       label: 'URL',
-      required: true,
       default: '/',
-      hidden: false,
-      localized: false,
+      required: true,
     },
     {
       type: 'boolean',
       name: 'showIcon',
-      label: 'Show icon',
-      required: false,
-      default: false,
-      hidden: false,
-      localized: false,
       group: 'styles',
+      label: 'Show icon',
+      default: false,
     },
     {
       type: 'enum',
       name: 'icon',
+      group: 'styles',
       label: 'Icon',
-      required: false,
-      default: 'arrowRight',
-      hidden: false,
-      localized: false,
       options: [
         {
-          label: 'Arrow down',
-          value: 'arrowDown',
+          label: 'Apple',
+          value: 'apple',
         },
         {
           label: 'Arrow left',
           value: 'arrowLeft',
         },
         {
+          label: 'Arrow left circle',
+          value: 'arrowLeftCircle',
+        },
+        {
           label: 'Arrow right',
           value: 'arrowRight',
         },
         {
-          label: 'Arrow up',
-          value: 'arrowUp',
+          label: 'Arrow right circle',
+          value: 'arrowRightCircle',
         },
         {
-          label: 'Chevron down',
-          value: 'chevronDown',
+          label: 'Arrow up left',
+          value: 'arrowUpLeft',
+        },
+        {
+          label: 'Arrow up right',
+          value: 'arrowUpRight',
+        },
+        {
+          label: 'Cart',
+          value: 'cart',
         },
         {
           label: 'Chevron left',
           value: 'chevronLeft',
         },
         {
-          label: 'Chevron big left',
-          value: 'chevronBigLeft',
-        },
-        {
           label: 'Chevron right',
           value: 'chevronRight',
-        },
-        {
-          label: 'Chevron big right',
-          value: 'chevronBigRight',
         },
         {
           label: 'Facebook',
@@ -96,6 +98,10 @@ export const Link: Model = {
         {
           label: 'GitHub',
           value: 'github',
+        },
+        {
+          label: 'Google Play',
+          value: 'googlePlay',
         },
         {
           label: 'Instagram',
@@ -114,16 +120,16 @@ export const Link: Model = {
           value: 'play',
         },
         {
+          label: 'Play circle',
+          value: 'playCircle',
+        },
+        {
           label: 'Reddit',
           value: 'reddit',
         },
         {
           label: 'Send',
           value: 'send',
-        },
-        {
-          label: 'Shopping bag',
-          value: 'shoppingBag',
         },
         {
           label: 'Twitter',
@@ -138,16 +144,14 @@ export const Link: Model = {
           value: 'youtube',
         },
       ],
-      group: 'styles',
+      default: 'arrowRight',
     },
     {
       type: 'enum',
       name: 'iconPosition',
+      group: 'styles',
+      controlType: 'button-group',
       label: 'Icon position',
-      required: false,
-      default: 'right',
-      hidden: false,
-      localized: false,
       options: [
         {
           label: 'Left',
@@ -158,52 +162,15 @@ export const Link: Model = {
           value: 'right',
         },
       ],
-      group: 'styles',
-      controlType: 'button-group',
-    },
-    {
-      type: 'enum',
-      name: 'style',
-      label: 'Style',
-      required: false,
-      default: 'primary',
-      hidden: false,
-      localized: false,
-      options: [
-        {
-          label: 'Primary',
-          value: 'primary',
-        },
-        {
-          label: 'Secondary',
-          value: 'secondary',
-        },
-      ],
-      group: 'styles',
-      controlType: 'button-group',
+      default: 'right',
     },
     {
       type: 'string',
       name: 'elementId',
+      group: 'settings',
       label: 'Element ID',
       description: 'The unique ID for an HTML element, must not contain whitespace',
-      required: false,
       default: '',
-      hidden: false,
-      localized: false,
-      group: 'settings',
-    },
-  ],
-  fieldGroups: [
-    {
-      name: 'styles',
-      label: 'Styles',
-      icon: 'palette',
-    },
-    {
-      name: 'settings',
-      label: 'Settings',
-      icon: 'gear',
     },
   ],
 };

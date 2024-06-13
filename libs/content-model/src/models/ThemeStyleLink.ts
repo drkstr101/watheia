@@ -1,18 +1,16 @@
 import { Model } from '@stackbit/types';
 
-export const ThemeStyleLink: Model = {
+export const ThemeStyleLinkModel: Model = {
   type: 'object',
   name: 'ThemeStyleLink',
-  label: 'Theme Style Link',
+  label: 'Link',
   labelField: 'weight',
   fields: [
     {
       type: 'enum',
       name: 'weight',
       label: 'Font weight',
-      required: false,
-      hidden: false,
-      localized: false,
+      controlType: 'button-group',
       options: [
         {
           label: 'Normal',
@@ -22,20 +20,15 @@ export const ThemeStyleLink: Model = {
           label: 'Medium',
           value: 'medium',
         },
-        {
-          label: 'Bold',
-          value: 'bold',
-        },
       ],
-      controlType: 'button-group',
+      default: 'medium',
+      required: true,
     },
     {
       type: 'enum',
       name: 'case',
       label: 'Case',
-      required: false,
-      hidden: false,
-      localized: false,
+      controlType: 'button-group',
       options: [
         {
           label: 'Default',
@@ -54,15 +47,14 @@ export const ThemeStyleLink: Model = {
           value: 'uppercase',
         },
       ],
-      controlType: 'button-group',
+      default: 'none',
+      required: true,
     },
     {
       type: 'enum',
       name: 'letterSpacing',
       label: 'Letter spacing',
-      required: false,
-      hidden: false,
-      localized: false,
+      controlType: 'button-group',
       options: [
         {
           label: 'Tighter',
@@ -85,8 +77,8 @@ export const ThemeStyleLink: Model = {
           value: 'wider',
         },
       ],
-      controlType: 'button-group',
+      default: 'normal',
+      required: true,
     },
   ],
-  readOnly: true,
 };

@@ -1,5 +1,5 @@
 import { formatDate } from '@watheia/content-helpers';
-import { ContactSection, Container, FadeIn, MDXComponents, PageLinks } from '@watheia/studio-ui';
+import { ContactSection, Container, FadeIn, MDXComponents, PageLinks } from '@watheia/base-ui';
 import { Article, MDXEntry, loadArticles } from '../../lib/mdx';
 
 export default async function BlogArticleWrapper({

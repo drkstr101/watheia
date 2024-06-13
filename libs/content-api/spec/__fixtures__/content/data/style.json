@@ -1,0 +1,71 @@
+{
+  "type": "ThemeStyle",
+  "white": "#f8fafc",
+  "black": "#020617",
+  "primary": "#06b6d4",
+  "secondary": "#6366f1",
+  "neutral": "#64748b",
+  "accent": "#14b8a6",
+  "fontBody": "fontBook",
+  "h1": {
+    "size": "6xl",
+    "weight": "medium",
+    "decoration": "none",
+    "case": "uppercase",
+    "letterSpacing": "normal"
+  },
+  "h2": {
+    "size": "5xl",
+    "weight": "normal",
+    "decoration": "none",
+    "case": "uppercase",
+    "letterSpacing": "normal"
+  },
+  "h3": {
+    "size": "4xl",
+    "weight": "normal",
+    "decoration": "none",
+    "case": "uppercase",
+    "letterSpacing": "normal"
+  },
+  "h4": {
+    "size": "3xl",
+    "weight": "medium",
+    "decoration": "none",
+    "case": "uppercase",
+    "letterSpacing": "normal"
+  },
+  "h5": {
+    "size": "xl",
+    "weight": "medium",
+    "decoration": "none",
+    "case": "uppercase",
+    "letterSpacing": "normal"
+  },
+  "h6": {
+    "size": "lg",
+    "weight": "medium",
+    "decoration": "none",
+    "case": "uppercase",
+    "letterSpacing": "normal"
+  },
+  "buttonPrimary": {
+    "weight": "normal",
+    "case": "none",
+    "letterSpacing": "normal",
+    "horizontalPadding": 20,
+    "verticalPadding": 15
+  },
+  "buttonSecondary": {
+    "weight": "normal",
+    "case": "none",
+    "letterSpacing": "normal",
+    "horizontalPadding": 20,
+    "verticalPadding": 15
+  },
+  "link": {
+    "weight": "normal",
+    "case": "uppercase",
+    "letterSpacing": "normal"
+  }
+}

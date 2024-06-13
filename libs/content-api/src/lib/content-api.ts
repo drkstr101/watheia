@@ -1,18 +1,21 @@
-import type { ContentCache, LocalContentSchema } from './content-api.types';
-import { resolveContent, resolveStaticPaths, resolveStaticProps } from './resolver';
+import { types } from '@watheia/content-model';
+import type { ContentApiOptions } from './content-api.types';
+import { resolveContent } from './resolver';
+import { resolveStaticProps } from './static-props-resolvers';
 
 export class LocalContentApi {
-  public static async create(schema: LocalContentSchema): Promise<LocalContentApi> {
-    return new LocalContentApi(await resolveContent(schema));
+  public static async resolve(options: ContentApiOptions): Promise<LocalContentApi> {
+    return new LocalContentApi(await resolveContent(options));
   }
 
-  constructor(public readonly cache: ContentCache) {}
+  constructor(public readonly documents: types.DocumentModelType[]) {}
 
-  resolvePaths(): string[] {
-    return resolveStaticPaths(this.cache);
+  staticPaths(): { paths: string[]; fallback: false } {
+    const paths = this.documents.map((obj) => obj.__metadata.urlPath).filter(Boolean) as string[];
+    return { paths, fallback: false };
   }
 
-  resolveProps(urlPath: string) {
-    return resolveStaticProps(urlPath, this.cache);
+  getProps(urlPath: string) {
+    return resolveStaticProps(urlPath, this.documents);
   }
 }
