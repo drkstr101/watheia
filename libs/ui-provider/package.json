@@ -10,10 +10,8 @@
     }
   },
   "dependencies": {
-    "@nx/react": "18.3.3",
-    "@nx/vite": "18.3.3",
-    "@vitejs/plugin-react": "^4.2.1",
-    "vite": "^5.2.10",
+    "@nx/react": "19.3.0",
+    "@nx/vite": "19.3.0",
     "vite-plugin-dts": "~2.3.0"
   }
 }
