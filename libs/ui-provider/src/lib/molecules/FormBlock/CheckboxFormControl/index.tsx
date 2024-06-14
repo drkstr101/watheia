@@ -12,13 +12,13 @@ export default function CheckboxFormControl(props) {
   }
   return (
     <div
-      className={classNames('sb-form-control', 'flex', 'items-center', {
+      className={classNames('wa-form-control', 'flex', 'items-center', {
         'sm:col-span-2': width === 'full',
       })}
     >
-      <input id={name} className="sb-checkbox" type="checkbox" name={name} {...attr} />
+      <input id={name} className="wa-checkbox" type="checkbox" name={name} {...attr} />
       {label && (
-        <label id={labelId} className="sb-label" htmlFor={name}>
+        <label id={labelId} className="wa-label" htmlFor={name}>
           {label}
         </label>
       )}

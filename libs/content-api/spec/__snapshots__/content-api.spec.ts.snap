@@ -163,7 +163,7 @@ exports[`watheia.content-api #resolve() fully resolves local content cache with 
       "verticalPadding": 15,
       "weight": "normal",
     },
-    "fontBody": "fontBook",
+    "fontBody": "book",
     "h1": {
       "case": "uppercase",
       "decoration": "none",
@@ -5271,7 +5271,7 @@ Vestibulum ullamcorper risus auctor eleifend consequat. Vivamus mollis in tellus
   page.content && (
     <Markdown
       options={{ forceBlock: true, overrides: { pre: HighlightedPreBlock } }}
-      className="sb-markdown mx-auto max-w-screen-md"
+      className="wa-markdown mx-auto max-w-screen-md"
       data-sb-field-path="content"
     >
       {page.content}
@@ -6097,20 +6097,20 @@ Etiam facilisis lacus nec pretium lobortis. Praesent dapibus justo non efficitur
 \`\`\`css
 .colors-a {
   @apply bg-black text-white;
-  .sb-input,
-  .sb-select,
-  .sb-textarea {
+  .wa-input,
+  .wa-select,
+  .wa-textarea {
     @apply text-white placeholder-white placeholder-opacity-75;
   }
-  .sb-header-links-primary .sb-component-link:before,
-  .sb-component-header .sb-component-social:before {
+  .wa-header-links-primary .wa-link:before,
+  .wa-header .wa-social:before {
     @apply bg-white;
   }
-  .sb-header-links-primary .sb-component-link:hover,
-  .sb-component-header .sb-component-social:hover {
+  .wa-header-links-primary .wa-link:hover,
+  .wa-header .wa-social:hover {
     @apply text-black;
   }
-  .sb-header-overlay {
+  .wa-header-overlay {
     @apply bg-black;
   }
 }

@@ -1,5 +1,5 @@
-import { Annotated } from '../../Annotated';
 import classNames from 'clsx';
+import { Annotated } from '../../Annotated';
 import { iconMap } from '../../svgs';
 import Link from '../Link';
 
@@ -24,13 +24,13 @@ export default function Action(props) {
         aria-label={altText}
         id={elementId || null}
         className={classNames(
-          'sb-component',
-          'sb-component-block',
-          type === 'Button' ? 'sb-component-button' : 'sb-component-link',
+          'wa-component',
+          'wa-block',
+          type === 'Button' ? 'wa-button' : 'wa-link',
           {
-            'sb-component-button-primary': type === 'Button' && style === 'primary',
-            'sb-component-button-secondary': type === 'Button' && style === 'secondary',
-            'sb-component-button-icon': type === 'Button' && !label,
+            'wa-button-primary': type === 'Button' && style === 'primary',
+            'wa-button-secondary': type === 'Button' && style === 'secondary',
+            'wa-button-icon': type === 'Button' && !label,
           },
           className
         )}

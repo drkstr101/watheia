@@ -27,9 +27,9 @@ export default function VideoBlock(props) {
     <div
       id={elementId || null}
       className={classNames(
-        'sb-component',
-        'sb-component-block',
-        'sb-component-video-block',
+        'wa-component',
+        'wa-block',
+        'wa-video-block',
         className,
         'overflow-hidden',
         'relative',

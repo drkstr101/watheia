@@ -62,7 +62,7 @@ function CtaBody(props) {
         <Markdown
           options={{ forceBlock: true, forceWrapper: true }}
           className={classNames(
-            'sb-markdown',
+            'wa-markdown',
             'sm:text-lg',
             styles.text ? mapStyles(styles.text) : null,
             { 'mt-4': title }

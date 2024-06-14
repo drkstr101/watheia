@@ -12,12 +12,7 @@ export default function FeaturedItem(props) {
   return (
     <article
       id={elementId || null}
-      className={classNames(
-        'sb-component',
-        'sb-component-block',
-        'sb-component-item',
-        mapStyles(otherSelfStyles)
-      )}
+      className={classNames('wa-component', 'wa-block', 'wa-item', mapStyles(otherSelfStyles))}
       style={{
         borderWidth: borderWidth ? `${borderWidth}px` : undefined,
       }}
@@ -42,7 +37,7 @@ export default function FeaturedItem(props) {
       {text && (
         <Markdown
           options={{ forceBlock: true, forceWrapper: true }}
-          className={classNames('sb-markdown', {
+          className={classNames('wa-markdown', {
             'mt-4': title || subtitle,
           })}
         >

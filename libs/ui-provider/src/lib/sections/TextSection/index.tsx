@@ -57,7 +57,7 @@ function TextBodyVariantA(props: Omit<TextBodyProps, 'variant'>) {
         <Markdown
           options={{ forceBlock: true, forceWrapper: true }}
           className={classNames(
-            'sb-markdown',
+            'wa-markdown',
             'sm:text-lg',
             styles.text ? mapStyles(styles.text) : null,
             {
@@ -106,7 +106,7 @@ function TextBodyVariantB(props: Omit<TextBodyProps, 'variant'>) {
           <Markdown
             options={{ forceBlock: true, forceWrapper: true }}
             className={classNames(
-              'sb-markdown',
+              'wa-markdown',
               'sm:text-lg',
               styles.text ? mapStyles(styles.text) : null
             )}

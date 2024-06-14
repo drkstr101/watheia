@@ -121,7 +121,7 @@ Vestibulum ullamcorper risus auctor eleifend consequat. Vivamus mollis in tellus
   page.content && (
     <Markdown
       options={{ forceBlock: true, overrides: { pre: HighlightedPreBlock } }}
-      className="sb-markdown mx-auto max-w-screen-md"
+      className="wa-markdown mx-auto max-w-screen-md"
       data-sb-field-path="content"
     >
       {page.content}

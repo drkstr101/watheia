@@ -13,12 +13,7 @@ export default function Social(props) {
         href={url}
         aria-label={altText}
         id={elementId || null}
-        className={classNames(
-          'sb-component',
-          'sb-component-block',
-          'sb-component-social',
-          className
-        )}
+        className={classNames('wa-component', 'wa-block', 'wa-social', className)}
       >
         {label && <span className="sr-only">{label}</span>}
         {IconComponent && <IconComponent className="h-5 w-5 fill-current" />}

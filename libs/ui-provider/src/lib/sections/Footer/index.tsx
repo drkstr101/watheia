@@ -6,11 +6,7 @@ export default function Footer(props) {
   const { primaryLinks = [], contacts, copyrightText, styles = {} } = props;
   return (
     <footer
-      className={classNames(
-        'sb-component',
-        'sb-component-footer',
-        styles.self?.padding ?? 'px-4 py-16'
-      )}
+      className={classNames('wa-component', 'wa-footer', styles.self?.padding ?? 'px-4 py-16')}
     >
       <div
         className={classNames(
@@ -55,7 +51,7 @@ export default function Footer(props) {
             >
               <Markdown
                 options={{ forceInline: true, forceWrapper: true, wrapper: 'p' }}
-                className="sb-markdown text-sm uppercase tracking-widest"
+                className="wa-markdown text-sm uppercase tracking-widest"
               >
                 {copyrightText}
               </Markdown>

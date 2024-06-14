@@ -20,20 +20,20 @@ export default function SelectFormControl(props) {
   }
   return (
     <div
-      className={classNames('sb-form-control', {
+      className={classNames('wa-form-control', {
         'sm:col-span-2': width === 'full',
       })}
     >
       {label && (
         <label
           id={labelId}
-          className={classNames('sb-label', { 'sr-only': hideLabel })}
+          className={classNames('wa-label', { 'sr-only': hideLabel })}
           htmlFor={name}
         >
           {label}
         </label>
       )}
-      <select id={name} className="sb-select" name={name} {...attr}>
+      <select id={name} className="wa-select" name={name} {...attr}>
         {defaultValue && <option value="">{defaultValue}</option>}
         {options.length > 0 &&
           options.map((option, index) => (

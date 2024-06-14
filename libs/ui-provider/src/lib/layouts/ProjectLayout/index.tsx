@@ -35,7 +35,7 @@ const Component: React.FC<ComponentProps> = (props) => {
 
   return (
     <BaseLayout {...props}>
-      <main id="main" className="sb-layout sb-project-layout">
+      <main id="main" className="wa-layout sb-project-layout">
         <article className="px-4 py-14 lg:py-20">
           <div className="mx-auto max-w-5xl">
             <header className="mb-10 sm:mb-16">
@@ -60,7 +60,7 @@ const Component: React.FC<ComponentProps> = (props) => {
             {markdownContent && (
               <Markdown
                 options={{ forceBlock: true, overrides: { pre: HighlightedPreBlock } }}
-                className="sb-markdown mx-auto max-w-screen-md"
+                className="wa-markdown mx-auto max-w-screen-md"
               >
                 {markdownContent}
               </Markdown>
@@ -68,7 +68,7 @@ const Component: React.FC<ComponentProps> = (props) => {
           </div>
         </article>
         {(prevProject || nextProject) && (
-          <nav className="sb-project-nav mb-20 mt-12 px-4 sm:px-8">
+          <nav className="wa-project-nav mb-20 mt-12 px-4 sm:px-8">
             <div className="mx-auto grid max-w-5xl gap-x-6 gap-y-12 md:grid-cols-2 lg:gap-x-8">
               {prevProject && <ProjectNavItem project={prevProject} label="Previous project" />}
               {nextProject && <ProjectNavItem project={nextProject} label="Next project" />}
@@ -100,7 +100,7 @@ function ProjectMedia({ media }) {
 function ProjectNavItem({ project, label }) {
   return (
     <Annotated content={project}>
-      <Link className="sb-project-nav-item group" href={project}>
+      <Link className="wa-project-nav-item group" href={project}>
         {project.featuredImage && (
           <div className="pt-2/3 relative mb-6 h-0 w-full overflow-hidden">
             <ImageBlock
@@ -109,7 +109,7 @@ function ProjectNavItem({ project, label }) {
             />
           </div>
         )}
-        <span className="sb-component sb-component-block sb-component-link">{label}</span>
+        <span className="wa-component wa-block wa-link">{label}</span>
       </Link>
     </Annotated>
   );

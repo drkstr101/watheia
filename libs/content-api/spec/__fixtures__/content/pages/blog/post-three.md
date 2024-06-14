@@ -124,20 +124,20 @@ Etiam facilisis lacus nec pretium lobortis. Praesent dapibus justo non efficitur
 ```css
 .colors-a {
   @apply bg-black text-white;
-  .sb-input,
-  .sb-select,
-  .sb-textarea {
+  .wa-input,
+  .wa-select,
+  .wa-textarea {
     @apply text-white placeholder-white placeholder-opacity-75;
   }
-  .sb-header-links-primary .sb-component-link:before,
-  .sb-component-header .sb-component-social:before {
+  .wa-header-links-primary .wa-link:before,
+  .wa-header .wa-social:before {
     @apply bg-white;
   }
-  .sb-header-links-primary .sb-component-link:hover,
-  .sb-component-header .sb-component-social:hover {
+  .wa-header-links-primary .wa-link:hover,
+  .wa-header .wa-social:hover {
     @apply text-black;
   }
-  .sb-header-overlay {
+  .wa-header-overlay {
     @apply bg-black;
   }
 }

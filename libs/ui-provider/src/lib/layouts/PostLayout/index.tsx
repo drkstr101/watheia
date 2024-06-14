@@ -17,7 +17,7 @@ const Component: React.FC<ComponentProps> = (props) => {
 
   return (
     <BaseLayout {...props}>
-      <main id="main" className="sb-layout sb-post-layout">
+      <main id="main" className="wa-layout sb-post-layout">
         <article className="px-4 py-14 lg:py-20">
           <div className="mx-auto max-w-5xl">
             <header className="mb-10 sm:mb-14">
@@ -40,7 +40,7 @@ const Component: React.FC<ComponentProps> = (props) => {
             {markdownContent && (
               <Markdown
                 options={{ forceBlock: true, overrides: { pre: HighlightedPreBlock } }}
-                className="sb-markdown mx-auto max-w-screen-md"
+                className="wa-markdown mx-auto max-w-screen-md"
               >
                 {markdownContent}
               </Markdown>

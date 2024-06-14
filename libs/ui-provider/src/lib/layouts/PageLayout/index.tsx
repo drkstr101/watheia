@@ -10,7 +10,7 @@ const Component: React.FC<ComponentProps> = (props) => {
 
   return (
     <BaseLayout {...props}>
-      <main id="main" className="sb-layout sb-page-layout">
+      <main id="main" className="wa-layout wa-page-layout">
         {title && <h1 className="sr-only">{title}</h1>}
         {sections.length > 0 && (
           <div>

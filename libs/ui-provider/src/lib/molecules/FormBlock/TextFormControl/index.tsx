@@ -15,20 +15,20 @@ export default function TextFormControl(props) {
   }
   return (
     <div
-      className={classNames('sb-form-control', {
+      className={classNames('wa-form-control', {
         'sm:col-span-2': width === 'full',
       })}
     >
       {label && (
         <label
           id={labelId}
-          className={classNames('sb-label', { 'sr-only': hideLabel })}
+          className={classNames('wa-label', { 'sr-only': hideLabel })}
           htmlFor={name}
         >
           {label}
         </label>
       )}
-      <input id={name} className="sb-input" type="text" name={name} {...attr} />
+      <input id={name} className="wa-input" type="text" name={name} {...attr} />
     </div>
   );
 }

@@ -51,12 +51,12 @@ function LabelItem(props) {
       {url ? (
         <Link
           href={url}
-          className="sb-component sb-component-block sb-component-button sb-component-button-secondary mb-6 mr-6"
+          className="wa-component wa-block wa-button wa-button-secondary mb-6 mr-6"
         >
           <span>{label}</span>
         </Link>
       ) : (
-        <div className="sb-component sb-component-block sb-component-button sb-component-button-secondary sb-component-button-no-hover mb-6 mr-6">
+        <div className="wa-component wa-block wa-button wa-button-secondary wa-button-no-hover mb-6 mr-6">
           <span>{label}</span>
         </div>
       )}

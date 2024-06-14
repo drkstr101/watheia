@@ -110,7 +110,7 @@ function ProjectsVariantABC(props) {
       })}
     >
       {projects.map((project, index) => (
-        <Link key={index} href={project} className="sb-project-feed-item group block">
+        <Link key={index} href={project} className="wa-project-feed-item group block">
           <article className="max-w-3xl border-b border-current pb-10">
             {showFeaturedImage && project.featuredImage && (
               <div className="pt-2/3 relative mb-6 h-0 w-full overflow-hidden">
@@ -131,7 +131,7 @@ function ProjectsVariantABC(props) {
             )}
             {showReadMoreLink && (
               <div className="mt-8">
-                <span className="sb-component sb-component-block sb-component-button sb-component-button-secondary sb-component-button-icon">
+                <span className="wa-component wa-block wa-button wa-button-secondary wa-button-icon">
                   <span className="sr-only">Read more</span>
                   <ArrowUpRightIcon className="h-5 w-5 fill-current" />
                 </span>
@@ -163,7 +163,7 @@ function ProjectsVariantD(props) {
       })}
     >
       {projects.map((project, index) => (
-        <Link key={index} href={project} className="sb-project-feed-item group block">
+        <Link key={index} href={project} className="wa-project-feed-item group block">
           <article className="border-b border-current pb-10 md:px-4 md:pb-12">
             <div className="md:flex md:items-center">
               {showFeaturedImage && project.featuredImage && (
@@ -194,7 +194,7 @@ function ProjectsVariantD(props) {
               </div>
               {showReadMoreLink && (
                 <div className="mt-8 md:mx-8 md:mt-0">
-                  <span className="sb-component sb-component-block sb-component-button sb-component-button-secondary sb-component-button-icon">
+                  <span className="wa-component wa-block wa-button wa-button-secondary wa-button-icon">
                     <span className="sr-only">Read more</span>
                     <ArrowUpRightIcon className="h-5 w-5 fill-current md:h-8 md:w-8" />
                   </span>

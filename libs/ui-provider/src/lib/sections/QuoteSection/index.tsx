@@ -13,7 +13,7 @@ export default function QuoteSection(props) {
           <Markdown
             options={{ forceBlock: true, forceWrapper: true }}
             className={classNames(
-              'sb-markdown',
+              'wa-markdown',
               'text-3xl',
               'sm:text-5xl',
               'sm:leading-tight',

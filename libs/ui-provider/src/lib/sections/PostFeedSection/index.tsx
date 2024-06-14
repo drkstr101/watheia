@@ -113,7 +113,7 @@ function PostsVariantABC(props) {
       })}
     >
       {posts.map((post, index) => (
-        <Link key={index} href={post} className="sb-post-feed-item group block">
+        <Link key={index} href={post} className="wa-post-feed-item group block">
           <article className="max-w-3xl border-b border-current pb-10">
             {showFeaturedImage && post.featuredImage && (
               <div className="pt-2/3 relative mb-6 h-0 w-full overflow-hidden">
@@ -134,7 +134,7 @@ function PostsVariantABC(props) {
             {showExcerpt && post.excerpt && <p className="mt-5 text-lg">{post.excerpt}</p>}
             {showReadMoreLink && (
               <div className="mt-8">
-                <span className="sb-component sb-component-block sb-component-button sb-component-button-secondary sb-component-button-icon">
+                <span className="wa-component wa-block wa-button wa-button-secondary wa-button-icon">
                   <span className="sr-only">Read more</span>
                   <ArrowUpRightIcon className="h-5 w-5 fill-current" />
                 </span>
@@ -167,7 +167,7 @@ function PostsVariantD(props) {
       })}
     >
       {posts.map((post, index) => (
-        <Link key={index} href={post} className="sb-post-feed-item group block">
+        <Link key={index} href={post} className="wa-post-feed-item group block">
           <article className="border-b border-current pb-10 md:px-4 md:pb-12">
             <div className="md:flex md:items-center">
               {showFeaturedImage && post.featuredImage && (
@@ -198,7 +198,7 @@ function PostsVariantD(props) {
               </div>
               {showReadMoreLink && (
                 <div className="mt-8 md:mx-8 md:mt-0">
-                  <span className="sb-component sb-component-block sb-component-button sb-component-button-secondary sb-component-button-icon">
+                  <span className="wa-component wa-block wa-button wa-button-secondary wa-button-icon">
                     <span className="sr-only">Read more</span>
                     <ArrowUpRightIcon className="h-5 w-5 fill-current md:h-8 md:w-8" />
                   </span>

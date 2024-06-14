@@ -24,8 +24,8 @@ export default function Header(props) {
   return (
     <header
       className={classNames(
-        'sb-component',
-        'sb-component-header',
+        'wa-component',
+        'wa-header',
         isSticky ? 'sticky top-0 z-10' : 'relative',
         'border-b',
         'border-current'
@@ -168,7 +168,7 @@ function MobileMenu(props) {
       </button>
       <div
         className={classNames(
-          'sb-header-overlay',
+          'wa-header-overlay',
           'fixed',
           'inset-0',
           'overflow-y-auto',
@@ -215,7 +215,7 @@ function SiteLogoLink({ title, isTitleVisible, logo }) {
   }
   return (
     <div className="flex items-center border-r border-current">
-      <Link href="/" className="sb-header-logo flex h-full items-center p-4">
+      <Link href="/" className="wa-header-logo flex h-full items-center p-4">
         {logo && (
           <ImageBlock {...logo} className={classNames('max-h-12', { 'mr-2': isTitleVisible })} />
         )}
@@ -236,7 +236,7 @@ function ListOfLinks({ links, inMobileMenu }) {
       <Action
         {...link}
         className={classNames(
-          inMobileMenu ? 'text-xl' : 'sb-component-link-fill p-4',
+          inMobileMenu ? 'text-xl' : 'wa-link-fill p-4',
           'font-normal',
           'text-base',
           'tracking-widest',
@@ -257,11 +257,7 @@ function ListOfSocialLinks({ links, inMobileMenu = false }) {
     >
       <Social
         {...link}
-        className={classNames(
-          'sb-component-social-fill',
-          'text-base',
-          inMobileMenu ? 'p-5' : 'p-4'
-        )}
+        className={classNames('wa-social-fill', 'text-base', inMobileMenu ? 'p-5' : 'p-4')}
       />
     </li>
   ));

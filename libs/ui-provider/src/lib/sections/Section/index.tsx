@@ -26,9 +26,9 @@ function SectionInset(props: SectionProps) {
     <div
       id={elementId}
       className={classNames(
-        'sb-component',
-        'sb-component-section',
-        classSuffix && `sb-component-${classSuffix}`,
+        'wa-component',
+        'wa-section',
+        classSuffix && `wa-${classSuffix}`,
         'flex',
         mapStyles({ justifyContent: styles.justifyContent ?? 'center' }),
         styles.margin
@@ -66,9 +66,9 @@ function SectionFullWidth(props: SectionProps) {
     <div
       id={elementId}
       className={classNames(
-        'sb-component',
-        'sb-component-section',
-        classSuffix && `sb-component-${classSuffix}`,
+        'wa-component',
+        'wa-section',
+        classSuffix && `wa-${classSuffix}`,
         colors,
         'flex',
         'flex-col',

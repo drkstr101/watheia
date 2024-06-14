@@ -6,7 +6,7 @@
   "secondary": "#6366f1",
   "neutral": "#64748b",
   "accent": "#14b8a6",
-  "fontBody": "fontBook",
+  "fontBody": "book",
   "h1": {
     "size": "6xl",
     "weight": "medium",

@@ -9,9 +9,9 @@ export default function DividerSection(props) {
       id={elementId || null}
       {...getDataAttrs(props)}
       className={classNames(
-        'sb-component',
-        'sb-component-section',
-        'sb-component-divider-section',
+        'wa-component',
+        'wa-section',
+        'wa-divider-section',
         'w-full',
         'flex',
         mapStyles({ justifyContent: styles.self?.justifyContent ?? 'center' }),

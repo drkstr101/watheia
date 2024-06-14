@@ -45,7 +45,7 @@ export default function ContactSection(props) {
         <div className="w-full flex-1">
           <ContactBody title={title} text={text} styles={styles} />
           {form && (
-            <div className={classNames('sb-contact-section-form', { 'mt-12': title || text })}>
+            <div className={classNames('wa-contact-section-form', { 'mt-12': title || text })}>
               <FormBlock {...form} className="inline-block w-full" />
             </div>
           )}
@@ -76,7 +76,7 @@ function ContactBody(props) {
         <Markdown
           options={{ forceBlock: true, forceWrapper: true }}
           className={classNames(
-            'sb-markdown',
+            'wa-markdown',
             props.styles?.text ? mapStyles(props.styles?.text) : null,
             { 'mt-4': props.title }
           )}

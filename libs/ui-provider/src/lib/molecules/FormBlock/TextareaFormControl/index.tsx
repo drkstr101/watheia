@@ -15,20 +15,20 @@ export default function TextareaFormControl(props) {
   }
   return (
     <div
-      className={classNames('sb-form-control', {
+      className={classNames('wa-form-control', {
         'sm:col-span-2': width === 'full',
       })}
     >
       {label && (
         <label
           id={labelId}
-          className={classNames('sb-label', { 'sr-only': hideLabel })}
+          className={classNames('wa-label', { 'sr-only': hideLabel })}
           htmlFor={name}
         >
           {label}
         </label>
       )}
-      <textarea id={name} className="sb-textarea" name={name} rows="5" {...attr} />
+      <textarea id={name} className="wa-textarea" name={name} rows="5" {...attr} />
     </div>
   );
 }

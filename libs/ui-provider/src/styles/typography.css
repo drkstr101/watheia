@@ -111,8 +111,7 @@
     /* stylelint-disable-next-line unit-no-unknown */
     border-radius: theme(borderRadius.4xl);
     overflow-x: auto;
-    margin: theme(spacing.10) calc(-1 * theme(spacing.6)) theme(spacing.10)
-      calc(-1 * theme(spacing.6));
+    margin: theme(spacing.10) calc(-1 * theme(spacing.6));
 
     @screen sm {
       margin-left: auto;

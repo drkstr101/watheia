@@ -32,12 +32,7 @@ export default function FormBlock(props) {
 
   return (
     <form
-      className={classNames(
-        'sb-component',
-        'sb-component-block',
-        'sb-component-form-block',
-        className
-      )}
+      className={classNames('wa-component', 'wa-block', 'wa-form-block', className)}
       name={elementId}
       id={elementId}
       onSubmit={handleSubmit}
@@ -57,10 +52,7 @@ export default function FormBlock(props) {
             : null
         )}
       >
-        <button
-          type="submit"
-          className="sb-component sb-component-block sb-component-button sb-component-button-primary"
-        >
+        <button type="submit" className="wa-component wa-block wa-button wa-button-primary">
           {submitLabel}
         </button>
       </div>

@@ -74,7 +74,7 @@ function TestimonialsVariantA(props) {
           {testimonial.quote && (
             <Markdown
               options={{ forceBlock: true, forceWrapper: true }}
-              className="sb-markdown text-3xl sm:text-4xl sm:leading-tight"
+              className="wa-markdown text-3xl sm:text-4xl sm:leading-tight"
             >
               {testimonial.quote}
             </Markdown>
@@ -123,7 +123,7 @@ function TestimonialsVariantB(props) {
           {testimonial.quote && (
             <Markdown
               options={{ forceBlock: true, forceWrapper: true }}
-              className="sb-markdown text-3xl sm:text-4xl sm:leading-tight lg:text-5xl lg:leading-tight"
+              className="wa-markdown text-3xl sm:text-4xl sm:leading-tight lg:text-5xl lg:leading-tight"
             >
               {testimonial.quote}
             </Markdown>
@@ -207,7 +207,7 @@ function TestimonialsVariantC(props) {
             {testimonial.quote && (
               <Markdown
                 options={{ forceBlock: true, forceWrapper: true }}
-                className="sb-markdown text-3xl sm:text-4xl sm:leading-tight"
+                className="wa-markdown text-3xl sm:text-4xl sm:leading-tight"
               >
                 {testimonial.quote}
               </Markdown>
