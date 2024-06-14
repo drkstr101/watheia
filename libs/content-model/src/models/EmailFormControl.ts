@@ -1,66 +1,55 @@
 import { Model } from '@stackbit/types';
 
-export const EmailFormControl: Model = {
+export const EmailFormControlModel: Model = {
   type: 'object',
   name: 'EmailFormControl',
-  label: 'Email Form Control',
+  label: 'Email',
   labelField: 'label',
+  fieldGroups: [
+    {
+      name: 'styles',
+      label: 'Styles',
+      icon: 'palette',
+    },
+    {
+      name: 'settings',
+      label: 'Settings',
+      icon: 'gear',
+    },
+  ],
   fields: [
     {
       type: 'string',
       name: 'name',
       label: 'Name',
+      default: 'email-address',
       description:
-        'Must be unique and not contain whitespace. This is the property name that will be sent to the server with this field value.',
-      required: false,
-      default: 'email',
-      hidden: false,
-      localized: false,
+        "Must be unique - this is the property name that will be sent to the server with this field's value.",
     },
     {
       type: 'string',
       name: 'label',
       label: 'Label',
-      required: false,
-      default: 'Email',
-      hidden: false,
-      localized: false,
+      default: 'Name',
     },
     {
       type: 'boolean',
       name: 'hideLabel',
       label: 'Hide label',
-      required: false,
       default: false,
-      hidden: false,
-      localized: false,
     },
     {
       type: 'string',
       name: 'placeholder',
       label: 'Placeholder text',
-      required: false,
-      default: 'Your email',
-      hidden: false,
-      localized: false,
+      default: 'Your name',
     },
-    {
-      type: 'boolean',
-      name: 'isRequired',
-      label: 'Is the field required?',
-      required: false,
-      default: false,
-      hidden: false,
-      localized: false,
-    },
+
     {
       type: 'enum',
       name: 'width',
+      group: 'styles',
       label: 'Width',
-      required: false,
-      default: 'full',
-      hidden: false,
-      localized: false,
       options: [
         {
           label: 'Full',
@@ -71,15 +60,15 @@ export const EmailFormControl: Model = {
           value: '1/2',
         },
       ],
-      group: 'styles',
-      controlType: 'button-group',
+      default: 'full',
+      required: true,
     },
-  ],
-  fieldGroups: [
     {
-      name: 'styles',
-      label: 'Styles',
-      icon: 'palette',
+      type: 'boolean',
+      name: 'isRequired',
+      group: 'settings',
+      label: 'Is the field required?',
+      default: false,
     },
   ],
 };

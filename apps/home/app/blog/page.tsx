@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { formatDate } from '@watheia/content-helpers';
-import { Border, Button, ContactSection, Container, FadeIn, PageIntro } from '@watheia/studio-ui';
+import { Border, Button, ContactSection, Container, FadeIn, PageIntro } from '@watheia/base-ui';
 
 import { loadArticles } from '../../lib/mdx';
 

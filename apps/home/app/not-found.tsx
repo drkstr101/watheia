@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Container, FadeIn } from '@watheia/studio-ui';
+import { Container, FadeIn } from '@watheia/base-ui';
 
 export default function NotFound() {
   return (

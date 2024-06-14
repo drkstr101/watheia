@@ -1,35 +1,42 @@
-import { DataModel } from '@stackbit/types';
+import { Model } from '@stackbit/types';
 
-export const Config: DataModel = {
+export const ConfigModel: Model = {
   type: 'data',
   name: 'Config',
-  label: 'Config',
-  labelField: 'titleSuffix',
+  label: 'Site configuration',
+  labelField: 'fixedLabel',
+  singleInstance: true,
+  file: 'content/data/config.json',
+  fieldGroups: [
+    {
+      name: 'seo',
+      label: 'SEO',
+      icon: 'page',
+    },
+  ],
   fields: [
+    {
+      type: 'string',
+      name: 'fixedLabel',
+      const: 'Site configuration',
+      hidden: true,
+    },
     {
       type: 'image',
       name: 'favicon',
       label: 'Favicon',
-      required: false,
-      hidden: false,
-      localized: false,
+      default: 'https://assets.stackbit.com/components/images/default/favicon.svg',
     },
     {
-      type: 'reference',
+      type: 'model',
       name: 'header',
       label: 'Header configuration',
-      required: false,
-      hidden: false,
-      localized: false,
       models: ['Header'],
     },
     {
-      type: 'reference',
+      type: 'model',
       name: 'footer',
       label: 'Footer configuration',
-      required: false,
-      hidden: false,
-      localized: false,
       models: ['Footer'],
     },
     {
@@ -38,9 +45,8 @@ export const Config: DataModel = {
       label: 'Suffix for page titles',
       description:
         'Suffix to append to the title tag of all pages, except in pages where the this behavior is disabled (e.g. typically the home page should have the site name as a prefix)',
-      required: false,
-      hidden: false,
-      localized: false,
+      default: null,
+      group: 'seo',
     },
     {
       type: 'image',
@@ -48,9 +54,8 @@ export const Config: DataModel = {
       label: 'Default image for social sharing',
       description:
         'Default image to use for the og:image meta tag in all pages, except in pages that define another image.',
-      required: false,
-      hidden: false,
-      localized: false,
+      default: null,
+      group: 'seo',
     },
     {
       type: 'list',
@@ -58,16 +63,11 @@ export const Config: DataModel = {
       label: 'Default additional meta tags',
       description:
         'Additional meta tags to set as default in all pages. Tags defined here are low-priority: they may be overriden by page-level settings.',
-      required: false,
-      hidden: false,
-      localized: false,
+      group: 'seo',
       items: {
         type: 'model',
         models: ['MetaTag'],
       },
     },
   ],
-  singleInstance: true,
-  readOnly: true,
-  file: 'site.json',
 };

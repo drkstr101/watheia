@@ -1,9 +1,9 @@
 import { type Metadata } from 'next';
 import Image from 'next/image';
 
-import imageDriesVincent from '@content/images/team/dries-vincent.jpg';
-import imageLeslieAlexander from '@content/images/team/leslie-alexander.jpg';
-import imageMichaelFoster from '@content/images/team/michael-foster.jpg';
+import imageDriesVincent from '@images/team/dries-vincent.jpg';
+import imageLeslieAlexander from '@images/team/leslie-alexander.jpg';
+import imageMichaelFoster from '@images/team/michael-foster.jpg';
 
 import {
   Border,
@@ -19,7 +19,7 @@ import {
   StatList,
   StatListItem,
   ValuesSection,
-} from '@watheia/studio-ui';
+} from '@watheia/base-ui';
 import { loadArticles } from '../../lib/mdx';
 
 function Culture() {

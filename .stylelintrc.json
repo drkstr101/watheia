@@ -3,8 +3,10 @@
   "overrides": [
     {
       "files": ["**/*.css"],
-      "extends": ["stylelint-config-recommended", "stylelint-config-tailwindcss"],
-      "rules": {}
+      "extends": ["stylelint-config-standard", "stylelint-config-tailwindcss"],
+      "rules": {
+        "value-keyword-case": null
+      }
     }
   ],
   "rules": {}

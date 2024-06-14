@@ -1,94 +1,98 @@
-import { Article } from './Article';
-import { BackgroundImage } from './BackgroundImage';
-import { Badge } from './Badge';
-import { Button } from './Button';
-import { CarouselSection } from './CarouselSection';
-import { CheckboxFormControl } from './CheckboxFormControl';
-import { ColorPalette } from './ColorPalette';
-import { Config } from './Config';
-import { DividerSection } from './DividerSection';
-import { EmailFormControl } from './EmailFormControl';
-import { FeaturedItem } from './FeaturedItem';
-import { FeaturedItemsSection } from './FeaturedItemsSection';
-import { FeaturedPeopleSection } from './FeaturedPeopleSection';
-import { FeaturedPostsSection } from './FeaturedPostsSection';
-import { Footer } from './Footer';
-import { FormBlock } from './FormBlock';
-import { GenericSection } from './GenericSection';
-import { Header } from './Header';
-import { ImageBlock } from './ImageBlock';
-import { ImageGallerySection } from './ImageGallerySection';
-import { Link } from './Link';
-import { Page } from './Page';
-import { PagedPostsSection } from './PagedPostsSection';
-import { Person } from './Person';
-import { PostFeedLayout } from './PostFeedLayout';
-import { PostFeedSection } from './PostFeedSection';
-import { PricingPlan } from './PricingPlan';
-import { PricingSection } from './PricingSection';
-import { RecentPostsSection } from './RecentPostsSection';
-import { SelectFormControl } from './SelectFormControl';
-import { Social } from './Social';
-import { SubNav } from './SubNav';
-import { SubmitButtonFormControl } from './SubmitButtonFormControl';
-import { TextFormControl } from './TextFormControl';
-import { TextareaFormControl } from './TextareaFormControl';
-import { ThemeStyle } from './ThemeStyle';
-import { ThemeStyleButton } from './ThemeStyleButton';
-import { ThemeStyleHeading } from './ThemeStyleHeading';
-import { ThemeStyleLink } from './ThemeStyleLink';
-import { TitleBlock } from './TitleBlock';
-import { VideoBlock } from './VideoBlock';
-import { FooterLinksGroup } from './FooterLinksGroup';
-import { MetaTag } from './MetaTag';
-import { Seo } from './Seo';
+import { BackgroundImageModel } from './BackgroundImage';
+import { ButtonModel } from './Button';
+import { CheckboxFormControlModel } from './CheckboxFormControl';
+import { ConfigModel } from './Config';
+import { ContactBlockModel } from './ContactBlock';
+import { ContactSectionModel } from './ContactSection';
+import { CtaSectionModel } from './CtaSection';
+import { DividerSectionModel } from './DividerSection';
+import { EmailFormControlModel } from './EmailFormControl';
+import { FeaturedItemModel } from './FeaturedItem';
+import { FeaturedItemsSectionModel } from './FeaturedItemsSection';
+import { FeaturedPostsSectionModel } from './FeaturedPostsSection';
+import { FeaturedProjectsSectionModel } from './FeaturedProjectsSection';
+import { FooterModel } from './Footer';
+import { FormBlockModel } from './FormBlock';
+import { HeaderModel } from './Header';
+import { HeroSectionModel } from './HeroSection';
+import { ImageBlockModel } from './ImageBlock';
+import { LabelModel } from './Label';
+import { LabelsSectionModel } from './LabelsSection';
+import { LinkModel } from './Link';
+import { MediaGallerySectionModel } from './MediaGallerySection';
+import { MetaTagModel } from './MetaTag';
+import { PageLayoutModel } from './PageLayout';
+import { PersonModel } from './Person';
+import { PostFeedLayoutModel } from './PostFeedLayout';
+import { PostFeedSectionModel } from './PostFeedSection';
+import { PostLayoutModel } from './PostLayout';
+import { ProjectFeedLayoutModel } from './ProjectFeedLayout';
+import { ProjectFeedSectionModel } from './ProjectFeedSection';
+import { ProjectLayoutModel } from './ProjectLayout';
+import { QuoteSectionModel } from './QuoteSection';
+import { RecentPostsSectionModel } from './RecentPostsSection';
+import { RecentProjectsSectionModel } from './RecentProjectsSection';
+import { SelectFormControlModel } from './SelectFormControl';
+import { SocialModel } from './Social';
+import { TestimonialModel } from './Testimonial';
+import { TestimonialsSectionModel } from './TestimonialsSection';
+import { TextareaFormControlModel } from './TextareaFormControl';
+import { TextFormControlModel } from './TextFormControl';
+import { TextSectionModel } from './TextSection';
+import { ThemeStyleModel } from './ThemeStyle';
+import { ThemeStyleButtonModel } from './ThemeStyleButton';
+import { ThemeStyleHeadingModel } from './ThemeStyleHeading';
+import { ThemeStyleLinkModel } from './ThemeStyleLink';
+import { VideoBlockModel } from './VideoBlock';
 
 export const models = {
-  BackgroundImage,
-  Badge,
-  Button,
-  CarouselSection,
-  CheckboxFormControl,
-  ColorPalette,
-  Config,
-  DividerSection,
-  EmailFormControl,
-  FeaturedItem,
-  FeaturedItemsSection,
-  FeaturedPeopleSection,
-  FeaturedPostsSection,
-  Footer,
-  FormBlock,
-  GenericSection,
-  Header,
-  ImageBlock,
-  ImageGallerySection,
-  Link,
-  Page,
-  PagedPostsSection,
-  Person,
-  PostFeedLayout,
-  PostFeedSection,
-  Article,
-  PricingPlan,
-  PricingSection,
-  RecentPostsSection,
-  SelectFormControl,
-  Social,
-  SubNav,
-  SubmitButtonFormControl,
-  TextFormControl,
-  TextareaFormControl,
-  ThemeStyle,
-  ThemeStyleButton,
-  ThemeStyleHeading,
-  ThemeStyleLink,
-  TitleBlock,
-  VideoBlock,
-  MetaTag,
-  FooterLinksGroup,
-  Seo,
-} as const;
+  BackgroundImageModel,
+  ButtonModel,
+  CheckboxFormControlModel,
+  ConfigModel,
+  ContactBlockModel,
+  ContactSectionModel,
+  CtaSectionModel,
+  DividerSectionModel,
+  EmailFormControlModel,
+  FeaturedItemModel,
+  FeaturedItemsSectionModel,
+  FeaturedPostsSectionModel,
+  FeaturedProjectsSectionModel,
+  FooterModel,
+  FormBlockModel,
+  HeaderModel,
+  HeroSectionModel,
+  ImageBlockModel,
+  LabelModel,
+  LabelsSectionModel,
+  LinkModel,
+  MediaGallerySectionModel,
+  MetaTagModel,
+  PageLayoutModel,
+  PersonModel,
+  PostFeedLayoutModel,
+  PostFeedSectionModel,
+  PostLayoutModel,
+  ProjectFeedLayoutModel,
+  ProjectFeedSectionModel,
+  ProjectLayoutModel,
+  QuoteSectionModel,
+  RecentPostsSectionModel,
+  RecentProjectsSectionModel,
+  SelectFormControlModel,
+  SocialModel,
+  TestimonialModel,
+  TestimonialsSectionModel,
+  TextareaFormControlModel,
+  TextFormControlModel,
+  TextSectionModel,
+  ThemeStyleModel,
+  ThemeStyleButtonModel,
+  ThemeStyleHeadingModel,
+  ThemeStyleLinkModel,
+  VideoBlockModel,
+};
 
 export type WatheiaModel = typeof models;
 

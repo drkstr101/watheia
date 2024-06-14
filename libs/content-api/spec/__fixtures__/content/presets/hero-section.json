@@ -2,34 +2,137 @@
   "model": "HeroSection",
   "presets": [
     {
-      "label": "Hero Section",
-      "thumbnail": "images/hero-section.png",
+      "label": "Hero transparent - text",
+      "thumbnail": "images/hero-transparent-text.png",
       "data": {
-        "title": "This Is A Big Hero Headline",
-        "text": "Aenean eros ipsum, interdum quis dignissim non, sollicitudin vitae nisl. Aenean vel aliquet elit, at blandit ipsum. Sed eleifend felis sit amet erat molestie, hendrerit malesuada justo ultrices. Nunc volutpat at erat itae interdum. Ut nec massa eget lorem blandit condimentum et at risus.",
-        "image": {
-          "type": "Image",
-          "href": "/images/hero.svg",
-          "altText": "Hero section image"
+        "colors": "colors-f",
+        "title": "I'm a developer, digital artist, consultant and a bunch of other impressive titles and buzz words.",
+        "subtitle": "This is my info—I'm sharing it all this with ya'll to impress you with all the hard work I've done in the past few years. Once you're impressed, you can continue to scroll down to see more details and credentials about me.",
+        "text": null,
+        "media": null,
+        "actions": [],
+        "styles": {
+          "self": {
+            "height": "auto",
+            "width": "wide",
+            "padding": ["pt-36", "pb-48", "pl-4", "pr-4"],
+            "alignItems": "center",
+            "justifyContent": "center",
+            "flexDirection": "row"
+          },
+          "title": {
+            "textAlign": "left"
+          },
+          "subtitle": {
+            "textAlign": "left"
+          },
+          "text": {
+            "textAlign": "left"
+          },
+          "actions": {
+            "justifyContent": "flex-start"
+          }
+        }
+      }
+    },
+    {
+      "label": "Hero primary - image right",
+      "thumbnail": "images/hero-primary-image-right.png",
+      "data": {
+        "colors": "colors-c",
+        "title": "I'm a developer, digital artist, consultant and a bunch of other impressive titles and buzz words.",
+        "subtitle": "This is my info—I'm sharing it all this with ya'll to impress you with all the hard work I've done in the past few years. Once you're impressed, you can continue to scroll down to see more details and credentials about me.",
+        "text": null,
+        "media": {
+          "type": "ImageBlock",
+          "url": "/images/about.jpg",
+          "altText": "Hero image"
         },
         "actions": [
           {
-            "type": "Button",
-            "label": "Start Building",
-            "href": "https://docs.netlify.com/create/getting-started/",
-            "size": "large",
-            "variant": "contained",
-            "color": "primary"
-          },
-          {
-            "type": "Button",
-            "label": "Read the Docs",
-            "href": "https://docs.netlify.com/create/overview",
-            "size": "large",
-            "variant": "outlined",
-            "color": "primary"
+            "label": "Hire me",
+            "altText": "",
+            "url": "/",
+            "showIcon": true,
+            "icon": "arrowRight",
+            "iconPosition": "right",
+            "style": "primary",
+            "elementId": "",
+            "type": "Button"
           }
-        ]
+        ],
+        "styles": {
+          "self": {
+            "height": "auto",
+            "width": "wide",
+            "padding": ["pt-36", "pb-48", "pl-4", "pr-4"],
+            "alignItems": "center",
+            "justifyContent": "center",
+            "flexDirection": "row"
+          },
+          "title": {
+            "textAlign": "left"
+          },
+          "subtitle": {
+            "textAlign": "left"
+          },
+          "text": {
+            "textAlign": "left"
+          },
+          "actions": {
+            "justifyContent": "flex-start"
+          }
+        }
+      }
+    },
+    {
+      "label": "Hero secondary - image left",
+      "thumbnail": "images/hero-secondary-image-left.png",
+      "data": {
+        "colors": "colors-d",
+        "title": "I'm a developer, digital artist, consultant and a bunch of other impressive titles and buzz words.",
+        "subtitle": "This is my info—I'm sharing it all this with ya'll to impress you with all the hard work I've done in the past few years. Once you're impressed, you can continue to scroll down to see more details and credentials about me.",
+        "text": null,
+        "media": {
+          "type": "ImageBlock",
+          "url": "/images/about.jpg",
+          "altText": "Hero image"
+        },
+        "actions": [
+          {
+            "label": "Hire me",
+            "altText": "",
+            "url": "/",
+            "showIcon": true,
+            "icon": "arrowRight",
+            "iconPosition": "right",
+            "style": "primary",
+            "elementId": "",
+            "type": "Button"
+          }
+        ],
+        "styles": {
+          "self": {
+            "height": "auto",
+            "width": "wide",
+            "padding": ["pt-36", "pb-48", "pl-4", "pr-4"],
+            "alignItems": "center",
+            "justifyContent": "center",
+            "flexDirection": "row-reverse"
+          },
+          "title": {
+            "textAlign": "left"
+          },
+          "subtitle": {
+            "textAlign": "left"
+          },
+          "text": {
+            "textAlign": "left"
+          },
+          "actions": {
+            "justifyContent": "flex-start"
+          }
+        }
       }
     }
   ]

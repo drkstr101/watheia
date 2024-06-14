@@ -1,146 +1,10 @@
-import { DataModel } from '@stackbit/types';
+import { Model } from '@stackbit/types';
 
-export const Header: DataModel = {
-  type: 'data',
+export const HeaderModel: Model = {
+  type: 'object',
   name: 'Header',
   label: 'Header',
   labelField: 'title',
-  fields: [
-    {
-      type: 'string',
-      name: 'title',
-      label: 'Title',
-      required: false,
-      default: 'Your Brand',
-      hidden: false,
-      localized: false,
-    },
-    {
-      type: 'model',
-      name: 'logo',
-      label: 'Logo',
-      required: false,
-      hidden: false,
-      localized: false,
-      models: ['ImageBlock'],
-    },
-    {
-      type: 'list',
-      name: 'primaryLinks',
-      label: 'Primary links',
-      required: false,
-      hidden: false,
-      localized: false,
-      items: {
-        type: 'model',
-        models: ['Button', 'Link', 'SubNav'],
-      },
-    },
-    {
-      type: 'list',
-      name: 'secondaryLinks',
-      label: 'Secondary links',
-      required: false,
-      hidden: false,
-      localized: false,
-      items: {
-        type: 'model',
-        models: ['Button', 'Link'],
-      },
-    },
-    {
-      type: 'enum',
-      name: 'variant',
-      label: 'Arrangement',
-      required: false,
-      default: 'logo-left-primary-nav-left',
-      hidden: false,
-      localized: false,
-      options: [
-        {
-          label: 'Logo and primary links on the left',
-          value: 'logo-left-primary-nav-left',
-          thumbnail:
-            'https://assets.stackbit.com/components/images/default/logo-left-primary-nav-left.png',
-        },
-        {
-          label: 'Logo on the left, primary links centered',
-          value: 'logo-left-primary-nav-centered',
-          thumbnail:
-            'https://assets.stackbit.com/components/images/default/logo-left-primary-nav-centered.png',
-        },
-        {
-          label: 'Logo on the left, primary links on the right',
-          value: 'logo-left-primary-nav-right',
-          thumbnail:
-            'https://assets.stackbit.com/components/images/default/logo-left-primary-nav-right.png',
-        },
-        {
-          label: 'Logo centered, primary links on the left',
-          value: 'logo-centered-primary-nav-left',
-          thumbnail:
-            'https://assets.stackbit.com/components/images/default/logo-centered-primary-nav-left.png',
-        },
-        {
-          label: 'Logo and primary links centered',
-          value: 'logo-centered-primary-nav-centered',
-          thumbnail:
-            'https://assets.stackbit.com/components/images/default/logo-centered-primary-nav-centered.png',
-        },
-      ],
-      group: 'styles',
-      controlType: 'thumbnails',
-    },
-    {
-      type: 'enum',
-      name: 'colors',
-      label: 'Colors',
-      required: false,
-      default: 'bg-light-fg-dark',
-      hidden: false,
-      localized: false,
-      options: [
-        {
-          label: 'Light background, dark foreground',
-          value: 'bg-light-fg-dark',
-          textColor: '$colors.black',
-          backgroundColor: '$colors.white',
-          borderColor: '#ececec',
-        },
-        {
-          label: 'Neutral background, dark foreground',
-          value: 'bg-neutral-fg-dark',
-          textColor: '$colors.black',
-          backgroundColor: '$colors.neutral.200',
-          borderColor: '#ececec',
-        },
-        {
-          label: 'Dark background, light foreground',
-          value: 'bg-dark-fg-light',
-          textColor: '$colors.white',
-          backgroundColor: '$colors.black',
-          borderColor: '#ececec',
-        },
-      ],
-      group: 'styles',
-      controlType: 'palette',
-    },
-    {
-      type: 'style',
-      name: 'styles',
-      label: 'Styles',
-      description: 'The styles field is controlled by Stackbit editor',
-      required: false,
-      hidden: false,
-      localized: false,
-      styles: {
-        self: {
-          margin: ['tw0:36'],
-          padding: ['tw0:36'],
-        },
-      },
-    },
-  ],
   readOnly: true,
   fieldGroups: [
     {
@@ -148,11 +12,122 @@ export const Header: DataModel = {
       label: 'Styles',
       icon: 'palette',
     },
+  ],
+  fields: [
     {
-      name: 'settings',
-      label: 'Settings',
-      icon: 'gear',
+      type: 'string',
+      name: 'title',
+      label: 'Title',
+      default: 'Your Brand',
+    },
+    {
+      type: 'boolean',
+      name: 'isTitleVisible',
+      label: 'Display title',
+      default: true,
+    },
+    {
+      type: 'model',
+      name: 'logo',
+      label: 'Logo',
+      models: ['ImageBlock'],
+      default: {
+        type: 'ImageBlock',
+        url: 'https://assets.stackbit.com/components/images/default/default-image.png',
+        altText: 'Your logo image',
+        caption: '',
+      },
+    },
+    {
+      type: 'list',
+      name: 'primaryLinks',
+      label: 'Primary navigation links',
+      items: {
+        type: 'model',
+        models: ['Link'],
+      },
+      default: [
+        {
+          type: 'Link',
+          label: 'Home',
+          url: '/',
+          altText: 'Home',
+        },
+        {
+          type: 'Link',
+          label: 'Blog',
+          url: '/',
+          altText: 'Blog',
+        },
+      ],
+    },
+    {
+      type: 'list',
+      name: 'socialLinks',
+      label: 'Social links',
+      items: {
+        type: 'model',
+        models: ['Social'],
+      },
+      default: [
+        {
+          type: 'Social',
+          label: '',
+          altText: 'Twitter',
+          url: '/',
+          icon: 'twitter',
+        },
+        {
+          type: 'Social',
+          label: '',
+          altText: 'GitHub',
+          url: '/',
+          icon: 'github',
+        },
+      ],
+    },
+    {
+      type: 'enum',
+      name: 'headerVariant',
+      group: 'styles',
+      label: 'Header arrangement',
+      options: [
+        {
+          label: 'Logo and primary links on the left',
+          value: 'variant-a',
+        },
+        {
+          label: 'Logo on the left and social links furthest to the right',
+          value: 'variant-b',
+        },
+        {
+          label: 'Logo on the left and primary links furthest to the right',
+          value: 'variant-c',
+        },
+      ],
+      default: 'variant-c',
+      required: true,
+    },
+    {
+      type: 'boolean',
+      name: 'isSticky',
+      group: 'styles',
+      label: 'Make header stick to the top of the page',
+      default: false,
+    },
+    {
+      type: 'style',
+      name: 'styles',
+      styles: {
+        self: {
+          width: ['narrow', 'wide', 'full'],
+        },
+      },
+      default: {
+        self: {
+          width: 'narrow',
+        },
+      },
     },
   ],
-  file: 'header.json',
 };

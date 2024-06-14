@@ -4,30 +4,36 @@
   .underline-line-through {
     text-decoration-line: underline line-through;
   }
-  .sb-animate-slide-left {
-    animation-name: slideLeft;
+
+  .wa-animate-slide-left {
+    animation-name: slide-left;
     animation-duration: var(--sb-slide-speed, 80s);
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
-  @keyframes slideLeft {
+
+  @keyframes slide-left {
     from {
       transform: translate3d(0, 0, 0);
     }
+
     to {
       transform: translate3d(-50%, 0, 0);
     }
   }
-  .sb-animate-slide-right {
-    animation-name: slideRight;
+
+  .wa-animate-slide-right {
+    animation-name: slide-right;
     animation-duration: var(--sb-slide-speed, 80s);
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
-  @keyframes slideRight {
+
+  @keyframes slide-right {
     from {
       transform: translate3d(-50%, 0, 0);
     }
+
     to {
       transform: translate3d(0, 0, 0);
     }

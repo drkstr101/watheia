@@ -6,7 +6,7 @@ import {
   MDXComponents,
   PageIntro,
   PageLinks,
-} from '@watheia/studio-ui';
+} from '@watheia/base-ui';
 import { CaseStudy, MDXEntry, loadCaseStudies } from '../../lib/mdx';
 
 export default async function CaseStudyLayout({

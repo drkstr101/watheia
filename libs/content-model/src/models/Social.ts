@@ -1,38 +1,48 @@
 import { Model } from '@stackbit/types';
 
-export const Social: Model = {
+export const SocialModel: Model = {
   type: 'object',
   name: 'Social',
   label: 'Social',
-  labelField: 'altText',
+  labelField: 'label',
+  fieldGroups: [
+    {
+      name: 'styles',
+      label: 'Styles',
+      icon: 'palette',
+    },
+    {
+      name: 'settings',
+      label: 'Settings',
+      icon: 'gear',
+    },
+  ],
   fields: [
+    {
+      type: 'string',
+      name: 'label',
+      label: 'Label',
+      default: 'Facebook',
+    },
     {
       type: 'string',
       name: 'altText',
       label: 'Alt text',
-      description: 'The alternative text for screen readers',
-      required: false,
       default: '',
-      hidden: false,
-      localized: false,
+      description: 'The alternative text for screen readers',
     },
     {
       type: 'string',
       name: 'url',
       label: 'URL',
-      required: true,
       default: '/',
-      hidden: false,
-      localized: false,
+      required: true,
     },
     {
       type: 'enum',
       name: 'icon',
+      group: 'styles',
       label: 'Icon',
-      required: true,
-      default: 'facebook',
-      hidden: false,
-      localized: false,
       options: [
         {
           label: 'Facebook',
@@ -51,10 +61,6 @@ export const Social: Model = {
           value: 'linkedin',
         },
         {
-          label: 'Mail',
-          value: 'mail',
-        },
-        {
           label: 'Reddit',
           value: 'reddit',
         },
@@ -71,30 +77,16 @@ export const Social: Model = {
           value: 'youtube',
         },
       ],
-      group: 'styles',
+      default: 'facebook',
+      required: true,
     },
     {
       type: 'string',
       name: 'elementId',
+      group: 'settings',
       label: 'Element ID',
       description: 'The unique ID for an HTML element, must not contain whitespace',
-      required: false,
       default: '',
-      hidden: false,
-      localized: false,
-      group: 'settings',
-    },
-  ],
-  fieldGroups: [
-    {
-      name: 'styles',
-      label: 'Styles',
-      icon: 'palette',
-    },
-    {
-      name: 'settings',
-      label: 'Settings',
-      icon: 'gear',
     },
   ],
 };

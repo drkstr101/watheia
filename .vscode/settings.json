@@ -16,6 +16,15 @@
     "**/.svn": true,
     "**/CVS": true
   },
+  "files.watcherExclude": {
+    "dist/**": true,
+    "tmp/**": true,
+    "**/.nx/**": true,
+    "**/.yarn/*/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true
+  },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "npm.packageManager": "yarn",
@@ -29,6 +38,7 @@
   "stylelint.enable": true,
   "stylelint.validate": ["css", "scss", "postcss"],
   "stylelint.packageManager": "yarn",
+  "tailwindCSS.lint.invalidConfigPath": "ignore",
   "[css]": {
     "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },

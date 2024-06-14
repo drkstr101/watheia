@@ -1,5 +1,5 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { RootLayout } from '@watheia/studio-ui';
+import { RootLayout } from '@watheia/base-ui';
 import { Metadata } from 'next';
 
 import '@watheia/ui-provider/style.css';

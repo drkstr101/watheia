@@ -1,31 +1,25 @@
-export function seoGenerateMetaTags(
-  page: { seo: { metaTags: Record<string, any>[] } },
-  site: { defaultMetaTags: Record<string, any>[] }
-) {
+export function seoGenerateMetaTags(page: any, site: any) {
   let pageMetaTags: Record<string, any> = {};
 
   if (site.defaultMetaTags?.length) {
-    site.defaultMetaTags.forEach((metaTag) => {
-      pageMetaTags[metaTag['property']] = metaTag['content'];
+    site.defaultMetaTags.forEach((metaTag: any) => {
+      pageMetaTags[metaTag.property] = metaTag.content;
     });
   }
-
-  const seoTitle = seoGenerateTitle(page, site);
-  const ogImage = seoGenerateOgImage(page, site);
 
   pageMetaTags = {
     ...pageMetaTags,
-    ...(seoTitle && { 'og:title': seoTitle }),
-    ...(ogImage && { 'og:image': ogImage }),
+    ...(seoGenerateTitle(page, site) && { 'og:title': seoGenerateTitle(page, site) }),
+    ...(seoGenerateOgImage(page, site) && { 'og:image': seoGenerateOgImage(page, site) }),
   };
 
-  if (page.seo?.metaTags?.length) {
-    page.seo?.metaTags.forEach((metaTag) => {
-      pageMetaTags[metaTag['property']] = metaTag['content'];
+  if (page.metaTags?.length) {
+    page.metaTags.forEach((metaTag: any) => {
+      pageMetaTags[metaTag.property] = metaTag.content;
     });
   }
 
-  const metaTags: Record<string, any>[] = [];
+  const metaTags: any[] = [];
   Object.keys(pageMetaTags).forEach((key) => {
     if (pageMetaTags[key] !== null) {
       metaTags.push({
@@ -39,12 +33,9 @@ export function seoGenerateMetaTags(
   return metaTags;
 }
 
-export function seoGenerateTitle(
-  page: { seo: any; title?: any },
-  site: { defaultMetaTags?: Record<string, any>[]; titleSuffix?: string }
-) {
-  let title = page.seo?.metaTitle ? page.seo?.metaTitle : page.title;
-  if (site.titleSuffix && page.seo?.addTitleSuffix !== false) {
+export function seoGenerateTitle(page: any, site: any) {
+  let title = page.metaTitle ? page.metaTitle : page.title;
+  if (site.titleSuffix && page.addTitleSuffix !== false) {
     title = `${title} - ${site.titleSuffix}`;
   }
   return title;
@@ -53,12 +44,12 @@ export function seoGenerateTitle(
 export function seoGenerateMetaDescription(page: any, site: any) {
   let metaDescription = null;
   // Blog posts use the exceprt as the default meta description
-  if (page.type === 'Article') {
+  if (page.__metadata.modelName === 'PostLayout') {
     metaDescription = page.excerpt;
   }
   // page metaDescription field overrides all others
-  if (page.seo?.metaDescription) {
-    metaDescription = page.seo?.metaDescription;
+  if (page.metaDescription) {
+    metaDescription = page.metaDescription;
   }
   return metaDescription;
 }
@@ -70,21 +61,24 @@ export function seoGenerateOgImage(page: any, site: any) {
     ogImage = site.defaultSocialImage;
   }
   // Blog posts use the featuredImage as the default og:image
-  if (page.type === 'Article') {
+  if (page.__metadata.modelName === 'PostLayout') {
     if (page.featuredImage?.url) {
       ogImage = page.featuredImage.url;
     }
   }
   // page socialImage field overrides all others
-  if (page.seo?.socialImage) {
-    ogImage = page.seo?.socialImage;
+  if (page.socialImage) {
+    ogImage = page.socialImage;
   }
 
+  // Relative or absolute URL
+  const absoluteUrlRegex = new RegExp('^(?:[a-z+]+:)?//', 'i');
+
   // ogImage should use an absolute URL. Get the Netlify domain URL from the Netlify environment variable process.env.URL
-  const domainUrl = site.env?.URL ? site.env.URL : null;
+  const domainUrl = site.env?.URL;
 
   if (ogImage) {
-    if (domainUrl) {
+    if (domainUrl && !absoluteUrlRegex.test(ogImage)) {
       return domainUrl + ogImage;
     } else {
       return ogImage;
