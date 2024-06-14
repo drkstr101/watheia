@@ -13,15 +13,15 @@ import {
   StylizedImage,
 } from '@watheia/base-ui';
 
-import logoUnseal from '@assets/images/clients/auto-devops/logo-light.svg';
-import logoBrightPath from '@assets/images/clients/bright-path/logo-light.svg';
-import logoFamilyFund from '@assets/images/clients/cabbage-cms/logo-light.svg';
-import logoPhobiaLight from '@assets/images/clients/cabbage-ui/logo-light.svg';
-import logoGreenLife from '@assets/images/clients/green-life/logo-light.svg';
-import logoHomeWork from '@assets/images/clients/home-work/logo-light.svg';
-import logoMailSmirk from '@assets/images/clients/mail-smirk/logo-light.svg';
-import logoNorthAdventures from '@assets/images/clients/north-adventures/logo-light.svg';
-import imageLaptop from '@assets/images/laptop.jpg';
+import logoUnseal from '@images/clients/auto-devops/logo-light.svg';
+import logoBrightPath from '@images/clients/bright-path/logo-light.svg';
+import logoFamilyFund from '@images/clients/cabbage-cms/logo-light.svg';
+import logoPhobiaLight from '@images/clients/cabbage-ui/logo-light.svg';
+import logoGreenLife from '@images/clients/green-life/logo-light.svg';
+import logoHomeWork from '@images/clients/home-work/logo-light.svg';
+import logoMailSmirk from '@images/clients/mail-smirk/logo-light.svg';
+import logoNorthAdventures from '@images/clients/north-adventures/logo-light.svg';
+import imageLaptop from '@images/laptop.jpg';
 
 import { CaseStudy, MDXEntry, loadCaseStudies } from '../lib/mdx';
 

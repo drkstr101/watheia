@@ -2,7 +2,6 @@ import { type Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { formatDate } from '@watheia/content-helpers';
 import {
   Blockquote,
   Border,
@@ -14,15 +13,16 @@ import {
   PageIntro,
   TestimonialSection,
 } from '@watheia/base-ui';
+import { formatDate } from '@watheia/content-helpers';
 
-import logoUnseal from '@assets/images/clients/auto-devops/logo-dark.svg';
-import logoBrightPath from '@assets/images/clients/bright-path/logo-dark.svg';
-import logoFamilyFund from '@assets/images/clients/cabbage-cms/logo-dark.svg';
-import logoPhobia from '@assets/images/clients/cabbage-ui/logo-dark.svg';
-import logoGreenLife from '@assets/images/clients/green-life/logo-dark.svg';
-import logoHomeWork from '@assets/images/clients/home-work/logo-dark.svg';
-import logoMailSmirk from '@assets/images/clients/mail-smirk/logo-dark.svg';
-import logoNorthAdventures from '@assets/images/clients/north-adventures/logo-dark.svg';
+import logoUnseal from '@images/clients/auto-devops/logo-dark.svg';
+import logoBrightPath from '@images/clients/bright-path/logo-dark.svg';
+import logoFamilyFund from '@images/clients/cabbage-cms/logo-dark.svg';
+import logoPhobia from '@images/clients/cabbage-ui/logo-dark.svg';
+import logoGreenLife from '@images/clients/green-life/logo-dark.svg';
+import logoHomeWork from '@images/clients/home-work/logo-dark.svg';
+import logoMailSmirk from '@images/clients/mail-smirk/logo-dark.svg';
+import logoNorthAdventures from '@images/clients/north-adventures/logo-dark.svg';
 import { CaseStudy, MDXEntry, loadCaseStudies } from '../../lib/mdx';
 
 function CaseStudies({ caseStudies }: { caseStudies: Array<MDXEntry<CaseStudy>> }) {

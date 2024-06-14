@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@assets/images/*": ["libs/assets/images/*"],
+      "@images/*": ["content/images/*"],
       "@home/app/blog/wrapper": ["apps/home/app/blog/wrapper.tsx"],
       "@home/app/solutions/wrapper": ["apps/home/app/solutions/wrapper.tsx"],
       "@home/lib/content-api": ["apps/home/lib/content-api.ts"],
