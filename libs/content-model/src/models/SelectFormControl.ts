@@ -1,77 +1,64 @@
 import { Model } from '@stackbit/types';
 
-export const SelectFormControl: Model = {
+export const SelectFormControlModel: Model = {
   type: 'object',
   name: 'SelectFormControl',
-  label: 'Select Form Control',
+  label: 'Select',
   labelField: 'label',
+  fieldGroups: [
+    {
+      name: 'styles',
+      label: 'Styles',
+      icon: 'palette',
+    },
+    {
+      name: 'settings',
+      label: 'Settings',
+      icon: 'gear',
+    },
+  ],
   fields: [
     {
       type: 'string',
       name: 'name',
       label: 'Name',
-      description:
-        'Must be unique and not contain whitespace. This is the property name that will be sent to the server with this field value.',
       required: true,
-      default: 'company-size',
-      hidden: false,
-      localized: false,
+      default: 'subject',
+      description:
+        "Must be unique - this is the property name that will be sent to the server with this field's value.",
     },
     {
       type: 'string',
       name: 'label',
       label: 'Label',
-      required: false,
-      default: 'Company size',
-      hidden: false,
-      localized: false,
+      default: 'Subject',
     },
     {
       type: 'boolean',
       name: 'hideLabel',
       label: 'Hide label',
-      required: false,
       default: false,
-      hidden: false,
-      localized: false,
     },
     {
       type: 'string',
       name: 'defaultValue',
       label: 'Default value',
-      required: false,
       default: 'Please choose...',
-      hidden: false,
-      localized: false,
     },
     {
       type: 'list',
       name: 'options',
       label: 'Options',
-      required: false,
-      hidden: false,
-      localized: false,
       items: {
         type: 'string',
       },
-    },
-    {
-      type: 'boolean',
-      name: 'isRequired',
-      label: 'Is the field required?',
-      required: false,
-      default: false,
-      hidden: false,
-      localized: false,
+      default: ['Logo design', 'Other'],
     },
     {
       type: 'enum',
       name: 'width',
+      group: 'styles',
       label: 'Width',
-      required: false,
-      default: 'full',
-      hidden: false,
-      localized: false,
       options: [
         {
           label: 'Full',
@@ -82,15 +69,15 @@ export const SelectFormControl: Model = {
           value: '1/2',
         },
       ],
-      group: 'styles',
-      controlType: 'button-group',
+      default: 'full',
+      required: true,
     },
-  ],
-  fieldGroups: [
     {
-      name: 'styles',
-      label: 'Styles',
-      icon: 'palette',
+      type: 'boolean',
+      name: 'isRequired',
+      group: 'settings',
+      label: 'Is the field required?',
+      default: false,
     },
   ],
 };

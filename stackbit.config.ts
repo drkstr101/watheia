@@ -6,11 +6,11 @@ import { models } from './libs/content-model/src/index';
 export default defineStackbitConfig({
   stackbitVersion: '~0.6.0',
   ssgName: 'nextjs',
-  buildCommand: 'nx run demo:build:production',
-  devCommand: 'nx run demo:serve:development --port {PORT}',
+  buildCommand: 'nx run home:build:production',
+  devCommand: 'nx run home:serve:development --port {PORT}',
   installCommand: 'yarn install',
 
-  nodeVersion: '18',
+  nodeVersion: '20',
   models,
   pagesDir: 'content/pages',
   dataDir: 'content/data',

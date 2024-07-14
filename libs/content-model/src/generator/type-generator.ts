@@ -7,7 +7,6 @@ import {
   FieldReference,
   Model,
 } from '@stackbit/types';
-import sortBy from 'lodash/sortBy';
 import {
   ListFormat,
   ScriptKind,
@@ -173,7 +172,7 @@ function fieldTransformer(field: Field) {
 }
 
 export default function generateModelTypes(models: Model[]) {
-  const nodes = factory.createNodeArray(sortBy(models, (m) => m.name).map(modelTransformer));
+  const nodes = factory.createNodeArray(models.sort().map(modelTransformer));
   const sourceFile = createSourceFile(
     'placeholder.ts',
     '',

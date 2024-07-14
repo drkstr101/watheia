@@ -1,6 +1,0 @@
-{
-  "type": "Person",
-  "name": "Jane Doe",
-  "role": "Co-Founder / CEO",
-  "image": { "type": "Image", "src": "/images/jane-doe.jpg", "altText": "Jane Doe" }
-}

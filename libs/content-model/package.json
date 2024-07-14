@@ -2,11 +2,10 @@
   "name": "@watheia/content-model",
   "version": "0.0.1",
   "dependencies": {
+    "@stackbit/types": "^2.0.1",
     "@swc/helpers": "~0.5.10",
-    "lodash": "4.17.21",
     "typescript": "~5.4.5"
   },
-  "devDependencies": {},
   "type": "commonjs",
   "main": "./src/index.js",
   "typings": "./src/index.d.ts"
