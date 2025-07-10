@@ -1,5 +1,14 @@
 # Add files here to ignore them from prettier formatting
 /dist
 /coverage
+/playwright-report
+/tmp
 /.nx/cache
+/.stackbit
+/.yarn
+
+.next/
+
 /.nx/workspace-data
+
+/pnpm-lock.yaml

@@ -61,10 +61,7 @@
   "nxCloudId": "68700e7b85cba1b0db8a6a43",
   "targetDefaults": {
     "stylelint": {
-      "inputs": [
-        "default",
-        "{workspaceRoot}/.stylelintrc(.(json|yml|yaml|js))?"
-      ],
+      "inputs": ["default", "{workspaceRoot}/.stylelintrc(.(json|yml|yaml|js))?"],
       "cache": true
     }
   }
