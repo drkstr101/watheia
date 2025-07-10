@@ -3,6 +3,10 @@
     "nrwl.angular-console",
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
-    "ms-playwright.playwright"
+    "ms-playwright.playwright",
+    "vitest.explorer",
+    "bradlc.vscode-tailwindcss",
+    "stylelint.vscode-stylelint",
+    "davidanson.vscode-markdownlint"
   ]
 }
