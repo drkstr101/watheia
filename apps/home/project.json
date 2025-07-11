@@ -4,13 +4,6 @@
   "sourceRoot": "apps/home",
   "projectType": "application",
   "tags": [],
-  "targets": {
-    "stylelint": {
-      "executor": "nx-stylelint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/home/**/*.css"]
-      }
-    }
-  }
+  "// targets": "to see all targets run: nx show project home --web",
+  "targets": {}
 }

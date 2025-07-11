@@ -1,0 +1,16 @@
+{
+  "name": "auto-annotated-portfolio",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "examples/auto-annotated-portfolio",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["examples/auto-annotated-portfolio/**/*.css"]
+      }
+    }
+  }
+}

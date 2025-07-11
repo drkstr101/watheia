@@ -1,4 +1,5 @@
 ignoreWorkspaceRootCheck: true
 packages:
   - 'apps/*'
+  - 'examples/*'
   - 'libs/*'
