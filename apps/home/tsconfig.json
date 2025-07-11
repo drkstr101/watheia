@@ -17,7 +17,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"],
+      "@/types": ["./src/types/index.ts"],
     },
     "outDir": "dist",
     "rootDir": "."
