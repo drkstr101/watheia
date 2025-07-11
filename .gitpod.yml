@@ -1,0 +1,16 @@
+# Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
+
+image:
+  file: Dockerfile.gitpod
+
+tasks:
+  - init: yarn install && yarn playwright install --with-deps
+    command: yarn start
+
+ports:
+  - port: 4200
+    visibility: public
+    onOpen: open-preview
+  - port: 4210
+    visibility: public
+    onOpen: open-preview
