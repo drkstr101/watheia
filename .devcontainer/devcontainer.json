@@ -18,7 +18,7 @@
       "nonFreePackages": true,
       "username": "vscode",
       "userUid": "automatic",
-      "userGid": "automatic",
+      "userGid": "automatic"
     },
     "ghcr.io/devcontainers/features/desktop-lite:1": {
       "version": "latest",
@@ -78,7 +78,7 @@
     "ghcr.io/devcontainers/features/github-cli:1": {
       "version": "latest",
       "installDirectlyFromGitHubRelease": true
-    },
+    }
   },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [],

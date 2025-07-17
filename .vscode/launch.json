@@ -7,22 +7,16 @@
     {
       "name": "Serve Home",
       "request": "launch",
-      "runtimeArgs": [
-        "start"
-      ],
+      "runtimeArgs": ["start"],
       "runtimeExecutable": "pnpm",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "type": "node"
     },
     {
       "type": "node",
       "request": "attach",
       "name": "Attach to application",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "port": 9229
     }
   ]

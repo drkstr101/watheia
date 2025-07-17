@@ -31,20 +31,12 @@
   "typescript.tsdk": "./node_modules/typescript/lib",
   "eslint.run": "onSave",
   "eslint.nodePath": "./node_modules",
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-    "json"
-  ],
+  "eslint.validate": ["javascript", "typescript", "json"],
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
   "stylelint.enable": true,
-  "stylelint.validate": [
-    "css",
-    "scss",
-    "postcss"
-  ],
+  "stylelint.validate": ["css", "scss", "postcss"],
   "stylelint.packageManager": "yarn",
   "tailwindCSS.lint.invalidConfigPath": "ignore",
   "[css]": {
@@ -56,10 +48,6 @@
   "[postcss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": [
-    "recma",
-    "rehype",
-    "shiki"
-  ],
+  "cSpell.words": ["recma", "rehype", "shiki"],
   "nxConsole.generateAiAgentRules": true
 }
