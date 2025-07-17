@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/screenplay"
+    },
+    {
+      "path": "./apps/home"
+    },
+    {
+      "path": "./examples/spectrum-next-app"
+    }
+  ]
+}

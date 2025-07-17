@@ -1,0 +1,8 @@
+{
+  "name": "screenplay",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/screenplay",
+  "projectType": "application",
+  "targets": {},
+  "tags": []
+}

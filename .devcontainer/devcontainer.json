@@ -1,0 +1,91 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+  "name": "Watheia",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  // "image": "mcr.microsoft.com/devcontainers/base:${templateOption:imageVariant}"
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "editor",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true,
+      "installOhMyZshConfig": true,
+      "upgradePackages": true,
+      "nonFreePackages": true,
+      "username": "vscode",
+      "userUid": "automatic",
+      "userGid": "automatic",
+    },
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "version": "latest",
+      "noVncVersion": "1.2.0",
+      "password": "noPassword",
+      "webPort": "6080",
+      "vncPort": "5901"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "moby": true,
+      "mobyBuildxVersion": "latest",
+      "dockerDashComposeVersion": "latest",
+      "azureDnsAutoDetection": false,
+      "installDockerBuildx": true,
+      "dockerBuildxVersion": "latest",
+      "dockerComposeVersion": "latest",
+      "installDockerComposeSwitch": true
+    },
+    // "ghcr.io/devcontainers/features/java:1": {
+    //   "version": "13",
+    //   "jdkDistro": "tem",
+    //   "installGradle": true,
+    //   "gradleVersion": "latest",
+    //   "installMaven": true,
+    //   "mavenVersion": "latest",
+    //   "installAnt": true,
+    //   "antVersion": "latest",
+    //   "installGroovy": true,
+    //   "groovyVersion": "latest"
+    // },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts",
+      "nodeGypDependencies": true,
+      "nvmInstallPath": "/home/vscode/.nvm",
+      "pnpmVersion": "latest",
+      "nvmVersion": "latest",
+      "installYarnUsingApt": false,
+      "installYarnUsingNpm": true
+    },
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+      "version": "latest",
+      "helm": "latest",
+      "installMinikube": false
+    },
+    "ghcr.io/devcontainers/features/git-lfs:1": {},
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest",
+      "ppa": true
+    },
+    "ghcr.io/devcontainers/features/aws-cli:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest",
+      "installDirectlyFromGitHubRelease": true
+    },
+  },
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "uname -a",
+  // Configure tool-specific properties.
+  "customizations": {},
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "vscode"
+}
